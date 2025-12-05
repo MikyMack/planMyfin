@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Financial Wellness Programme | PlanMyFin</title>
+<title>Legacy Planning | PlanMyFin</title>
 <!-- Stylesheets -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
@@ -13,110 +13,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-	.fin-stats-box {
-		background: var(  --gradient-2);
+	.legacy-stats-box {
+		background: var(--gradient-2);
 		padding: 30px;
 		border-radius: 10px;
 		color: white;
 		text-align: center;
 		margin-bottom: 20px;
-        height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-	}
-	.fin-stats-box h2 {
-		font-size: 48px;
-		font-weight: 700;
-		margin-bottom: 10px;
-		color: white;
-	}
-	.fin-stats-box p {
-		font-size: 16px;
-		margin-bottom: 0;
-		color: white;
-	}
-	.fin-outcome-box {
-		background: var(--theme-color6);
-		padding: 25px;
-		border-radius: 8px;
-		margin-bottom: 20px;
-		border-left: 4px solid   var(--theme-color1);
-		transition: all 0.3s;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-	}
-	.fin-outcome-box:hover {
-		box-shadow: 0 5px 20px var( --theme-color2);
-		transform: translateY(-3px);
-	}
-	.fin-outcome-box h5 {
-		color: var(--theme-color5);
-		font-weight: 600;
-		margin-bottom: 10px;
-	}
-	.fin-outcome-box p {
-		color: #666;
-		margin-bottom: 0;
-		font-size: 14px;
-	}
-	.fin-focus-badge {
-		display: inline-block;
-		background: var(  --theme-color8);
-		color: white;
-		padding: 10px 20px;
-		border-radius: 25px;
-		margin: 5px;
-		font-size: 14px;
-		font-weight: 500;
-	}
-	.fin-implementation-card {
-		background: white;
-		border: 2px solid var(--gradient-1);
-		padding: 30px;
-		border-radius: 10px;
-		text-align: center;
-		margin-bottom: 20px;
-		transition: all 0.3s;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 	}
-	.fin-implementation-card:hover {
-		background: var(  --gradient-2);
-		color: white;
-	}
-	.fin-implementation-card:hover h4,
-	.fin-implementation-card:hover p {
-		color: white;
-	}
-	.fin-implementation-card i {
+	.legacy-stats-box h2 {
 		font-size: 48px;
-		color: var(--dark-color2);
-		margin-bottom: 20px;
-	}
-	.fin-implementation-card:hover i {
+		font-weight: 700;
+		margin-bottom: 10px;
 		color: white;
 	}
-	.fin-benefit-card {
-		background: var(--theme-color-light);
-		padding: 20px;
+	.legacy-stats-box p {
+		font-size: 16px;
+		margin-bottom: 0;
+		color: white;
+	}
+	.legacy-step-box {
+		background: var(--theme-color6);
+		padding: 30px;
 		border-radius: 8px;
-		margin-bottom: 15px;
-		box-shadow: 0 3px 10px var(--dark-color2);
+		margin-bottom: 20px;
+		border-left: 4px solid var(--theme-color1);
+		transition: all 0.3s;
 		height: 100%;
-		display: flex;
-		flex-direction: column;
 	}
-	.fin-benefit-card h5 {
-		color: #1a1a2e;
-		font-size: 18px;
-		font-weight: 600;
-		margin-bottom: 10px;
+	.legacy-step-box:hover {
+		box-shadow: 0 5px 20px var(--theme-color2);
+		transform: translateY(-3px);
 	}
-	.fin-benefit-icon {
+	.legacy-step-number {
 		width: 50px;
 		height: 50px;
 		background: var(--gradient-1);
@@ -126,24 +59,70 @@
 		justify-content: center;
 		color: white;
 		font-size: 24px;
-		margin-bottom: 15px;
+		font-weight: 700;
+		margin-bottom: 20px;
 	}
-	.fin-highlight-box {
+	.legacy-step-box h5 {
+		color: var(--theme-color5);
+		font-weight: 600;
+		margin-bottom: 15px;
+		font-size: 20px;
+	}
+	.legacy-step-box p {
+		color: #666;
+		margin-bottom: 0;
+		font-size: 14px;
+		line-height: 1.8;
+	}
+	.legacy-highlight-box {
 		background: var(--theme-color1);
 		border-left: 4px solid var(--dark-color2);
-		padding: 20px;
+		padding: 25px;
 		margin: 30px 0;
 		border-radius: 5px;
 	}
-	.fin-quote-box {
+	.legacy-quote-box {
 		background: var(--theme-color8);
 		color: white;
-		padding: 30px;
+		padding: 40px;
 		border-radius: 10px;
 		text-align: center;
-		font-size: 20px;
-		font-style: italic;
+		font-size: 22px;
+		font-weight: 500;
 		margin: 40px 0;
+	}
+	.legacy-will-card {
+		background: white;
+		border: 2px solid var(--gradient-1);
+		padding: 25px;
+		border-radius: 10px;
+		margin-bottom: 20px;
+		transition: all 0.3s;
+		height: 100%;
+	}
+	.legacy-will-card:hover {
+		background: var(--gradient-2);
+		color: white;
+		border-color: var(--gradient-2);
+	}
+	.legacy-will-card:hover h5,
+	.legacy-will-card:hover p {
+		color: white;
+	}
+	.legacy-will-card i {
+		font-size: 42px;
+		color: var(--dark-color2);
+		margin-bottom: 20px;
+		display: block;
+	}
+	.legacy-will-card:hover i {
+		color: white;
+	}
+	.legacy-will-card h5 {
+		color: var(--theme-color5);
+		font-weight: 600;
+		font-size: 18px;
+		margin-bottom: 10px;
 	}
 </style>
 </head>
@@ -182,7 +161,6 @@
 
 	<!-- Main Header-->
 	<header class="main-header header-style-one header-1">
-		<!-- Header Lower -->
 		<div class="header-lower header-lower2 show-header-section">
 			<div class="main-box">
 				<div class="nav-outer">
@@ -195,7 +173,7 @@
 							<li class="dropdown"><a href="page-about.html">About</a></li>
 							<li class="dropdown current"><a href="page-services.html">Services</a>
 								<ul>
-									<li class="current"><a href="fin-wellness-programme.html">Financial Wellness Programme</a></li>
+									<li><a href="fin-wellness-programme.html">Financial Wellness Programme</a></li>
 									<li><a href="investment-planning.html">Investment Planning</a></li>
 									<li><a href="retirement-planning.html">Retirement Planning</a></li>
 									<li><a href="risk-management.html">Risk Management</a></li>
@@ -204,7 +182,7 @@
 									<li><a href="cashflow-analysis.html">Cashflow Analysis</a></li>
 									<li><a href="asset-allocation.html">Asset Allocation</a></li>
 									<li><a href="risk-profiling.html">Risk Profiling</a></li>
-									<li><a href="legacy-planning.html">Legacy Planning</a></li>
+									<li class="current"><a href="legacy-planning.html">Legacy Planning</a></li>
 									<li><a href="goal-planning.html">Financial Goal Planning</a></li>
 								</ul>
 							</li>
@@ -285,9 +263,9 @@
 				<ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
 					<li><a href="index.html">Home</a></li>
 					<li><a href="page-services.html">Services</a></li>
-					<li>Financial Wellness Programme</li>
+					<li>Legacy Planning</li>
 				</ul>
-				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Financial Wellness Programme</h1>
+				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Legacy Planning</h1>
 			</div>
 		</div>
 	</section>
@@ -301,49 +279,24 @@
 						<h6 class="sub-title wow fadeInUp">
 							<span class="triangle triangle1"></span>
 							<span class="triangle triangle2"></span>
-							Comprehensive Financial Coaching
+							Estate Planning & Will Creation
 						</h6>
 						<h2 class="wow fadeInUp" data-wow-delay=".2s">
-							Transform Your Financial Life from <br class="d-none d-lg-block"> Confusion to Conviction
+							Secure Your Legacy and <br class="d-none d-lg-block"> Protect Your Loved Ones
 						</h2>
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<div class="project-details__top mt-lg-5">
-						<div class="text mb-40">Essential financial skill is the most important life skill any person should possess. This programme, designed as a one-to-one coaching experience, is created to deliver a complete mindset upgrade—equipping participants with the skills and confidence to take control of their financial lives.</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Statistics Section -->
-			<div class="row stats-row mt-5 mb-5">
-				<div class="col-lg-12">
-					<h3 class="text-center mb-4">Why Financial Wellness Matters Today</h3>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-					<div class="fin-stats-box">
-						<h2>57%</h2>
-						<p>of employees are stressed about their finances (PwC 2023)</p>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-					<div class="fin-stats-box">
-						<h2>82%</h2>
-						<p>want help with their personal finances</p>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-					<div class="fin-stats-box">
-						<h2>3-5x</h2>
-						<p>more likely to be distracted at work due to financial stress</p>
+						<div class="text mb-40">Legacy planning is considered to be one of the most important financial obligations for any individual. It's about determining how an individual's assets, liabilities and obligations will be handled in the event of death or incapacity. Drafting a will is the simplest method for legacy planning.</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="fin-highlight-box wow fadeInUp">
-						<p class="mb-0"><strong>Critical Insight:</strong> Financial stress extends beyond the bank account to key drivers of health and well-being. It affects productivity, engagement, physical health, and overall life satisfaction.</p>
+					<div class="legacy-quote-box wow fadeInUp">
+						"Estate planning is not just about distributing assets; it's about preserving your values, ensuring your loved ones are cared for, and leaving a positive impact on the world."
 					</div>
 				</div>
 			</div>
@@ -353,180 +306,121 @@
 				<div class="col-xl-8 col-lg-8">
 					<div class="services-details__content">
 						
-						<!-- Quote Section -->
-						<div class="fin-quote-box wow fadeInUp">
-							"Connecting the dots of your Reality with your Purpose"
+						<!-- What is Legacy Planning -->
+						<h3 class="mb-4">What is Legacy Planning?</h3>
+						<p class="mb-4">Legacy planning is about determining how your assets, liabilities, and obligations will be handled in the event of your death or incapacity. Without proper planning, asset distribution will be based on laws applicable to your religion, which may not align with your wishes. A well-structured legacy plan ensures:</p>
+
+						<ul class="outcome-list mb-5">
+							<li><i class="fal fa-check"></i> Your assets are distributed according to YOUR wishes</li>
+							<li><i class="fal fa-check"></i> Your loved ones are financially protected</li>
+							<li><i class="fal fa-check"></i> Tax implications are minimized</li>
+							<li><i class="fal fa-check"></i> Family disputes are prevented</li>
+							<li><i class="fal fa-check"></i> Your values and legacy continue</li>
+						</ul>
+
+						<div class="legacy-highlight-box wow fadeInUp mb-5">
+							<p class="mb-0"><strong>Important Note:</strong> Without a will, distribution will be based on the law applicable to your religion. Taking the time to plan now can provide peace of mind and ensure that your legacy lives on as you intend.</p>
 						</div>
 
-						<!-- Expected Outcomes -->
-						<h3 class="mb-4">The Expected Outcome of This Programme</h3>
-						<p class="mb-4">This one-to-one coaching experience delivers a complete mindset upgrade—equipping you with the skills and confidence to take control of your financial life. The key outcomes expected from this programme are as follows:</p>
+						<!-- Actionable Steps Section -->
+						<h3 class="mb-4">Actionable Steps in Order of Priority</h3>
+						<div class="row g-4 mb-5">
+							<div class="col-lg-6 wow fadeInUp" data-wow-delay=".2s">
+								<div class="legacy-step-box">
+									<div class="legacy-step-number">1</div>
+									<h5>Organize Your Assets</h5>
+									<p>Begin estate planning by listing out your Assets, Accounts, Investments, Loans and Liabilities. This comprehensive inventory forms the foundation of your legacy plan.</p>
+								</div>
+							</div>
+							<div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+								<div class="legacy-step-box">
+									<div class="legacy-step-number">2</div>
+									<h5>Name Nominees</h5>
+									<p>Designate nominees for assets, especially the intangible ones like bank accounts, insurance policies, mutual funds and retirement funds. This ensures smooth transfer of assets.</p>
+								</div>
+							</div>
+							<div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
+								<div class="legacy-step-box">
+									<div class="legacy-step-number">3</div>
+									<h5>Create a Will</h5>
+									<p>A will outlines asset distribution after you pass. Without it, distribution will be based on the law applicable to your religion. This is the most critical document in legacy planning.</p>
+								</div>
+							</div>
+							<div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+								<div class="legacy-step-box">
+									<div class="legacy-step-number">4</div>
+									<h5>Establish Trusts (If Needed)</h5>
+									<p>Trusts manage assets as per your instructions, useful for taxes, minors, or special needs beneficiaries. They provide additional control over asset distribution.</p>
+								</div>
+							</div>
+							<div class="col-lg-6 wow fadeInUp" data-wow-delay=".6s">
+								<div class="legacy-step-box">
+									<div class="legacy-step-number">5</div>
+									<h5>Regular Updates</h5>
+									<p>Review and adjust for family changes, financial shifts, and legal updates. Life events like marriage, divorce, birth of children require plan modifications.</p>
+								</div>
+							</div>
+							<div class="col-lg-6 wow fadeInUp" data-wow-delay=".7s">
+								<div class="legacy-step-box">
+									<div class="legacy-step-number">6</div>
+									<h5>Seek Professional Help</h5>
+									<p>Estate planning experts ensure a legally sound plan. Professional guidance helps navigate complex legal and tax implications.</p>
+								</div>
+							</div>
+							<div class="col-lg-12 wow fadeInUp" data-wow-delay=".8s">
+								<div class="legacy-step-box">
+									<div class="legacy-step-number">7</div>
+									<h5>Advance Medical Directives</h5>
+									<p>Choose a trusted person for financial and medical decisions if you're unable to make them yourself. This includes Power of Attorney and Living Will documents.</p>
+								</div>
+							</div>
+						</div>
 
+						<!-- What's Included in a Will -->
+						<h3 class="mb-4">What Should Your Will Include?</h3>
+						<p class="mb-4">A comprehensive will should cover all aspects of your estate. Here are the key components:</p>
+						
 						<div class="row g-4">
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Crafting Your Own Financial Plan</h5>
-									<p>You would be empowered to design & implement a personalized plan for your financial wellness</p>
+								<div class="legacy-will-card">
+									<i class="lnr-icon-home"></i>
+									<h5>Immovable Assets</h5>
+									<p>House, Flat, Shop, Land, and other real estate properties with clear beneficiary details</p>
 								</div>
 							</div>
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Avoiding Costly Financial Mistakes</h5>
-									<p>You would gain insights that protect you from errors & blunders many make unknowingly</p>
+								<div class="legacy-will-card">
+									<i class="lnr-icon-database"></i>
+									<h5>Bank Accounts & FDs</h5>
+									<p>Savings accounts, fixed deposits, lockers, and cash holdings with account numbers and institutions</p>
 								</div>
 							</div>
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".4s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Freedom from Product-Centric Advice</h5>
-									<p>You would learn to choose the best products suitable to you and staying insulated from biased & product-driven financial suggestions</p>
+								<div class="legacy-will-card">
+									<i class="lnr-icon-chart-bars"></i>
+									<h5>Investments</h5>
+									<p>Mutual Funds, stocks, bonds, debentures, MLDs, AIF, PMS, and other investment accounts</p>
 								</div>
 							</div>
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".5s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Clarity in Financial Decisions</h5>
-									<p>You would gain a clear direction and deeper meaning in every financial choice you make</p>
+								<div class="legacy-will-card">
+									<i class="lnr-icon-shield"></i>
+									<h5>Insurance Policies</h5>
+									<p>Life insurance, health insurance, and other policy details with beneficiary information</p>
 								</div>
 							</div>
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".6s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Overcome Random Investments</h5>
-									<p>By being able to replace scattered, impulsive investments with structured, purposeful planning</p>
+								<div class="legacy-will-card">
+									<i class="lnr-icon-car"></i>
+									<h5>Motor Vehicles</h5>
+									<p>Cars, bikes, and other vehicles with registration numbers and ownership details</p>
 								</div>
 							</div>
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".7s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Achieve Your Financial Goals</h5>
-									<p>Through a realistic, practical path to reach your short- and long-term financial aspirations</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".8s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Experience A Holistic Approach to Wealth</h5>
-									<p>You would be able to experience complete financial well-being, not just piecemeal solutions</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".9s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Master the Most Important Life Skill</h5>
-									<p>Learn how to effectively manage your financial life, skill impacting every stage of your journey</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay="1s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Transform from Confusion to Conviction</h5>
-									<p>You would be able to move from financial stress & uncertainty to conviction & peace of mind</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay="1.1s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Experiencing Financial Freedom</h5>
-									<p>The programme follows a scientific, step-by-step path that equips you to make informed decisions—ultimately leading you to the most powerful outcome</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Key Focus Areas -->
-						<div class="mt-5 mb-5">
-							<h3 class="mb-4">Key Focus Areas</h3>
-							<p class="mb-4">Our comprehensive programme covers every critical aspect of your financial life:</p>
-							<div class="text-center">
-								<span class="fin-focus-badge">Risk Management</span>
-								<span class="fin-focus-badge">Emergency Fund</span>
-								<span class="fin-focus-badge">Retirement Planning</span>
-								<span class="fin-focus-badge">Financial Goal Planning</span>
-								<span class="fin-focus-badge">Risk Profiling</span>
-								<span class="fin-focus-badge">Asset Allocation</span>
-								<span class="fin-focus-badge">Investment Planning</span>
-								<span class="fin-focus-badge">Cashflow Analysis</span>
-								<span class="fin-focus-badge">Debt Management</span>
-								<span class="fin-focus-badge">Tax Planning</span>
-								<span class="fin-focus-badge">Legacy Planning</span>
-							</div>
-						</div>
-
-						<!-- Implementation Options -->
-						<h3 class="mb-4">Implementation Options</h3>
-						<div class="row">
-							<div class="col-md-4 wow fadeInUp" data-wow-delay=".2s">
-								<div class="fin-implementation-card">
-									<i class="lnr-icon-users"></i>
-									<h4>Seminars and Workshops</h4>
-									<p>Group sessions for organizations and teams</p>
-								</div>
-							</div>
-							<div class="col-md-4 wow fadeInUp" data-wow-delay=".4s">
-								<div class="fin-implementation-card">
-									<i class="lnr-icon-user"></i>
-									<h4>One-to-One Consultations</h4>
-									<p>Personalized coaching sessions tailored to you</p>
-								</div>
-							</div>
-							<div class="col-md-4 wow fadeInUp" data-wow-delay=".6s">
-								<div class="fin-implementation-card">
-									<i class="lnr-icon-file-add"></i>
-									<h4>Personalized Financial Plan</h4>
-									<p>Complete wellness plan preparation for employees</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Benefits to Organizations -->
-						<div class="mt-5">
-							<h3 class="mb-4">Benefits to Organizations</h3>
-							<div class="row g-4">
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".2s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-chart-bars"></i>
-										</div>
-										<h5>Improved Employee Productivity</h5>
-										<p>Financial wellness programs minimize personal financial distractions, enhancing productivity as a result of improved financial decisions</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".3s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-heart"></i>
-										</div>
-										<h5>Reduce Workplace Stress</h5>
-										<p>Minimize financial stress affecting physical health and potentially reduce healthcare costs for employers</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".4s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-calendar-full"></i>
-										</div>
-										<h5>Reduce Absenteeism</h5>
-										<p>Decrease the need for employees to miss work as they are empowered with better management of their finances</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".5s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-users2"></i>
-										</div>
-										<h5>Employee Retention & Commitment</h5>
-										<p>Programs that help employees build stable financial lives increase their tenure and loyalty to the company</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".6s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-star"></i>
-										</div>
-										<h5>Enhance Employee Recruiting</h5>
-										<p>Make your company more attractive to potential employees, particularly younger generations who value such support</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".7s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-apartment"></i>
-										</div>
-										<h5>Caring & Inclusive Culture</h5>
-										<p>Contribute to a caring company culture by empowering all employees to improve their financial well-being</p>
-									</div>
+								<div class="legacy-will-card">
+									<i class="lnr-icon-diamond"></i>
+									<h5>Movable Property</h5>
+									<p>Gold, jewelry, precious metals, and other valuable personal belongings</p>
 								</div>
 							</div>
 						</div>
@@ -537,49 +431,49 @@
 							<div class="faq-content-1">
 								<ul class="accordion-box">
 									<li class="accordion block active-block wow fadeInUp">
-										<div class="acc-btn">Who can benefit from the Financial Wellness Programme?
+										<div class="acc-btn">Why is creating a will important?
 											<div class="icon fa fa-plus"></div>
 										</div>
 										<div class="acc-content current">
 											<div class="content">
 												<div class="text">
-													This programme is designed for individuals at any stage of their financial journey—whether you're just starting your career, planning for major life goals, approaching retirement, or running a business. Organizations can also implement this for their employees to improve productivity and reduce financial stress.
+													Without a will, your assets will be distributed according to laws applicable to your religion, which may not reflect your wishes. A will ensures your assets go to the people you choose, prevents family disputes, minimizes tax implications, and provides peace of mind knowing your loved ones will be taken care of according to your wishes.
 												</div>
 											</div>
 										</div>
 									</li>
 									<li class="accordion block wow fadeInUp" data-wow-delay=".2s">
-										<div class="acc-btn">What makes this programme different from regular financial advice?
+										<div class="acc-btn">Can I change my will after creating it?
 											<div class="icon fa fa-plus"></div>
 										</div>
 										<div class="acc-content">
 											<div class="content">
 												<div class="text">
-													Unlike product-centric financial advice, our programme focuses on empowering YOU with the skills to manage your own financial life. We provide objective, trustworthy resources that aren't driven by product sales. You'll learn to craft your own financial plan rather than just following recommendations.
+													Yes, you can and should update your will regularly. Life events like marriage, divorce, birth of children, acquisition of new assets, or changes in relationships may require modifications to your will. It's recommended to review your will every 3-5 years or after any major life event.
 												</div>
 											</div>
 										</div>
 									</li>
 									<li class="accordion block wow fadeInUp" data-wow-delay=".4s">
-										<div class="acc-btn">How long does the programme take?
+										<div class="acc-btn">Do I need a lawyer to create a will?
 											<div class="icon fa fa-plus"></div>
 										</div>
 										<div class="acc-content">
 											<div class="content">
 												<div class="text">
-													The programme is customized based on your needs. It can range from intensive one-to-one consultations over a few sessions to ongoing coaching relationships. For organizations, we offer flexible formats including workshops, seminars, and comprehensive employee wellness plans.
+													While you can create a basic will yourself, it's highly recommended to seek professional help. Estate planning experts ensure your will is legally sound, covers all necessary aspects, minimizes tax implications, and stands up to legal scrutiny. Professional guidance is especially important for complex estates or family situations.
 												</div>
 											</div>
 										</div>
 									</li>
 									<li class="accordion block wow fadeInUp" data-wow-delay=".6s">
-										<div class="acc-btn">Do I need to have financial knowledge before starting?
+										<div class="acc-btn">What happens if I don't have a will?
 											<div class="icon fa fa-plus"></div>
 										</div>
 										<div class="acc-content">
 											<div class="content">
 												<div class="text">
-													No prior financial knowledge is required. The programme is designed to meet you where you are—whether you're a complete beginner or have some financial experience. We build your knowledge systematically, ensuring you understand each concept before moving forward.
+													If you die without a will (intestate), your assets will be distributed according to succession laws applicable to your religion in India. This may not align with your wishes and can lead to family disputes, delayed distribution, higher legal costs, and your loved ones may not receive what you intended for them.
 												</div>
 											</div>
 										</div>
@@ -598,7 +492,7 @@
 							<div class="sidebar-service-list mb-30">
 								<h4 class="title">All Services</h4>
 								<ul>
-									<li class="current"><a href="fin-wellness-programme.html"><i class="far fa-arrow-right"></i><span>Financial Wellness Programme</span></a></li>
+									<li><a href="fin-wellness-programme.html"><i class="far fa-arrow-right"></i><span>Financial Wellness Programme</span></a></li>
 									<li><a href="investment-planning.html"><i class="far fa-arrow-right"></i><span>Investment Planning</span></a></li>
 									<li><a href="retirement-planning.html"><i class="far fa-arrow-right"></i><span>Retirement Planning</span></a></li>
 									<li><a href="risk-management.html"><i class="far fa-arrow-right"></i><span>Risk Management</span></a></li>
@@ -607,7 +501,7 @@
 									<li><a href="cashflow-analysis.html"><i class="far fa-arrow-right"></i><span>Cashflow Analysis</span></a></li>
 									<li><a href="asset-allocation.html"><i class="far fa-arrow-right"></i><span>Asset Allocation</span></a></li>
 									<li><a href="risk-profiling.html"><i class="far fa-arrow-right"></i><span>Risk Profiling</span></a></li>
-									<li><a href="legacy-planning.html"><i class="far fa-arrow-right"></i><span>Legacy Planning</span></a></li>
+									<li class="current"><a href="legacy-planning.html"><i class="far fa-arrow-right"></i><span>Legacy Planning</span></a></li>
 									<li><a href="goal-planning.html"><i class="far fa-arrow-right"></i><span>Financial Goal Planning</span></a></li>
 								</ul>
 							</div>
@@ -648,6 +542,9 @@
 			</div>
 		</div>
 	</section>
+
+
+
 
 	<!-- Footer Section Start -->
 	<footer class="footer-section-1 fix footer-bg bg-cover" style="background-image: url(images/home-1/footer-shape.png);">
