@@ -5526,6 +5526,7 @@ Section Title
   position: relative;
   overflow: hidden;
   border-radius: 5px;
+   height: 250px;
 }
 .benifit-box-items-style-1 .benifit-image img {
   width: 100%;
@@ -5533,6 +5534,7 @@ Section Title
   border-radius: 5px;
   -webkit-transition: all 400ms ease;
   transition: all 400ms ease;
+  object-fit: cover;
 }
 .benifit-box-items-style-1 .benifit-image img {
   background-size: cover;
@@ -10627,6 +10629,7 @@ Section Title
   border-radius: 10px;
   border: 1px solid #EBEBEB;
   padding: 30px 24px;
+  
 }
 [data-tm-layout=dark] .project-box-items-2 {
   border-color: rgb(var(--theme-color-white-rgb), 0.1);
@@ -21483,4 +21486,26 @@ Sidebar
   .footer-section-4 .footer-right-shape {
     display: none;
   }
+}
+
+/***************Home page section3*********************/
+
+.project-box-items-2-sect3 .project-image {
+  height: 280px; 
+}
+
+.project-box-items-2-sect3 .project-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.project-box-items-2-sect3 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-box-items-2-sect3 .theme-btn.btn-style-one {
+  margin-top: auto; 
 }

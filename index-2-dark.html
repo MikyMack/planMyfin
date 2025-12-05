@@ -11,6 +11,7 @@
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
 	<link href="css/style-dark.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 	<link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
 	<link rel="icon" href="images/favicon.svg" type="image/x-icon">
@@ -18,6 +19,21 @@
 	<!-- Responsive -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		.icon-wrapper {
+			width: 80px;
+			height: 80px;
+			background: var(--gradient-1);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 25px;
+			transition: all 0.3s ease;
+		}
+	</style>
+
 </head>
 
 <body>
@@ -86,8 +102,8 @@
 					<!--Nav Box-->
 					<div class="nav-outer">
 						<div class="logo-box">
-							<div class="logo"><a href="index.html"><img src="images/white-logo.png" alt=""
-										title="finclix"></a></div>
+							<div class="logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""
+										title="planmyfin" style="height: 80px; width: auto;"></a></div>
 						</div>
 						<nav class="nav main-menu">
 							<ul class="navigation">
@@ -96,19 +112,29 @@
 								<li class="dropdown"><a href="page-about.html">About</a></li>
 
 
-								<li class="dropdown"><a href="#">Services</a>
+								<li class="dropdown"><a href="page-services.html">Services</a>
 									<ul>
-										<li><a href="page-services.html">Our Services</a></li>
-										<li><a href="page-service-details.html">Service Details</a></li>
+										<!--<li><a href="page-services.html">Our Services</a></li>-->
+										<li><a href="fin-wellness-plan1.html">Financial Wellness Programme</a></li>
+										<li><a href="page-service-details.html">Investment Planning</a></li>
+										<li><a href="page-service-details.html">Retirement Planning</a></li>
+										<li><a href="page-service-details.html">Risk Management & Insurance Planning</a></li>
+										<li><a href="page-service-details.html">Emergency Fund Planning</a></li>
+										<li><a href="page-service-details.html">Debt Management</a></li>
+										<li><a href="page-service-details.html">Cashflow Analysis</a></li>
+										<li><a href="page-service-details.html">Asset Allocation Strategy</a></li>
+										<li><a href="page-service-details.html">Risk Profiling</a></li>										
+										<li><a href="page-service-details.html">Legacy Planning (Estate Planning & Will)</a></li>
+										<li><a href="page-service-details.html">Financial Goal Planning </a></li>
 									</ul>
 								</li>
-								<li class="dropdown"><a href="fin-adv-services.html">Financial Advising Services</a>
+								<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a>
 
-								<li class="dropdown"><a href="#">Blogs</a>
-									<ul>
+								<li class="dropdown"><a href="news-grid.html">Blogs</a>
+								<!--	<ul>
 										<li><a href="news-grid.html">News Grid</a></li>
 										<li><a href="news-details.html">News Details</a></li>
-									</ul>
+									</ul>-->
 								</li>
 								<li><a href="page-contact.html">Contact</a></li>
 							</ul>
@@ -137,7 +163,7 @@
 				<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
 				<nav class="menu-box">
 					<div class="upper-box">
-						<div class="nav-logo"><a href="index.html"><img src="images/white-logo.png" alt=""></a></div>
+						<div class="nav-logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt="" style="height: 50px; width: auto;"></a></div>
 						<div class="close-btn"><i class="icon fa fa-times"></i></div>
 					</div>
 
@@ -190,7 +216,7 @@
 					<div class="inner-container">
 						<!--Logo-->
 						<div class="logo">
-							<a href="index.html"><img src="images/white-logo.png" alt="img"></a>
+							<a href="index.html"><img src="images/planmyfin-logo.png" alt="img"  style="height: 80px; width: auto;"></a>
 						</div>
 
 						<!--Right Col-->
@@ -215,7 +241,7 @@
 
 		<!-- Hero Section Start -->
 		<section class="hero-section hero-2 parallaxie bg-cover"
-			style="background-image: url('images/home-2/hero/hero-image.jpg');">
+			style="background-image: url('images/planmyfin-imgs/hero-banner2.jpg');">
 			<div class="row g-4 justify-content-between align-items-end">
 				<div class="col-xxl-6">
 					<div class="hero-content">
@@ -342,7 +368,7 @@
 						<div class="col-lg-6">
 							<div class="about-image-items-2 wow img-custom-anim-left">
 								<div class="about-image">
-									<img src="images/home-2/about/about-01.png" alt="img">
+									<img src="images/planmyfin-imgs/home-section2.png" alt="img">
 								</div>
 								<div class="about-counter2">
 									<div class="count-box">
@@ -455,7 +481,7 @@
 					<h6 class="sub-title wow fadeInUp">
 						<span class="triangle triangle1"></span>
 						<span class="triangle triangle2"></span>
-					Key Focus Areas
+						Key Focus Areas
 					</h6>
 					<h2 class="wow fadeInUp" data-wow-delay=".3s">
 						The 11 Pillars of Your <br>Financial Wellness
@@ -466,20 +492,25 @@
 				<div class="swiper project-slider-2">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<div class="project-box-items-2">
+							<div class="project-box-items-2 project-box-items-2-sect3">
 								<div class="project-image">
-									<img src="images/home-2/project/project-01.jpg" alt="img">
-									<img src="images/home-2/project/project-01.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
 									<div class="shape-1">
 										<img src="images/home-2/project/shape-1.png" alt="img">
 									</div>
 									<div class="project-content">
-										<h3><a href="page-project-details.html">Assessment </a></h3>
-										<p>Comprehensive evaluation of your current financial health across all life areas</p>
+										<h3><a href="page-project-details.html">
+												<div class="icon-wrapper">
+													<i class="fa-solid fa-clipboard-check"></i>
+												</div>
+											</a></h3>
+										<p>Comprehensive evaluation of your current financial health across all life
+											areas</p>
 									</div>
 								</div>
-								<a href="page-project-details.html" class="theme-btn btn-style-one">
-									Get Assessed 
+								<a href="page-project-details.html" class="theme-btn btn-style-one sect-3">
+									Get Assessed
 									<span class="icon">
 										<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
 											viewBox="0 0 50 50" fill="none">
@@ -492,20 +523,24 @@
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<div class="project-box-items-2">
+							<div class="project-box-items-2 project-box-items-2-sect3">
 								<div class="project-image">
-									<img src="images/home-2/project/project-02.jpg" alt="img">
-									<img src="images/home-2/project/project-02.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
 									<div class="shape-1">
 										<img src="images/home-2/project/shape-1.png" alt="img">
 									</div>
 									<div class="project-content">
-										<h3><a href="page-project-details.html">Growth chart</a></h3>
+										<h3><a href="page-project-details.html">
+												<div class="icon-wrapper">
+													<i class="fa-solid fa-chart-line"></i>
+												</div>
+											</a></h3>
 										<p>Strategic goal-based investing with inflation-adjusted projections</p>
 									</div>
 								</div>
 								<a href="page-project-details.html" class="theme-btn btn-style-one">
-								Start Investing 
+									Start Investing
 									<span class="icon">
 										<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
 											viewBox="0 0 50 50" fill="none">
@@ -518,20 +553,24 @@
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<div class="project-box-items-2">
+							<div class="project-box-items-2 project-box-items-2-sect3">
 								<div class="project-image">
-									<img src="images/home-2/project/project-03.jpg" alt="img">
-									<img src="images/home-2/project/project-03.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
 									<div class="shape-1">
 										<img src="images/home-2/project/shape-1.png" alt="img">
 									</div>
 									<div class="project-content">
-										<h3><a href="page-project-details.html">Retirement</a></h3>
+										<h3><a href="page-project-details.html">
+												<div class="icon-wrapper">
+													<i class="fa-solid fa-umbrella-beach"></i>
+												</div>
+											</a></h3>
 										<p> Secure your golden years with corpus calculation and income strategies</p>
 									</div>
 								</div>
 								<a href="page-project-details.html" class="theme-btn btn-style-one">
-									Plan Ahead 
+									Plan Ahead
 									<span class="icon">
 										<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
 											viewBox="0 0 50 50" fill="none">
@@ -544,15 +583,19 @@
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<div class="project-box-items-2">
+							<div class="project-box-items-2 project-box-items-2-sect3">
 								<div class="project-image">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
 									<div class="shape-1">
 										<img src="images/home-2/project/shape-1.png" alt="img">
 									</div>
 									<div class="project-content">
-										<h3><a href="page-project-details.html">Shield</a></h3>
+										<h3><a href="page-project-details.html">
+												<div class="icon-wrapper">
+													<i class="fa-solid fa-shield-halved"></i>
+												</div>
+											</a></h3>
 										<p>Complete protection through life, health, and disability coverage</p>
 									</div>
 								</div>
@@ -570,15 +613,18 @@
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<div class="project-box-items-2">
+							<div class="project-box-items-2 project-box-items-2-sect3">
 								<div class="project-image">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
 									<div class="shape-1">
 										<img src="images/home-2/project/shape-1.png" alt="img">
 									</div>
 									<div class="project-content">
-										<h3><a href="page-project-details.html">Emergency Fund Icon: Safety net</a></h3>
+										<h3><a href="page-project-details.html">
+												<div class="icon-wrapper">
+													<i class="fa-solid fa-life-ring"></i>
+											</a></h3>
 										<p>Build financial resilience for unexpected life events</p>
 									</div>
 								</div>
@@ -596,24 +642,27 @@
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<div class="project-box-items-2">
+							<div class="project-box-items-2 project-box-items-2-sect3">
 								<div class="project-image">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
 									<div class="shape-1">
 										<img src="images/home-2/project/shape-1.png" alt="img">
 									</div>
 									<div class="project-content">
-										<h3><a href="page-project-details.html">Debt Management
-Icon: Balance scale
+										<h3><a href="page-project-details.html">
+												<div class="icon-wrapper">
+													<i class="fa-solid fa-scale-balanced"></i>
+												</div>
 
 
-										</a></h3>
+
+											</a></h3>
 										<p>Optimize liabilities and achieve debt-free living</p>
 									</div>
 								</div>
 								<a href="page-project-details.html" class="theme-btn btn-style-one">
-									Manage Debt 
+									Manage Debt
 									<span class="icon">
 										<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
 											viewBox="0 0 50 50" fill="none">
@@ -626,21 +675,24 @@ Icon: Balance scale
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<div class="project-box-items-2">
+							<div class="project-box-items-2 project-box-items-2-sect3">
 								<div class="project-image">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
 									<div class="shape-1">
 										<img src="images/home-2/project/shape-1.png" alt="img">
 									</div>
 									<div class="project-content">
-										<h3><a href="page-project-details.html">Tax Planning
-Icon: Tax document</a></h3>
+										<h3><a href="page-project-details.html">
+												<div class="icon-wrapper">
+													<i class="fa-solid fa-file-invoice-dollar"></i>
+												</div>
+											</a></h3>
 										<p>Minimize tax burden through strategic planning</p>
 									</div>
 								</div>
 								<a href="page-project-details.html" class="theme-btn btn-style-one">
-									Optimize Taxes 
+									Optimize Taxes
 									<span class="icon">
 										<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
 											viewBox="0 0 50 50" fill="none">
@@ -653,21 +705,25 @@ Icon: Tax document</a></h3>
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<div class="project-box-items-2">
+							<div class="project-box-items-2 project-box-items-2-sect3">
 								<div class="project-image">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
 									<div class="shape-1">
 										<img src="images/home-2/project/shape-1.png" alt="img">
 									</div>
 									<div class="project-content">
-										<h3><a href="page-project-details.html">Money flow</a></h3>
+										<h3><a href="page-project-details.html">
+												<div class="icon-wrapper">
+													<i class="fa-solid fa-arrow-right-arrow-left"></i>
+												</div>
+											</a></h3>
 										<p>Understand and optimize your income-expense patterns
-</p>
+										</p>
 									</div>
 								</div>
 								<a href="page-project-details.html" class="theme-btn btn-style-one">
-								Analyze Cashflow
+									Analyze Cashflow
 									<span class="icon">
 										<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
 											viewBox="0 0 50 50" fill="none">
@@ -680,17 +736,21 @@ Icon: Tax document</a></h3>
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<div class="project-box-items-2">
+							<div class="project-box-items-2 project-box-items-2-sect3">
 								<div class="project-image">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
 									<div class="shape-1">
 										<img src="images/home-2/project/shape-1.png" alt="img">
 									</div>
 									<div class="project-content">
-										<h3><a href="page-project-details.html"> Portfolio</a></h3>
+										<h3><a href="page-project-details.html">
+												<div class="icon-wrapper">
+													<i class="fa-solid fa-chart-pie"></i>
+												</div>
+											</a></h3>
 										<p>Risk-aligned investment mix for optimal returns
-</p>
+										</p>
 									</div>
 								</div>
 								<a href="page-project-details.html" class="theme-btn btn-style-one">
@@ -707,15 +767,19 @@ Icon: Tax document</a></h3>
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<div class="project-box-items-2">
+							<div class="project-box-items-2 project-box-items-2-sect3">
 								<div class="project-image">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
 									<div class="shape-1">
 										<img src="images/home-2/project/shape-1.png" alt="img">
 									</div>
 									<div class="project-content">
-										<h3><a href="page-project-details.html">Family tree</a></h3>
+										<h3><a href="page-project-details.html">
+												<div class="icon-wrapper">
+													<i class="fa-solid fa-users"></i>
+												</div>
+											</a></h3>
 										<p>Ensure smooth wealth transfer to your loved ones</p>
 									</div>
 								</div>
@@ -732,21 +796,25 @@ Icon: Tax document</a></h3>
 								</a>
 							</div>
 						</div>
-							<div class="swiper-slide">
-							<div class="project-box-items-2">
+						<div class="swiper-slide">
+							<div class="project-box-items-2 project-box-items-2-sect3">
 								<div class="project-image">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
-									<img src="images/home-2/project/project-04.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
+									<img src="images/planmyfin-imgs/home-sect31.jpg" alt="img">
 									<div class="shape-1">
 										<img src="images/home-2/project/shape-1.png" alt="img">
 									</div>
 									<div class="project-content">
-										<h3><a href="page-project-details.html">Target</a></h3>
+										<h3><a href="page-project-details.html">
+												<div class="icon-wrapper">
+													<i class="fa-solid fa-bullseye"></i>
+												</div>
+											</a></h3>
 										<p> Systematic path to reach all your financial milestones</p>
 									</div>
 								</div>
 								<a href="page-project-details.html" class="theme-btn btn-style-one">
-									Set Goals 
+									Set Goals
 									<span class="icon">
 										<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
 											viewBox="0 0 50 50" fill="none">
@@ -777,7 +845,7 @@ Icon: Tax document</a></h3>
 					<div class="row justify-content-between">
 						<div class="col-xxl-3 col-xl-5">
 							<div class="choose-us-image-2 wow fadeInUp" data-wow-delay=".3s">
-								<img src="images/home-2/choose-us/choose-us-image.png" alt="img">
+								<img src="/images/planmyfin-imgs/home-sect42.png" alt="img">
 							</div>
 						</div>
 						<div class="col-xxl-8 col-xl-7">
@@ -1118,8 +1186,8 @@ Icon: Tax document</a></h3>
 						<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
 							<div class="benifit-box-items-style-1">
 								<div class="benifit-image">
-									<img src="images/home-2/benefit/benifit-01.jpg" alt="img">
-									<img src="images/home-2/benefit/benifit-01.jpg" alt="img">
+									<img src="/images/planmyfin-imgs/home-sect51.png" alt="img">
+									<img src="/images/planmyfin-imgs/home-sect51.png" alt="img">
 								</div>
 								<div class="benefit-content">
 									<h3> Personal Financial Coaching</h3>
@@ -1146,16 +1214,16 @@ Icon: Tax document</a></h3>
 						<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
 							<div class="benifit-box-items-style-1">
 								<div class="benifit-image">
-									<img src="images/home-2/benefit/benifit-02.jpg" alt="img">
-									<img src="images/home-2/benefit/benifit-02.jpg" alt="img">
+									<img src="/images/planmyfin-imgs/home-sect52.jpg" alt="img">
+									<img src="/images/planmyfin-imgs/home-sect52.jpg" alt="img">
 								</div>
 								<div class="benefit-content">
 									<h3> Corporate Wellness Programs</h3>
 									<p>
-										<li>✓ Reduce Employee Financial Stress</li>									
+										<li>✓ Reduce Employee Financial Stress</li>
 										<li>✓ Improve Engagement & Retention</li>
 										Empower your workforce with financial
-										education and coaching. Reduce stress, 
+										education and coaching. Reduce stress,
 										boost productivity, build a thriving
 										team.
 									</p>
@@ -1197,22 +1265,23 @@ Icon: Tax document</a></h3>
 										<div class="why-choose-list wow fadeInUp" data-wow-delay=".3s">
 											<h3>Our Mission</h3>
 											<p>
-												Empower individuals and organizations to achieve financial well-being through objective, comprehensive, personalized guidance.
+												Empower individuals and organizations to achieve financial well-being
+												through objective, comprehensive, personalized guidance.
 											</p>
-											
+
 										</div>
 										<ul class="about-list wow fadeInUp" data-wow-delay=".5s">
 											<li>
 												<span class="icon">
 													<img src="images/home-1/about/check.svg" alt="img">
 												</span>
-											Objective Financial Guidance
+												Objective Financial Guidance
 											</li>
 											<li>
 												<span class="icon">
 													<img src="images/home-1/about/check.svg" alt="img">
 												</span>
-											Comprehensive Wealth Planning
+												Comprehensive Wealth Planning
 											</li>
 										</ul>
 									</div>
@@ -1220,7 +1289,8 @@ Icon: Tax document</a></h3>
 										<div class="why-choose-list">
 											<h3>Our Vision</h3>
 											<p>
-											Transform financial stress into confidence by making quality financial planning accessible to everyone.
+												Transform financial stress into confidence by making quality financial
+												planning accessible to everyone.
 											</p>
 										</div>
 										<ul class="about-list">
@@ -1242,7 +1312,8 @@ Icon: Tax document</a></h3>
 										<div class="why-choose-list">
 											<h3>Our Philosophy</h3>
 											<p>
-												Education over sales. Holistic planning over product pushing. Your success is our only measure.
+												Education over sales. Holistic planning over product pushing. Your
+												success is our only measure.
 											</p>
 										</div>
 										<ul class="about-list">
@@ -1250,7 +1321,7 @@ Icon: Tax document</a></h3>
 												<span class="icon">
 													<img src="images/home-1/about/check.svg" alt="img">
 												</span>
-												 Zero Product Bias
+												Zero Product Bias
 											</li>
 											<li>
 												<span class="icon">
@@ -1274,7 +1345,8 @@ Icon: Tax document</a></h3>
 								</div>
 								<div class="content">
 									<h3>Debt Management</h3>
-									<p>Optimize loans, reduce EMI burden, and achieve debt-free status faster with strategic planning.</p>
+									<p>Optimize loans, reduce EMI burden, and achieve debt-free status faster with
+										strategic planning.</p>
 								</div>
 							</div>
 						</div>
@@ -1285,7 +1357,8 @@ Icon: Tax document</a></h3>
 								</div>
 								<div class="content">
 									<h3>Legacy Planning</h3>
-									<p>Wills, nominations, and estate strategies to protect your family's financial future.</p>
+									<p>Wills, nominations, and estate strategies to protect your family's financial
+										future.</p>
 								</div>
 							</div>
 						</div>
@@ -1296,7 +1369,8 @@ Icon: Tax document</a></h3>
 								</div>
 								<div class="content">
 									<h3>Emergency Fund Planning</h3>
-									<p>Build 3-6 months expense reserves and optimize cashflow for complete financial stability.</p>
+									<p>Build 3-6 months expense reserves and optimize cashflow for complete financial
+										stability.</p>
 								</div>
 							</div>
 						</div>
@@ -1307,7 +1381,8 @@ Icon: Tax document</a></h3>
 								</div>
 								<div class="content">
 									<h3>Tax Optimization</h3>
-									<p>Reduce tax burden through strategic planning while maximizing wealth creation legally.</p>
+									<p>Reduce tax burden through strategic planning while maximizing wealth creation
+										legally.</p>
 								</div>
 							</div>
 						</div>
@@ -1573,7 +1648,7 @@ Icon: Tax document</a></h3>
 			<div class="auto-container">
 				<div class="footer-top-wrapper">
 					<a href="index.html" class="footer-logo wow fadeInUp" data-wow-delay=".3s">
-						<img src="images/white-logo.png" alt="img">
+						<img src="images/planmyfin-logo.png" alt="img"  style="height: 80px; width: auto;">
 					</a>
 					<div class="social-icon wow fadeInUp" data-wow-delay=".5s">
 						<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
@@ -1587,19 +1662,19 @@ Icon: Tax document</a></h3>
 						<div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".3s">
 							<div class="footer-widget-items mt-30">
 								<div class="widget-title mb-25">
-									<h3 class="font-size-24 text-white font-weight-500">Head office</h3>
+									<!--<h3 class="font-size-24 text-white font-weight-500">Head office</h3>-->
 								</div>
 								<div class="footer-content">
-									<p class="text-white">2972 Westheimer Rd. Santa Ana, Illinois 85486 </p>
+									<!--<p class="text-white">2972 Westheimer Rd. Santa Ana, Illinois 85486 </p>-->
 									<ul class="contact-list-2">
 										<li>
-											<a href="tel:+123456-7890">+ (123) 456-7890</a>
+											<a href="tel:+123456-7890">+91 97785 96947</a>
 										</li>
 										<li>
 											<a
 												href="https://html.kodesolution.com/cdn-cgi/l/email-protection#99e0f6ecebfaf6f4e9f8f7e0d9fce1f8f4e9f5fcb7faf6f4"><span
 													class="__cf_email__"
-													data-cfemail="247d4b5156474b4954454a5d64415c45495448410a474b49">[email&#160;protected]</span></a>
+													data-cfemail="247d4b5156474b4954454a5d64415c45495448410a474b49">info@planmyfin.com</span></a>
 										</li>
 									</ul>
 								</div>

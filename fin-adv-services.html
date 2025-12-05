@@ -1,485 +1,1589 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from html.kodesolution.com/2025/finclix-html/page-services.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Dec 2025 05:04:07 GMT -->
 <head>
-<meta charset="utf-8">
-<title>Finclix - Business Consulting Html Template </title>
-<!-- Stylesheets -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link href="css/responsive.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Financial Advising Services - PlanMyFin</title>
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <!-- REMOVED: <link href="css/style-dark.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
-<link rel="icon" href="images/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+    <link rel="icon" href="images/favicon.svg" type="image/x-icon">
 
-<!-- Responsive -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .download-box {
+            background: var(--gradient-1);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .download-box h3 {
+            color: var(--theme-color2);
+            margin-bottom: 20px;
+        }
+
+        .download-box .report-features {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+
+        .download-box .report-features li {
+            color: var(--theme-color2);
+            font-size: 16px;
+            margin: 10px 0;
+            font-weight: 500;
+        }
+
+        .download-box .disclaimer {
+            font-size: 14px;
+            color: var(--theme-color2);
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+
+        .process-step {
+            background: var(--theme-color3);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient-1);
+        }
+
+        .process-step .step-number {
+            background: var(--gradient-1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--theme-color2);
+            margin-bottom: 20px;
+        }
+
+        .process-step h4 {
+            color: var(--headings-color);
+            margin-bottom: 15px;
+        }
+
+        .process-step p {
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .target-audience-card {
+            background: var(--theme-color3);
+            padding: 40px 30px;
+            border-radius: 15px;
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .target-audience-card:hover {
+            border-color: var(--theme-color1);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(200, 241, 105, 0.3);
+        }
+
+        .target-audience-card .icon-box {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .target-audience-card .icon-box i {
+            font-size: 32px;
+            color: var(--theme-color2);
+        }
+
+        .target-audience-card h4 {
+            color: var(--headings-color);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .target-audience-card p {
+            color: var(--text-color);
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .difference-item {
+            background: var(--theme-color3);
+            padding: 35px 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            height:100%;
+            display:flex;
+            flex-direction: column;
+        }
+
+        .difference-item:hover {
+            background: var(--theme-color-white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .difference-item .number {
+            background: var(--gradient-1);
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--theme-color2);
+            margin-bottom: 20px;
+        }
+
+        .difference-item h4 {
+            color: var(--headings-color);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .difference-item p {
+            color: var(--text-color);
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .core-area-card {
+            background: var(--theme-color3);
+            padding: 30px;
+            border-radius: 15px;
+            height: 100%;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .core-area-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(200, 241, 105, 0.3);
+        }
+
+        .core-area-card .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .core-area-card .icon-wrapper i {
+            font-size: 36px;
+            color: var(--theme-color2);
+        }
+
+        .core-area-card h4 {
+            color: var(--headings-color);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .core-area-card p {
+            color: var(--text-color);
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .report-section-box {
+            background: var(--theme-color3);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid;
+            border-image: var(--gradient-1) 1;
+        }
+
+        .report-section-box h4 {
+            color: var(--headings-color);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .report-section-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .report-section-box ul li {
+            color: var(--text-color);
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 15px;
+        }
+
+        .report-section-box ul li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--theme-color1);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Light theme hero adjustments */
+        .page-title {
+            background-color: var(--theme-color2);
+            padding: 100px 0 80px;
+        }
+
+        .page-title .title {
+            color: var(--theme-color-white);
+        }
+
+        .page-title .page-breadcrumb li {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .page-title .page-breadcrumb li a {
+            color: var(--theme-color1);
+        }
+
+        /* Section background adjustments */
+        .section-bg {
+            background-color: var(--theme-color-light);
+        }
+
+        /* Icon items style adjustments for light theme */
+        .icon-items-style-2 {
+            background: var(--theme-color3);
+            border: 1px solid #e0e0e0;
+            padding: 30px 25px;
+            border-radius: 15px;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .icon-items-style-2:hover {
+            background: var(--theme-color-white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .icon-items-style-2 .icon {
+            background: var(--gradient-1);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .icon-items-style-2 .icon i {
+            font-size: 32px;
+            color: var(--theme-color2);
+        }
+
+        .icon-items-style-2 .content h3 {
+            color: var(--headings-color);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .icon-items-style-2 .content p {
+            color: var(--text-color);
+            font-size: 15px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Perfect if you're feeling section */
+        .feeling-box {
+            background: var(--theme-color3);
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 5px solid;
+            border-image: var(--gradient-1) 1;
+        }
+
+        .feeling-box h3 {
+            color: var(--headings-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .feeling-box p {
+            color: var(--text-color);
+            margin: 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        .btn-style-one{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            gap:10px;
+        }
+    </style>
+
 </head>
 
 <body>
 
-<div class="page-wrapper">
+    <div class="page-wrapper">
 
-	<!-- Preloader Start -->
-	<div id="preloader" class="preloader">
-		<div class="animation-preloader">
-			<div class="spinner">                
-			</div>
-			<div class="txt-loading">
-				<span data-text-preloader="F" class="letters-loading">
-					F
-				</span>
-				<span data-text-preloader="I" class="letters-loading">
-					I
-				</span>
-				<span data-text-preloader="N" class="letters-loading">
-					N
-				</span>
-				<span data-text-preloader="C" class="letters-loading">
-					C
-				</span>
-				<span data-text-preloader="L" class="letters-loading">
-					L
-				</span>
-				<span data-text-preloader="I" class="letters-loading">
-					I
-				</span>
-				<span data-text-preloader="X" class="letters-loading">
-					X
-				</span>
-			</div>
-			<p class="text-center">Loading</p>
-		</div>
-		<div class="loader">
-			<div class="row">
-				<div class="col-3 loader-section section-left">
-					<div class="bg"></div>
-				</div>
-				<div class="col-3 loader-section section-left">
-					<div class="bg"></div>
-				</div>
-				<div class="col-3 loader-section section-right">
-					<div class="bg"></div>
-				</div>
-				<div class="col-3 loader-section section-right">
-					<div class="bg"></div>
-				</div>
-			</div>
-		</div>
-	</div>
+        <!-- Preloader Start -->
+        <div id="preloader" class="preloader">
+            <div class="animation-preloader">
+                <div class="spinner">
+                </div>
+                <div class="txt-loading">
+                    <span data-text-preloader="P" class="letters-loading">P</span>
+                    <span data-text-preloader="L" class="letters-loading">L</span>
+                    <span data-text-preloader="A" class="letters-loading">A</span>
+                    <span data-text-preloader="N" class="letters-loading">N</span>
+                    <span data-text-preloader="M" class="letters-loading">M</span>
+                    <span data-text-preloader="Y" class="letters-loading">Y</span>
+                    <span data-text-preloader="F" class="letters-loading">F</span>
+                    <span data-text-preloader="I" class="letters-loading">I</span>
+                    <span data-text-preloader="N" class="letters-loading">N</span>
+                </div>
+                <p class="text-center">Loading</p>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-	<!-- Scroll To Top -->
-	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+        <!-- Scroll To Top -->
+        <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 
-	<!-- Main Header-->
-	<header class="main-header header-style-one header-1">
+        <!-- Main Header-->
+        <header class="main-header header-style-one header-1">
 
+            <!-- Header Lower -->
+            <div class="header-lower">
+                <!-- Main box -->
+                <div class="main-box">
 
-		
-		<!-- Header Lower -->
-		<div class="header-lower header-lower2 show-header-section">
-			<!-- Main box -->
-			<div class="main-box">
-				
-				<!--Nav Box-->
-				<div class="nav-outer">
-					<div class="logo-box">
-						<div class="logo"><a href="index.html"><img src="images/white-logo.png" alt="" title="finclix"></a></div>
-					</div>
-					<nav class="nav main-menu">
-							<ul class="navigation">
-								
-								<li class="dropdown"><a href="index-2-dark.html">Home</a></li>
-								<li class="dropdown"><a href="page-about.html">About</a></li>					
-									
-							
-								<li class="dropdown"><a href="#">Services</a>
-									<ul>
-										<li><a href="page-services.html">Our Services</a></li>
-										<li><a href="page-service-details.html">Service Details</a></li>
-									</ul>
-								</li>
-								<li class="dropdown"><a href="fin-adv-services.html">Financial Advising Services</a>								
-								
-								<li class="dropdown"><a href="#">Blogs</a>
-									<ul>
-										<li><a href="news-grid.html">News Grid</a></li>
-										<li><a href="news-details.html">News Details</a></li>
-									</ul>
-								</li>
-								<li><a href="page-contact.html">Contact</a></li>
-							</ul>
-						</nav>
-					<!-- Main Menu End-->
-					<div class="outer-box">
-						<a href="tel:+92(8800)9806" class="info-btn">
-							<i class="icon fa fa-phone"></i>
-							+ 88 ( 9800 ) 6802
-						</a>
+                    <!--Nav Box-->
+                    <div class="nav-outer">
+                        <div class="logo-box">
+                            <div class="logo"><a href="index.html"><img src="images/black-logo.png" alt=""
+                                        title="planmyfin"></a></div>
+                        </div>
+                        <nav class="nav main-menu">
+                            <ul class="navigation">
+                                <li class="dropdown"><a href="index.html">Home</a></li>
+                                <li class="dropdown"><a href="page-about.html">About</a></li>
+                                <li class="dropdown"><a href="#">Services</a>
+                                    <ul>
+                                        <li><a href="page-services.html">Our Services</a></li>
+                                        <li><a href="page-service-details.html">Service Details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="current dropdown"><a href="fin-adv-services.html">Financial Advising</a></li>
+                                <li class="dropdown"><a href="#">Blogs</a>
+                                    <ul>
+                                        <li><a href="news-grid.html">News Grid</a></li>
+                                        <li><a href="news-details.html">News Details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="page-contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <!-- Main Menu End-->
+                        <div class="outer-box">
+                            <a href="tel:+919778596947" class="info-btn">
+                                <i class="icon fa fa-phone"></i>
+                                +91 97785 96947
+                            </a>
 
-						<a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
+                            <a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
 
-						<!-- Mobile Nav toggler -->
-						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Header Lower -->
+                            <!-- Mobile Nav toggler -->
+                            <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Header Lower -->
 
+            <!-- Mobile Menu  -->
+            <div class="mobile-menu">
+                <div class="menu-backdrop"></div>
 
-		<!-- Mobile Menu  -->
-		<div class="mobile-menu">
-			<div class="menu-backdrop"></div>
+                <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                <nav class="menu-box">
+                    <div class="upper-box">
+                        <div class="nav-logo"><a href="index.html"><img src="images/black-logo.png" alt=""></a></div>
+                        <div class="close-btn"><i class="icon fa fa-times"></i></div>
+                    </div>
 
-			<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-			<nav class="menu-box">
-				<div class="upper-box">
-					<div class="nav-logo"><a href="index.html"><img src="images/white-logo.png" alt=""></a></div>
-					<div class="close-btn"><i class="icon fa fa-times"></i></div>
-				</div>
+                    <ul class="navigation clearfix">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </ul>
+                    <ul class="contact-list-one">
+                        <li>
+                            <!-- Contact Info Box -->
+                            <div class="contact-info-box">
+                                <i class="icon lnr-icon-phone-handset"></i>
+                                <span class="title">Call Now</span>
+                                <a href="tel:+919778596947">+91 97785 96947</a>
+                            </div>
+                        </li>
+                        <li>
+                            <!-- Contact Info Box -->
+                            <div class="contact-info-box">
+                                <span class="icon lnr-icon-envelope1"></span>
+                                <span class="title">Send Email</span>
+                                <a href="mailto:info@planmyfin.com">info@planmyfin.com</a>
+                            </div>
+                        </li>
+                        <li>
+                            <!-- Contact Info Box -->
+                            <div class="contact-info-box">
+                                <span class="icon lnr-icon-clock"></span>
+                                <span class="title">Working Hours</span>
+                                Mon - Sat 9:00 - 6:00, Sunday - CLOSED
+                            </div>
+                        </li>
+                    </ul>
 
-				<ul class="navigation clearfix">
-					<!--Keep This Empty / Menu will come through Javascript-->
-				</ul>
-				<ul class="contact-list-one">
-					<li>
-						<!-- Contact Info Box -->
-						<div class="contact-info-box">
-							<i class="icon lnr-icon-phone-handset"></i>
-							<span class="title">Call Now</span>
-							<a href="tel:+92880098670">+92 (8800) - 98670</a>
-						</div>
-					</li>
-					<li>
-						<!-- Contact Info Box -->
-						<div class="contact-info-box">
-							<span class="icon lnr-icon-envelope1"></span>
-							<span class="title">Send Email</span>
-							<a href="https://html.kodesolution.com/cdn-cgi/l/email-protection#48202d2438082b272538292631662b2725"><span class="__cf_email__" data-cfemail="84ece1e8f4c4e7ebe9f4e5eafdaae7ebe9">[email&#160;protected]</span></a>
-						</div>
-					</li>
-					<li>
-						<!-- Contact Info Box -->
-						<div class="contact-info-box">
-							<span class="icon lnr-icon-clock"></span>
-							<span class="title">Send Email</span>
-							Mon - Sat 8:00 - 6:30, Sunday - CLOSED
-						</div>
-					</li>
-				</ul>
+                    <ul class="social-links">
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </nav>
+            </div><!-- End Mobile Menu -->
 
+            <!-- Sticky Header  -->
+            <div class="sticky-header">
+                <div class="auto-container">
+                    <div class="inner-container">
+                        <!--Logo-->
+                        <div class="logo">
+                            <a href="index.html"><img src="images/black-logo.png" alt="img"></a>
+                        </div>
 
-				<ul class="social-links">
-					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-					<li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-				</ul>
-			</nav>
-		</div><!-- End Mobile Menu -->
+                        <!--Right Col-->
+                        <div class="nav-outer">
+                            <!-- Main Menu -->
+                            <nav class="main-menu">
+                                <div class="navbar-collapse show collapse clearfix">
+                                    <ul class="navigation clearfix">
+                                        <!--Keep This Empty / Menu will come through Javascript-->
+                                    </ul>
+                                </div>
+                            </nav><!-- Main Menu End-->
 
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Sticky Menu -->
+        </header>
+        <!--End Main Header -->
 
-		<!-- Sticky Header  -->
-		<div class="sticky-header">
-			<div class="auto-container">
-				<div class="inner-container">
-					<!--Logo-->
-					<div class="logo">
-						<a href="index.html"><img src="images/black-logo.png" alt="img"></a>
-					</div>
+        <!-- Hero Section (from About Page) -->
+        <section class="page-title" style="background-image: url(images/inner/page-title-bg.jpg);">
+            <div class="auto-container">
+                <div class="title-outer">
+                    <ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
+                        <li><a href="index.html">Home</a></li>
+                        <li>Financial Advising Services</li>
+                    </ul>
+                    <h1 class="title wow fadeInUp" data-wow-delay=".5s">Comprehensive Financial Wellness Planning</h1>
+                    <p class="wow fadeInUp" data-wow-delay=".7s"
+                        style="color: rgba(255,255,255,0.9); font-size: 18px; margin-top: 20px; max-width: 800px;">
+                        Get Your Personalized Financial Roadmap – A Complete Analysis Covering 11 Critical Areas of Your
+                        Financial Life
+                    </p>
+                </div>
+            </div>
+        </section>
 
-					<!--Right Col-->
-					<div class="nav-outer">
-						<!-- Main Menu -->
-						<nav class="main-menu">
-							<div class="navbar-collapse show collapse clearfix">
-								<ul class="navigation clearfix">
-									<!--Keep This Empty / Menu will come through Javascript-->
-								</ul>
-							</div>
-						</nav><!-- Main Menu End-->
+        <!-- Section 2: What You Get -->
+        <section class="about-section-2 fix section-padding">
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <h6 class="sub-title wow fadeInUp">
+                        <span class="triangle triangle1"></span>
+                        <span class="triangle triangle2"></span>
+                        What You Get
+                    </h6>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s">Your Complete Financial Wellness Plan</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".5s" style="max-width: 800px; margin: 20px auto;">
+                        Our Financial Wellness Programme delivers a comprehensive, personalized report that becomes your
+                        roadmap to financial freedom. Unlike product-driven advisors, we focus on empowering you with
+                        knowledge, clarity, and actionable strategies.
+                    </p>
+                </div>
 
-						<!--Mobile Navigation Toggler-->
-						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
-					</div>
-				</div>
-			</div>
-		</div><!-- End Sticky Menu -->
-	</header>
-	<!--End Main Header -->
+                <div class="row g-4 mt-4">
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="icon-items-style-2">
+                            <div class="icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Detailed Financial Analysis</h3>
+                                <p>Thorough assessment of your current financial situation, income, expenses, savings,
+                                    and existing investments.</p>
+                            </div>
+                        </div>
+                    </div>
 
-	<!-- Start main-content -->
-  <section class="page-title" style="background-image: url(images/inner/page-title-bg.jpg);">
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="icon-items-style-2">
+                            <div class="icon">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Goal Quantification</h3>
+                                <p>Scientific calculation of your major life goals with inflation-adjusted projections
+                                    and timelines.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="icon-items-style-2">
+                            <div class="icon">
+                                <i class="fa-solid fa-gauge-high"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Risk Profile Assessment</h3>
+                                <p>Understanding your investment personality and risk tolerance for strategies aligned
+                                    with your comfort level.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="icon-items-style-2">
+                            <div class="icon">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Asset Allocation Strategy</h3>
+                                <p>Personalized investment mix between equity, debt, and other assets based on your risk
+                                    profile.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                        <div class="icon-items-style-2">
+                            <div class="icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Risk Management</h3>
+                                <p>Analysis of life insurance, health coverage, critical illness, disability, and
+                                    property protection needs.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                        <div class="icon-items-style-2">
+                            <div class="icon">
+                                <i class="fa-solid fa-route"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Investment Roadmap</h3>
+                                <p>Monthly investment requirements for each goal with multiple inflation scenarios and
+                                    return projections.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".9s">
+                        <div class="icon-items-style-2">
+                            <div class="icon">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Debt Management</h3>
+                                <p>Optimization of existing loans, EMI analysis, and debt-to-income ratio management
+                                    strategies.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1s">
+                        <div class="icon-items-style-2">
+                            <div class="icon">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Cashflow Analysis</h3>
+                                <p>Understanding your income-expense patterns and required savings ratios to achieve
+                                    your goals.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1.1s">
+                        <div class="icon-items-style-2">
+                            <div class="icon">
+                                <i class="fa-solid fa-life-ring"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Emergency Fund Planning</h3>
+                                <p>Calculation of adequate reserves to handle unexpected expenses and income
+                                    disruptions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1.2s">
+                        <div class="icon-items-style-2">
+                            <div class="icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Legacy Planning</h3>
+                                <p>Will drafting framework, nominee designations, and estate planning strategies for
+                                    your family.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1.3s">
+                        <div class="icon-items-style-2">
+                            <div class="icon">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Tax Planning Insights</h3>
+                                <p>Strategies for tax optimization while staying compliant and building wealth
+                                    efficiently.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The 11 Core Areas -->
+        <section class="project-section-2 fix section-padding section-bg">
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <h6 class="sub-title wow fadeInUp">
+                        <span class="triangle triangle1"></span>
+                        <span class="triangle triangle2"></span>
+                        Complete Coverage
+                    </h6>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s">11 Critical Areas of Financial Wellness</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".5s" style="max-width: 800px; margin: 20px auto;">
+                        Every aspect of your financial life analyzed, quantified, and optimized for your success.
+                    </p>
+                </div>
+
+                <div class="row g-4 mt-4">
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="core-area-card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                            <h4>Timeline of Goals</h4>
+                            <p>Map out when each major goal needs to be achieved—from next year to 30+ years ahead.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="core-area-card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-umbrella-beach"></i>
+                            </div>
+                            <h4>Retirement Needs</h4>
+                            <p>Calculate your required retirement corpus with inflation-adjusted income projections for
+                                20-25 years post-retirement.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="core-area-card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <h4>Major Goals Quantification</h4>
+                            <p>Children's education, property purchase, life establishment funds—all calculated with
+                                inflation impact.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="core-area-card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-gauge-high"></i>
+                            </div>
+                            <h4>Risk Profile Analysis</h4>
+                            <p>7-category investor classification from extremely conservative to extremely aggressive.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                        <div class="core-area-card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </div>
+                            <h4>Asset Allocation</h4>
+                            <p>Scientific mix of equity and debt based on your age, goals, and risk tolerance.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                        <div class="core-area-card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-indian-rupee-sign"></i>
+                            </div>
+                            <h4>Investment Requirements</h4>
+                            <p>Exact monthly investment amounts needed at various return scenarios with cost of delay
+                                analysis.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".9s">
+                        <div class="core-area-card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                            </div>
+                            <h4>Cashflow & Savings</h4>
+                            <p>Current vs. required savings ratios across different inflation scenarios.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1s">
+                        <div class="core-area-card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <h4>Debt Management</h4>
+                            <p>Liability analysis, EMI-to-income ratio, and debt optimization strategies.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1.1s">
+                        <div class="core-area-card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h4>Risk Management</h4>
+                            <p>Life insurance, health coverage, disability protection, property insurance, and liability
+                                coverage assessment.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1.3s">
+                        <div class="core-area-card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <h4>Legacy Planning</h4>
+                            <p>Will creation framework, nominee designations, and asset distribution strategies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Sample Report Showcase -->
+        <section class="about-section-2 fix section-padding">
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <h6 class="sub-title wow fadeInUp">
+                        <span class="triangle triangle1"></span>
+                        <span class="triangle triangle2"></span>
+                        Inside Your Report
+                    </h6>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s">What's Included in Your Financial Wellness Plan</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".5s" style="max-width: 800px; margin: 20px auto;">
+                        Every report is customized to your unique situation and includes detailed analysis across these
+                        critical areas.
+                    </p>
+                </div>
+
+                <div class="row g-4 mt-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="report-section-box">
+                            <h4><i class="fa-solid fa-a" style="color: var(--theme-color1); margin-right: 10px;"></i>
+                                Financial Wellness Plan Summary</h4>
+                            <ul>
+                                <li>Timeline of all your financial goals</li>
+                                <li>Fund requirements at different inflation levels (2%, 3%, 4%, 5%, 6%)</li>
+                                <li>Monthly investment recommendations for each goal</li>
+                                <li>Expected fund accumulation vs. shortfall analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="report-section-box">
+                            <h4><i class="fa-solid fa-b" style="color: var(--theme-color1); margin-right: 10px;"></i>
+                                Investment Planning</h4>
+                            <ul>
+                                <li>Detailed goal-by-goal analysis with timelines</li>
+                                <li>Inflation impact projections at multiple scenarios</li>
+                                <li>Monthly savings required vs. cost of 3-year delay</li>
+                                <li>Year-by-year cashflow projections with top-ups</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="report-section-box">
+                            <h4><i class="fa-solid fa-c" style="color: var(--theme-color1); margin-right: 10px;"></i>
+                                Risk Profile Assessment</h4>
+                            <ul>
+                                <li>Your investor category and risk tolerance score</li>
+                                <li>Expected return range for your risk group</li>
+                                <li>7-category classification from conservative to aggressive</li>
+                                <li>Investment personality insights</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="report-section-box">
+                            <h4><i class="fa-solid fa-d" style="color: var(--theme-color1); margin-right: 10px;"></i>
+                                Asset Allocation</h4>
+                            <ul>
+                                <li>Customized equity-debt mix for your profile</li>
+                                <li>Minimum and maximum allocation ranges</li>
+                                <li>Expected return range: 8.9%-10.3% for moderate risk</li>
+                                <li>Rebalancing guidelines</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".7s">
+                        <div class="report-section-box">
+                            <h4><i class="fa-solid fa-e" style="color: var(--theme-color1); margin-right: 10px;"></i>
+                                Investment Requirements</h4>
+                            <ul>
+                                <li>Goal-wise monthly investment breakdown</li>
+                                <li>Total fund requirements at 0%, 2%, 4%, 6% inflation</li>
+                                <li>Expected fund at goal year with recommended investments</li>
+                                <li>Percentage of savings increase year-on-year to avoid shortfall</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".8s">
+                        <div class="report-section-box">
+                            <h4><i class="fa-solid fa-f" style="color: var(--theme-color1); margin-right: 10px;"></i>
+                                Cashflow Analysis</h4>
+                            <ul>
+                                <li>Income-expense-savings breakdown with visuals</li>
+                                <li>Current vs. required savings ratios</li>
+                                <li>Savings gap analysis at multiple inflation levels</li>
+                                <li>Money flow representation for clarity</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".9s">
+                        <div class="report-section-box">
+                            <h4><i class="fa-solid fa-g" style="color: var(--theme-color1); margin-right: 10px;"></i>
+                                Debt Management</h4>
+                            <ul>
+                                <li>Current loan analysis and liability profile</li>
+                                <li>Asset-creating vs. lifestyle debt breakdown</li>
+                                <li>Debt-to-income ratio assessment</li>
+                                <li>EMI optimization strategies</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="1s">
+                        <div class="report-section-box">
+                            <h4><i class="fa-solid fa-h" style="color: var(--theme-color1); margin-right: 10px;"></i>
+                                Risk Management</h4>
+                            <ul>
+                                <li>Life insurance gap analysis (4 calculation methods)</li>
+                                <li>Health insurance adequacy with inflation impact</li>
+                                <li>Disability and critical illness coverage needs</li>
+                                <li>Property and liability risk assessment</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="1.1s">
+                        <div class="report-section-box">
+                            <h4><i class="fa-solid fa-i" style="color: var(--theme-color1); margin-right: 10px;"></i>
+                                Emergency Fund</h4>
+                            <ul>
+                                <li>Required fund based on your dependency situation</li>
+                                <li>3 months coverage for dual income families</li>
+                                <li>6 months coverage for single income dependency</li>
+                                <li>Current availability vs. requirement analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="1.2s">
+                        <div class="report-section-box">
+                            <h4><i class="fa-solid fa-j" style="color: var(--theme-color1); margin-right: 10px;"></i>
+                                Legacy Planning</h4>
+                            <ul>
+                                <li>Will drafting template with step-by-step guidance</li>
+                                <li>Nominee designation checklist for all assets</li>
+                                <li>Estate planning action items</li>
+                                <li>Asset distribution framework</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: How It Works -->
+        <section class="about-section-2 fix section-padding section-bg">
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <h6 class="sub-title wow fadeInUp">
+                        <span class="triangle triangle1"></span>
+                        <span class="triangle triangle2"></span>
+                        The Process
+                    </h6>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s">Your Journey to Financial Wellness</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".5s" style="max-width: 800px; margin: 20px auto;">
+                        From initial consultation to implementation support—here's how we work together to transform
+                        your financial future.
+                    </p>
+                </div>
+
+                <div class="row g-4 mt-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h4>Initial Consultation (Free)</h4>
+                            <p>30-minute discussion to understand your goals, current situation, and concerns. We'll
+                                explain our approach and answer all your questions.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h4>Data Collection</h4>
+                            <p>You provide details about income, expenses, existing investments, insurance policies,
+                                loans, and life goals through our secure questionnaire.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h4>Comprehensive Analysis</h4>
+                            <p>We analyze your data using scientific models, inflation projections, and risk assessment
+                                tools to create your personalized plan.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <h4>Report Preparation</h4>
+                            <p>Creation of your customized 50+ page Financial Wellness Report with detailed
+                                recommendations, charts, and projections.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".7s">
+                        <div class="process-step">
+                            <div class="step-number">5</div>
+                            <h4>Report Presentation</h4>
+                            <p>1-2 hour session where we walk you through every section, answer questions, and clarify
+                                strategies for implementation.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".8s">
+                        <div class="process-step">
+                            <div class="step-number">6</div>
+                            <h4>Implementation Support</h4>
+                            <p>Guidance on executing recommendations, aligning existing investments, and making
+                                necessary adjustments to your financial life.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 wow fadeInUp" data-wow-delay=".9s">
+                        <div class="process-step">
+                            <div class="step-number">7</div>
+                            <h4>Ongoing Reviews (Optional)</h4>
+                            <p>Annual or bi-annual check-ins to adjust your plan as life circumstances change—marriage,
+                                children, job changes, market conditions, etc.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5 wow fadeInUp" data-wow-delay="1s">
+                    <p style="color: var(--text-color); font-size: 18px; margin-bottom: 20px;">
+                        <strong>Timeline:</strong> From initial consultation to report delivery typically takes 2-3
+                        weeks, depending on how quickly you provide required information.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Who Is This For -->
+        <section class="about-section-2 fix section-padding">
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <h6 class="sub-title wow fadeInUp">
+                        <span class="triangle triangle1"></span>
+                        <span class="triangle triangle2"></span>
+                        Who We Serve
+                    </h6>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s">Is Financial Wellness Planning Right for You?</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".5s" style="max-width: 800px; margin: 20px auto;">
+                        Our comprehensive planning is perfect for anyone serious about taking control of their financial
+                        future.
+                    </p>
+                </div>
+
+                <div class="row g-4 mt-5">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="target-audience-card">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
+                            <h4>Young Professionals (25-35)</h4>
+                            <p>Starting career, planning marriage, first home, or starting a family—build strong
+                                financial foundations early. Learn to invest systematically and avoid costly mistakes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="target-audience-card">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-people-roof"></i>
+                            </div>
+                            <h4>Growing Families (35-45)</h4>
+                            <p>Multiple goals like children's education, property purchase, retirement planning—need
+                                comprehensive roadmap. Balance present needs with future security.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="target-audience-card">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <h4>Mid-Career Professionals (45-55)</h4>
+                            <p>Peak earning years—maximize wealth creation and ensure retirement readiness. Time to
+                                consolidate investments and optimize tax strategies.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="target-audience-card">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-person-cane"></i>
+                            </div>
+                            <h4>Pre-Retirees (55-60)</h4>
+                            <p>Approaching retirement—finalize corpus, plan post-retirement income distribution. Ensure
+                                sustainable income for 20-25 years ahead.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                        <div class="target-audience-card">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <h4>Business Owners</h4>
+                            <p>Managing business and personal finances, tax planning, succession planning. Separate and
+                                optimize both business and personal wealth.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                        <div class="target-audience-card">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-id-card"></i>
+                            </div>
+                            <h4>Corporate Employees</h4>
+                            <p>Optimize EPF, NPS, gratuity, and personal investments holistically. Make the most of
+                                employer benefits while building additional wealth.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-lg-12 wow fadeInUp" data-wow-delay=".9s">
+                        <div class="feeling-box">
+                            <h3>Perfect If You're Feeling:</h3>
+                            <div class="row g-3">
+                                <div class="col-lg-4 col-md-6">
+                                    <p>
+                                        <i class="fa-solid fa-circle-check"
+                                            style="position: absolute; left: 0; color: var(--theme-color1); font-size: 20px;"></i>
+                                        Confused about where to invest
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <p>
+                                        <i class="fa-solid fa-circle-check"
+                                            style="position: absolute; left: 0; color: var(--theme-color1); font-size: 20px;"></i>
+                                        Stressed about financial future
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <p>
+                                        <i class="fa-solid fa-circle-check"
+                                            style="position: absolute; left: 0; color: var(--theme-color1); font-size: 20px;"></i>
+                                        Unsure if savings are enough
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <p>
+                                        <i class="fa-solid fa-circle-check"
+                                            style="position: absolute; left: 0; color: var(--theme-color1); font-size: 20px;"></i>
+                                        Overwhelmed by financial decisions
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <p>
+                                        <i class="fa-solid fa-circle-check"
+                                            style="position: absolute; left: 0; color: var(--theme-color1); font-size: 20px;"></i>
+                                        Want objective, unbiased guidance
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <p>
+                                        <i class="fa-solid fa-circle-check"
+                                            style="position: absolute; left: 0; color: var(--theme-color1); font-size: 20px;"></i>
+                                        Ready to take control of your finances
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: What Makes Us Different -->
+        <section class="about-section-2 fix section-padding section-bg">
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <h6 class="sub-title wow fadeInUp">
+                        <span class="triangle triangle1"></span>
+                        <span class="triangle triangle2"></span>
+                        Why Choose Us
+                    </h6>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s">What Makes Our Financial Wellness Programme Different
+                    </h2>
+                </div>
+
+                <div class="row g-4 mt-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="difference-item">
+                            <div class="number">1</div>
+                            <h4>Comprehensive, Not Piecemeal</h4>
+                            <p>We don't just recommend mutual funds or insurance. We look at your ENTIRE financial life
+                                holistically—from goals to retirement, debt to legacy.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="difference-item">
+                            <div class="number">2</div>
+                            <h4>Objective, Fee-Only Advice</h4>
+                            <p>Zero commissions. No product sales. Pure guidance focused on YOUR success, not our
+                                profits. Complete transparency in pricing and recommendations.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="difference-item">
+                            <div class="number">3</div>
+                            <h4>Education-Focused Approach</h4>
+                            <p>We empower you with knowledge to make informed decisions, not just follow recommendations
+                                blindly. You'll understand the "why" behind every strategy.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="difference-item">
+                            <div class="number">4</div>
+                            <h4>Scientific Methodology</h4>
+                            <p>Data-driven analysis with inflation scenarios (2%, 4%, 6%), risk profiling, and
+                                quantified projections—not vague advice or gut feelings.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".7s">
+                        <div class="difference-item">
+                            <div class="number">5</div>
+                            <h4>Personalized to Your Life Stage</h4>
+                            <p>Whether you're 25 or 55, your plan is customized to your age, income, goals, risk
+                                tolerance, and family situation—not generic templates.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".8s">
+                        <div class="difference-item">
+                            <div class="number">6</div>
+                            <h4>Implementation Support</h4>
+                            <p>We don't just give you a report and disappear. We guide you through execution, answer
+                                questions, and help you stay on track.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".9s">
+                        <div class="difference-item">
+                            <div class="number">7</div>
+                            <h4>CFP Certified Expertise</h4>
+                            <p>15+ years experience with Certified Financial Planner credentials, MBA, LLB, and FIII
+                                qualifications. Proven methodology trusted by hundreds.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <!-- Download Sample Report Section -->
+<section class="about-section-2 fix section-padding" id="download-section">
     <div class="auto-container">
-			<div class="title-outer">
-				<ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
-					<li><a href="index.html">Home</a></li>
-					<li>Our Services</li>
-				</ul>
-				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Our Services</h1>
-			</div>
+        <div class="sec-title text-center">
+            <h6 class="sub-title wow fadeInUp">
+                <span class="triangle triangle1"></span>
+                <span class="triangle triangle2"></span>
+                See For Yourself
+            </h6>
+            <h2 class="wow fadeInUp" data-wow-delay=".3s">Download a Sample Financial Wellness Report</h2>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-10">
+                <div class="download-box wow fadeInUp" data-wow-delay=".5s">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 text-center mb-4 mb-lg-0">
+                            <img src="images/3dmockup2.png" alt="Sample Report"
+                                style="max-width: 100%; height: auto;">
+                        </div>
+                        <div class="col-lg-7">
+                            <h3>📄 Sample Financial Wellness Report</h3>
+                            <p style="color: var(--theme-color2); font-size: 16px; margin: 20px 0;">
+                                See exactly what you'll receive. This sample report shows the depth of analysis,
+                                clarity of recommendations, and comprehensive nature of our financial wellness
+                                planning.
+                            </p>
+                            <ul class="report-features">
+                                <li>✓ 50+ pages of comprehensive analysis</li>
+                                <li>✓ Visual charts and projections</li>
+                                <li>✓ All 11 sections fully detailed</li>
+                                <li>✓ Goal quantification examples</li>
+                                <li>✓ Real formatting and structure</li>
+                            </ul>
+                            
+                            <!-- ADD THIS DOWNLOAD BUTTON -->
+                            <div class="text-center mt-4">
+                                <a href="pdf/Sample Finacial Wellness Report.pdf" 
+                                   download="PlanMyFin-Sample-Report.pdf" 
+                                   class="theme-btn btn-style-one">
+                                    <i class="fa-solid fa-download"></i> Download Sample Report (PDF)
+                                    <span class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                                            viewBox="0 0 50 50" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M19.782 17.0248C19.7611 16.4269 20.2289 15.9253 20.8268 15.9044L33.0759 15.4767C33.6738 15.4558 34.1754 15.9235 34.1963 16.5215L34.624 28.7705C34.6449 29.3685 34.1772 29.8701 33.5792 29.8909C32.9813 29.9118 32.4797 29.4441 32.4588 28.8461L32.1222 19.2109L18.1442 34.2005C17.7362 34.6381 17.0507 34.662 16.6131 34.254C16.1756 33.8459 16.1516 33.1604 16.5596 32.7228L30.5376 17.7333L20.9025 18.0697C20.3045 18.0906 19.8029 17.6227 19.782 17.0248Z"
+                                                fill="#C8F169" />
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                            
+                            <p class="disclaimer">*Sample report contains dummy data for illustration purposes
+                                only.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
-	<!-- service Section Start -->
-	<section class="service-section-4 section-padding fix">
-		<div class="auto-container">
-			<div class="row g-4">
-				<div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-					<div class="service-card-items-2">
-						<div class="service-icon">
-							<div class="icon">
-								<i class="flaticon-business-028-briefcase"></i>
-								<div class="service-triangle"></div>
-							</div>
-							<span class="number">
-								01
-							</span>
-						</div>
-						<div class="content">
-							<h3><a href="page-service-details.html">Business Consulting</a></h3>
-							<p>
-								everyone with high and useful reward for  his We offer a free consultation <br>
-								so that .
-							</p>
-						</div>
-						<div class="arrow-shape-2 float-bob-x">
-							<img src="images/home-2/service-icon/arrow-shape.png" alt="img">
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-					<div class="service-card-items-2">
-						<div class="service-icon">
-							<div class="icon">
-								<i class="lnr-icon-folder-open"></i>
-								<div class="service-triangle"></div>
-							</div>
-							<span class="number">
-								02
-							</span>
-						</div>
-						<div class="content">
-							<h3><a href="page-service-details.html">Invest Process</a></h3>
-							<p>
-								everyone with high and useful reward for  his We offer a free consultation <br>
-								so that .
-							</p>
-						</div>
-						<div class="arrow-shape-2 float-bob-x">
-							<img src="images/home-2/service-icon/arrow-shape.png" alt="img">
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-					<div class="service-card-items-2">
-						<div class="service-icon">
-							<div class="icon">
-								<i class=" lnr-icon-layers"></i>
-								<div class="service-triangle"></div>
-							</div>
-							<span class="number">
-								03
-							</span>
-						</div>
-						<div class="content">
-							<h3><a href="page-service-details.html">Life Insurance</a></h3>
-							<p>
-								everyone with high and useful reward for  his We offer a free consultation <br>
-								so that .
-							</p>
-						</div>
-						<div class="arrow-shape-2 float-bob-x">
-							<img src="images/home-2/service-icon/arrow-shape.png" alt="img">
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-					<div class="service-card-items-2">
-						<div class="service-icon">
-							<div class="icon">
-								<i class="lnr-icon-folder-open"></i>
-								<div class="service-triangle"></div>
-							</div>
-							<span class="number">04</span>
-						</div>
-						<div class="content">
-							<h3><a href="page-service-details.html">Invest Process</a></h3>
-							<p>everyone with high and useful reward for  his We offer a free consultation <br>so that .</p>
-						</div>
-						<div class="arrow-shape-2 float-bob-x">
-							<img src="images/home-2/service-icon/arrow-shape.png" alt="img">
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-					<div class="service-card-items-2">
-						<div class="service-icon">
-							<div class="icon">
-								<i class=" lnr-icon-layers"></i>
-								<div class="service-triangle"></div>
-							</div>
-							<span class="number">05</span>
-						</div>
-						<div class="content">
-							<h3><a href="page-service-details.html">Life Insurance</a></h3>
-							<p>everyone with high and useful reward for  his We offer a free consultation <br>so that.</p>
-						</div>
-						<div class="arrow-shape-2 float-bob-x">
-							<img src="images/home-2/service-icon/arrow-shape.png" alt="img">
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-					<div class="service-card-items-2">
-						<div class="service-icon">
-							<div class="icon">
-								<i class="flaticon-business-028-briefcase"></i>
-								<div class="service-triangle"></div>
-							</div>
-							<span class="number">06</span>
-						</div>
-						<div class="content">
-							<h3><a href="page-service-details.html">Business Consulting</a></h3>
-							<p>everyone with high and useful reward for  his We offer a free consultation <br>so that.</p>
-						</div>
-						<div class="arrow-shape-2 float-bob-x">
-							<img src="images/home-2/service-icon/arrow-shape.png" alt="img">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+        <!-- Contact Section Start -->
+        <section class="contact-section fix section-padding section-bg">
+            <div class="contact-shape">
+                <img src="images/home-1/contact/contact-shape.png" alt="img" />
+            </div>
+            <div class="auto-container">
+                <div class="contact-wrapper">
+                    <div class="row g-4">
+                        <div class="col-lg-6 col-md-8">
+                            <div class="contact-content-1">
+                                <div class="sec-title mb-0">
+                                    <h6 class="sub-title wow fadeInUp">
+                                        <span class="triangle triangle1"></span>
+                                        <span class="triangle triangle2"></span>
+                                        Contact Us
+                                    </h6>
+                                    <h2 class="wow fadeInUp" data-wow-delay=".2s">Ready to Transform Your Financial
+                                        Future?</h2>
+                                    <p class="wow fadeInUp" data-wow-delay=".3s" style="margin-top: 15px;">
+                                        Take the first step toward financial wellness. Book a free 30-minute
+                                        consultation to discuss your situation and see how we can help you achieve every
+                                        financial goal.
+                                    </p>
+                                </div>
+                                <form action="#" class="form-box wow fadeInUp" data-wow-delay=".3s">
+                                    <div class="row g-4">
+                                        <div class="col-md-12">
+                                            <div class="form-clt">
+                                                <input type="text" name="name" id="name" placeholder="Full Name*" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-clt">
+                                                <input type="text" name="name" id="email" placeholder="Email*" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-clt">
+                                                <input type="text" name="name" id="phone" placeholder="Phone*" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-clt">
+                                                <textarea name="message" id="message" placeholder="Message"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-clt">
+                                                <button class="theme-btn btn-style-one w-100" type="submit">Book Free
+                                                    Consultation</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-image-1">
+                <img src="images/home-1/contact/contact-image.jpg" alt="img" class="wow img-custom-anim-right" />
+                <div class="shape-image">
+                    <img src="images/home-1/contact/shape-1.png" alt="img" />
+                </div>
+                <div class="contact-info-box float-bob-y">
+                    <h2>Still Have Any Questions?</h2>
+                    <ul class="contact-list">
+                        <li>
+                            <div class="icon">
+                                <i class="lnr-icon-phone-handset"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Call Us</h3>
+                                <p><a href="tel:+919778596947">+91 97785 96947</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="lnr-icon-envelope"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Mail Us</h3>
+                                <p><a href="mailto:info@planmyfin.com">info@planmyfin.com</a></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <span class="ellipse-bg"></span>
+                </div>
+            </div>
+        </section>
 
-	<!-- Footer Section Start -->
-	<footer class="footer-section-1 fix footer-bg bg-cover" style="background-image: url(images/home-1/footer-shape.png);">
-		<span class="circle-shape"></span>
-		<span class="circle-shape-2"></span>
-		<div class="auto-container">
-			<div class="footer-newsletter-wrapper">
-				<div class="footer-newsletter-left wow fadeInUp" data-wow-delay=".3s">
-					<div class="icon">
-						<img src="images/home-1/email.png" alt="img">
-					</div>
-					<h3 class="text-white font-weight-700 font-size-28">
-						subscribe to <br>
-						newsletter
-					</h3>
-				</div>
-				<form action="#" class="wow fadeInUp" data-wow-delay=".5s">
-					<div class="form-clt">
-						<input type="text" name="email" id="email2" placeholder="Your email address">
-            <button class="arrow-icon" type="submit">
-              <i class="lnr-icon-arrow-right"></i>
-            </button>
-					</div>
-				</form>
-			</div>
-			<div class="footer-widget-wrapper">
-				<div class="row justify-content-between">
-					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<a href="index.html" class="footer-logo">
-									<img src="images/home-1/logo/white-logo.svg" alt="img">
-								</a>
-							</div>
-							<div class="footer-content">
-								<p>
-									everyone with high and useful reward for  his/her trading
-								</p>
-								<div class="social-icon">
-									<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-									<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-									<a href="#"><i class="fa-brands fa-instagram"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<h3 class="font-size-24 text-white font-weight-500">Company</h3>
-							</div>
-							<ul class="user-links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="page-about.html">About us</a></li>
-								<li><a href="page-services.html">Services</a></li>
-								<li><a href="page-contact.html">Contact Us</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<h3 class="font-size-24 text-white font-weight-500">Support</h3>
-							</div>
-							<ul class="user-links">
-								<li><a href="page-service-details.html">Customer Support</a></li>
-								<li><a href="page-service-details.html">Privacy & policy</a></li>
-								<li><a href="page-service-details.html">Terms & condition</a></li>
-								<li><a href="page-service-details.html">Help Center</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
-							</div>
-							<ul class="contact-list">
-                    <li>
-                      <i class="lnr-icon-phone-handset"></i>
-                      <p><a href="tel:+1050055900">+10500-55-900</a></p>
-                    </li>
-                    <li>
-                       <i class="lnr-icon-envelope"></i>
-                      <p><a href="https://html.kodesolution.com/cdn-cgi/l/email-protection#583e31363b34312018303d3428762d2b"><span class="__cf_email__" data-cfemail="4107282f222d28390129242d316f3432">[email&#160;protected]</span></a></p>
-                    </li>
-                    <li>
-                      <i class="lnr-icon-map-marker"></i>
-                      <p>44 Danwers, NY City, USA, 70-102</p>
-                    </li>
-                  </ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="auto-container">
-				<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 Finclix.  All Rights Reserved</p>
-			</div>
-		</div>
-	</footer>
-</div><!-- End Page Wrapper -->
+        <!-- Footer Section Start -->
+        <footer class="footer-section-1 fix footer-bg bg-cover"
+            style="background-image: url(images/home-1/footer-shape.png)">
+            <span class="circle-shape"></span>
+            <span class="circle-shape-2"></span>
+            <div class="auto-container">
+                <div class="footer-newsletter-wrapper">
+                    <div class="footer-newsletter-left wow fadeInUp" data-wow-delay=".3s">
+                        <div class="icon">
+                            <i class="lnr-icon-envelope"></i>
+                        </div>
+                        <h3 class="font-weight-700 font-size-28">Subscribe to Newsletter</h3>
+                    </div>
+                    <form action="#" class="wow fadeInUp" data-wow-delay=".5s">
+                        <div class="form-clt">
+                            <input type="text" name="email" id="email2" placeholder="Your email address" />
+                            <button class="arrow-icon" type="submit">
+                                <i class="lnr-icon-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="footer-widget-wrapper">
+                    <div class="row justify-content-between">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+                            <div class="footer-widget-items mt-30">
+                                <div class="widget-title mb-25">
+                                    <a href="index.html" class="footer-logo">
+                                        <img src="images/white-logo.png" alt="img" />
+                                    </a>
+                                </div>
+                                <div class="footer-content">
+                                    <p>Empowering everyone with essential financial wellness skills through
+                                        personalized, objective coaching.</p>
+                                    <div class="social-icon">
+                                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+                            <div class="footer-widget-items mt-30">
+                                <div class="widget-title mb-25">
+                                    <h3 class="font-size-24 font-weight-500">Company</h3>
+                                </div>
+                                <ul class="user-links">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="page-about.html">About us</a></li>
+                                    <li><a href="page-services.html">Services</a></li>
+                                    <li><a href="blog-grid.html">Blog</a></li>
+                                    <li><a href="page-contact.html">Contact</a></li>
 
-<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.js"></script> 
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.fancybox.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/gsap.js"></script>
-<script src="js/gsap-scroll-to-plugin.js"></script>
-<script src="js/gsap-scroll-smoother.js"></script>
-<script src="js/gsap-scroll-trigger.js"></script>
-<script src="js/gsap-split-text.js"></script>
-<script src="js/split-type.min.js"></script>
-<script src="js/parallaxie.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/bxslider.js"></script>
-<script src="js/nice-select.min.js"></script>
-<script src="js/knob.js"></script>
-<script src="js/appear.js"></script>
-<script src="js/swiper.min.js"></script>
-<script src="js/mixitup.js"></script>
-<script src="js/script.js"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"88f4fa328f314d4c95a104b4a60b2313","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+                                    <li><a href="fin-adv-services.html">Financial Advising</a></li>
+                                    <li><a href="page-contact.html">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
+                            <div class="footer-widget-items mt-30">
+                                <div class="widget-title mb-25">
+                                    <h3 class="font-size-24 font-weight-500">Services</h3>
+                                </div>
+                                <ul class="user-links">
+                                    <li><a href="page-service-details.html">Personal Planning</a></li>
+                                    <li><a href="page-service-details.html">Investment Strategy</a></li>
+                                    <li><a href="page-service-details.html">Risk Management</a></li>
+                                    <li><a href="page-service-details.html">Corporate Wellness</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+                            <div class="footer-widget-items mt-30">
+                                <div class="widget-title mb-25">
+                                    <h3 class="font-size-24 font-weight-500">Contact Us</h3>
+                                </div>
+                                <ul class="contact-list">
+                                    <li>
+                                        <i class="lnr-icon-phone-handset"></i>
+                                        <p><a href="tel:+919778596947">+91 97785 96947</a></p>
+                                    </li>
+                                    <li>
+                                        <i class="lnr-icon-envelope"></i>
+                                        <p><a href="mailto:info@planmyfin.com">info@planmyfin.com</a></p>
+                                    </li>
+                                    <li>
+                                        <i class="lnr-icon-map-marker"></i>
+                                        <p>Bengaluru, Karnataka, India</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="auto-container">
+                    <p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved</p>
+                </div>
+            </div>
+        </footer>
+
+    </div><!-- End Page Wrapper -->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/gsap.js"></script>
+    <script src="js/gsap-scroll-to-plugin.js"></script>
+    <script src="js/gsap-scroll-smoother.js"></script>
+    <script src="js/gsap-scroll-trigger.js"></script>
+    <script src="js/gsap-split-text.js"></script>
+    <script src="js/split-type.min.js"></script>
+    <script src="js/parallaxie.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/bxslider.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/knob.js"></script>
+    <script src="js/appear.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/mixitup.js"></script>
+    <script src="js/script.js"></script>
+
 </body>
 
-<!-- Mirrored from html.kodesolution.com/2025/finclix-html/page-services.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Dec 2025 05:04:07 GMT -->
 </html>
