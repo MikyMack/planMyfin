@@ -14,16 +14,16 @@
 
 <style>
 	.fin-stats-box {
-		background: var(  --gradient-2);
+		background: var(--gradient-2);
 		padding: 30px;
 		border-radius: 10px;
 		color: white;
 		text-align: center;
 		margin-bottom: 20px;
-        height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 	.fin-stats-box h2 {
 		font-size: 48px;
@@ -41,14 +41,14 @@
 		padding: 25px;
 		border-radius: 8px;
 		margin-bottom: 20px;
-		border-left: 4px solid   var(--theme-color1);
+		border-left: 4px solid var(--theme-color1);
 		transition: all 0.3s;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
 	}
 	.fin-outcome-box:hover {
-		box-shadow: 0 5px 20px var( --theme-color2);
+		box-shadow: 0 5px 20px var(--theme-color2);
 		transform: translateY(-3px);
 	}
 	.fin-outcome-box h5 {
@@ -60,16 +60,6 @@
 		color: #666;
 		margin-bottom: 0;
 		font-size: 14px;
-	}
-	.fin-focus-badge {
-		display: inline-block;
-		background: var(  --theme-color8);
-		color: white;
-		padding: 10px 20px;
-		border-radius: 25px;
-		margin: 5px;
-		font-size: 14px;
-		font-weight: 500;
 	}
 	.fin-implementation-card {
 		background: white;
@@ -85,7 +75,7 @@
 		justify-content: center;
 	}
 	.fin-implementation-card:hover {
-		background: var(  --gradient-2);
+		background: var(--gradient-2);
 		color: white;
 	}
 	.fin-implementation-card:hover h4,
@@ -145,6 +135,101 @@
 		font-style: italic;
 		margin: 40px 0;
 	}
+	.risk-profile-card {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		padding: 40px;
+		border-radius: 15px;
+		color: white;
+		text-align: center;
+		margin: 30px 0;
+	}
+	.risk-profile-card h3 {
+		color: white;
+		font-size: 28px;
+		font-weight: 700;
+		margin-bottom: 15px;
+	}
+	.risk-profile-card p {
+		color: white;
+		font-size: 16px;
+		margin-bottom: 0;
+	}
+	.allocation-visual {
+		background: white;
+		padding: 40px;
+		border-radius: 15px;
+		box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+		margin: 30px 0;
+	}
+	.allocation-bar {
+		display: flex;
+		height: 60px;
+		border-radius: 30px;
+		overflow: hidden;
+		margin: 30px 0;
+	}
+	.allocation-segment {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-weight: 600;
+		font-size: 18px;
+		transition: all 0.3s;
+	}
+	.allocation-segment:hover {
+		filter: brightness(1.1);
+		transform: scale(1.02);
+	}
+	.equity-segment {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	}
+	.debt-segment {
+		background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+	}
+	.allocation-legend {
+		display: flex;
+		justify-content: center;
+		gap: 40px;
+		margin-top: 20px;
+	}
+	.legend-item {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	.legend-color {
+		width: 30px;
+		height: 30px;
+		border-radius: 5px;
+	}
+	.principle-card {
+		background: white;
+		border: 2px solid #e0e0e0;
+		padding: 25px;
+		border-radius: 10px;
+		margin-bottom: 20px;
+		transition: all 0.3s;
+		height: 100%;
+	}
+	.principle-card:hover {
+		border-color: var(--theme-color1);
+		box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+		transform: translateY(-5px);
+	}
+	.principle-number {
+		width: 50px;
+		height: 50px;
+		background: var(--gradient-2);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 24px;
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
 </style>
 </head>
 
@@ -183,47 +268,66 @@
 	<!-- Main Header-->
 	<header class="main-header header-style-one header-1">
 		<!-- Header Lower -->
-		<div class="header-lower header-lower2 show-header-section">
-			<div class="main-box">
-				<div class="nav-outer">
-					<div class="logo-box">
-						<div class="logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt="" title="planmyfin" style="height: 80px; width: auto;"></a></div>
-					</div>
-					<nav class="nav main-menu">
-						<ul class="navigation">
-							<li class="dropdown"><a href="index-2-dark.html">Home</a></li>
-							<li class="dropdown"><a href="page-about.html">About</a></li>
-							<li class="dropdown current"><a href="page-services.html">Services</a>
-								<ul>
-									<li class="current"><a href="fin-wellness-programme.html">Financial Wellness Programme</a></li>
-									<li><a href="investment-planning.html">Investment Planning</a></li>
-									<li><a href="retirement-planning.html">Retirement Planning</a></li>
-									<li><a href="risk-management.html">Risk Management</a></li>
-									<li><a href="emergency-fund.html">Emergency Fund Planning</a></li>
-									<li><a href="debt-management.html">Debt Management</a></li>
-									<li><a href="cashflow-analysis.html">Cashflow Analysis</a></li>
-									<li><a href="asset-allocation.html">Asset Allocation</a></li>
-									<li><a href="risk-profiling.html">Risk Profiling</a></li>
-									<li><a href="legacy-planning.html">Legacy Planning</a></li>
-									<li><a href="goal-planning.html">Financial Goal Planning</a></li>
-								</ul>
-							</li>
-							<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a></li>
-							<li class="dropdown"><a href="news-grid.html">Blogs</a></li>
-							<li><a href="page-contact.html">Contact</a></li>
-						</ul>
-					</nav>
-					<div class="outer-box">
-						<a href="tel:+919778596947" class="info-btn">
-							<i class="icon fa fa-phone"></i>
-							+91 97785 96947
-						</a>
-						<a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
-						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+			<div class="header-lower header-lower2 show-header-section">
+				<!-- Main box -->
+				<div class="main-box">
+
+					<!--Nav Box-->
+					<div class="nav-outer">
+						<div class="logo-box">
+							<div class="logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""
+										title="planmyfin" style="height: 80px; width: auto;"></a></div>
+						</div>
+						<nav class="nav main-menu">
+							<ul class="navigation">
+
+								<li class="dropdown"><a href="index.html">Home</a></li>
+								<li class="dropdown"><a href="page-about.html">About</a></li>
+
+
+								<li class="dropdown"><a href="page-services.html">Services</a>
+									<ul>
+										<!--<li><a href="page-services.html">Our Services</a></li>-->
+										<li><a href="fin-wellness-plan1.html">Financial Wellness Programme</a></li>
+										<li><a href="page-service-details.html">Investment Planning</a></li>
+										<li><a href="page-service-details.html">Retirement Planning</a></li>
+										<li><a href="page-service-details.html">Risk Management & Insurance Planning</a></li>
+										<li><a href="page-service-details.html">Emergency Fund Planning</a></li>
+										<li><a href="page-service-details.html">Debt Management</a></li>
+										<li><a href="page-service-details.html">Cashflow Analysis</a></li>
+										<li><a href="page-service-details.html">Asset Allocation Strategy</a></li>
+										<li><a href="page-service-details.html">Risk Profiling</a></li>										
+										<li><a href="page-service-details.html">Legacy Planning (Estate Planning & Will)</a></li>
+										<li><a href="page-service-details.html">Financial Goal Planning </a></li>
+									</ul>
+								</li>
+								<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a>
+
+								<li class="dropdown"><a href="news-grid.html">Blogs</a>
+								<!--	<ul>
+										<li><a href="news-grid.html">News Grid</a></li>
+										<li><a href="news-details.html">News Details</a></li>
+									</ul>-->
+								</li>
+								<li><a href="page-contact.html">Contact</a></li>
+							</ul>
+						</nav>
+						<!-- Main Menu End-->
+						<div class="outer-box">
+							<a href="tel:+92(8800)9806" class="info-btn">
+								<i class="icon fa fa-phone"></i>
+								+91 97785 96947
+							</a>
+
+							<a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
+
+							<!-- Mobile Nav toggler -->
+							<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+			<!-- End Header Lower -->
 
 		<!-- Mobile Menu -->
 		<div class="mobile-menu">
@@ -285,9 +389,9 @@
 				<ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
 					<li><a href="index.html">Home</a></li>
 					<li><a href="page-services.html">Services</a></li>
-					<li>Financial Wellness Programme</li>
+					<li>Asset Allocation</li>
 				</ul>
-				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Financial Wellness Programme</h1>
+				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Asset Allocation</h1>
 			</div>
 		</div>
 	</section>
@@ -301,41 +405,16 @@
 						<h6 class="sub-title wow fadeInUp">
 							<span class="triangle triangle1"></span>
 							<span class="triangle triangle2"></span>
-							Comprehensive Financial Coaching
+							Strategic Portfolio Design
 						</h6>
 						<h2 class="wow fadeInUp" data-wow-delay=".2s">
-							Transform Your Financial Life from <br class="d-none d-lg-block"> Confusion to Conviction
+							Finding Your Ideal <br class="d-none d-lg-block"> Investment Mix
 						</h2>
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<div class="project-details__top mt-lg-5">
-						<div class="text mb-40">Essential financial skill is the most important life skill any person should possess. This programme, designed as a one-to-one coaching experience, is created to deliver a complete mindset upgrade—equipping participants with the skills and confidence to take control of their financial lives.</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Statistics Section -->
-			<div class="row stats-row mt-5 mb-5">
-				<div class="col-lg-12">
-					<h3 class="text-center mb-4">Why Financial Wellness Matters Today</h3>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-					<div class="fin-stats-box">
-						<h2>57%</h2>
-						<p>of employees are stressed about their finances (PwC 2023)</p>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-					<div class="fin-stats-box">
-						<h2>82%</h2>
-						<p>want help with their personal finances</p>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-					<div class="fin-stats-box">
-						<h2>3-5x</h2>
-						<p>more likely to be distracted at work due to financial stress</p>
+						<div class="text mb-40">Asset allocation is the cornerstone of successful investing. It's not about picking the best stocks or timing the market—it's about finding the right balance between different asset classes that aligns with your goals, timeline, and comfort with risk. Your asset allocation strategy is personalized to you, considering your age, financial objectives, and risk profile.</div>
 					</div>
 				</div>
 			</div>
@@ -343,7 +422,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="fin-highlight-box wow fadeInUp">
-						<p class="mb-0"><strong>Critical Insight:</strong> Financial stress extends beyond the bank account to key drivers of health and well-being. It affects productivity, engagement, physical health, and overall life satisfaction.</p>
+						<p class="mb-0"><strong>The Foundation of Wealth Building:</strong> Studies show that asset allocation accounts for over 90% of portfolio returns over time—far more than individual security selection or market timing. Getting this right is the single most important investment decision you'll make.</p>
 					</div>
 				</div>
 			</div>
@@ -353,179 +432,132 @@
 				<div class="col-xl-8 col-lg-8">
 					<div class="services-details__content">
 						
-						<!-- Quote Section -->
+						<!-- Understanding Asset Allocation -->
+						<h3 class="mb-4">What is Asset Allocation?</h3>
+						<p class="mb-4">Asset allocation is the strategic distribution of your investments across different asset categories—primarily equity (stocks), debt (bonds and fixed income), and sometimes alternative assets. Each asset class behaves differently under various market conditions, and the right mix can help you achieve growth while managing risk.</p>
+
 						<div class="fin-quote-box wow fadeInUp">
-							"Connecting the dots of your Reality with your Purpose"
+							"Don't put all your eggs in one basket—but also make sure you're putting them in the right baskets."
 						</div>
 
-						<!-- Expected Outcomes -->
-						<h3 class="mb-4">The Expected Outcome of This Programme</h3>
-						<p class="mb-4">This one-to-one coaching experience delivers a complete mindset upgrade—equipping you with the skills and confidence to take control of your financial life. The key outcomes expected from this programme are as follows:</p>
-
+						<!-- Why It Matters -->
+						<h3 class="mb-4">Why Asset Allocation is Critical to Your Success</h3>
 						<div class="row g-4">
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
 								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Crafting Your Own Financial Plan</h5>
-									<p>You would be empowered to design & implement a personalized plan for your financial wellness</p>
+									<h5><i class="fal fa-shield-check" style="color: #f39c12; margin-right: 10px;"></i>Risk Management</h5>
+									<p>Diversification across asset classes reduces the impact of poor performance in any single investment, protecting your wealth during market volatility</p>
 								</div>
 							</div>
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
 								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Avoiding Costly Financial Mistakes</h5>
-									<p>You would gain insights that protect you from errors & blunders many make unknowingly</p>
+									<h5><i class="fal fa-chart-line" style="color: #f39c12; margin-right: 10px;"></i>Optimized Returns</h5>
+									<p>The right allocation helps you capture growth opportunities while maintaining stability, ensuring your portfolio works efficiently toward your goals</p>
 								</div>
 							</div>
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".4s">
 								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Freedom from Product-Centric Advice</h5>
-									<p>You would learn to choose the best products suitable to you and staying insulated from biased & product-driven financial suggestions</p>
+									<h5><i class="fal fa-balance-scale" style="color: #f39c12; margin-right: 10px;"></i>Emotional Balance</h5>
+									<p>A well-structured allocation aligned with your risk tolerance helps you stay calm during market fluctuations and avoid emotional decisions</p>
 								</div>
 							</div>
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".5s">
 								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Clarity in Financial Decisions</h5>
-									<p>You would gain a clear direction and deeper meaning in every financial choice you make</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".6s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Overcome Random Investments</h5>
-									<p>By being able to replace scattered, impulsive investments with structured, purposeful planning</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".7s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Achieve Your Financial Goals</h5>
-									<p>Through a realistic, practical path to reach your short- and long-term financial aspirations</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".8s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Experience A Holistic Approach to Wealth</h5>
-									<p>You would be able to experience complete financial well-being, not just piecemeal solutions</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".9s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Master the Most Important Life Skill</h5>
-									<p>Learn how to effectively manage your financial life, skill impacting every stage of your journey</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay="1s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Transform from Confusion to Conviction</h5>
-									<p>You would be able to move from financial stress & uncertainty to conviction & peace of mind</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay="1.1s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Experiencing Financial Freedom</h5>
-									<p>The programme follows a scientific, step-by-step path that equips you to make informed decisions—ultimately leading you to the most powerful outcome</p>
+									<h5><i class="fal fa-crosshairs" style="color: #f39c12; margin-right: 10px;"></i>Goal Alignment</h5>
+									<p>Your allocation is tailored to match your investment timeline and objectives—aggressive for long-term goals, conservative for near-term needs</p>
 								</div>
 							</div>
 						</div>
 
-						<!-- Key Focus Areas -->
+						<!-- Risk Profile Connection -->
 						<div class="mt-5 mb-5">
-							<h3 class="mb-4">Key Focus Areas</h3>
-							<p class="mb-4">Our comprehensive programme covers every critical aspect of your financial life:</p>
-							<div class="text-center">
-								<span class="fin-focus-badge">Risk Management</span>
-								<span class="fin-focus-badge">Emergency Fund</span>
-								<span class="fin-focus-badge">Retirement Planning</span>
-								<span class="fin-focus-badge">Financial Goal Planning</span>
-								<span class="fin-focus-badge">Risk Profiling</span>
-								<span class="fin-focus-badge">Asset Allocation</span>
-								<span class="fin-focus-badge">Investment Planning</span>
-								<span class="fin-focus-badge">Cashflow Analysis</span>
-								<span class="fin-focus-badge">Debt Management</span>
-								<span class="fin-focus-badge">Tax Planning</span>
-								<span class="fin-focus-badge">Legacy Planning</span>
+							<h3 class="mb-4">Your Asset Allocation is Based on Your Risk Profile</h3>
+							<p class="mb-4">We don't use a one-size-fits-all approach. Your asset allocation is determined through a scientific assessment of your risk tolerance, which considers factors including your age, income stability, investment experience, financial goals, and emotional comfort with market fluctuations.</p>
+
+							<div class="risk-profile-card wow fadeInUp">
+								<h3>Understanding Risk Profiles</h3>
+								<p>Investors are typically categorized into seven risk groups, from Extremely Conservative to Extremely Aggressive. Each profile corresponds to a specific asset allocation range designed to balance growth potential with your comfort level.</p>
 							</div>
 						</div>
 
-						<!-- Implementation Options -->
-						<h3 class="mb-4">Implementation Options</h3>
-						<div class="row">
-							<div class="col-md-4 wow fadeInUp" data-wow-delay=".2s">
-								<div class="fin-implementation-card">
-									<i class="lnr-icon-users"></i>
-									<h4>Seminars and Workshops</h4>
-									<p>Group sessions for organizations and teams</p>
+						<!-- Sample Allocation Visual -->
+						<div class="allocation-visual wow fadeInUp">
+							<h4 class="text-center mb-4">Example: Moderate Risk Profile Allocation</h4>
+							<p class="text-center mb-4">This balanced approach seeks moderate growth with reasonable stability</p>
+							
+							<div class="allocation-bar">
+								<div class="allocation-segment equity-segment" style="flex: 50;">
+									Equity: 40-60%
+								</div>
+								<div class="allocation-segment debt-segment" style="flex: 50;">
+									Debt & Others: 40-60%
 								</div>
 							</div>
-							<div class="col-md-4 wow fadeInUp" data-wow-delay=".4s">
-								<div class="fin-implementation-card">
-									<i class="lnr-icon-user"></i>
-									<h4>One-to-One Consultations</h4>
-									<p>Personalized coaching sessions tailored to you</p>
+
+							<div class="allocation-legend">
+								<div class="legend-item">
+									<div class="legend-color" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+									<span><strong>Equity:</strong> Growth-focused investments</span>
 								</div>
-							</div>
-							<div class="col-md-4 wow fadeInUp" data-wow-delay=".6s">
-								<div class="fin-implementation-card">
-									<i class="lnr-icon-file-add"></i>
-									<h4>Personalized Financial Plan</h4>
-									<p>Complete wellness plan preparation for employees</p>
+								<div class="legend-item">
+									<div class="legend-color" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+									<span><strong>Debt:</strong> Stability and income</span>
 								</div>
 							</div>
 						</div>
 
-						<!-- Benefits to Organizations -->
+						<!-- Key Principles -->
+						<div class="mt-5 mb-5">
+							<h3 class="mb-4">Core Principles of Effective Asset Allocation</h3>
+							<div class="row g-4">
+								<div class="col-md-4 wow fadeInUp" data-wow-delay=".2s">
+									<div class="principle-card">
+										<div class="principle-number">1</div>
+										<h5>Personalization</h5>
+										<p>Your allocation is unique to your circumstances. What works for someone else may not work for you, and that's perfectly fine.</p>
+									</div>
+								</div>
+								<div class="col-md-4 wow fadeInUp" data-wow-delay=".3s">
+									<div class="principle-card">
+										<div class="principle-number">2</div>
+										<h5>Dynamic Adjustment</h5>
+										<p>Your ideal allocation changes as you age, your goals evolve, and market conditions shift. Regular reviews are essential.</p>
+									</div>
+								</div>
+								<div class="col-md-4 wow fadeInUp" data-wow-delay=".4s">
+									<div class="principle-card">
+										<div class="principle-number">3</div>
+										<h5>Disciplined Rebalancing</h5>
+										<p>Over time, winning investments grow while others lag. Rebalancing maintains your target allocation and manages risk.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Asset Classes Explained -->
 						<div class="mt-5">
-							<h3 class="mb-4">Benefits to Organizations</h3>
+							<h3 class="mb-4">Understanding the Asset Classes</h3>
 							<div class="row g-4">
 								<div class="col-md-6">
 									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".2s">
 										<div class="fin-benefit-icon">
 											<i class="lnr-icon-chart-bars"></i>
 										</div>
-										<h5>Improved Employee Productivity</h5>
-										<p>Financial wellness programs minimize personal financial distractions, enhancing productivity as a result of improved financial decisions</p>
+										<h5>Equity (Stocks & Equity Funds)</h5>
+										<p><strong>Purpose:</strong> Long-term wealth creation and inflation protection</p>
+										<p><strong>Characteristics:</strong> Higher potential returns with higher volatility; suitable for goals beyond 5 years</p>
+										<p><strong>Best for:</strong> Retirement planning, children's education, long-term wealth building</p>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".3s">
 										<div class="fin-benefit-icon">
-											<i class="lnr-icon-heart"></i>
+											<i class="lnr-icon-layers"></i>
 										</div>
-										<h5>Reduce Workplace Stress</h5>
-										<p>Minimize financial stress affecting physical health and potentially reduce healthcare costs for employers</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".4s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-calendar-full"></i>
-										</div>
-										<h5>Reduce Absenteeism</h5>
-										<p>Decrease the need for employees to miss work as they are empowered with better management of their finances</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".5s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-users2"></i>
-										</div>
-										<h5>Employee Retention & Commitment</h5>
-										<p>Programs that help employees build stable financial lives increase their tenure and loyalty to the company</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".6s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-star"></i>
-										</div>
-										<h5>Enhance Employee Recruiting</h5>
-										<p>Make your company more attractive to potential employees, particularly younger generations who value such support</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".7s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-apartment"></i>
-										</div>
-										<h5>Caring & Inclusive Culture</h5>
-										<p>Contribute to a caring company culture by empowering all employees to improve their financial well-being</p>
+										<h5>Debt (Bonds & Fixed Income)</h5>
+										<p><strong>Purpose:</strong> Capital preservation, stability, and regular income</p>
+										<p><strong>Characteristics:</strong> Lower volatility with moderate returns; provides portfolio stability</p>
+										<p><strong>Best for:</strong> Emergency funds, short-term goals, risk mitigation, retirement income</p>
 									</div>
 								</div>
 							</div>
@@ -537,49 +569,49 @@
 							<div class="faq-content-1">
 								<ul class="accordion-box">
 									<li class="accordion block active-block wow fadeInUp">
-										<div class="acc-btn">Who can benefit from the Financial Wellness Programme?
+										<div class="acc-btn">How often should I review my asset allocation?
 											<div class="icon fa fa-plus"></div>
 										</div>
 										<div class="acc-content current">
 											<div class="content">
 												<div class="text">
-													This programme is designed for individuals at any stage of their financial journey—whether you're just starting your career, planning for major life goals, approaching retirement, or running a business. Organizations can also implement this for their employees to improve productivity and reduce financial stress.
+													We recommend reviewing your asset allocation at least annually, or whenever you experience significant life changes such as marriage, children, job changes, inheritance, or approaching retirement. Market movements can also shift your allocation away from targets, requiring rebalancing.
 												</div>
 											</div>
 										</div>
 									</li>
 									<li class="accordion block wow fadeInUp" data-wow-delay=".2s">
-										<div class="acc-btn">What makes this programme different from regular financial advice?
+										<div class="acc-btn">Should I change my allocation as I get older?
 											<div class="icon fa fa-plus"></div>
 										</div>
 										<div class="acc-content">
 											<div class="content">
 												<div class="text">
-													Unlike product-centric financial advice, our programme focuses on empowering YOU with the skills to manage your own financial life. We provide objective, trustworthy resources that aren't driven by product sales. You'll learn to craft your own financial plan rather than just following recommendations.
+													Generally, yes. As you age and approach your financial goals, you typically want to shift toward more conservative allocations to protect accumulated wealth. However, the pace of this shift depends on your specific goals, risk tolerance, and income sources. It's not a rigid rule but a guideline to be personalized.
 												</div>
 											</div>
 										</div>
 									</li>
 									<li class="accordion block wow fadeInUp" data-wow-delay=".4s">
-										<div class="acc-btn">How long does the programme take?
+										<div class="acc-btn">Can I have different allocations for different goals?
 											<div class="icon fa fa-plus"></div>
 										</div>
 										<div class="acc-content">
 											<div class="content">
 												<div class="text">
-													The programme is customized based on your needs. It can range from intensive one-to-one consultations over a few sessions to ongoing coaching relationships. For organizations, we offer flexible formats including workshops, seminars, and comprehensive employee wellness plans.
+													Absolutely! This is actually recommended. Goals with longer time horizons (like retirement in 30 years) can afford more aggressive allocations, while near-term goals (like buying a house in 3 years) should have conservative allocations. Each goal can have its own strategic allocation based on its timeline and importance.
 												</div>
 											</div>
 										</div>
 									</li>
 									<li class="accordion block wow fadeInUp" data-wow-delay=".6s">
-										<div class="acc-btn">Do I need to have financial knowledge before starting?
+										<div class="acc-btn">What happens if I don't follow proper asset allocation?
 											<div class="icon fa fa-plus"></div>
 										</div>
 										<div class="acc-content">
 											<div class="content">
 												<div class="text">
-													No prior financial knowledge is required. The programme is designed to meet you where you are—whether you're a complete beginner or have some financial experience. We build your knowledge systematically, ensuring you understand each concept before moving forward.
+													Without proper asset allocation, you risk taking on too much risk (potentially suffering devastating losses) or too little risk (failing to achieve your financial goals). Many investors also make emotional decisions without a clear allocation strategy, buying high and selling low. A disciplined allocation approach helps avoid these costly mistakes.
 												</div>
 											</div>
 										</div>
@@ -598,14 +630,14 @@
 							<div class="sidebar-service-list mb-30">
 								<h4 class="title">All Services</h4>
 								<ul>
-									<li class="current"><a href="fin-wellness-programme.html"><i class="far fa-arrow-right"></i><span>Financial Wellness Programme</span></a></li>
+									<li><a href="fin-wellness-programme.html"><i class="far fa-arrow-right"></i><span>Financial Wellness Programme</span></a></li>
 									<li><a href="investment-planning.html"><i class="far fa-arrow-right"></i><span>Investment Planning</span></a></li>
 									<li><a href="retirement-planning.html"><i class="far fa-arrow-right"></i><span>Retirement Planning</span></a></li>
 									<li><a href="risk-management.html"><i class="far fa-arrow-right"></i><span>Risk Management</span></a></li>
 									<li><a href="emergency-fund.html"><i class="far fa-arrow-right"></i><span>Emergency Fund Planning</span></a></li>
 									<li><a href="debt-management.html"><i class="far fa-arrow-right"></i><span>Debt Management</span></a></li>
 									<li><a href="cashflow-analysis.html"><i class="far fa-arrow-right"></i><span>Cashflow Analysis</span></a></li>
-									<li><a href="asset-allocation.html"><i class="far fa-arrow-right"></i><span>Asset Allocation</span></a></li>
+									<li class="current"><a href="asset-allocation.html"><i class="far fa-arrow-right"></i><span>Asset Allocation</span></a></li>
 									<li><a href="risk-profiling.html"><i class="far fa-arrow-right"></i><span>Risk Profiling</span></a></li>
 									<li><a href="legacy-planning.html"><i class="far fa-arrow-right"></i><span>Legacy Planning</span></a></li>
 									<li><a href="goal-planning.html"><i class="far fa-arrow-right"></i><span>Financial Goal Planning</span></a></li>
@@ -649,107 +681,94 @@
 		</div>
 	</section>
 
-	<!-- Footer Section Start -->
-	<footer class="footer-section-1 fix footer-bg bg-cover" style="background-image: url(images/home-1/footer-shape.png);">
-		<span class="circle-shape"></span>
-		<span class="circle-shape-2"></span>
-		<div class="auto-container">
-			<div class="footer-newsletter-wrapper">
-				<div class="footer-newsletter-left wow fadeInUp" data-wow-delay=".3s">
-					<div class="icon">
-						<img src="images/home-1/email.png" alt="img">
-					</div>
-					<h3 class="text-white font-weight-700 font-size-28">
-						subscribe to <br>
-						newsletter
-					</h3>
-				</div>
-				<form action="#" class="wow fadeInUp" data-wow-delay=".5s">
-					<div class="form-clt">
-						<input type="text" name="email" id="email2" placeholder="Your email address">
-						<button class="arrow-icon" type="submit">
-							<i class="lnr-icon-arrow-right"></i>
-						</button>
-					</div>
-				</form>
-			</div>
-			<div class="footer-widget-wrapper">
-				<div class="row justify-content-between">
-					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<a href="index.html" class="footer-logo">
-									<img src="images/white-logo.png" alt="PlanMyFin">
-								</a>
-							</div>
-							<div class="footer-content">
-								<p>
-									Empowering everyone with the knowledge and tools for financial wellness and freedom
-								</p>
-								<div class="social-icon">
-									<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-									<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-									<a href="#"><i class="fa-brands fa-instagram"></i></a>
+<!-- Footer Section Start -->
+		<footer class="footer-section-1 fix footer-bg bg-cover"
+			style="background-image: url(images/home-1/footer-shape.png)">
+			<span class="circle-shape"></span>
+			<span class="circle-shape-2"></span>
+			<div class="auto-container">
+				
+				<div class="footer-widget-wrapper">
+					<div class="row justify-content-between">
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<a href="index.html" class="footer-logo">
+										<img src="/images/planmyfin-logo.png" alt="img"  style="height: 80px; width: auto;" />
+									</a>
+								</div>
+								<div class="footer-content">
+									<p>PlanMyFin is a financial wellness platform helping individuals and businesses achieve long-term stability through personalized planning.</p>
+									
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<h3 class="font-size-24 text-white font-weight-500">Company</h3>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Company</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="page-about.html">About us</a></li>
+									<li><a href="page-services.html">Blogs</a></li>
+									<li><a href="page-contact.html">Contact Us</a></li>
+								</ul>
 							</div>
-							<ul class="user-links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="page-about.html">About us</a></li>
-								<li><a href="page-services.html">Services</a></li>
-								<li><a href="page-contact.html">Contact Us</a></li>
-							</ul>
 						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<h3 class="font-size-24 text-white font-weight-500">Services</h3>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Main Services</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Financial Advising</a></li>
+									<li><a href="page-about.html">Investment Planning</a></li>
+									<li><a href="page-services.html">Risk Profiling</a></li>
+									<li><a href="page-contact.html">Retirement Planning</a></li>
+								</ul>
 							</div>
-							<ul class="user-links">
-								<li><a href="fin-wellness-programme.html">Financial Wellness</a></li>
-								<li><a href="investment-planning.html">Investment Planning</a></li>
-								<li><a href="retirement-planning.html">Retirement Planning</a></li>
-								<li><a href="risk-management.html">Risk Management</a></li>
-							</ul>
 						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
+								</div>
+								<ul class="contact-list">
+									<li>
+										<i class="lnr-icon-phone-handset"></i>
+										<p><a href="tel:+1050055900">+91 97785 96947</a></p>
+									</li>
+									<li>
+										<i class="lnr-icon-envelope"></i>
+										<p><a
+												href="https://html.kodesolution.com/cdn-cgi/l/email-protection#a3c5cacdc0cfcadbe3cbc6cfd38dd6d0"><span
+													class="__cf_email__"
+													data-cfemail="ce88a7a0ada2a7b68ea6aba2bee0bbbd">info@planmyfin.com</span></a>
+										</p>
+									</li>
+									<li>
+										<div class="social-icon">
+										<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+										<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+										<a href="#"><i class="fa-brands fa-instagram"></i></a>
+									</div>
+										<!--<i class="lnr-icon-map-marker"></i>-->
+										<!--<p>44 Danwers, NY City, USA, 70-102</p>-->
+									</li>
+								</ul>
 							</div>
-							<ul class="contact-list">
-								<li>
-									<i class="lnr-icon-phone-handset"></i>
-									<p><a href="tel:+919778596947">+91 97785 96947</a></p>
-								</li>
-								<li>
-									<i class="lnr-icon-envelope"></i>
-									<p><a href="mailto:info@planmyfin.com">info@planmyfin.com</a></p>
-								</li>
-								<li>
-									<i class="lnr-icon-map-marker"></i>
-									<p>Bengaluru, Karnataka, IN</p>
-								</li>
-							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="auto-container">
-				<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved</p>
+			<div class="footer-bottom">
+				<div class="auto-container">
+					<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved. Designed & Developed by Trivlogic.</p>
+				</div>
 			</div>
-		</div>
-	</footer>
+		</footer>
+
 
 </div>
 

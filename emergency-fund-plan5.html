@@ -14,16 +14,16 @@
 
 <style>
 	.fin-stats-box {
-		background: var(  --gradient-2);
+		background: var(--gradient-2);
 		padding: 30px;
 		border-radius: 10px;
 		color: white;
 		text-align: center;
 		margin-bottom: 20px;
-        height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 	.fin-stats-box h2 {
 		font-size: 48px;
@@ -41,14 +41,14 @@
 		padding: 25px;
 		border-radius: 8px;
 		margin-bottom: 20px;
-		border-left: 4px solid   var(--theme-color1);
+		border-left: 4px solid var(--theme-color1);
 		transition: all 0.3s;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
 	}
 	.fin-outcome-box:hover {
-		box-shadow: 0 5px 20px var( --theme-color2);
+		box-shadow: 0 5px 20px var(--theme-color2);
 		transform: translateY(-3px);
 	}
 	.fin-outcome-box h5 {
@@ -61,51 +61,12 @@
 		margin-bottom: 0;
 		font-size: 14px;
 	}
-	.fin-focus-badge {
-		display: inline-block;
-		background: var(  --theme-color8);
-		color: white;
-		padding: 10px 20px;
-		border-radius: 25px;
-		margin: 5px;
-		font-size: 14px;
-		font-weight: 500;
-	}
-	.fin-implementation-card {
-		background: white;
-		border: 2px solid var(--gradient-1);
-		padding: 30px;
-		border-radius: 10px;
-		text-align: center;
-		margin-bottom: 20px;
-		transition: all 0.3s;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-	.fin-implementation-card:hover {
-		background: var(  --gradient-2);
-		color: white;
-	}
-	.fin-implementation-card:hover h4,
-	.fin-implementation-card:hover p {
-		color: white;
-	}
-	.fin-implementation-card i {
-		font-size: 48px;
-		color: var(--dark-color2);
-		margin-bottom: 20px;
-	}
-	.fin-implementation-card:hover i {
-		color: white;
-	}
 	.fin-benefit-card {
 		background: var(--theme-color-light);
 		padding: 20px;
 		border-radius: 8px;
 		margin-bottom: 15px;
-		box-shadow: 0 3px 10px var(--dark-color2);
+		box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 		height: 100%;
 		display: flex;
 		flex-direction: column;
@@ -115,6 +76,11 @@
 		font-size: 18px;
 		font-weight: 600;
 		margin-bottom: 10px;
+	}
+	.fin-benefit-card p {
+		color: #666;
+		font-size: 14px;
+		margin-bottom: 8px;
 	}
 	.fin-benefit-icon {
 		width: 50px;
@@ -144,6 +110,102 @@
 		font-size: 20px;
 		font-style: italic;
 		margin: 40px 0;
+	}
+	.emergency-scenario-card {
+		background: white;
+		border: 2px solid #e0e0e0;
+		padding: 25px;
+		border-radius: 10px;
+		margin-bottom: 20px;
+		transition: all 0.3s;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.emergency-scenario-card:hover {
+		border-color: #e74c3c;
+		box-shadow: 0 5px 20px rgba(231, 76, 60, 0.2);
+		transform: translateY(-5px);
+	}
+	.scenario-icon {
+		width: 60px;
+		height: 60px;
+		background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 28px;
+		margin-bottom: 20px;
+	}
+	.emergency-scenario-card h5 {
+		color: #2c3e50;
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+	.emergency-scenario-card p {
+		color: #666;
+		font-size: 14px;
+		margin-bottom: 0;
+		flex-grow: 1;
+	}
+	.step-card {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		padding: 30px;
+		border-radius: 10px;
+		color: white;
+		margin-bottom: 20px;
+		transition: all 0.3s;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.step-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+	}
+	.step-number {
+		width: 50px;
+		height: 50px;
+		background: white;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #667eea;
+		font-size: 24px;
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
+	.step-card h5 {
+		color: white;
+		font-weight: 600;
+		margin-bottom: 15px;
+	}
+	.step-card p {
+		color: white;
+		margin-bottom: 0;
+	}
+	.mistake-card {
+		background: #fff5f5;
+		border-left: 4px solid #e74c3c;
+		padding: 20px;
+		border-radius: 8px;
+		margin-bottom: 15px;
+	}
+	.mistake-card h6 {
+		color: #e74c3c;
+		font-weight: 600;
+		margin-bottom: 10px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	.mistake-card p {
+		color: #666;
+		margin-bottom: 0;
+		font-size: 14px;
 	}
 </style>
 </head>
@@ -183,47 +245,67 @@
 	<!-- Main Header-->
 	<header class="main-header header-style-one header-1">
 		<!-- Header Lower -->
-		<div class="header-lower header-lower2 show-header-section">
-			<div class="main-box">
-				<div class="nav-outer">
-					<div class="logo-box">
-						<div class="logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt="" title="planmyfin" style="height: 80px; width: auto;"></a></div>
-					</div>
-					<nav class="nav main-menu">
-						<ul class="navigation">
-							<li class="dropdown"><a href="index-2-dark.html">Home</a></li>
-							<li class="dropdown"><a href="page-about.html">About</a></li>
-							<li class="dropdown current"><a href="page-services.html">Services</a>
-								<ul>
-									<li class="current"><a href="fin-wellness-programme.html">Financial Wellness Programme</a></li>
-									<li><a href="investment-planning.html">Investment Planning</a></li>
-									<li><a href="retirement-planning.html">Retirement Planning</a></li>
-									<li><a href="risk-management.html">Risk Management</a></li>
-									<li><a href="emergency-fund.html">Emergency Fund Planning</a></li>
-									<li><a href="debt-management.html">Debt Management</a></li>
-									<li><a href="cashflow-analysis.html">Cashflow Analysis</a></li>
-									<li><a href="asset-allocation.html">Asset Allocation</a></li>
-									<li><a href="risk-profiling.html">Risk Profiling</a></li>
-									<li><a href="legacy-planning.html">Legacy Planning</a></li>
-									<li><a href="goal-planning.html">Financial Goal Planning</a></li>
-								</ul>
-							</li>
-							<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a></li>
-							<li class="dropdown"><a href="news-grid.html">Blogs</a></li>
-							<li><a href="page-contact.html">Contact</a></li>
-						</ul>
-					</nav>
-					<div class="outer-box">
-						<a href="tel:+919778596947" class="info-btn">
-							<i class="icon fa fa-phone"></i>
-							+91 97785 96947
-						</a>
-						<a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
-						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+			<div class="header-lower header-lower2 show-header-section">
+				<!-- Main box -->
+				<div class="main-box">
+
+					<!--Nav Box-->
+					<div class="nav-outer">
+						<div class="logo-box">
+							<div class="logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""
+										title="planmyfin" style="height: 80px; width: auto;"></a></div>
+						</div>
+						<nav class="nav main-menu">
+							<ul class="navigation">
+
+								<li class="dropdown"><a href="index.html">Home</a></li>
+								<li class="dropdown"><a href="page-about.html">About</a></li>
+
+
+								<li class="dropdown"><a href="page-services.html">Services</a>
+									<ul>
+										<!--<li><a href="page-services.html">Our Services</a></li>-->
+										<li><a href="fin-wellness-plan1.html">Financial Wellness Programme</a></li>
+										<li><a href="page-service-details.html">Investment Planning</a></li>
+										<li><a href="page-service-details.html">Retirement Planning</a></li>
+										<li><a href="page-service-details.html">Risk Management & Insurance Planning</a></li>
+										<li><a href="page-service-details.html">Emergency Fund Planning</a></li>
+										<li><a href="page-service-details.html">Debt Management</a></li>
+										<li><a href="page-service-details.html">Cashflow Analysis</a></li>
+										<li><a href="page-service-details.html">Asset Allocation Strategy</a></li>
+										<li><a href="page-service-details.html">Risk Profiling</a></li>										
+										<li><a href="page-service-details.html">Legacy Planning (Estate Planning & Will)</a></li>
+										<li><a href="page-service-details.html">Financial Goal Planning </a></li>
+									</ul>
+								</li>
+								<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a>
+
+								<li class="dropdown"><a href="news-grid.html">Blogs</a>
+								<!--	<ul>
+										<li><a href="news-grid.html">News Grid</a></li>
+										<li><a href="news-details.html">News Details</a></li>
+									</ul>-->
+								</li>
+								<li><a href="page-contact.html">Contact</a></li>
+							</ul>
+						</nav>
+						<!-- Main Menu End-->
+						<div class="outer-box">
+							<a href="tel:+92(8800)9806" class="info-btn">
+								<i class="icon fa fa-phone"></i>
+								+91 97785 96947
+							</a>
+
+							<a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
+
+							<!-- Mobile Nav toggler -->
+							<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+			<!-- End Header Lower -->
+
 
 		<!-- Mobile Menu -->
 		<div class="mobile-menu">
@@ -285,9 +367,9 @@
 				<ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
 					<li><a href="index.html">Home</a></li>
 					<li><a href="page-services.html">Services</a></li>
-					<li>Financial Wellness Programme</li>
+					<li>Emergency Fund Plan</li>
 				</ul>
-				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Financial Wellness Programme</h1>
+				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Emergency Fund Plan</h1>
 			</div>
 		</div>
 	</section>
@@ -301,16 +383,16 @@
 						<h6 class="sub-title wow fadeInUp">
 							<span class="triangle triangle1"></span>
 							<span class="triangle triangle2"></span>
-							Comprehensive Financial Coaching
+							Your Financial Safety Net
 						</h6>
 						<h2 class="wow fadeInUp" data-wow-delay=".2s">
-							Transform Your Financial Life from <br class="d-none d-lg-block"> Confusion to Conviction
+							Building a Cushion for <br class="d-none d-lg-block"> Life's Unexpected Moments
 						</h2>
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<div class="project-details__top mt-lg-5">
-						<div class="text mb-40">Essential financial skill is the most important life skill any person should possess. This programme, designed as a one-to-one coaching experience, is created to deliver a complete mindset upgrade—equipping participants with the skills and confidence to take control of their financial lives.</div>
+						<div class="text mb-40">An emergency fund is your first line of defense against financial chaos. It's the foundation that allows you to handle unexpected expenses without derailing your financial goals, going into debt, or making desperate decisions. Think of it as financial insurance—protecting you from life's inevitable surprises.</div>
 					</div>
 				</div>
 			</div>
@@ -318,24 +400,24 @@
 			<!-- Statistics Section -->
 			<div class="row stats-row mt-5 mb-5">
 				<div class="col-lg-12">
-					<h3 class="text-center mb-4">Why Financial Wellness Matters Today</h3>
+					<h3 class="text-center mb-4">The Reality of Financial Emergencies</h3>
 				</div>
 				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
 					<div class="fin-stats-box">
-						<h2>57%</h2>
-						<p>of employees are stressed about their finances (PwC 2023)</p>
+						<h2>60%</h2>
+						<p>of households couldn't cover an unexpected expense without borrowing</p>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
 					<div class="fin-stats-box">
-						<h2>82%</h2>
-						<p>want help with their personal finances</p>
+						<h2>78%</h2>
+						<p>of workers live paycheck to paycheck at some point during the year</p>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
 					<div class="fin-stats-box">
-						<h2>3-5x</h2>
-						<p>more likely to be distracted at work due to financial stress</p>
+						<h2>3-6</h2>
+						<p>months of expenses recommended as a minimum emergency fund</p>
 					</div>
 				</div>
 			</div>
@@ -343,7 +425,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="fin-highlight-box wow fadeInUp">
-						<p class="mb-0"><strong>Critical Insight:</strong> Financial stress extends beyond the bank account to key drivers of health and well-being. It affects productivity, engagement, physical health, and overall life satisfaction.</p>
+						<p class="mb-0"><strong>Critical Truth:</strong> Life doesn't wait for you to be financially ready. Medical emergencies, job loss, urgent home repairs, or family crises can happen to anyone at any time. An emergency fund transforms these crises from catastrophic to manageable.</p>
 					</div>
 				</div>
 			</div>
@@ -353,182 +435,217 @@
 				<div class="col-xl-8 col-lg-8">
 					<div class="services-details__content">
 						
-						<!-- Quote Section -->
 						<div class="fin-quote-box wow fadeInUp">
-							"Connecting the dots of your Reality with your Purpose"
+							"Hope for the best, but plan for the unexpected"
 						</div>
 
-						<!-- Expected Outcomes -->
-						<h3 class="mb-4">The Expected Outcome of This Programme</h3>
-						<p class="mb-4">This one-to-one coaching experience delivers a complete mindset upgrade—equipping you with the skills and confidence to take control of your financial life. The key outcomes expected from this programme are as follows:</p>
+						<!-- What Is Emergency Fund -->
+						<h3 class="mb-4">What is an Emergency Fund?</h3>
+						<p class="mb-4">An emergency fund is a dedicated pool of easily accessible money set aside specifically for unexpected expenses or income disruptions. It's not for vacations, new gadgets, or planned purchases—it's strictly for genuine emergencies that threaten your financial stability.</p>
 
-						<div class="row g-4">
+						<!-- Emergency Scenarios -->
+						<h3 class="mb-4 mt-5">When Do You Need an Emergency Fund?</h3>
+						<div class="row g-4 mb-5">
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
+								<div class="emergency-scenario-card">
+									<div class="scenario-icon">
+										<i class="lnr-icon-briefcase"></i>
+									</div>
+									<h5>Job Loss or Income Reduction</h5>
+									<p>Sudden unemployment, business downturn, salary cuts, or loss of a major client. Your emergency fund keeps you afloat while you find new opportunities.</p>
+								</div>
+							</div>
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
+								<div class="emergency-scenario-card">
+									<div class="scenario-icon">
+										<i class="lnr-icon-heart-pulse"></i>
+									</div>
+									<h5>Medical Emergencies</h5>
+									<p>Unexpected hospitalizations, treatments not covered by insurance, medical procedures, or healthcare for family members requiring immediate attention.</p>
+								</div>
+							</div>
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".4s">
+								<div class="emergency-scenario-card">
+									<div class="scenario-icon">
+										<i class="lnr-icon-apartment"></i>
+									</div>
+									<h5>Home & Property Repairs</h5>
+									<p>Critical repairs like roof leaks, plumbing failures, electrical issues, appliance breakdowns, or damage from natural events that need immediate fixing.</p>
+								</div>
+							</div>
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".5s">
+								<div class="emergency-scenario-card">
+									<div class="scenario-icon">
+										<i class="lnr-icon-car"></i>
+									</div>
+									<h5>Vehicle Emergencies</h5>
+									<p>Major car repairs, accidents, breakdowns, or urgent replacement when your vehicle is essential for work or family obligations.</p>
+								</div>
+							</div>
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".6s">
+								<div class="emergency-scenario-card">
+									<div class="scenario-icon">
+										<i class="lnr-icon-users"></i>
+									</div>
+									<h5>Family Emergencies</h5>
+									<p>Supporting family members in crisis, emergency travel for family matters, or urgent needs of dependents requiring immediate financial help.</p>
+								</div>
+							</div>
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".7s">
+								<div class="emergency-scenario-card">
+									<div class="scenario-icon">
+										<i class="lnr-icon-warning"></i>
+									</div>
+									<h5>Legal or Financial Crises</h5>
+									<p>Unexpected legal matters, identity theft recovery, urgent tax obligations, or other financial emergencies requiring immediate action.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Why It's Critical -->
+						<h3 class="mb-4 mt-5">Why an Emergency Fund is Non-Negotiable</h3>
+						<div class="row g-4 mb-5">
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
 								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Crafting Your Own Financial Plan</h5>
-									<p>You would be empowered to design & implement a personalized plan for your financial wellness</p>
+									<h5><i class="fal fa-shield-alt" style="color: #f39c12; margin-right: 10px;"></i>Prevents Debt Spiral</h5>
+									<p>Without emergency savings, you're forced to use high-interest credit cards or loans, creating debt that can take years to escape</p>
 								</div>
 							</div>
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
 								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Avoiding Costly Financial Mistakes</h5>
-									<p>You would gain insights that protect you from errors & blunders many make unknowingly</p>
+									<h5><i class="fal fa-lock" style="color: #f39c12; margin-right: 10px;"></i>Protects Long-Term Investments</h5>
+									<p>Emergency funds prevent you from liquidating retirement accounts or investments at the wrong time, often at a loss and with penalties</p>
 								</div>
 							</div>
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".4s">
 								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Freedom from Product-Centric Advice</h5>
-									<p>You would learn to choose the best products suitable to you and staying insulated from biased & product-driven financial suggestions</p>
+									<h5><i class="fal fa-brain" style="color: #f39c12; margin-right: 10px;"></i>Reduces Stress & Anxiety</h5>
+									<p>Knowing you have a financial cushion dramatically reduces stress, improves sleep, and allows clearer decision-making during crises</p>
 								</div>
 							</div>
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".5s">
 								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Clarity in Financial Decisions</h5>
-									<p>You would gain a clear direction and deeper meaning in every financial choice you make</p>
+									<h5><i class="fal fa-hands-helping" style="color: #f39c12; margin-right: 10px;"></i>Provides Independence</h5>
+									<p>You won't need to rely on family, friends, or employers in times of crisis, maintaining your dignity and independence</p>
 								</div>
 							</div>
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".6s">
 								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Overcome Random Investments</h5>
-									<p>By being able to replace scattered, impulsive investments with structured, purposeful planning</p>
+									<h5><i class="fal fa-compass" style="color: #f39c12; margin-right: 10px;"></i>Enables Better Decisions</h5>
+									<p>Financial security allows you to make rational choices rather than desperate ones—whether in career moves or major purchases</p>
 								</div>
 							</div>
 							<div class="col-md-6 wow fadeInUp" data-wow-delay=".7s">
 								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Achieve Your Financial Goals</h5>
-									<p>Through a realistic, practical path to reach your short- and long-term financial aspirations</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".8s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Experience A Holistic Approach to Wealth</h5>
-									<p>You would be able to experience complete financial well-being, not just piecemeal solutions</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".9s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Master the Most Important Life Skill</h5>
-									<p>Learn how to effectively manage your financial life, skill impacting every stage of your journey</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay="1s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Transform from Confusion to Conviction</h5>
-									<p>You would be able to move from financial stress & uncertainty to conviction & peace of mind</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay="1.1s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Experiencing Financial Freedom</h5>
-									<p>The programme follows a scientific, step-by-step path that equips you to make informed decisions—ultimately leading you to the most powerful outcome</p>
+									<h5><i class="fal fa-chart-line" style="color: #f39c12; margin-right: 10px;"></i>Keeps Goals on Track</h5>
+									<p>Your emergency fund ensures that temporary setbacks don't derail your long-term financial goals and dreams</p>
 								</div>
 							</div>
 						</div>
 
-						<!-- Key Focus Areas -->
-						<div class="mt-5 mb-5">
-							<h3 class="mb-4">Key Focus Areas</h3>
-							<p class="mb-4">Our comprehensive programme covers every critical aspect of your financial life:</p>
-							<div class="text-center">
-								<span class="fin-focus-badge">Risk Management</span>
-								<span class="fin-focus-badge">Emergency Fund</span>
-								<span class="fin-focus-badge">Retirement Planning</span>
-								<span class="fin-focus-badge">Financial Goal Planning</span>
-								<span class="fin-focus-badge">Risk Profiling</span>
-								<span class="fin-focus-badge">Asset Allocation</span>
-								<span class="fin-focus-badge">Investment Planning</span>
-								<span class="fin-focus-badge">Cashflow Analysis</span>
-								<span class="fin-focus-badge">Debt Management</span>
-								<span class="fin-focus-badge">Tax Planning</span>
-								<span class="fin-focus-badge">Legacy Planning</span>
-							</div>
-						</div>
-
-						<!-- Implementation Options -->
-						<h3 class="mb-4">Implementation Options</h3>
-						<div class="row">
-							<div class="col-md-4 wow fadeInUp" data-wow-delay=".2s">
-								<div class="fin-implementation-card">
-									<i class="lnr-icon-users"></i>
-									<h4>Seminars and Workshops</h4>
-									<p>Group sessions for organizations and teams</p>
+						<!-- How to Build -->
+						<h3 class="mb-4 mt-5">How to Build Your Emergency Fund</h3>
+						<div class="row g-4 mb-5">
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
+								<div class="step-card">
+									<div class="step-number">1</div>
+									<h5>Calculate Your Target</h5>
+									<p>Determine your essential monthly expenses (housing, food, utilities, transportation, insurance, minimum debt payments). Multiply by 3-6 months based on your situation.</p>
 								</div>
 							</div>
-							<div class="col-md-4 wow fadeInUp" data-wow-delay=".4s">
-								<div class="fin-implementation-card">
-									<i class="lnr-icon-user"></i>
-									<h4>One-to-One Consultations</h4>
-									<p>Personalized coaching sessions tailored to you</p>
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
+								<div class="step-card">
+									<div class="step-number">2</div>
+									<h5>Start Small, Stay Consistent</h5>
+									<p>Don't wait to save the full amount. Start with a micro-goal—even a single month's expenses. The key is consistency, not perfection.</p>
 								</div>
 							</div>
-							<div class="col-md-4 wow fadeInUp" data-wow-delay=".6s">
-								<div class="fin-implementation-card">
-									<i class="lnr-icon-file-add"></i>
-									<h4>Personalized Financial Plan</h4>
-									<p>Complete wellness plan preparation for employees</p>
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".4s">
+								<div class="step-card">
+									<div class="step-number">3</div>
+									<h5>Automate Your Savings</h5>
+									<p>Set up automatic transfers to a separate savings account on payday. Treat it like a non-negotiable bill. What you don't see, you won't spend.</p>
+								</div>
+							</div>
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".5s">
+								<div class="step-card">
+									<div class="step-number">4</div>
+									<h5>Keep It Accessible but Separate</h5>
+									<p>Store your emergency fund in a liquid, low-risk account—savings account, liquid funds, or money market. Not in stocks or locked deposits.</p>
 								</div>
 							</div>
 						</div>
 
-						<!-- Benefits to Organizations -->
-						<div class="mt-5">
-							<h3 class="mb-4">Benefits to Organizations</h3>
-							<div class="row g-4">
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".2s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-chart-bars"></i>
-										</div>
-										<h5>Improved Employee Productivity</h5>
-										<p>Financial wellness programs minimize personal financial distractions, enhancing productivity as a result of improved financial decisions</p>
+						<!-- Where to Keep It -->
+						<h3 class="mb-4 mt-5">Where Should You Keep Your Emergency Fund?</h3>
+						<div class="row g-4 mb-5">
+							<div class="col-md-6">
+								<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".2s">
+									<div class="fin-benefit-icon">
+										<i class="lnr-icon-database"></i>
 									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".3s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-heart"></i>
-										</div>
-										<h5>Reduce Workplace Stress</h5>
-										<p>Minimize financial stress affecting physical health and potentially reduce healthcare costs for employers</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".4s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-calendar-full"></i>
-										</div>
-										<h5>Reduce Absenteeism</h5>
-										<p>Decrease the need for employees to miss work as they are empowered with better management of their finances</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".5s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-users2"></i>
-										</div>
-										<h5>Employee Retention & Commitment</h5>
-										<p>Programs that help employees build stable financial lives increase their tenure and loyalty to the company</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".6s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-star"></i>
-										</div>
-										<h5>Enhance Employee Recruiting</h5>
-										<p>Make your company more attractive to potential employees, particularly younger generations who value such support</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".7s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-apartment"></i>
-										</div>
-										<h5>Caring & Inclusive Culture</h5>
-										<p>Contribute to a caring company culture by empowering all employees to improve their financial well-being</p>
-									</div>
+									<h5>High-Yield Savings Account</h5>
+									<p><strong>Best for:</strong> Easy access with some interest earnings</p>
+									<p><strong>Pros:</strong> FDIC insured, instant access, earns interest</p>
+									<p><strong>Cons:</strong> Returns typically below inflation</p>
 								</div>
 							</div>
+							<div class="col-md-6">
+								<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".3s">
+									<div class="fin-benefit-icon">
+										<i class="lnr-icon-drop"></i>
+									</div>
+									<h5>Liquid Mutual Funds</h5>
+									<p><strong>Best for:</strong> Slightly better returns with quick access</p>
+									<p><strong>Pros:</strong> Better returns than savings, accessible within 1-2 days</p>
+									<p><strong>Cons:</strong> Slight delay, minimal market risk</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".4s">
+									<div class="fin-benefit-icon">
+										<i class="lnr-icon-layers"></i>
+									</div>
+									<h5>Combination Approach</h5>
+									<p><strong>Best for:</strong> Optimizing access and returns</p>
+									<p><strong>Strategy:</strong> Keep 1 month in savings for instant access, rest in liquid funds</p>
+									<p><strong>Benefit:</strong> Balance of accessibility and returns</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".5s">
+									<div class="fin-benefit-icon">
+										<i class="lnr-icon-credit-card"></i>
+									</div>
+									<h5>Overdraft Facility (Supplementary)</h5>
+									<p><strong>Best for:</strong> Additional backup layer</p>
+									<p><strong>Use:</strong> As a secondary cushion, not primary fund</p>
+									<p><strong>Caution:</strong> Should support, not replace, actual savings</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Common Mistakes -->
+						<h3 class="mb-4 mt-5">Common Emergency Fund Mistakes to Avoid</h3>
+						<div class="mistake-card wow fadeInUp" data-wow-delay=".2s">
+							<h6><i class="fa fa-times-circle"></i> Keeping It Too Accessible</h6>
+							<p>Storing your emergency fund in your regular checking account makes it too tempting to spend on non-emergencies. Use a separate account.</p>
+						</div>
+						<div class="mistake-card wow fadeInUp" data-wow-delay=".3s">
+							<h6><i class="fa fa-times-circle"></i> Investing in High-Risk Assets</h6>
+							<p>Emergency funds should never be in stocks, crypto, or long-term locked deposits. You need guaranteed access when emergencies strike.</p>
+						</div>
+						<div class="mistake-card wow fadeInUp" data-wow-delay=".4s">
+							<h6><i class="fa fa-times-circle"></i> Using It for Non-Emergencies</h6>
+							<p>A sale, vacation, or lifestyle upgrade is not an emergency. Maintain strict discipline about what qualifies as a genuine emergency.</p>
+						</div>
+						<div class="mistake-card wow fadeInUp" data-wow-delay=".5s">
+							<h6><i class="fa fa-times-circle"></i> Not Replenishing After Use</h6>
+							<p>If you need to use your emergency fund, make replenishing it your top financial priority before resuming other goals.</p>
+						</div>
+						<div class="mistake-card wow fadeInUp" data-wow-delay=".6s">
+							<h6><i class="fa fa-times-circle"></i> Waiting Until It's "Perfect"</h6>
+							<p>Don't delay starting because you can't save the full amount immediately. Start with what you can, even if it's small.</p>
 						</div>
 
 						<!-- FAQ Section -->
@@ -537,49 +654,49 @@
 							<div class="faq-content-1">
 								<ul class="accordion-box">
 									<li class="accordion block active-block wow fadeInUp">
-										<div class="acc-btn">Who can benefit from the Financial Wellness Programme?
+										<div class="acc-btn">How much should I keep in my emergency fund?
 											<div class="icon fa fa-plus"></div>
 										</div>
 										<div class="acc-content current">
 											<div class="content">
 												<div class="text">
-													This programme is designed for individuals at any stage of their financial journey—whether you're just starting your career, planning for major life goals, approaching retirement, or running a business. Organizations can also implement this for their employees to improve productivity and reduce financial stress.
+													The standard recommendation is 3-6 months of essential expenses. However, your specific amount depends on your situation. Single-income households, self-employed individuals, or those in volatile industries should aim for 6-12 months. Dual-income stable households might be comfortable with 3-4 months. Calculate your essential monthly costs and multiply accordingly.
 												</div>
 											</div>
 										</div>
 									</li>
 									<li class="accordion block wow fadeInUp" data-wow-delay=".2s">
-										<div class="acc-btn">What makes this programme different from regular financial advice?
+										<div class="acc-btn">Should I build an emergency fund or pay off debt first?
 											<div class="icon fa fa-plus"></div>
 										</div>
 										<div class="acc-content">
 											<div class="content">
 												<div class="text">
-													Unlike product-centric financial advice, our programme focuses on empowering YOU with the skills to manage your own financial life. We provide objective, trustworthy resources that aren't driven by product sales. You'll learn to craft your own financial plan rather than just following recommendations.
+													This depends on your debt type and interest rates. Generally, build a small starter emergency fund (1 month of expenses) first, then focus on high-interest debt. Once high-interest debt is under control, build your full emergency fund. This balanced approach prevents you from going deeper into debt when emergencies inevitably occur during your debt payoff journey.
 												</div>
 											</div>
 										</div>
 									</li>
 									<li class="accordion block wow fadeInUp" data-wow-delay=".4s">
-										<div class="acc-btn">How long does the programme take?
+										<div class="acc-btn">Can I invest my emergency fund for better returns?
 											<div class="icon fa fa-plus"></div>
 										</div>
 										<div class="acc-content">
 											<div class="content">
 												<div class="text">
-													The programme is customized based on your needs. It can range from intensive one-to-one consultations over a few sessions to ongoing coaching relationships. For organizations, we offer flexible formats including workshops, seminars, and comprehensive employee wellness plans.
+													No. Your emergency fund's primary purpose is accessibility and preservation, not growth. It should be in low-risk, highly liquid instruments like savings accounts or liquid funds. Investing it in stocks or long-term assets defeats its purpose—you might need to sell at a loss during a market downturn, exactly when you need the money most. Keep other savings for investment growth.
 												</div>
 											</div>
 										</div>
 									</li>
 									<li class="accordion block wow fadeInUp" data-wow-delay=".6s">
-										<div class="acc-btn">Do I need to have financial knowledge before starting?
+										<div class="acc-btn">What counts as a real emergency?
 											<div class="icon fa fa-plus"></div>
 										</div>
 										<div class="acc-content">
 											<div class="content">
 												<div class="text">
-													No prior financial knowledge is required. The programme is designed to meet you where you are—whether you're a complete beginner or have some financial experience. We build your knowledge systematically, ensuring you understand each concept before moving forward.
+													A real emergency is an unexpected, urgent expense that threatens your financial stability or well-being: job loss, medical emergencies, critical home/car repairs, family crises. Not emergencies: sales, holidays, planned expenses, wants vs. needs, predictable irregular expenses (which should be budgeted). Ask yourself: "Is this unexpected, urgent, and necessary?" If any answer is no, it's not an emergency.
 												</div>
 											</div>
 										</div>
@@ -598,11 +715,11 @@
 							<div class="sidebar-service-list mb-30">
 								<h4 class="title">All Services</h4>
 								<ul>
-									<li class="current"><a href="fin-wellness-programme.html"><i class="far fa-arrow-right"></i><span>Financial Wellness Programme</span></a></li>
+									<li><a href="fin-wellness-programme.html"><i class="far fa-arrow-right"></i><span>Financial Wellness Programme</span></a></li>
 									<li><a href="investment-planning.html"><i class="far fa-arrow-right"></i><span>Investment Planning</span></a></li>
 									<li><a href="retirement-planning.html"><i class="far fa-arrow-right"></i><span>Retirement Planning</span></a></li>
 									<li><a href="risk-management.html"><i class="far fa-arrow-right"></i><span>Risk Management</span></a></li>
-									<li><a href="emergency-fund.html"><i class="far fa-arrow-right"></i><span>Emergency Fund Planning</span></a></li>
+									<li class="current"><a href="emergency-fund.html"><i class="far fa-arrow-right"></i><span>Emergency Fund Planning</span></a></li>
 									<li><a href="debt-management.html"><i class="far fa-arrow-right"></i><span>Debt Management</span></a></li>
 									<li><a href="cashflow-analysis.html"><i class="far fa-arrow-right"></i><span>Cashflow Analysis</span></a></li>
 									<li><a href="asset-allocation.html"><i class="far fa-arrow-right"></i><span>Asset Allocation</span></a></li>
@@ -649,107 +766,95 @@
 		</div>
 	</section>
 
+			
 	<!-- Footer Section Start -->
-	<footer class="footer-section-1 fix footer-bg bg-cover" style="background-image: url(images/home-1/footer-shape.png);">
-		<span class="circle-shape"></span>
-		<span class="circle-shape-2"></span>
-		<div class="auto-container">
-			<div class="footer-newsletter-wrapper">
-				<div class="footer-newsletter-left wow fadeInUp" data-wow-delay=".3s">
-					<div class="icon">
-						<img src="images/home-1/email.png" alt="img">
-					</div>
-					<h3 class="text-white font-weight-700 font-size-28">
-						subscribe to <br>
-						newsletter
-					</h3>
-				</div>
-				<form action="#" class="wow fadeInUp" data-wow-delay=".5s">
-					<div class="form-clt">
-						<input type="text" name="email" id="email2" placeholder="Your email address">
-						<button class="arrow-icon" type="submit">
-							<i class="lnr-icon-arrow-right"></i>
-						</button>
-					</div>
-				</form>
-			</div>
-			<div class="footer-widget-wrapper">
-				<div class="row justify-content-between">
-					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<a href="index.html" class="footer-logo">
-									<img src="images/white-logo.png" alt="PlanMyFin">
-								</a>
-							</div>
-							<div class="footer-content">
-								<p>
-									Empowering everyone with the knowledge and tools for financial wellness and freedom
-								</p>
-								<div class="social-icon">
-									<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-									<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-									<a href="#"><i class="fa-brands fa-instagram"></i></a>
+		<footer class="footer-section-1 fix footer-bg bg-cover"
+			style="background-image: url(images/home-1/footer-shape.png)">
+			<span class="circle-shape"></span>
+			<span class="circle-shape-2"></span>
+			<div class="auto-container">
+				
+				<div class="footer-widget-wrapper">
+					<div class="row justify-content-between">
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<a href="index.html" class="footer-logo">
+										<img src="/images/planmyfin-logo.png" alt="img"  style="height: 80px; width: auto;" />
+									</a>
+								</div>
+								<div class="footer-content">
+									<p>PlanMyFin is a financial wellness platform helping individuals and businesses achieve long-term stability through personalized planning.</p>
+									
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<h3 class="font-size-24 text-white font-weight-500">Company</h3>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Company</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="page-about.html">About us</a></li>
+									<li><a href="page-services.html">Blogs</a></li>
+									<li><a href="page-contact.html">Contact Us</a></li>
+								</ul>
 							</div>
-							<ul class="user-links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="page-about.html">About us</a></li>
-								<li><a href="page-services.html">Services</a></li>
-								<li><a href="page-contact.html">Contact Us</a></li>
-							</ul>
 						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<h3 class="font-size-24 text-white font-weight-500">Services</h3>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Main Services</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Financial Advising</a></li>
+									<li><a href="page-about.html">Investment Planning</a></li>
+									<li><a href="page-services.html">Risk Profiling</a></li>
+									<li><a href="page-contact.html">Retirement Planning</a></li>
+								</ul>
 							</div>
-							<ul class="user-links">
-								<li><a href="fin-wellness-programme.html">Financial Wellness</a></li>
-								<li><a href="investment-planning.html">Investment Planning</a></li>
-								<li><a href="retirement-planning.html">Retirement Planning</a></li>
-								<li><a href="risk-management.html">Risk Management</a></li>
-							</ul>
 						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
+								</div>
+								<ul class="contact-list">
+									<li>
+										<i class="lnr-icon-phone-handset"></i>
+										<p><a href="tel:+1050055900">+91 97785 96947</a></p>
+									</li>
+									<li>
+										<i class="lnr-icon-envelope"></i>
+										<p><a
+												href="https://html.kodesolution.com/cdn-cgi/l/email-protection#a3c5cacdc0cfcadbe3cbc6cfd38dd6d0"><span
+													class="__cf_email__"
+													data-cfemail="ce88a7a0ada2a7b68ea6aba2bee0bbbd">info@planmyfin.com</span></a>
+										</p>
+									</li>
+									<li>
+										<div class="social-icon">
+										<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+										<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+										<a href="#"><i class="fa-brands fa-instagram"></i></a>
+									</div>
+										<!--<i class="lnr-icon-map-marker"></i>-->
+										<!--<p>44 Danwers, NY City, USA, 70-102</p>-->
+									</li>
+								</ul>
 							</div>
-							<ul class="contact-list">
-								<li>
-									<i class="lnr-icon-phone-handset"></i>
-									<p><a href="tel:+919778596947">+91 97785 96947</a></p>
-								</li>
-								<li>
-									<i class="lnr-icon-envelope"></i>
-									<p><a href="mailto:info@planmyfin.com">info@planmyfin.com</a></p>
-								</li>
-								<li>
-									<i class="lnr-icon-map-marker"></i>
-									<p>Bengaluru, Karnataka, IN</p>
-								</li>
-							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="auto-container">
-				<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved</p>
+			<div class="footer-bottom">
+				<div class="auto-container">
+					<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved. Designed & Developed by Trivlogic.</p>
+				</div>
 			</div>
-		</div>
-	</footer>
+		</footer>
+
 
 </div>
 

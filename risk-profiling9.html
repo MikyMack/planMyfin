@@ -13,138 +13,330 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-	.fin-stats-box {
-		background: var(  --gradient-2);
-		padding: 30px;
-		border-radius: 10px;
-		color: white;
-		text-align: center;
-		margin-bottom: 20px;
-        height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-	}
-	.fin-stats-box h2 {
-		font-size: 48px;
-		font-weight: 700;
-		margin-bottom: 10px;
-		color: white;
-	}
-	.fin-stats-box p {
-		font-size: 16px;
-		margin-bottom: 0;
-		color: white;
-	}
-	.fin-outcome-box {
-		background: var(--theme-color6);
-		padding: 25px;
-		border-radius: 8px;
-		margin-bottom: 20px;
-		border-left: 4px solid   var(--theme-color1);
-		transition: all 0.3s;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-	}
-	.fin-outcome-box:hover {
-		box-shadow: 0 5px 20px var( --theme-color2);
-		transform: translateY(-3px);
-	}
-	.fin-outcome-box h5 {
-		color: var(--theme-color5);
-		font-weight: 600;
-		margin-bottom: 10px;
-	}
-	.fin-outcome-box p {
-		color: #666;
-		margin-bottom: 0;
-		font-size: 14px;
-	}
-	.fin-focus-badge {
-		display: inline-block;
-		background: var(  --theme-color8);
-		color: white;
-		padding: 10px 20px;
-		border-radius: 25px;
-		margin: 5px;
-		font-size: 14px;
-		font-weight: 500;
-	}
-	.fin-implementation-card {
-		background: white;
-		border: 2px solid var(--gradient-1);
-		padding: 30px;
-		border-radius: 10px;
-		text-align: center;
-		margin-bottom: 20px;
-		transition: all 0.3s;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-	.fin-implementation-card:hover {
-		background: var(  --gradient-2);
-		color: white;
-	}
-	.fin-implementation-card:hover h4,
-	.fin-implementation-card:hover p {
-		color: white;
-	}
-	.fin-implementation-card i {
-		font-size: 48px;
-		color: var(--dark-color2);
-		margin-bottom: 20px;
-	}
-	.fin-implementation-card:hover i {
-		color: white;
-	}
-	.fin-benefit-card {
-		background: var(--theme-color-light);
-		padding: 20px;
-		border-radius: 8px;
-		margin-bottom: 15px;
-		box-shadow: 0 3px 10px var(--dark-color2);
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-	}
-	.fin-benefit-card h5 {
-		color: #1a1a2e;
-		font-size: 18px;
-		font-weight: 600;
-		margin-bottom: 10px;
-	}
-	.fin-benefit-icon {
-		width: 50px;
-		height: 50px;
-		background: var(--gradient-1);
-		border-radius: 50%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: white;
-		font-size: 24px;
-		margin-bottom: 15px;
-	}
-	.fin-highlight-box {
-		background: var(--theme-color1);
-		border-left: 4px solid var(--dark-color2);
-		padding: 20px;
-		margin: 30px 0;
-		border-radius: 5px;
-	}
-	.fin-quote-box {
-		background: var(--theme-color8);
-		color: white;
-		padding: 30px;
-		border-radius: 10px;
-		text-align: center;
-		font-size: 20px;
-		font-style: italic;
-		margin: 40px 0;
-	}
+
+
+/* Main Content */
+.section-padding {
+  padding: 80px 0;
+}
+
+.auto-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.sec-title {
+  margin-bottom: 40px;
+}
+
+.sub-title {
+  color: #f39c12;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.sec-title h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.3;
+}
+
+/* Risk Assessment Card */
+.risk-assessment-card {
+  background: white;
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.score-display {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.score-circle {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+  background: var(--gradient-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+}
+
+.score-number {
+  font-size: 72px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.risk-group-badge {
+  display: inline-block;
+  background: var(--gradient-1);
+  color: white;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.risk-description {
+  font-size: 18px;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Risk Groups Table */
+.risk-groups-section {
+  background: white;
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.risk-group-item {
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: all 0.3s;
+  border-left: 4px solid #e0e0e0;
+}
+
+.risk-group-item:hover {
+  background: #f8f9fa;
+  transform: translateX(5px);
+}
+
+.risk-group-item.active {
+  background: var(--theme-color1);
+  border-left-color: #f39c12;
+  box-shadow: 0 5px 20px rgba(243, 156, 18, 0.15);
+}
+
+.risk-group-number {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-2);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.risk-group-item.active .risk-group-number {
+  background: var(--gradient-1);
+}
+
+.risk-group-content {
+  flex: 1;
+}
+
+.risk-group-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+.risk-group-desc {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.risk-group-return {
+  color: #f39c12;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Asset Allocation */
+.asset-allocation-section {
+  background: white;
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.allocation-chart {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.allocation-bar {
+  display: flex;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.equity-part {
+  background: var(--gradient-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.debt-part {
+  background: var(--gradient-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.allocation-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.legend-item {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.legend-color {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+}
+
+.legend-equity {
+  background: var(--gradient-1);
+}
+
+.legend-debt {
+  background: var(--gradient-2);
+}
+
+.legend-label {
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 5px;
+}
+
+.legend-range {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Footer */
+.footer-section {
+  background: #1a1a2e;
+  color: white;
+  padding: 60px 0 20px;
+  margin-top: 80px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-widget h3 {
+  color: #f39c12;
+  margin-bottom: 20px;
+}
+
+.footer-widget ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-widget ul li {
+  margin-bottom: 10px;
+}
+
+.footer-widget ul li a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-widget ul li a:hover {
+  color: #f39c12;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-menu, .outer-box {
+    display: none;
+  }
+  
+  .page-title h1 {
+    font-size: 32px;
+  }
+  
+  .sec-title h2 {
+    font-size: 28px;
+  }
+  
+  .risk-assessment-card,
+  .risk-groups-section,
+  .asset-allocation-section {
+    padding: 30px 20px;
+  }
+  
+  .score-circle {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .score-number {
+    font-size: 56px;
+  }
+  
+  .allocation-legend {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 
@@ -183,47 +375,67 @@
 	<!-- Main Header-->
 	<header class="main-header header-style-one header-1">
 		<!-- Header Lower -->
-		<div class="header-lower header-lower2 show-header-section">
-			<div class="main-box">
-				<div class="nav-outer">
-					<div class="logo-box">
-						<div class="logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt="" title="planmyfin" style="height: 80px; width: auto;"></a></div>
-					</div>
-					<nav class="nav main-menu">
-						<ul class="navigation">
-							<li class="dropdown"><a href="index-2-dark.html">Home</a></li>
-							<li class="dropdown"><a href="page-about.html">About</a></li>
-							<li class="dropdown current"><a href="page-services.html">Services</a>
-								<ul>
-									<li class="current"><a href="fin-wellness-programme.html">Financial Wellness Programme</a></li>
-									<li><a href="investment-planning.html">Investment Planning</a></li>
-									<li><a href="retirement-planning.html">Retirement Planning</a></li>
-									<li><a href="risk-management.html">Risk Management</a></li>
-									<li><a href="emergency-fund.html">Emergency Fund Planning</a></li>
-									<li><a href="debt-management.html">Debt Management</a></li>
-									<li><a href="cashflow-analysis.html">Cashflow Analysis</a></li>
-									<li><a href="asset-allocation.html">Asset Allocation</a></li>
-									<li><a href="risk-profiling.html">Risk Profiling</a></li>
-									<li><a href="legacy-planning.html">Legacy Planning</a></li>
-									<li><a href="goal-planning.html">Financial Goal Planning</a></li>
-								</ul>
-							</li>
-							<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a></li>
-							<li class="dropdown"><a href="news-grid.html">Blogs</a></li>
-							<li><a href="page-contact.html">Contact</a></li>
-						</ul>
-					</nav>
-					<div class="outer-box">
-						<a href="tel:+919778596947" class="info-btn">
-							<i class="icon fa fa-phone"></i>
-							+91 97785 96947
-						</a>
-						<a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
-						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+			<div class="header-lower header-lower2 show-header-section">
+				<!-- Main box -->
+				<div class="main-box">
+
+					<!--Nav Box-->
+					<div class="nav-outer">
+						<div class="logo-box">
+							<div class="logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""
+										title="planmyfin" style="height: 80px; width: auto;"></a></div>
+						</div>
+						<nav class="nav main-menu">
+							<ul class="navigation">
+
+								<li class="dropdown"><a href="index.html">Home</a></li>
+								<li class="dropdown"><a href="page-about.html">About</a></li>
+
+
+								<li class="dropdown"><a href="page-services.html">Services</a>
+									<ul>
+										<!--<li><a href="page-services.html">Our Services</a></li>-->
+										<li><a href="fin-wellness-plan1.html">Financial Wellness Programme</a></li>
+										<li><a href="page-service-details.html">Investment Planning</a></li>
+										<li><a href="page-service-details.html">Retirement Planning</a></li>
+										<li><a href="page-service-details.html">Risk Management & Insurance Planning</a></li>
+										<li><a href="page-service-details.html">Emergency Fund Planning</a></li>
+										<li><a href="page-service-details.html">Debt Management</a></li>
+										<li><a href="page-service-details.html">Cashflow Analysis</a></li>
+										<li><a href="page-service-details.html">Asset Allocation Strategy</a></li>
+										<li><a href="page-service-details.html">Risk Profiling</a></li>										
+										<li><a href="page-service-details.html">Legacy Planning (Estate Planning & Will)</a></li>
+										<li><a href="page-service-details.html">Financial Goal Planning </a></li>
+									</ul>
+								</li>
+								<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a>
+
+								<li class="dropdown"><a href="news-grid.html">Blogs</a>
+								<!--	<ul>
+										<li><a href="news-grid.html">News Grid</a></li>
+										<li><a href="news-details.html">News Details</a></li>
+									</ul>-->
+								</li>
+								<li><a href="page-contact.html">Contact</a></li>
+							</ul>
+						</nav>
+						<!-- Main Menu End-->
+						<div class="outer-box">
+							<a href="tel:+92(8800)9806" class="info-btn">
+								<i class="icon fa fa-phone"></i>
+								+91 97785 96947
+							</a>
+
+							<a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
+
+							<!-- Mobile Nav toggler -->
+							<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+			<!-- End Header Lower -->
+
 
 		<!-- Mobile Menu -->
 		<div class="mobile-menu">
@@ -285,314 +497,177 @@
 				<ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
 					<li><a href="index.html">Home</a></li>
 					<li><a href="page-services.html">Services</a></li>
-					<li>Financial Wellness Programme</li>
+					<li>Risk Profiling</li>
 				</ul>
-				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Financial Wellness Programme</h1>
+				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Risk Profiling</h1>
 			</div>
 		</div>
 	</section>
 
-	<!-- Services Details -->
-	<section class="services-details section-padding">
-		<div class="auto-container">
-			<div class="row align-items-lg-center g-4">
-				<div class="col-lg-6">
-					<div class="sec-title mb-40">
-						<h6 class="sub-title wow fadeInUp">
-							<span class="triangle triangle1"></span>
-							<span class="triangle triangle2"></span>
-							Comprehensive Financial Coaching
-						</h6>
-						<h2 class="wow fadeInUp" data-wow-delay=".2s">
-							Transform Your Financial Life from <br class="d-none d-lg-block"> Confusion to Conviction
-						</h2>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="project-details__top mt-lg-5">
-						<div class="text mb-40">Essential financial skill is the most important life skill any person should possess. This programme, designed as a one-to-one coaching experience, is created to deliver a complete mindset upgrade—equipping participants with the skills and confidence to take control of their financial lives.</div>
-					</div>
-				</div>
-			</div>
+	 <!-- Risk Profile Content -->
+  <section class="section-padding">
+    <div class="auto-container">
+      
+      <!-- Introduction -->
+      <div class="row mb-5">
+        <div class="col-lg-8 mx-auto text-center">
+          <div class="sec-title">
+            <span class="sub-title">Understanding Your Investment Personality</span>
+            <h2>Risk Profile Analysis</h2>
+          </div>
+          <p style="font-size: 18px; color: #666;">
+            The second step towards your investment planning is to understand your risk profile as an investor. 
+            Different investment products carry different risks—some are considered safe, while others are riskier. 
+            An assessment of your risk profile helps you understand the risk you can take as an investor, 
+            and accordingly, your asset allocation can be decided.
+          </p>
+        </div>
+      </div>
 
-			<!-- Statistics Section -->
-			<div class="row stats-row mt-5 mb-5">
-				<div class="col-lg-12">
-					<h3 class="text-center mb-4">Why Financial Wellness Matters Today</h3>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-					<div class="fin-stats-box">
-						<h2>57%</h2>
-						<p>of employees are stressed about their finances (PwC 2023)</p>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-					<div class="fin-stats-box">
-						<h2>82%</h2>
-						<p>want help with their personal finances</p>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-					<div class="fin-stats-box">
-						<h2>3-5x</h2>
-						<p>more likely to be distracted at work due to financial stress</p>
-					</div>
-				</div>
-			</div>
+      <!-- Risk Score Display -->
+      <div class="risk-assessment-card">
+        <div class="score-display">
+          <div class="score-circle">
+            <div class="score-number">52</div>
+            <div class="score-label">Risk Score</div>
+          </div>
+          <div class="risk-group-badge">Risk Group 4 - Moderate Risk Profile</div>
+          <p class="risk-description">
+            As an investor, you are looking for relatively higher returns over medium to long term with modest risk. 
+            This score indicates your risk group and your indicative risk-taking ability and investor category.
+          </p>
+          <div style="margin-top: 30px;">
+            <strong style="color: #f39c12; font-size: 20px;">Expected Return Range: 8.9% - 10.3%</strong>
+          </div>
+        </div>
+      </div>
 
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="fin-highlight-box wow fadeInUp">
-						<p class="mb-0"><strong>Critical Insight:</strong> Financial stress extends beyond the bank account to key drivers of health and well-being. It affects productivity, engagement, physical health, and overall life satisfaction.</p>
-					</div>
-				</div>
-			</div>
+      <!-- Risk Groups Overview -->
+      <div class="risk-groups-section">
+        <div class="sec-title text-center mb-5">
+          <h2>Understanding Risk Groups</h2>
+          <p style="color: #666; max-width: 800px; margin: 0 auto;">
+            Based on risk profile, investors can be grouped under 7 categories, 
+            ranging from Extremely Conservative to Extremely Aggressive. Here's where you stand:
+          </p>
+        </div>
 
-			<!-- Main Content -->
-			<div class="row">
-				<div class="col-xl-8 col-lg-8">
-					<div class="services-details__content">
-						
-						<!-- Quote Section -->
-						<div class="fin-quote-box wow fadeInUp">
-							"Connecting the dots of your Reality with your Purpose"
-						</div>
+        <div class="risk-group-item">
+          <div class="risk-group-number">1</div>
+          <div class="risk-group-content">
+            <div class="risk-group-title">Extremely Conservative</div>
+            <div class="risk-group-desc">Capital preservation with minimal risk tolerance</div>
+            <div class="risk-group-return">Expected Return: 4% - 6%</div>
+          </div>
+        </div>
 
-						<!-- Expected Outcomes -->
-						<h3 class="mb-4">The Expected Outcome of This Programme</h3>
-						<p class="mb-4">This one-to-one coaching experience delivers a complete mindset upgrade—equipping you with the skills and confidence to take control of your financial life. The key outcomes expected from this programme are as follows:</p>
+        <div class="risk-group-item">
+          <div class="risk-group-number">2</div>
+          <div class="risk-group-content">
+            <div class="risk-group-title">Conservative</div>
+            <div class="risk-group-desc">Low risk appetite with stable income focus</div>
+            <div class="risk-group-return">Expected Return: 5% - 7%</div>
+          </div>
+        </div>
 
-						<div class="row g-4">
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Crafting Your Own Financial Plan</h5>
-									<p>You would be empowered to design & implement a personalized plan for your financial wellness</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Avoiding Costly Financial Mistakes</h5>
-									<p>You would gain insights that protect you from errors & blunders many make unknowingly</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".4s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Freedom from Product-Centric Advice</h5>
-									<p>You would learn to choose the best products suitable to you and staying insulated from biased & product-driven financial suggestions</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".5s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Clarity in Financial Decisions</h5>
-									<p>You would gain a clear direction and deeper meaning in every financial choice you make</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".6s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Overcome Random Investments</h5>
-									<p>By being able to replace scattered, impulsive investments with structured, purposeful planning</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".7s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Achieve Your Financial Goals</h5>
-									<p>Through a realistic, practical path to reach your short- and long-term financial aspirations</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".8s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Experience A Holistic Approach to Wealth</h5>
-									<p>You would be able to experience complete financial well-being, not just piecemeal solutions</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".9s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Master the Most Important Life Skill</h5>
-									<p>Learn how to effectively manage your financial life, skill impacting every stage of your journey</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay="1s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Transform from Confusion to Conviction</h5>
-									<p>You would be able to move from financial stress & uncertainty to conviction & peace of mind</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay="1.1s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Experiencing Financial Freedom</h5>
-									<p>The programme follows a scientific, step-by-step path that equips you to make informed decisions—ultimately leading you to the most powerful outcome</p>
-								</div>
-							</div>
-						</div>
+        <div class="risk-group-item">
+          <div class="risk-group-number">3</div>
+          <div class="risk-group-content">
+            <div class="risk-group-title">Moderately Conservative</div>
+            <div class="risk-group-desc">Balanced approach with slight equity exposure</div>
+            <div class="risk-group-return">Expected Return: 6.5% - 8.5%</div>
+          </div>
+        </div>
 
-						<!-- Key Focus Areas -->
-						<div class="mt-5 mb-5">
-							<h3 class="mb-4">Key Focus Areas</h3>
-							<p class="mb-4">Our comprehensive programme covers every critical aspect of your financial life:</p>
-							<div class="text-center">
-								<span class="fin-focus-badge">Risk Management</span>
-								<span class="fin-focus-badge">Emergency Fund</span>
-								<span class="fin-focus-badge">Retirement Planning</span>
-								<span class="fin-focus-badge">Financial Goal Planning</span>
-								<span class="fin-focus-badge">Risk Profiling</span>
-								<span class="fin-focus-badge">Asset Allocation</span>
-								<span class="fin-focus-badge">Investment Planning</span>
-								<span class="fin-focus-badge">Cashflow Analysis</span>
-								<span class="fin-focus-badge">Debt Management</span>
-								<span class="fin-focus-badge">Tax Planning</span>
-								<span class="fin-focus-badge">Legacy Planning</span>
-							</div>
-						</div>
+        <div class="risk-group-item active">
+          <div class="risk-group-number">4</div>
+          <div class="risk-group-content">
+            <div class="risk-group-title">Moderate (Your Profile)</div>
+            <div class="risk-group-desc">Balanced portfolio seeking growth with manageable risk</div>
+            <div class="risk-group-return">Expected Return: 8.9% - 10.3%</div>
+          </div>
+        </div>
 
-						<!-- Implementation Options -->
-						<h3 class="mb-4">Implementation Options</h3>
-						<div class="row">
-							<div class="col-md-4 wow fadeInUp" data-wow-delay=".2s">
-								<div class="fin-implementation-card">
-									<i class="lnr-icon-users"></i>
-									<h4>Seminars and Workshops</h4>
-									<p>Group sessions for organizations and teams</p>
-								</div>
-							</div>
-							<div class="col-md-4 wow fadeInUp" data-wow-delay=".4s">
-								<div class="fin-implementation-card">
-									<i class="lnr-icon-user"></i>
-									<h4>One-to-One Consultations</h4>
-									<p>Personalized coaching sessions tailored to you</p>
-								</div>
-							</div>
-							<div class="col-md-4 wow fadeInUp" data-wow-delay=".6s">
-								<div class="fin-implementation-card">
-									<i class="lnr-icon-file-add"></i>
-									<h4>Personalized Financial Plan</h4>
-									<p>Complete wellness plan preparation for employees</p>
-								</div>
-							</div>
-						</div>
+        <div class="risk-group-item">
+          <div class="risk-group-number">5</div>
+          <div class="risk-group-content">
+            <div class="risk-group-title">Moderately Aggressive</div>
+            <div class="risk-group-desc">Higher equity allocation for enhanced growth</div>
+            <div class="risk-group-return">Expected Return: 10% - 12%</div>
+          </div>
+        </div>
 
-						<!-- Benefits to Organizations -->
-						<div class="mt-5">
-							<h3 class="mb-4">Benefits to Organizations</h3>
-							<div class="row g-4">
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".2s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-chart-bars"></i>
-										</div>
-										<h5>Improved Employee Productivity</h5>
-										<p>Financial wellness programs minimize personal financial distractions, enhancing productivity as a result of improved financial decisions</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".3s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-heart"></i>
-										</div>
-										<h5>Reduce Workplace Stress</h5>
-										<p>Minimize financial stress affecting physical health and potentially reduce healthcare costs for employers</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".4s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-calendar-full"></i>
-										</div>
-										<h5>Reduce Absenteeism</h5>
-										<p>Decrease the need for employees to miss work as they are empowered with better management of their finances</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".5s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-users2"></i>
-										</div>
-										<h5>Employee Retention & Commitment</h5>
-										<p>Programs that help employees build stable financial lives increase their tenure and loyalty to the company</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".6s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-star"></i>
-										</div>
-										<h5>Enhance Employee Recruiting</h5>
-										<p>Make your company more attractive to potential employees, particularly younger generations who value such support</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".7s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-apartment"></i>
-										</div>
-										<h5>Caring & Inclusive Culture</h5>
-										<p>Contribute to a caring company culture by empowering all employees to improve their financial well-being</p>
-									</div>
-								</div>
-							</div>
-						</div>
+        <div class="risk-group-item">
+          <div class="risk-group-number">6</div>
+          <div class="risk-group-content">
+            <div class="risk-group-title">Aggressive</div>
+            <div class="risk-group-desc">High risk tolerance for maximum growth potential</div>
+            <div class="risk-group-return">Expected Return: 11% - 14%</div>
+          </div>
+        </div>
 
-						<!-- FAQ Section -->
-						<div class="innerpage mt-5">
-							<h3 class="mb-4">Frequently Asked Questions</h3>
-							<div class="faq-content-1">
-								<ul class="accordion-box">
-									<li class="accordion block active-block wow fadeInUp">
-										<div class="acc-btn">Who can benefit from the Financial Wellness Programme?
-											<div class="icon fa fa-plus"></div>
-										</div>
-										<div class="acc-content current">
-											<div class="content">
-												<div class="text">
-													This programme is designed for individuals at any stage of their financial journey—whether you're just starting your career, planning for major life goals, approaching retirement, or running a business. Organizations can also implement this for their employees to improve productivity and reduce financial stress.
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="accordion block wow fadeInUp" data-wow-delay=".2s">
-										<div class="acc-btn">What makes this programme different from regular financial advice?
-											<div class="icon fa fa-plus"></div>
-										</div>
-										<div class="acc-content">
-											<div class="content">
-												<div class="text">
-													Unlike product-centric financial advice, our programme focuses on empowering YOU with the skills to manage your own financial life. We provide objective, trustworthy resources that aren't driven by product sales. You'll learn to craft your own financial plan rather than just following recommendations.
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="accordion block wow fadeInUp" data-wow-delay=".4s">
-										<div class="acc-btn">How long does the programme take?
-											<div class="icon fa fa-plus"></div>
-										</div>
-										<div class="acc-content">
-											<div class="content">
-												<div class="text">
-													The programme is customized based on your needs. It can range from intensive one-to-one consultations over a few sessions to ongoing coaching relationships. For organizations, we offer flexible formats including workshops, seminars, and comprehensive employee wellness plans.
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="accordion block wow fadeInUp" data-wow-delay=".6s">
-										<div class="acc-btn">Do I need to have financial knowledge before starting?
-											<div class="icon fa fa-plus"></div>
-										</div>
-										<div class="acc-content">
-											<div class="content">
-												<div class="text">
-													No prior financial knowledge is required. The programme is designed to meet you where you are—whether you're a complete beginner or have some financial experience. We build your knowledge systematically, ensuring you understand each concept before moving forward.
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
+        <div class="risk-group-item">
+          <div class="risk-group-number">7</div>
+          <div class="risk-group-content">
+            <div class="risk-group-title">Extremely Aggressive</div>
+            <div class="risk-group-desc">Maximum risk for potentially highest returns</div>
+            <div class="risk-group-return">Expected Return: 12% - 16%+</div>
+          </div>
+        </div>
+      </div>
 
-					</div>
-				</div>
+      <!-- Asset Allocation -->
+      <div class="asset-allocation-section">
+        <div class="sec-title text-center mb-5">
+          <h2>Your Ideal Asset Allocation</h2>
+          <p style="color: #666; max-width: 800px; margin: 0 auto;">
+            Based on your Moderate Risk Profile (Group 4), here is your recommended asset allocation strategy. 
+            This mix balances growth potential with risk management.
+          </p>
+        </div>
+
+        <div class="allocation-chart">
+          <div class="allocation-bar">
+            <div class="equity-part" style="width: 50%;">
+              EQUITY<br>40-60%
+            </div>
+            <div class="debt-part" style="width: 50%;">
+              DEBT & OTHERS<br>40-60%
+            </div>
+          </div>
+
+          <div class="allocation-legend">
+            <div class="legend-item">
+              <div class="legend-color legend-equity"></div>
+              <div class="legend-label">Equity Allocation</div>
+              <div class="legend-range">Minimum: 40% | Maximum: 60%</div>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color legend-debt"></div>
+              <div class="legend-label">Debt & Others</div>
+              <div class="legend-range">Minimum: 40% | Maximum: 60%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <div style="background: #f8f9fa; padding: 30px; border-radius: 10px; max-width: 800px; margin: 0 auto;">
+            <h4 style="color: #1a1a2e; margin-bottom: 15px;">Important Note</h4>
+            <p style="color: #666; margin: 0;">
+              The asset allocation decision is personal and there is no perfect model. The allocation that works 
+              best for you changes at different times of your life and therefore requires modification as your age, 
+              goals, and risk profile evolve.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 
 				<!-- Sidebar -->
-				<div class="col-lg-4">
+				<!--<div class="col-lg-4">
 					<div class="service-sidebar mt-5 mt-lg-0">
 						<div class="sidebar-widget service-sidebar-single">
 							<div class="sidebar-service-list mb-30">
@@ -647,109 +722,96 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section>-->
 
 	<!-- Footer Section Start -->
-	<footer class="footer-section-1 fix footer-bg bg-cover" style="background-image: url(images/home-1/footer-shape.png);">
-		<span class="circle-shape"></span>
-		<span class="circle-shape-2"></span>
-		<div class="auto-container">
-			<div class="footer-newsletter-wrapper">
-				<div class="footer-newsletter-left wow fadeInUp" data-wow-delay=".3s">
-					<div class="icon">
-						<img src="images/home-1/email.png" alt="img">
-					</div>
-					<h3 class="text-white font-weight-700 font-size-28">
-						subscribe to <br>
-						newsletter
-					</h3>
-				</div>
-				<form action="#" class="wow fadeInUp" data-wow-delay=".5s">
-					<div class="form-clt">
-						<input type="text" name="email" id="email2" placeholder="Your email address">
-						<button class="arrow-icon" type="submit">
-							<i class="lnr-icon-arrow-right"></i>
-						</button>
-					</div>
-				</form>
-			</div>
-			<div class="footer-widget-wrapper">
-				<div class="row justify-content-between">
-					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<a href="index.html" class="footer-logo">
-									<img src="images/white-logo.png" alt="PlanMyFin">
-								</a>
-							</div>
-							<div class="footer-content">
-								<p>
-									Empowering everyone with the knowledge and tools for financial wellness and freedom
-								</p>
-								<div class="social-icon">
-									<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-									<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-									<a href="#"><i class="fa-brands fa-instagram"></i></a>
+		<footer class="footer-section-1 fix footer-bg bg-cover"
+			style="background-image: url(images/home-1/footer-shape.png)">
+			<span class="circle-shape"></span>
+			<span class="circle-shape-2"></span>
+			<div class="auto-container">
+				
+				<div class="footer-widget-wrapper">
+					<div class="row justify-content-between">
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<a href="index.html" class="footer-logo">
+										<img src="/images/planmyfin-logo.png" alt="img"  style="height: 80px; width: auto;" />
+									</a>
+								</div>
+								<div class="footer-content">
+									<p>PlanMyFin is a financial wellness platform helping individuals and businesses achieve long-term stability through personalized planning.</p>
+									
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<h3 class="font-size-24 text-white font-weight-500">Company</h3>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Company</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="page-about.html">About us</a></li>
+									<li><a href="page-services.html">Blogs</a></li>
+									<li><a href="page-contact.html">Contact Us</a></li>
+								</ul>
 							</div>
-							<ul class="user-links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="page-about.html">About us</a></li>
-								<li><a href="page-services.html">Services</a></li>
-								<li><a href="page-contact.html">Contact Us</a></li>
-							</ul>
 						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<h3 class="font-size-24 text-white font-weight-500">Services</h3>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Main Services</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Financial Advising</a></li>
+									<li><a href="page-about.html">Investment Planning</a></li>
+									<li><a href="page-services.html">Risk Profiling</a></li>
+									<li><a href="page-contact.html">Retirement Planning</a></li>
+								</ul>
 							</div>
-							<ul class="user-links">
-								<li><a href="fin-wellness-programme.html">Financial Wellness</a></li>
-								<li><a href="investment-planning.html">Investment Planning</a></li>
-								<li><a href="retirement-planning.html">Retirement Planning</a></li>
-								<li><a href="risk-management.html">Risk Management</a></li>
-							</ul>
 						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
+								</div>
+								<ul class="contact-list">
+									<li>
+										<i class="lnr-icon-phone-handset"></i>
+										<p><a href="tel:+1050055900">+91 97785 96947</a></p>
+									</li>
+									<li>
+										<i class="lnr-icon-envelope"></i>
+										<p><a
+												href="https://html.kodesolution.com/cdn-cgi/l/email-protection#a3c5cacdc0cfcadbe3cbc6cfd38dd6d0"><span
+													class="__cf_email__"
+													data-cfemail="ce88a7a0ada2a7b68ea6aba2bee0bbbd">info@planmyfin.com</span></a>
+										</p>
+									</li>
+									<li>
+										<div class="social-icon">
+										<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+										<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+										<a href="#"><i class="fa-brands fa-instagram"></i></a>
+									</div>
+										<!--<i class="lnr-icon-map-marker"></i>-->
+										<!--<p>44 Danwers, NY City, USA, 70-102</p>-->
+									</li>
+								</ul>
 							</div>
-							<ul class="contact-list">
-								<li>
-									<i class="lnr-icon-phone-handset"></i>
-									<p><a href="tel:+919778596947">+91 97785 96947</a></p>
-								</li>
-								<li>
-									<i class="lnr-icon-envelope"></i>
-									<p><a href="mailto:info@planmyfin.com">info@planmyfin.com</a></p>
-								</li>
-								<li>
-									<i class="lnr-icon-map-marker"></i>
-									<p>Bengaluru, Karnataka, IN</p>
-								</li>
-							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="auto-container">
-				<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved</p>
+			<div class="footer-bottom">
+				<div class="auto-container">
+					<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved. Designed & Developed by Trivlogic.</p>
+				</div>
 			</div>
-		</div>
-	</footer>
+		</footer>
+
 
 </div>
 

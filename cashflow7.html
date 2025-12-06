@@ -13,138 +13,662 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-	.fin-stats-box {
-		background: var(  --gradient-2);
-		padding: 30px;
-		border-radius: 10px;
-		color: white;
-		text-align: center;
-		margin-bottom: 20px;
-        height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-	}
-	.fin-stats-box h2 {
-		font-size: 48px;
-		font-weight: 700;
-		margin-bottom: 10px;
-		color: white;
-	}
-	.fin-stats-box p {
-		font-size: 16px;
-		margin-bottom: 0;
-		color: white;
-	}
-	.fin-outcome-box {
-		background: var(--theme-color6);
-		padding: 25px;
-		border-radius: 8px;
-		margin-bottom: 20px;
-		border-left: 4px solid   var(--theme-color1);
-		transition: all 0.3s;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-	}
-	.fin-outcome-box:hover {
-		box-shadow: 0 5px 20px var( --theme-color2);
-		transform: translateY(-3px);
-	}
-	.fin-outcome-box h5 {
-		color: var(--theme-color5);
-		font-weight: 600;
-		margin-bottom: 10px;
-	}
-	.fin-outcome-box p {
-		color: #666;
-		margin-bottom: 0;
-		font-size: 14px;
-	}
-	.fin-focus-badge {
-		display: inline-block;
-		background: var(  --theme-color8);
-		color: white;
-		padding: 10px 20px;
-		border-radius: 25px;
-		margin: 5px;
-		font-size: 14px;
-		font-weight: 500;
-	}
-	.fin-implementation-card {
-		background: white;
-		border: 2px solid var(--gradient-1);
-		padding: 30px;
-		border-radius: 10px;
-		text-align: center;
-		margin-bottom: 20px;
-		transition: all 0.3s;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-	.fin-implementation-card:hover {
-		background: var(  --gradient-2);
-		color: white;
-	}
-	.fin-implementation-card:hover h4,
-	.fin-implementation-card:hover p {
-		color: white;
-	}
-	.fin-implementation-card i {
-		font-size: 48px;
-		color: var(--dark-color2);
-		margin-bottom: 20px;
-	}
-	.fin-implementation-card:hover i {
-		color: white;
-	}
-	.fin-benefit-card {
-		background: var(--theme-color-light);
-		padding: 20px;
-		border-radius: 8px;
-		margin-bottom: 15px;
-		box-shadow: 0 3px 10px var(--dark-color2);
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-	}
-	.fin-benefit-card h5 {
-		color: #1a1a2e;
-		font-size: 18px;
-		font-weight: 600;
-		margin-bottom: 10px;
-	}
-	.fin-benefit-icon {
-		width: 50px;
-		height: 50px;
-		background: var(--gradient-1);
-		border-radius: 50%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: white;
-		font-size: 24px;
-		margin-bottom: 15px;
-	}
-	.fin-highlight-box {
-		background: var(--theme-color1);
-		border-left: 4px solid var(--dark-color2);
-		padding: 20px;
-		margin: 30px 0;
-		border-radius: 5px;
-	}
-	.fin-quote-box {
-		background: var(--theme-color8);
-		color: white;
-		padding: 30px;
-		border-radius: 10px;
-		text-align: center;
-		font-size: 20px;
-		font-style: italic;
-		margin: 40px 0;
-	}
+	.cashflow-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .cashflow-page-wrapper {
+            padding: 80px 0;
+        }
+
+        .cashflow-main-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+        }
+
+        /* Hero Section */
+        .cashflow-hero-section {
+            background: var(--theme-color-light);
+            padding: 80px 0;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cashflow-hero-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(200, 241, 105, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cashflow-hero-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cashflow-hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gradient-1);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cashflow-hero-title {
+            font-family: var(--heading-font-family);
+            font-size: 52px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            color: var(--headings-color);
+        }
+
+        .cashflow-hero-highlight {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cashflow-hero-description {
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            color: var(--text-color);
+        }
+
+        .cashflow-hero-features {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .cashflow-hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--text-color);
+        }
+
+        .cashflow-hero-feature::before {
+            content: '✓';
+            width: 24px;
+            height: 24px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .cashflow-hero-visual {
+            position: relative;
+            height: 450px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(20, 68, 67, 0.1);
+        }
+
+        .cashflow-hero-visual::before {
+            content: 'Cashflow Analytics Illustration';
+            color: rgba(20, 68, 67, 0.2);
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Importance Section */
+        .cashflow-importance-section {
+            margin-bottom: 60px;
+        }
+
+        .cashflow-section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .cashflow-section-subtitle {
+            color: var(--theme-color7);
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .cashflow-section-title {
+            font-family: var(--heading-font-family);
+            font-size: 42px;
+            font-weight: 600;
+            color: var(--headings-color);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .cashflow-section-description {
+            font-size: 16px;
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .cashflow-importance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .cashflow-importance-card {
+            background: var(--theme-color-light);
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .cashflow-importance-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+            border-radius: 15px 15px 0 0;
+        }
+
+        .cashflow-importance-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(20, 68, 67, 0.15);
+        }
+
+        .cashflow-importance-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 20px;
+        }
+
+        .cashflow-importance-card h4 {
+            font-family: var(--heading-font-family);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--headings-color);
+            margin-bottom: 12px;
+        }
+
+        .cashflow-importance-card p {
+            font-size: 15px;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        /* Components Section */
+        .cashflow-components-section {
+            background: white;
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+
+        .cashflow-components-wrapper {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .cashflow-components-visual {
+            position: relative;
+            height: 500px;
+            background: var(--gradient-2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cashflow-components-visual::before {
+            content: 'Income & Expense Flow';
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .cashflow-components-content h2 {
+            font-family: var(--heading-font-family);
+            font-size: 42px;
+            font-weight: 600;
+            color: var(--headings-color);
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .cashflow-component-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .cashflow-component-item {
+            display: flex;
+            gap: 20px;
+            padding: 25px;
+            background: var(--theme-color-light);
+            border-radius: 12px;
+            border-left: 4px solid var(--theme-color1);
+            transition: all 0.3s ease;
+        }
+
+        .cashflow-component-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(20, 68, 67, 0.1);
+        }
+
+        .cashflow-component-number {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .cashflow-component-text h5 {
+            font-family: var(--heading-font-family);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--headings-color);
+            margin-bottom: 8px;
+        }
+
+        .cashflow-component-text p {
+            font-size: 14px;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        /* Ratios Section */
+        .cashflow-ratios-section {
+            background: var(--theme-color-light);
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+        }
+
+        .cashflow-ratios-title {
+            font-family: var(--heading-font-family);
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--headings-color);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .cashflow-ratios-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .cashflow-ratio-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(20, 68, 67, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .cashflow-ratio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(20, 68, 67, 0.15);
+        }
+
+        .cashflow-ratio-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .cashflow-ratio-name {
+            font-family: var(--heading-font-family);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--headings-color);
+        }
+
+        .cashflow-ratio-badge {
+            background: var(--gradient-1);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .cashflow-ratio-formula {
+            background: var(--theme-color-light);
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: var(--theme-color5);
+            margin-bottom: 15px;
+        }
+
+        .cashflow-ratio-description {
+            font-size: 15px;
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .cashflow-ratio-benchmark {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--theme-color7);
+            font-weight: 600;
+        }
+
+        .cashflow-ratio-benchmark::before {
+            content: '🎯';
+            font-size: 18px;
+        }
+
+        /* Benefits Section */
+        .cashflow-benefits-section {
+            margin-bottom: 60px;
+        }
+
+        .cashflow-benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .cashflow-benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid var(--theme-color-light);
+            transition: all 0.3s ease;
+        }
+
+        .cashflow-benefit-card:hover {
+            border-color: var(--theme-color1);
+            box-shadow: 0 10px 30px rgba(20, 68, 67, 0.1);
+        }
+
+        .cashflow-benefit-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .cashflow-benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .cashflow-benefit-card h5 {
+            font-family: var(--heading-font-family);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--headings-color);
+        }
+
+        .cashflow-benefit-card p {
+            font-size: 15px;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cashflow-cta-section {
+            background: var(--gradient-1);
+            padding: 60px 50px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+        }
+
+        .cashflow-cta-title {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .cashflow-cta-description {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cashflow-cta-button {
+            display: inline-block;
+            background: var(--theme-color2);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .cashflow-cta-button:hover {
+            background: var(--theme-color8);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sidebar Styles */
+        .cashflow-sidebar {
+            position: sticky;
+            top: 20px;
+        }
+
+        .cashflow-sidebar-widget {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .cashflow-sidebar-title {
+            background: var(--gradient-1);
+            color: white;
+            padding: 20px 25px;
+            font-family: var(--heading-font-family);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .cashflow-services-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cashflow-services-list li {
+            border-bottom: 1px solid var(--theme-color-light);
+        }
+
+        .cashflow-services-list li:last-child {
+            border-bottom: none;
+        }
+
+        .cashflow-services-list a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 25px;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cashflow-services-list a:hover {
+            background: var(--theme-color-light);
+            color: var(--theme-color7);
+            padding-left: 30px;
+        }
+
+        .cashflow-services-list li.current a {
+            background: var(--theme-color-light);
+            color: var(--theme-color7);
+            font-weight: 600;
+        }
+
+        .cashflow-services-list i {
+            color: var(--theme-color7);
+        }
+
+        .cashflow-contact-widget {
+            padding: 25px;
+        }
+
+        .cashflow-contact-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cashflow-contact-list li {
+            margin-bottom: 15px;
+            color: var(--text-color);
+            font-size: 15px;
+        }
+
+        .cashflow-contact-list a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .cashflow-contact-list a:hover {
+            color: var(--theme-color7);
+        }
+
+        .cashflow-form-widget {
+            padding: 25px;
+        }
+
+        .cashflow-form-group {
+            margin-bottom: 20px;
+        }
+
+        .cashflow-form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--theme-color-light);
+            border-radius: 8px;
+            font-family: var(--body-font-family);
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .cashflow-form-control:focus {
+            outline: none;
+            border-color: var(--theme-color7);
+        }
+
+        .cashflow-form-button {
+            width: 100%;
+            background: var(--gradient-1);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cashflow-form-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(20, 68, 67, 0.2);
+        }
+
+        @media (max-width: 1024px) {
+            .cashflow-main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cashflow-hero-content-grid,
+            .cashflow-components-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .cashflow-importance-grid,
+            .cashflow-ratios-grid,
+            .cashflow-benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cashflow-sidebar {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cashflow-hero-title,
+            .cashflow-section-title {
+                font-size: 36px;
+            }
+
+            .cashflow-hero-visual,
+            .cashflow-components-visual {
+                height: 300px;
+            }
+        }
 </style>
 </head>
 
@@ -182,48 +706,68 @@
 
 	<!-- Main Header-->
 	<header class="main-header header-style-one header-1">
-		<!-- Header Lower -->
-		<div class="header-lower header-lower2 show-header-section">
-			<div class="main-box">
-				<div class="nav-outer">
-					<div class="logo-box">
-						<div class="logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt="" title="planmyfin" style="height: 80px; width: auto;"></a></div>
-					</div>
-					<nav class="nav main-menu">
-						<ul class="navigation">
-							<li class="dropdown"><a href="index-2-dark.html">Home</a></li>
-							<li class="dropdown"><a href="page-about.html">About</a></li>
-							<li class="dropdown current"><a href="page-services.html">Services</a>
-								<ul>
-									<li class="current"><a href="fin-wellness-programme.html">Financial Wellness Programme</a></li>
-									<li><a href="investment-planning.html">Investment Planning</a></li>
-									<li><a href="retirement-planning.html">Retirement Planning</a></li>
-									<li><a href="risk-management.html">Risk Management</a></li>
-									<li><a href="emergency-fund.html">Emergency Fund Planning</a></li>
-									<li><a href="debt-management.html">Debt Management</a></li>
-									<li><a href="cashflow-analysis.html">Cashflow Analysis</a></li>
-									<li><a href="asset-allocation.html">Asset Allocation</a></li>
-									<li><a href="risk-profiling.html">Risk Profiling</a></li>
-									<li><a href="legacy-planning.html">Legacy Planning</a></li>
-									<li><a href="goal-planning.html">Financial Goal Planning</a></li>
-								</ul>
-							</li>
-							<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a></li>
-							<li class="dropdown"><a href="news-grid.html">Blogs</a></li>
-							<li><a href="page-contact.html">Contact</a></li>
-						</ul>
-					</nav>
-					<div class="outer-box">
-						<a href="tel:+919778596947" class="info-btn">
-							<i class="icon fa fa-phone"></i>
-							+91 97785 96947
-						</a>
-						<a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
-						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+	<!-- Header Lower -->
+			<div class="header-lower header-lower2 show-header-section">
+				<!-- Main box -->
+				<div class="main-box">
+
+					<!--Nav Box-->
+					<div class="nav-outer">
+						<div class="logo-box">
+							<div class="logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""
+										title="planmyfin" style="height: 80px; width: auto;"></a></div>
+						</div>
+						<nav class="nav main-menu">
+							<ul class="navigation">
+
+								<li class="dropdown"><a href="index.html">Home</a></li>
+								<li class="dropdown"><a href="page-about.html">About</a></li>
+
+
+								<li class="dropdown"><a href="page-services.html">Services</a>
+									<ul>
+										<!--<li><a href="page-services.html">Our Services</a></li>-->
+										<li><a href="fin-wellness-plan1.html">Financial Wellness Programme</a></li>
+										<li><a href="page-service-details.html">Investment Planning</a></li>
+										<li><a href="page-service-details.html">Retirement Planning</a></li>
+										<li><a href="page-service-details.html">Risk Management & Insurance Planning</a></li>
+										<li><a href="page-service-details.html">Emergency Fund Planning</a></li>
+										<li><a href="page-service-details.html">Debt Management</a></li>
+										<li><a href="page-service-details.html">Cashflow Analysis</a></li>
+										<li><a href="page-service-details.html">Asset Allocation Strategy</a></li>
+										<li><a href="page-service-details.html">Risk Profiling</a></li>										
+										<li><a href="page-service-details.html">Legacy Planning (Estate Planning & Will)</a></li>
+										<li><a href="page-service-details.html">Financial Goal Planning </a></li>
+									</ul>
+								</li>
+								<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a>
+
+								<li class="dropdown"><a href="news-grid.html">Blogs</a>
+								<!--	<ul>
+										<li><a href="news-grid.html">News Grid</a></li>
+										<li><a href="news-details.html">News Details</a></li>
+									</ul>-->
+								</li>
+								<li><a href="page-contact.html">Contact</a></li>
+							</ul>
+						</nav>
+						<!-- Main Menu End-->
+						<div class="outer-box">
+							<a href="tel:+92(8800)9806" class="info-btn">
+								<i class="icon fa fa-phone"></i>
+								+91 97785 96947
+							</a>
+
+							<a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
+
+							<!-- Mobile Nav toggler -->
+							<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+			<!-- End Header Lower -->
+
 
 		<!-- Mobile Menu -->
 		<div class="mobile-menu">
@@ -285,471 +829,490 @@
 				<ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
 					<li><a href="index.html">Home</a></li>
 					<li><a href="page-services.html">Services</a></li>
-					<li>Financial Wellness Programme</li>
+					<li>Cashflow Analysis</li>
 				</ul>
-				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Financial Wellness Programme</h1>
+				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Cashflow Analysis</h1>
 			</div>
 		</div>
 	</section>
 
-	<!-- Services Details -->
-	<section class="services-details section-padding">
-		<div class="auto-container">
-			<div class="row align-items-lg-center g-4">
-				<div class="col-lg-6">
-					<div class="sec-title mb-40">
-						<h6 class="sub-title wow fadeInUp">
-							<span class="triangle triangle1"></span>
-							<span class="triangle triangle2"></span>
-							Comprehensive Financial Coaching
-						</h6>
-						<h2 class="wow fadeInUp" data-wow-delay=".2s">
-							Transform Your Financial Life from <br class="d-none d-lg-block"> Confusion to Conviction
-						</h2>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="project-details__top mt-lg-5">
-						<div class="text mb-40">Essential financial skill is the most important life skill any person should possess. This programme, designed as a one-to-one coaching experience, is created to deliver a complete mindset upgrade—equipping participants with the skills and confidence to take control of their financial lives.</div>
-					</div>
-				</div>
-			</div>
+ <!-- Hero Section -->
+    <section class="cashflow-hero-section">
+        <div class="cashflow-container">
+            <div class="cashflow-hero-content-grid">
+                <div class="cashflow-hero-content">
+                    <span class="cashflow-hero-tag">Financial Intelligence</span>
+                    <h1 class="cashflow-hero-title">
+                        Master Your Money Flow:<br>
+                        <span class="cashflow-hero-highlight">Understanding Cashflow Analysis</span>
+                    </h1>
+                    <p class="cashflow-hero-description">
+                        Cashflow analysis is the foundation of financial wellness. It reveals where your money comes from, 
+                        where it goes, and most importantly—how to optimize it for maximum financial freedom.
+                    </p>
+                    <div class="cashflow-hero-features">
+                        <div class="cashflow-hero-feature">Track income vs expenses accurately</div>
+                        <div class="cashflow-hero-feature">Identify spending patterns and leaks</div>
+                        <div class="cashflow-hero-feature">Optimize savings and investment ratios</div>
+                        <div class="cashflow-hero-feature">Make data-driven financial decisions</div>
+                    </div>
+                </div>
+                <div class="cashflow-hero-visual">
+                    <!-- Placeholder for illustration -->
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<!-- Statistics Section -->
-			<div class="row stats-row mt-5 mb-5">
-				<div class="col-lg-12">
-					<h3 class="text-center mb-4">Why Financial Wellness Matters Today</h3>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-					<div class="fin-stats-box">
-						<h2>57%</h2>
-						<p>of employees are stressed about their finances (PwC 2023)</p>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-					<div class="fin-stats-box">
-						<h2>82%</h2>
-						<p>want help with their personal finances</p>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-					<div class="fin-stats-box">
-						<h2>3-5x</h2>
-						<p>more likely to be distracted at work due to financial stress</p>
-					</div>
-				</div>
-			</div>
+    <!-- Main Content with Sidebar -->
+    <div class="cashflow-page-wrapper">
+        <div class="cashflow-container">
+            <div class="cashflow-main-grid">
+                <!-- Main Content Area -->
+                <div class="cashflow-content-area">
+                    <!-- Importance Section -->
+                    <div class="cashflow-importance-section">
+                        <div class="cashflow-section-header">
+                            <div class="cashflow-section-subtitle">Core Financial Practice</div>
+                            <h2 class="cashflow-section-title">Why Cashflow Analysis is Critical</h2>
+                            <p class="cashflow-section-description">
+                                Understanding your cashflow is like having a financial GPS—it shows you exactly where you are 
+                                and helps you navigate toward your goals
+                            </p>
+                        </div>
 
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="fin-highlight-box wow fadeInUp">
-						<p class="mb-0"><strong>Critical Insight:</strong> Financial stress extends beyond the bank account to key drivers of health and well-being. It affects productivity, engagement, physical health, and overall life satisfaction.</p>
-					</div>
-				</div>
-			</div>
+                        <div class="cashflow-importance-grid">
+                            <div class="cashflow-importance-card">
+                                <div class="cashflow-importance-icon">📊</div>
+                                <h4>Financial Clarity</h4>
+                                <p>Get a crystal-clear picture of your financial health and identify areas for improvement</p>
+                            </div>
 
-			<!-- Main Content -->
-			<div class="row">
-				<div class="col-xl-8 col-lg-8">
-					<div class="services-details__content">
-						
-						<!-- Quote Section -->
-						<div class="fin-quote-box wow fadeInUp">
-							"Connecting the dots of your Reality with your Purpose"
-						</div>
+                            <div class="cashflow-importance-card">
+                                <div class="cashflow-importance-icon">🎯</div>
+                                <h4>Goal Achievement</h4>
+                                <p>Align your spending with your priorities to reach financial goals faster</p>
+                            </div>
 
-						<!-- Expected Outcomes -->
-						<h3 class="mb-4">The Expected Outcome of This Programme</h3>
-						<p class="mb-4">This one-to-one coaching experience delivers a complete mindset upgrade—equipping you with the skills and confidence to take control of your financial life. The key outcomes expected from this programme are as follows:</p>
+                            <div class="cashflow-importance-card">
+                                <div class="cashflow-importance-icon">🛡️</div>
+                                <h4>Risk Prevention</h4>
+                                <p>Spot potential financial problems before they become emergencies</p>
+                            </div>
 
-						<div class="row g-4">
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Crafting Your Own Financial Plan</h5>
-									<p>You would be empowered to design & implement a personalized plan for your financial wellness</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Avoiding Costly Financial Mistakes</h5>
-									<p>You would gain insights that protect you from errors & blunders many make unknowingly</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".4s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Freedom from Product-Centric Advice</h5>
-									<p>You would learn to choose the best products suitable to you and staying insulated from biased & product-driven financial suggestions</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".5s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Clarity in Financial Decisions</h5>
-									<p>You would gain a clear direction and deeper meaning in every financial choice you make</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".6s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Overcome Random Investments</h5>
-									<p>By being able to replace scattered, impulsive investments with structured, purposeful planning</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".7s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Achieve Your Financial Goals</h5>
-									<p>Through a realistic, practical path to reach your short- and long-term financial aspirations</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".8s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Experience A Holistic Approach to Wealth</h5>
-									<p>You would be able to experience complete financial well-being, not just piecemeal solutions</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay=".9s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Master the Most Important Life Skill</h5>
-									<p>Learn how to effectively manage your financial life, skill impacting every stage of your journey</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay="1s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Transform from Confusion to Conviction</h5>
-									<p>You would be able to move from financial stress & uncertainty to conviction & peace of mind</p>
-								</div>
-							</div>
-							<div class="col-md-6 wow fadeInUp" data-wow-delay="1.1s">
-								<div class="fin-outcome-box">
-									<h5><i class="fal fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Experiencing Financial Freedom</h5>
-									<p>The programme follows a scientific, step-by-step path that equips you to make informed decisions—ultimately leading you to the most powerful outcome</p>
-								</div>
-							</div>
-						</div>
+                            <div class="cashflow-importance-card">
+                                <div class="cashflow-importance-icon">💡</div>
+                                <h4>Smart Decisions</h4>
+                                <p>Make informed choices about spending, saving, and investing based on real data</p>
+                            </div>
 
-						<!-- Key Focus Areas -->
-						<div class="mt-5 mb-5">
-							<h3 class="mb-4">Key Focus Areas</h3>
-							<p class="mb-4">Our comprehensive programme covers every critical aspect of your financial life:</p>
-							<div class="text-center">
-								<span class="fin-focus-badge">Risk Management</span>
-								<span class="fin-focus-badge">Emergency Fund</span>
-								<span class="fin-focus-badge">Retirement Planning</span>
-								<span class="fin-focus-badge">Financial Goal Planning</span>
-								<span class="fin-focus-badge">Risk Profiling</span>
-								<span class="fin-focus-badge">Asset Allocation</span>
-								<span class="fin-focus-badge">Investment Planning</span>
-								<span class="fin-focus-badge">Cashflow Analysis</span>
-								<span class="fin-focus-badge">Debt Management</span>
-								<span class="fin-focus-badge">Tax Planning</span>
-								<span class="fin-focus-badge">Legacy Planning</span>
-							</div>
-						</div>
+                            <div class="cashflow-importance-card">
+                                <div class="cashflow-importance-icon">📈</div>
+                                <h4>Wealth Building</h4>
+                                <p>Identify opportunities to increase savings and accelerate wealth accumulation</p>
+                            </div>
 
-						<!-- Implementation Options -->
-						<h3 class="mb-4">Implementation Options</h3>
-						<div class="row">
-							<div class="col-md-4 wow fadeInUp" data-wow-delay=".2s">
-								<div class="fin-implementation-card">
-									<i class="lnr-icon-users"></i>
-									<h4>Seminars and Workshops</h4>
-									<p>Group sessions for organizations and teams</p>
-								</div>
-							</div>
-							<div class="col-md-4 wow fadeInUp" data-wow-delay=".4s">
-								<div class="fin-implementation-card">
-									<i class="lnr-icon-user"></i>
-									<h4>One-to-One Consultations</h4>
-									<p>Personalized coaching sessions tailored to you</p>
-								</div>
-							</div>
-							<div class="col-md-4 wow fadeInUp" data-wow-delay=".6s">
-								<div class="fin-implementation-card">
-									<i class="lnr-icon-file-add"></i>
-									<h4>Personalized Financial Plan</h4>
-									<p>Complete wellness plan preparation for employees</p>
-								</div>
-							</div>
-						</div>
+                            <div class="cashflow-importance-card">
+                                <div class="cashflow-importance-icon">⚖️</div>
+                                <h4>Balance & Control</h4>
+                                <p>Maintain healthy balance between lifestyle today and security tomorrow</p>
+                            </div>
+                        </div>
+                    </div>
 
-						<!-- Benefits to Organizations -->
-						<div class="mt-5">
-							<h3 class="mb-4">Benefits to Organizations</h3>
-							<div class="row g-4">
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".2s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-chart-bars"></i>
-										</div>
-										<h5>Improved Employee Productivity</h5>
-										<p>Financial wellness programs minimize personal financial distractions, enhancing productivity as a result of improved financial decisions</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".3s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-heart"></i>
-										</div>
-										<h5>Reduce Workplace Stress</h5>
-										<p>Minimize financial stress affecting physical health and potentially reduce healthcare costs for employers</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".4s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-calendar-full"></i>
-										</div>
-										<h5>Reduce Absenteeism</h5>
-										<p>Decrease the need for employees to miss work as they are empowered with better management of their finances</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".5s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-users2"></i>
-										</div>
-										<h5>Employee Retention & Commitment</h5>
-										<p>Programs that help employees build stable financial lives increase their tenure and loyalty to the company</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".6s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-star"></i>
-										</div>
-										<h5>Enhance Employee Recruiting</h5>
-										<p>Make your company more attractive to potential employees, particularly younger generations who value such support</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="fin-benefit-card wow fadeInUp" data-wow-delay=".7s">
-										<div class="fin-benefit-icon">
-											<i class="lnr-icon-apartment"></i>
-										</div>
-										<h5>Caring & Inclusive Culture</h5>
-										<p>Contribute to a caring company culture by empowering all employees to improve their financial well-being</p>
-									</div>
-								</div>
-							</div>
-						</div>
+                    <!-- Components Section -->
+                    <div class="cashflow-components-section">
+                        <div class="cashflow-components-wrapper">
+                            <div class="cashflow-components-visual">
+                                <!-- Placeholder for illustration -->
+                            </div>
 
-						<!-- FAQ Section -->
-						<div class="innerpage mt-5">
-							<h3 class="mb-4">Frequently Asked Questions</h3>
-							<div class="faq-content-1">
-								<ul class="accordion-box">
-									<li class="accordion block active-block wow fadeInUp">
-										<div class="acc-btn">Who can benefit from the Financial Wellness Programme?
-											<div class="icon fa fa-plus"></div>
-										</div>
-										<div class="acc-content current">
-											<div class="content">
-												<div class="text">
-													This programme is designed for individuals at any stage of their financial journey—whether you're just starting your career, planning for major life goals, approaching retirement, or running a business. Organizations can also implement this for their employees to improve productivity and reduce financial stress.
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="accordion block wow fadeInUp" data-wow-delay=".2s">
-										<div class="acc-btn">What makes this programme different from regular financial advice?
-											<div class="icon fa fa-plus"></div>
-										</div>
-										<div class="acc-content">
-											<div class="content">
-												<div class="text">
-													Unlike product-centric financial advice, our programme focuses on empowering YOU with the skills to manage your own financial life. We provide objective, trustworthy resources that aren't driven by product sales. You'll learn to craft your own financial plan rather than just following recommendations.
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="accordion block wow fadeInUp" data-wow-delay=".4s">
-										<div class="acc-btn">How long does the programme take?
-											<div class="icon fa fa-plus"></div>
-										</div>
-										<div class="acc-content">
-											<div class="content">
-												<div class="text">
-													The programme is customized based on your needs. It can range from intensive one-to-one consultations over a few sessions to ongoing coaching relationships. For organizations, we offer flexible formats including workshops, seminars, and comprehensive employee wellness plans.
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="accordion block wow fadeInUp" data-wow-delay=".6s">
-										<div class="acc-btn">Do I need to have financial knowledge before starting?
-											<div class="icon fa fa-plus"></div>
-										</div>
-										<div class="acc-content">
-											<div class="content">
-												<div class="text">
-													No prior financial knowledge is required. The programme is designed to meet you where you are—whether you're a complete beginner or have some financial experience. We build your knowledge systematically, ensuring you understand each concept before moving forward.
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
+                            <div class="cashflow-components-content">
+                                <h2>Key Components of Cashflow Analysis</h2>
+                                
+                                <div class="cashflow-component-list">
+                                    <div class="cashflow-component-item">
+                                        <div class="cashflow-component-number">1</div>
+                                        <div class="cashflow-component-text">
+                                            <h5>Income Streams</h5>
+                                            <p>Tracking all sources of income including salary, business income, rental income, and passive income streams</p>
+                                        </div>
+                                    </div>
 
-					</div>
-				</div>
+                                    <div class="cashflow-component-item">
+                                        <div class="cashflow-component-number">2</div>
+                                        <div class="cashflow-component-text">
+                                            <h5>Fixed Expenses</h5>
+                                            <p>Regular, predictable costs like rent/EMI, insurance premiums, subscriptions, and loan payments</p>
+                                        </div>
+                                    </div>
 
-				<!-- Sidebar -->
-				<div class="col-lg-4">
-					<div class="service-sidebar mt-5 mt-lg-0">
-						<div class="sidebar-widget service-sidebar-single">
-							<div class="sidebar-service-list mb-30">
-								<h4 class="title">All Services</h4>
-								<ul>
-									<li class="current"><a href="fin-wellness-programme.html"><i class="far fa-arrow-right"></i><span>Financial Wellness Programme</span></a></li>
-									<li><a href="investment-planning.html"><i class="far fa-arrow-right"></i><span>Investment Planning</span></a></li>
-									<li><a href="retirement-planning.html"><i class="far fa-arrow-right"></i><span>Retirement Planning</span></a></li>
-									<li><a href="risk-management.html"><i class="far fa-arrow-right"></i><span>Risk Management</span></a></li>
-									<li><a href="emergency-fund.html"><i class="far fa-arrow-right"></i><span>Emergency Fund Planning</span></a></li>
-									<li><a href="debt-management.html"><i class="far fa-arrow-right"></i><span>Debt Management</span></a></li>
-									<li><a href="cashflow-analysis.html"><i class="far fa-arrow-right"></i><span>Cashflow Analysis</span></a></li>
-									<li><a href="asset-allocation.html"><i class="far fa-arrow-right"></i><span>Asset Allocation</span></a></li>
-									<li><a href="risk-profiling.html"><i class="far fa-arrow-right"></i><span>Risk Profiling</span></a></li>
-									<li><a href="legacy-planning.html"><i class="far fa-arrow-right"></i><span>Legacy Planning</span></a></li>
-									<li><a href="goal-planning.html"><i class="far fa-arrow-right"></i><span>Financial Goal Planning</span></a></li>
-								</ul>
-							</div>
-							<div class="sidebar-service-list mb-30">
-								<h4 class="title">Contact Us</h4>
-								<ul class="address">
-									<li>Bengaluru, Karnataka, IN</li>
-									<li><a href="mailto:info@planmyfin.com">info@planmyfin.com</a></li>
-									<li><a href="tel:+919778596947">+91 97785 96947</a></li>
-								</ul>
-							</div>
-							<div class="sidebar-service-list">
-								<h4 class="title">Get In Touch</h4>
-								<form action="#0">
-									<div class="row">
-										<div class="col-sm-12">
-											<div class="mb-20">
-												<input class="form-control" type="text" placeholder="Your Name">
-											</div>
-										</div>
-										<div class="col-sm-12">
-											<div class="mb-20">
-												<input class="form-control" type="email" placeholder="Email Address">
-											</div>
-										</div>
-										<div class="col-sm-12">
-											<div class="mb-20">
-												<textarea class="form-control" name="message" id="message" rows="5" placeholder="Write a Message"></textarea>
-												<button class="theme-btn btn-style-one rounded-1 mt-30">Send Message</button>
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                                    <div class="cashflow-component-item">
+                                        <div class="cashflow-component-number">3</div>
+                                        <div class="cashflow-component-text">
+                                            <h5>Variable Expenses</h5>
+                                            <p>Fluctuating costs such as groceries, utilities, entertainment, and discretionary spending</p>
+                                        </div>
+                                    </div>
 
-	<!-- Footer Section Start -->
-	<footer class="footer-section-1 fix footer-bg bg-cover" style="background-image: url(images/home-1/footer-shape.png);">
-		<span class="circle-shape"></span>
-		<span class="circle-shape-2"></span>
-		<div class="auto-container">
-			<div class="footer-newsletter-wrapper">
-				<div class="footer-newsletter-left wow fadeInUp" data-wow-delay=".3s">
-					<div class="icon">
-						<img src="images/home-1/email.png" alt="img">
-					</div>
-					<h3 class="text-white font-weight-700 font-size-28">
-						subscribe to <br>
-						newsletter
-					</h3>
-				</div>
-				<form action="#" class="wow fadeInUp" data-wow-delay=".5s">
-					<div class="form-clt">
-						<input type="text" name="email" id="email2" placeholder="Your email address">
-						<button class="arrow-icon" type="submit">
-							<i class="lnr-icon-arrow-right"></i>
-						</button>
-					</div>
-				</form>
-			</div>
-			<div class="footer-widget-wrapper">
-				<div class="row justify-content-between">
-					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<a href="index.html" class="footer-logo">
-									<img src="images/white-logo.png" alt="PlanMyFin">
-								</a>
-							</div>
-							<div class="footer-content">
-								<p>
-									Empowering everyone with the knowledge and tools for financial wellness and freedom
-								</p>
-								<div class="social-icon">
-									<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-									<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-									<a href="#"><i class="fa-brands fa-instagram"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<h3 class="font-size-24 text-white font-weight-500">Company</h3>
-							</div>
-							<ul class="user-links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="page-about.html">About us</a></li>
-								<li><a href="page-services.html">Services</a></li>
-								<li><a href="page-contact.html">Contact Us</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<h3 class="font-size-24 text-white font-weight-500">Services</h3>
-							</div>
-							<ul class="user-links">
-								<li><a href="fin-wellness-programme.html">Financial Wellness</a></li>
-								<li><a href="investment-planning.html">Investment Planning</a></li>
-								<li><a href="retirement-planning.html">Retirement Planning</a></li>
-								<li><a href="risk-management.html">Risk Management</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
-						<div class="footer-widget-items mt-30">
-							<div class="widget-title mb-25">
-								<h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
-							</div>
-							<ul class="contact-list">
-								<li>
-									<i class="lnr-icon-phone-handset"></i>
-									<p><a href="tel:+919778596947">+91 97785 96947</a></p>
-								</li>
-								<li>
-									<i class="lnr-icon-envelope"></i>
-									<p><a href="mailto:info@planmyfin.com">info@planmyfin.com</a></p>
-								</li>
-								<li>
-									<i class="lnr-icon-map-marker"></i>
-									<p>Bengaluru, Karnataka, IN</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer-bottom">
+                                    <div class="cashflow-component-item">
+                                        <div class="cashflow-component-number">4</div>
+                                        <div class="cashflow-component-text">
+                                            <h5>Savings & Investments</h5>
+                                            <p>Monthly contributions to emergency funds, retirement accounts, and investment portfolios</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="cashflow-component-item">
+                                        <div class="cashflow-component-number">5</div>
+                                        <div class="cashflow-component-text">
+                                            <h5>Net Cashflow</h5>
+                                            <p>The difference between total income and total expenses—your financial surplus or deficit</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ratios Section -->
+                    <div class="cashflow-ratios-section">
+                        <h2 class="cashflow-ratios-title">Important Cashflow Ratios</h2>
+                        
+                        <div class="cashflow-ratios-grid">
+                            <div class="cashflow-ratio-card">
+                                <div class="cashflow-ratio-header">
+                                    <h4 class="cashflow-ratio-name">Savings Ratio</h4>
+                                    <span class="cashflow-ratio-badge">Essential</span>
+                                </div>
+                                <div class="cashflow-ratio-formula">
+                                    (Monthly Savings ÷ Monthly Income) × 100
+                                </div>
+                                <p class="cashflow-ratio-description">
+                                    Measures what percentage of your income you're saving. This ratio directly impacts 
+                                    your ability to achieve financial goals and build wealth.
+                                </p>
+                                <div class="cashflow-ratio-benchmark">
+                                    Ideal: 20-30% or higher
+                                </div>
+                            </div>
+
+                            <div class="cashflow-ratio-card">
+                                <div class="cashflow-ratio-header">
+                                    <h4 class="cashflow-ratio-name">EMI to Income Ratio</h4>
+                                    <span class="cashflow-ratio-badge">Critical</span>
+                                </div>
+                                <div class="cashflow-ratio-formula">
+                                    (Total EMI ÷ Monthly Income) × 100
+                                </div>
+                                <p class="cashflow-ratio-description">
+                                    Shows how much of your income goes toward debt repayment. High ratios indicate 
+                                    excessive debt burden and limited financial flexibility.
+                                </p>
+                                <div class="cashflow-ratio-benchmark">
+                                    Ideal: Below 40%
+                                </div>
+                            </div>
+
+                            <div class="cashflow-ratio-card">
+                                <div class="cashflow-ratio-header">
+                                    <h4 class="cashflow-ratio-name">Expense Ratio</h4>
+                                    <span class="cashflow-ratio-badge">Important</span>
+                                </div>
+                                <div class="cashflow-ratio-formula">
+                                    (Monthly Expenses ÷ Monthly Income) × 100
+                                </div>
+                                <p class="cashflow-ratio-description">
+                                    Indicates what portion of income is spent on expenses. Lower ratios mean more 
+                                    money available for savings and investments.
+                                </p>
+                                <div class="cashflow-ratio-benchmark">
+                                    Ideal: 50-70%
+                                </div>
+                            </div>
+
+                            <div class="cashflow-ratio-card">
+                                <div class="cashflow-ratio-header">
+                                    <h4 class="cashflow-ratio-name">Liquidity Ratio</h4>
+                                    <span class="cashflow-ratio-badge">Security</span>
+                                </div>
+                                <div class="cashflow-ratio-formula">
+                                    (Liquid Assets ÷ Monthly Expenses)
+                                </div>
+                                <p class="cashflow-ratio-description">
+                                    Measures how many months of expenses you can cover with your liquid assets. 
+                                    Higher ratios provide better financial cushion for emergencies.
+                                </p>
+                                <div class="cashflow-ratio-benchmark">
+                                    Ideal: 3-6 months
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benefits Section -->
+                    <div class="cashflow-benefits-section">
+                        <div class="cashflow-section-header">
+                            <div class="cashflow-section-subtitle">Value Proposition</div>
+                            <h2 class="cashflow-section-title">Benefits of Regular Cashflow Analysis</h2>
+                        </div>
+
+                        <div class="cashflow-benefits-grid">
+                            <div class="cashflow-benefit-card">
+                                <div class="cashflow-benefit-header">
+                                    <div class="cashflow-benefit-icon">💰</div>
+                                    <h5>Identify Spending Leaks</h5>
+                                </div>
+                                <p>
+                                    Discover where money is slipping away unnoticed and plug those financial leaks 
+                                    to boost your savings automatically.
+                                </p>
+                            </div>
+
+                            <div class="cashflow-benefit-card">
+                                <div class="cashflow-benefit-header">
+                                    <div class="cashflow-benefit-icon">🎯</div>
+                                    <h5>Better Budget Planning</h5>
+                                </div>
+                                <p>
+                                    Create realistic budgets based on actual spending patterns rather than 
+                                    guesswork, leading to more sustainable financial habits.
+                                </p>
+                            </div>
+
+                            <div class="cashflow-benefit-card">
+                                <div class="cashflow-benefit-header">
+                                    <div class="cashflow-benefit-icon">📈</div>
+                                    <h5>Investment Optimization</h5>
+                                </div>
+                                <p>
+                                    Understand exactly how much you can invest monthly without straining your 
+                                    finances or compromising lifestyle needs.
+                                </p>
+                            </div>
+
+                            <div class="cashflow-benefit-card">
+                                <div class="cashflow-benefit-header">
+                                    <div class="cashflow-benefit-icon">🚨</div>
+                                    <h5>Early Warning System</h5>
+                                </div>
+                                <p>
+                                    Detect negative trends early before they become serious problems, allowing 
+                                    you to course-correct quickly.
+                                </p>
+                            </div>
+
+                            <div class="cashflow-benefit-card">
+                                <div class="cashflow-benefit-header">
+                                    <div class="cashflow-benefit-icon">✅</div>
+                                    <h5>Goal Progress Tracking</h5>
+                                </div>
+                                <p>
+                                    Monitor whether your current savings rate is sufficient to achieve your 
+                                    financial goals within desired timeframes.
+                                </p>
+                            </div>
+
+                            <div class="cashflow-benefit-card">
+                                <div class="cashflow-benefit-header">
+                                    <div class="cashflow-benefit-icon">🧘</div>
+                                    <h5>Reduced Financial Stress</h5>
+                                </div>
+                                <p>
+                                    Gain peace of mind knowing exactly where you stand financially and having 
+                                    a clear plan for improvement.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="cashflow-cta-section">
+                        <h2 class="cashflow-cta-title">Ready to Master Your Cashflow?</h2>
+                        <p class="cashflow-cta-description">
+                            Let's analyze your income and expenses to create a customized plan for financial optimization
+                        </p>
+                        <a href="#contact" class="cashflow-cta-button">Start Your Cashflow Analysis</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="cashflow-sidebar">
+                    <!-- Services List Widget -->
+                    <div class="cashflow-sidebar-widget">
+                        <h4 class="cashflow-sidebar-title">All Services</h4>
+                        <ul class="cashflow-services-list">
+                            <li><a href="fin-wellness-programme.html">
+                                <span>Financial Wellness Programme</span>
+                                <i>→</i>
+                            </a></li>
+                            <li><a href="investment-planning.html">
+                                <span>Investment Planning</span>
+                                <i>→</i>
+                            </a></li>
+                            <li><a href="retirement-planning.html">
+                                <span>Retirement Planning</span>
+                                <i>→</i>
+                            </a></li>
+                            <li><a href="risk-management.html">
+                                <span>Risk Management</span>
+                                <i>→</i>
+                            </a></li>
+                            <li><a href="emergency-fund.html">
+                                <span>Emergency Fund Planning</span>
+                                <i>→</i>
+                            </a></li>
+                            <li><a href="debt-management.html">
+                                <span>Debt Management</span>
+                                <i>→</i>
+                            </a></li>
+                            <li class="current"><a href="cashflow-analysis.html">
+                                <span>Cashflow Analysis</span>
+                                <i>→</i>
+                            </a></li>
+                            <li><a href="asset-allocation.html">
+                                <span>Asset Allocation</span>
+                                <i>→</i>
+                            </a></li>
+                            <li><a href="risk-profiling.html">
+                                <span>Risk Profiling</span>
+                                <i>→</i>
+                            </a></li>
+                            <li><a href="legacy-planning.html">
+                                <span>Legacy Planning</span>
+                                <i>→</i>
+                            </a></li>
+                            <li><a href="goal-planning.html">
+                                <span>Financial Goal Planning</span>
+                                <i>→</i>
+                            </a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Widget -->
+                    <div class="cashflow-sidebar-widget">
+                        <h4 class="cashflow-sidebar-title">Contact Us</h4>
+                        <div class="cashflow-contact-widget">
+                            <ul class="cashflow-contact-list">
+                                <li>📍 Bengaluru, Karnataka, IN</li>
+                                <li>✉️ <a href="mailto:info@planmyfin.com">info@planmyfin.com</a></li>
+                                <li>📞 <a href="tel:+919778596947">+91 97785 96947</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Widget -->
+                    <div class="cashflow-sidebar-widget">
+                        <h4 class="cashflow-sidebar-title">Get In Touch</h4>
+                        <div class="cashflow-form-widget">
+                            <form action="#" method="post">
+                                <div class="cashflow-form-group">
+                                    <input type="text" class="cashflow-form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="cashflow-form-group">
+                                    <input type="email" class="cashflow-form-control" placeholder="Email Address" required>
+                                </div>
+                                <div class="cashflow-form-group">
+                                    <textarea class="cashflow-form-control" rows="5" placeholder="Write a Message" required></textarea>
+                                </div>
+                                <button type="submit" class="cashflow-form-button">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+<!-- Footer Section Start -->
+		<footer class="footer-section-1 fix footer-bg bg-cover"
+			style="background-image: url(images/home-1/footer-shape.png)">
+			<span class="circle-shape"></span>
+			<span class="circle-shape-2"></span>
 			<div class="auto-container">
-				<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved</p>
+				
+				<div class="footer-widget-wrapper">
+					<div class="row justify-content-between">
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<a href="index.html" class="footer-logo">
+										<img src="/images/planmyfin-logo.png" alt="img"  style="height: 80px; width: auto;" />
+									</a>
+								</div>
+								<div class="footer-content">
+									<p>PlanMyFin is a financial wellness platform helping individuals and businesses achieve long-term stability through personalized planning.</p>
+									
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Company</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="page-about.html">About us</a></li>
+									<li><a href="page-services.html">Blogs</a></li>
+									<li><a href="page-contact.html">Contact Us</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Main Services</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Financial Advising</a></li>
+									<li><a href="page-about.html">Investment Planning</a></li>
+									<li><a href="page-services.html">Risk Profiling</a></li>
+									<li><a href="page-contact.html">Retirement Planning</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
+								</div>
+								<ul class="contact-list">
+									<li>
+										<i class="lnr-icon-phone-handset"></i>
+										<p><a href="tel:+1050055900">+91 97785 96947</a></p>
+									</li>
+									<li>
+										<i class="lnr-icon-envelope"></i>
+										<p><a
+												href="https://html.kodesolution.com/cdn-cgi/l/email-protection#a3c5cacdc0cfcadbe3cbc6cfd38dd6d0"><span
+													class="__cf_email__"
+													data-cfemail="ce88a7a0ada2a7b68ea6aba2bee0bbbd">info@planmyfin.com</span></a>
+										</p>
+									</li>
+									<li>
+										<div class="social-icon">
+										<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+										<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+										<a href="#"><i class="fa-brands fa-instagram"></i></a>
+									</div>
+										<!--<i class="lnr-icon-map-marker"></i>-->
+										<!--<p>44 Danwers, NY City, USA, 70-102</p>-->
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-	</footer>
+			<div class="footer-bottom">
+				<div class="auto-container">
+					<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved. Designed & Developed by Trivlogic.</p>
+				</div>
+			</div>
+		</footer>
+
+
 
 </div>
 
