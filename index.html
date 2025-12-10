@@ -13,6 +13,8 @@
 	<link href="css/style-dark.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+	 <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+
 	<link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
 	<link rel="icon" href="images/favicon.svg" type="image/x-icon">
 
@@ -32,6 +34,263 @@
 			margin-bottom: 25px;
 			transition: all 0.3s ease;
 		}
+
+		     /* Floating Calculator Buttons */
+        .calculator-float-buttons {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .calc-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(9, 150, 150, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calc-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(9, 150, 150, 0.5);
+        }
+
+        .calc-btn-tooltip {
+            position: absolute;
+            left: 75px;
+            background: #1a1a1a;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            white-space: nowrap;
+            font-size: 14px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .calc-btn:hover .calc-btn-tooltip {
+            opacity: 1;
+        }
+
+        /* Modal Styles */
+        .calc-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .calc-modal.active {
+            display: flex;
+        }
+
+        .calc-modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .calc-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .calc-modal-close:hover {
+            color: #099696;
+        }
+
+        .calc-modal-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .calc-modal-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .calc-form-group {
+            margin-bottom: 20px;
+        }
+
+        .calc-form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .calc-form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .calc-form-input:focus {
+            outline: none;
+            border-color: #099696;
+        }
+
+        .calc-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .calc-btn-calculate {
+            width: 100%;
+            padding: 15px;
+            background: var(--gradient-1);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .calc-btn-calculate:hover {
+            transform: translateY(-2px);
+        }
+
+        .calc-result-box {
+            margin-top: 30px;
+            padding: 25px;
+            background: var(--gradient-1);
+            border-radius: 15px;
+            color: white;
+            display: none;
+        }
+
+        .calc-result-box.show {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .calc-result-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .calc-result-value {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .calc-result-details {
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        /* Budget Tracker Specific */
+        .budget-summary {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .budget-summary-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .budget-summary-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .budget-summary-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #099696;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .calculator-float-buttons {
+                left: 10px;
+            }
+
+            .calc-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .calc-modal-content {
+                padding: 25px;
+            }
+
+            .calc-form-row {
+                grid-template-columns: 1fr;
+            }
+        }
 	</style>
 
 </head>
@@ -521,7 +780,7 @@
 											viewBox="0 0 50 50" fill="none">
 											<path fill-rule="evenodd" clip-rule="evenodd"
 												d="M19.782 17.0248C19.7611 16.4269 20.2289 15.9253 20.8268 15.9044L33.0759 15.4767C33.6738 15.4558 34.1754 15.9235 34.1963 16.5215L34.624 28.7705C34.6449 29.3685 34.1772 29.8701 33.5792 29.8909C32.9813 29.9118 32.4797 29.4441 32.4588 28.8461L32.1222 19.2109L18.1442 34.2005C17.7362 34.6381 17.0507 34.662 16.6131 34.254C16.1756 33.8459 16.1516 33.1604 16.5596 32.7228L30.5376 17.7333L20.9025 18.0697C20.3045 18.0906 19.8029 17.6227 19.782 17.0248Z"
-												fill="#C8F169" />
+												fill="#C9A961" />
 										</svg>
 									</span>
 								</a>
@@ -551,7 +810,7 @@
 											viewBox="0 0 50 50" fill="none">
 											<path fill-rule="evenodd" clip-rule="evenodd"
 												d="M19.782 17.0248C19.7611 16.4269 20.2289 15.9253 20.8268 15.9044L33.0759 15.4767C33.6738 15.4558 34.1754 15.9235 34.1963 16.5215L34.624 28.7705C34.6449 29.3685 34.1772 29.8701 33.5792 29.8909C32.9813 29.9118 32.4797 29.4441 32.4588 28.8461L32.1222 19.2109L18.1442 34.2005C17.7362 34.6381 17.0507 34.662 16.6131 34.254C16.1756 33.8459 16.1516 33.1604 16.5596 32.7228L30.5376 17.7333L20.9025 18.0697C20.3045 18.0906 19.8029 17.6227 19.782 17.0248Z"
-												fill="#C8F169" />
+												fill="#C9A961" />
 										</svg>
 									</span>
 								</a>
@@ -581,7 +840,7 @@
 											viewBox="0 0 50 50" fill="none">
 											<path fill-rule="evenodd" clip-rule="evenodd"
 												d="M19.782 17.0248C19.7611 16.4269 20.2289 15.9253 20.8268 15.9044L33.0759 15.4767C33.6738 15.4558 34.1754 15.9235 34.1963 16.5215L34.624 28.7705C34.6449 29.3685 34.1772 29.8701 33.5792 29.8909C32.9813 29.9118 32.4797 29.4441 32.4588 28.8461L32.1222 19.2109L18.1442 34.2005C17.7362 34.6381 17.0507 34.662 16.6131 34.254C16.1756 33.8459 16.1516 33.1604 16.5596 32.7228L30.5376 17.7333L20.9025 18.0697C20.3045 18.0906 19.8029 17.6227 19.782 17.0248Z"
-												fill="#C8F169" />
+												fill="#C9A961" />
 										</svg>
 									</span>
 								</a>
@@ -611,7 +870,7 @@
 											viewBox="0 0 50 50" fill="none">
 											<path fill-rule="evenodd" clip-rule="evenodd"
 												d="M19.782 17.0248C19.7611 16.4269 20.2289 15.9253 20.8268 15.9044L33.0759 15.4767C33.6738 15.4558 34.1754 15.9235 34.1963 16.5215L34.624 28.7705C34.6449 29.3685 34.1772 29.8701 33.5792 29.8909C32.9813 29.9118 32.4797 29.4441 32.4588 28.8461L32.1222 19.2109L18.1442 34.2005C17.7362 34.6381 17.0507 34.662 16.6131 34.254C16.1756 33.8459 16.1516 33.1604 16.5596 32.7228L30.5376 17.7333L20.9025 18.0697C20.3045 18.0906 19.8029 17.6227 19.782 17.0248Z"
-												fill="#C8F169" />
+												fill="#C9A961" />
 										</svg>
 									</span>
 								</a>
@@ -640,7 +899,7 @@
 											viewBox="0 0 50 50" fill="none">
 											<path fill-rule="evenodd" clip-rule="evenodd"
 												d="M19.782 17.0248C19.7611 16.4269 20.2289 15.9253 20.8268 15.9044L33.0759 15.4767C33.6738 15.4558 34.1754 15.9235 34.1963 16.5215L34.624 28.7705C34.6449 29.3685 34.1772 29.8701 33.5792 29.8909C32.9813 29.9118 32.4797 29.4441 32.4588 28.8461L32.1222 19.2109L18.1442 34.2005C17.7362 34.6381 17.0507 34.662 16.6131 34.254C16.1756 33.8459 16.1516 33.1604 16.5596 32.7228L30.5376 17.7333L20.9025 18.0697C20.3045 18.0906 19.8029 17.6227 19.782 17.0248Z"
-												fill="#C8F169" />
+												fill="#C9A961" />
 										</svg>
 									</span>
 								</a>
@@ -673,7 +932,7 @@
 											viewBox="0 0 50 50" fill="none">
 											<path fill-rule="evenodd" clip-rule="evenodd"
 												d="M19.782 17.0248C19.7611 16.4269 20.2289 15.9253 20.8268 15.9044L33.0759 15.4767C33.6738 15.4558 34.1754 15.9235 34.1963 16.5215L34.624 28.7705C34.6449 29.3685 34.1772 29.8701 33.5792 29.8909C32.9813 29.9118 32.4797 29.4441 32.4588 28.8461L32.1222 19.2109L18.1442 34.2005C17.7362 34.6381 17.0507 34.662 16.6131 34.254C16.1756 33.8459 16.1516 33.1604 16.5596 32.7228L30.5376 17.7333L20.9025 18.0697C20.3045 18.0906 19.8029 17.6227 19.782 17.0248Z"
-												fill="#C8F169" />
+												fill="#C9A961" />
 										</svg>
 									</span>
 								</a>
@@ -703,7 +962,7 @@
 											viewBox="0 0 50 50" fill="none">
 											<path fill-rule="evenodd" clip-rule="evenodd"
 												d="M19.782 17.0248C19.7611 16.4269 20.2289 15.9253 20.8268 15.9044L33.0759 15.4767C33.6738 15.4558 34.1754 15.9235 34.1963 16.5215L34.624 28.7705C34.6449 29.3685 34.1772 29.8701 33.5792 29.8909C32.9813 29.9118 32.4797 29.4441 32.4588 28.8461L32.1222 19.2109L18.1442 34.2005C17.7362 34.6381 17.0507 34.662 16.6131 34.254C16.1756 33.8459 16.1516 33.1604 16.5596 32.7228L30.5376 17.7333L20.9025 18.0697C20.3045 18.0906 19.8029 17.6227 19.782 17.0248Z"
-												fill="#C8F169" />
+												fill="#C9A961" />
 										</svg>
 									</span>
 								</a>
@@ -734,7 +993,7 @@
 											viewBox="0 0 50 50" fill="none">
 											<path fill-rule="evenodd" clip-rule="evenodd"
 												d="M19.782 17.0248C19.7611 16.4269 20.2289 15.9253 20.8268 15.9044L33.0759 15.4767C33.6738 15.4558 34.1754 15.9235 34.1963 16.5215L34.624 28.7705C34.6449 29.3685 34.1772 29.8701 33.5792 29.8909C32.9813 29.9118 32.4797 29.4441 32.4588 28.8461L32.1222 19.2109L18.1442 34.2005C17.7362 34.6381 17.0507 34.662 16.6131 34.254C16.1756 33.8459 16.1516 33.1604 16.5596 32.7228L30.5376 17.7333L20.9025 18.0697C20.3045 18.0906 19.8029 17.6227 19.782 17.0248Z"
-												fill="#C8F169" />
+												fill="#C9A961" />
 										</svg>
 									</span>
 								</a>
@@ -765,7 +1024,7 @@
 											viewBox="0 0 50 50" fill="none">
 											<path fill-rule="evenodd" clip-rule="evenodd"
 												d="M19.782 17.0248C19.7611 16.4269 20.2289 15.9253 20.8268 15.9044L33.0759 15.4767C33.6738 15.4558 34.1754 15.9235 34.1963 16.5215L34.624 28.7705C34.6449 29.3685 34.1772 29.8701 33.5792 29.8909C32.9813 29.9118 32.4797 29.4441 32.4588 28.8461L32.1222 19.2109L18.1442 34.2005C17.7362 34.6381 17.0507 34.662 16.6131 34.254C16.1756 33.8459 16.1516 33.1604 16.5596 32.7228L30.5376 17.7333L20.9025 18.0697C20.3045 18.0906 19.8029 17.6227 19.782 17.0248Z"
-												fill="#C8F169" />
+												fill="#C9A961" />
 										</svg>
 									</span>
 								</a>
@@ -795,7 +1054,7 @@
 											viewBox="0 0 50 50" fill="none">
 											<path fill-rule="evenodd" clip-rule="evenodd"
 												d="M19.782 17.0248C19.7611 16.4269 20.2289 15.9253 20.8268 15.9044L33.0759 15.4767C33.6738 15.4558 34.1754 15.9235 34.1963 16.5215L34.624 28.7705C34.6449 29.3685 34.1772 29.8701 33.5792 29.8909C32.9813 29.9118 32.4797 29.4441 32.4588 28.8461L32.1222 19.2109L18.1442 34.2005C17.7362 34.6381 17.0507 34.662 16.6131 34.254C16.1756 33.8459 16.1516 33.1604 16.5596 32.7228L30.5376 17.7333L20.9025 18.0697C20.3045 18.0906 19.8029 17.6227 19.782 17.0248Z"
-												fill="#C8F169" />
+												fill="#C9A961" />
 										</svg>
 									</span>
 								</a>
@@ -825,7 +1084,7 @@
 											viewBox="0 0 50 50" fill="none">
 											<path fill-rule="evenodd" clip-rule="evenodd"
 												d="M19.782 17.0248C19.7611 16.4269 20.2289 15.9253 20.8268 15.9044L33.0759 15.4767C33.6738 15.4558 34.1754 15.9235 34.1963 16.5215L34.624 28.7705C34.6449 29.3685 34.1772 29.8701 33.5792 29.8909C32.9813 29.9118 32.4797 29.4441 32.4588 28.8461L32.1222 19.2109L18.1442 34.2005C17.7362 34.6381 17.0507 34.662 16.6131 34.254C16.1756 33.8459 16.1516 33.1604 16.5596 32.7228L30.5376 17.7333L20.9025 18.0697C20.3045 18.0906 19.8029 17.6227 19.782 17.0248Z"
-												fill="#C8F169" />
+												fill="#C9A961" />
 										</svg>
 									</span>
 								</a>
@@ -953,16 +1212,16 @@
 									<img src="images/home-2/testimonial/bg-shape.png" alt="img">
 								</div>
 								<div class="client-1">
-									<img src="images/home-2/testimonial/client-4.png" alt="img">
+									<img src="/images/planmyfin-imgs/home-client1.png" alt="img">
 								</div>
 								<div class="client-2">
-									<img src="images/home-2/testimonial/client-5.png" alt="img">
+									<img src="/images/planmyfin-imgs/home-client2.png" alt="img">
 								</div>
 								<div class="client-3">
-									<img src="images/home-2/testimonial/client-6.png" alt="img">
+									<img src="/images/planmyfin-imgs/home-client3.png" alt="img">
 								</div>
 								<div class="client-4">
-									<img src="images/home-2/testimonial/client-7.png" alt="img">
+									<img src="/images/planmyfin-imgs/home-client4.png" alt="img">
 								</div>
 							</div>
 						</div>
@@ -979,7 +1238,7 @@
 								</div>
 								<div class="client-item">
 									<div class="client-image">
-										<img src="images/home-2/testimonial/client-2.png" alt="img">
+										<img src="/images/planmyfin-imgs/home-client2.png" alt="img">
 									</div>
 									<div class="info-text">
 										<h5>Rajesh Kumar</h5>
@@ -1027,7 +1286,7 @@
 								</div>
 								<div class="client-item">
 									<div class="client-image">
-										<img src="images/home-2/testimonial/client-1.png" alt="img">
+										<img src="/images/planmyfin-imgs/home-client3.png" alt="img">
 									</div>
 									<div class="info-text">
 										<h5>Priya & Sandeep Mehta</h5>
@@ -1075,7 +1334,7 @@
 								</div>
 								<div class="client-item">
 									<div class="client-image">
-										<img src="images/home-2/testimonial/client-2.png" alt="img">
+										<img src="/images/planmyfin-imgs/home-client4.png" alt="img">
 									</div>
 									<div class="info-text">
 										<h5>Anjali Deshmukh</h5>
@@ -1123,7 +1382,7 @@
 								</div>
 								<div class="client-item">
 									<div class="client-image">
-										<img src="images/home-2/testimonial/client-3.png" alt="img">
+										<img src="/images/planmyfin-imgs/home-client1.png" alt="img">
 									</div>
 									<div class="info-text">
 										<h5>Vikram Iyer</h5>
@@ -1398,7 +1657,7 @@
 
 		<!-- Lets Talk banner Section Start -->
 		<section class="lets-talk-banner-section parallaxie  section-padding fix bg-cover"
-			style="background-image: url('images/home-2/feature/banner.jpg');">
+			style="background-image: url('images/planmyfin-imgs/home-cont-sect.jpg');">
 			<div class="blur-shape-1">
 				<img src="images/home-2/feature/blur-shape-1.png" alt="img">
 			</div>
@@ -1410,28 +1669,27 @@
 					<div class="row g-4 align-items-center justify-content-between">
 						<div class="col-lg-8">
 							<div class="lets-talk-banner-content">
-								<h2 class="wow fadeInUp" data-wow-delay=".2s">
-									have a project? let’s talk
+								<h2 class="wow fadeInUp" data-wow-delay=".2s" style="font-size: 3.5em;">
+									Unsure Where Your Money Should Go? <br> let's talk
 								</h2>
 								<p class="wow fadeInUp" data-wow-delay=".4s">
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit sed diam nonummy.Lorem
-									ipsum dolor sit amet, consectetuer adipiscing elit sed diam nonummy.
+									Take control of your financial future with expert guidance tailored to your unique goals. From retirement planning to wealth building, we transform financial confusion into clarity—helping you make informed decisions that secure your family's future.
 								</p>
 								<div class="count-item">
 									<div class="count-box wow fadeInUp" data-wow-delay=".6s">
 										<h2>
-											<span class="count-text" data-speed="3000" data-stop="99">0</span>%
+											<span class="count-text" data-speed="3000" data-stop="100">0</span>%
 										</h2>
 										<span>
-											client satisfaction
+											Objective Advice							
 										</span>
 									</div>
 									<div class="count-box wow fadeInUp" data-wow-delay=".6s">
 										<h2>
-											<span class="count-text" data-speed="3000" data-stop="67">0</span>%
+											<span class="count-text" data-speed="3000" data-stop="98">0</span>%
 										</h2>
 										<span>
-											Product Design
+											Goal Achievement 
 										</span>
 									</div>
 								</div>
@@ -1457,191 +1715,115 @@
 		</section>
 
 		<!-- News Section Start -->
-		<section class="news-secton section-padding fix">
-			<div class="auto-container">
-				<div class="sec-title text-center">
-					<h6 class="sub-title wow fadeInUp">
-						<span class="triangle triangle1"></span>
-						<span class="triangle triangle2"></span>
-						Our Blog
-					</h6>
-					<h2 class="wow fadeInUp" data-wow-delay=".3s">Insights from Latest Blog </h2>
-				</div>
-				<div class="row">
-					<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-						<div class="news-box-items">
-							<div class="news-image">
-								<img src="images/home-1/news/news-01.jpg" alt="img">
-								<img src="images/home-1/news/news-01.jpg" alt="img">
-								<span class="post-box">
-									<span class="date">20</span>
-									<span class="month">March</span>
-								</span>
-							</div>
-							<div class="news-content">
-								<ul class="comments-list">
-									<li>
-										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-											viewBox="0 0 18 18" fill="none">
-											<path opacity="0.5"
-												d="M9 9C10.2426 9 11.25 7.99264 11.25 6.75C11.25 5.50736 10.2426 4.5 9 4.5C7.75736 4.5 6.75 5.50736 6.75 6.75C6.75 7.99264 7.75736 9 9 9Z"
-												stroke="#144443" />
-											<path
-												d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z"
-												stroke="#144443" />
-											<path opacity="0.5"
-												d="M13.4772 15C13.3579 12.8314 12.6939 11.25 9.00029 11.25C5.30678 11.25 4.6428 12.8314 4.52344 15"
-												stroke="#144443" stroke-linecap="round" />
-										</svg>
-										Admin
-									</li>
-									<li>
-										<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
-											viewBox="0 0 23 23" fill="none">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M8.42865 5.05957H14.5696C16.4442 5.07375 17.9525 6.60465 17.9387 8.47921V12.6312C17.9453 13.5316 17.594 14.3977 16.9619 15.039C16.33 15.6802 15.4691 16.0443 14.5687 16.0508H8.42865L5.05869 17.9396V8.47921C5.05207 7.57884 5.40341 6.71274 6.0354 6.07142C6.66741 5.43011 7.52828 5.06613 8.42865 5.05957Z"
-												stroke="#144443" stroke-linecap="round" stroke-linejoin="round" />
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M6.90039 10.5802C6.90039 10.072 7.31229 9.66016 7.82039 9.66016C8.3285 9.66016 8.74039 10.072 8.74039 10.5802C8.74039 11.0883 8.3285 11.5002 7.82039 11.5002C7.5764 11.5002 7.34239 11.4032 7.16985 11.2307C6.99732 11.0582 6.90039 10.8241 6.90039 10.5802Z"
-												stroke="#144443" stroke-linecap="round" stroke-linejoin="round" />
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M10.5801 10.5802C10.5801 10.072 10.992 9.66016 11.5001 9.66016C12.0082 9.66016 12.4201 10.072 12.4201 10.5802C12.4201 11.0883 12.0082 11.5002 11.5001 11.5002C10.992 11.5002 10.5801 11.0883 10.5801 10.5802Z"
-												stroke="#144443" stroke-linecap="round" stroke-linejoin="round" />
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M14.2598 10.5802C14.2598 10.072 14.6716 9.66016 15.1798 9.66016C15.6879 9.66016 16.0998 10.072 16.0998 10.5802C16.0998 11.0883 15.6879 11.5002 15.1798 11.5002C14.6716 11.5002 14.2598 11.0883 14.2598 10.5802Z"
-												stroke="#144443" stroke-linecap="round" stroke-linejoin="round" />
-										</svg>
-										3 Comments
-									</li>
-								</ul>
-								<h3>
-									<a href="news-details.html">Errors with financial
-										consequences in tax ?</a>
-								</h3>
-								<a href="news-details.html" class="link-btn">
-									Learn More
-									<span class="icon"><i class="lnr-icon-arrow-right"></i></span>
-								</a>
-							</div>
-						</div>
+<section class="news-secton section-padding fix">
+	<div class="auto-container">
+		<div class="sec-title text-center">
+			<h6 class="sub-title wow fadeInUp">
+				<span class="triangle triangle1"></span>
+				<span class="triangle triangle2"></span>
+				Our Blog
+			</h6>
+			<h2 class="wow fadeInUp" data-wow-delay=".3s">Insights from Latest Blog</h2>
+		</div>
+		<div class="row">
+			<!-- Blog 1 -->
+			<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+				<div class="news-box-items">
+					<div class="news-image">
+						<img src="images/home-1/news/news-01.jpg" alt="Financial Planning">
+						<img src="images/home-1/news/news-01.jpg" alt="Financial Planning">
+						<span class="post-box">
+							<span class="date">05</span>
+							<span class="month">Dec</span>
+						</span>
 					</div>
-					<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-						<div class="news-box-items">
-							<div class="news-image">
-								<img src="images/home-1/news/news-02.jpg" alt="img">
-								<img src="images/home-1/news/news-02.jpg" alt="img">
-								<span class="post-box">
-									<span class="date">25</span>
-									<span class="month">March</span>
-								</span>
-							</div>
-							<div class="news-content">
-								<ul class="comments-list">
-									<li>
-										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-											viewBox="0 0 18 18" fill="none">
-											<path opacity="0.5"
-												d="M9 9C10.2426 9 11.25 7.99264 11.25 6.75C11.25 5.50736 10.2426 4.5 9 4.5C7.75736 4.5 6.75 5.50736 6.75 6.75C6.75 7.99264 7.75736 9 9 9Z"
-												stroke="#144443" />
-											<path
-												d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z"
-												stroke="#144443" />
-											<path opacity="0.5"
-												d="M13.4772 15C13.3579 12.8314 12.6939 11.25 9.00029 11.25C5.30678 11.25 4.6428 12.8314 4.52344 15"
-												stroke="#144443" stroke-linecap="round" />
-										</svg>
-										Admin
-									</li>
-									<li>
-										<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
-											viewBox="0 0 23 23" fill="none">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M8.42865 5.05957H14.5696C16.4442 5.07375 17.9525 6.60465 17.9387 8.47921V12.6312C17.9453 13.5316 17.594 14.3977 16.9619 15.039C16.33 15.6802 15.4691 16.0443 14.5687 16.0508H8.42865L5.05869 17.9396V8.47921C5.05207 7.57884 5.40341 6.71274 6.0354 6.07142C6.66741 5.43011 7.52828 5.06613 8.42865 5.05957Z"
-												stroke="#144443" stroke-linecap="round" stroke-linejoin="round" />
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M6.90039 10.5802C6.90039 10.072 7.31229 9.66016 7.82039 9.66016C8.3285 9.66016 8.74039 10.072 8.74039 10.5802C8.74039 11.0883 8.3285 11.5002 7.82039 11.5002C7.5764 11.5002 7.34239 11.4032 7.16985 11.2307C6.99732 11.0582 6.90039 10.8241 6.90039 10.5802Z"
-												stroke="#144443" stroke-linecap="round" stroke-linejoin="round" />
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M10.5801 10.5802C10.5801 10.072 10.992 9.66016 11.5001 9.66016C12.0082 9.66016 12.4201 10.072 12.4201 10.5802C12.4201 11.0883 12.0082 11.5002 11.5001 11.5002C10.992 11.5002 10.5801 11.0883 10.5801 10.5802Z"
-												stroke="#144443" stroke-linecap="round" stroke-linejoin="round" />
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M14.2598 10.5802C14.2598 10.072 14.6716 9.66016 15.1798 9.66016C15.6879 9.66016 16.0998 10.072 16.0998 10.5802C16.0998 11.0883 15.6879 11.5002 15.1798 11.5002C14.6716 11.5002 14.2598 11.0883 14.2598 10.5802Z"
-												stroke="#144443" stroke-linecap="round" stroke-linejoin="round" />
-										</svg>
-										3 Comments
-									</li>
-								</ul>
-								<h3>
-									<a href="news-details.html">Achieving Work Life Balance in a Hectic World</a>
-								</h3>
-								<a href="news-details.html" class="link-btn">
-									Learn More
-									<span class="icon"><i class="lnr-icon-arrow-right"></i></span>
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-						<div class="news-box-items">
-							<div class="news-image">
-								<img src="images/home-1/news/news-03.jpg" alt="img">
-								<img src="images/home-1/news/news-03.jpg" alt="img">
-								<span class="post-box">
-									<span class="date">30</span>
-									<span class="month">March</span>
-								</span>
-							</div>
-							<div class="news-content">
-								<ul class="comments-list">
-									<li>
-										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-											viewBox="0 0 18 18" fill="none">
-											<path opacity="0.5"
-												d="M9 9C10.2426 9 11.25 7.99264 11.25 6.75C11.25 5.50736 10.2426 4.5 9 4.5C7.75736 4.5 6.75 5.50736 6.75 6.75C6.75 7.99264 7.75736 9 9 9Z"
-												stroke="#144443" />
-											<path
-												d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z"
-												stroke="#144443" />
-											<path opacity="0.5"
-												d="M13.4772 15C13.3579 12.8314 12.6939 11.25 9.00029 11.25C5.30678 11.25 4.6428 12.8314 4.52344 15"
-												stroke="#144443" stroke-linecap="round" />
-										</svg>
-										Admin
-									</li>
-									<li>
-										<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
-											viewBox="0 0 23 23" fill="none">
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M8.42865 5.05957H14.5696C16.4442 5.07375 17.9525 6.60465 17.9387 8.47921V12.6312C17.9453 13.5316 17.594 14.3977 16.9619 15.039C16.33 15.6802 15.4691 16.0443 14.5687 16.0508H8.42865L5.05869 17.9396V8.47921C5.05207 7.57884 5.40341 6.71274 6.0354 6.07142C6.66741 5.43011 7.52828 5.06613 8.42865 5.05957Z"
-												stroke="#144443" stroke-linecap="round" stroke-linejoin="round" />
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M6.90039 10.5802C6.90039 10.072 7.31229 9.66016 7.82039 9.66016C8.3285 9.66016 8.74039 10.072 8.74039 10.5802C8.74039 11.0883 8.3285 11.5002 7.82039 11.5002C7.5764 11.5002 7.34239 11.4032 7.16985 11.2307C6.99732 11.0582 6.90039 10.8241 6.90039 10.5802Z"
-												stroke="#144443" stroke-linecap="round" stroke-linejoin="round" />
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M10.5801 10.5802C10.5801 10.072 10.992 9.66016 11.5001 9.66016C12.0082 9.66016 12.4201 10.072 12.4201 10.5802C12.4201 11.0883 12.0082 11.5002 11.5001 11.5002C10.992 11.5002 10.5801 11.0883 10.5801 10.5802Z"
-												stroke="#144443" stroke-linecap="round" stroke-linejoin="round" />
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M14.2598 10.5802C14.2598 10.072 14.6716 9.66016 15.1798 9.66016C15.6879 9.66016 16.0998 10.072 16.0998 10.5802C16.0998 11.0883 15.6879 11.5002 15.1798 11.5002C14.6716 11.5002 14.2598 11.0883 14.2598 10.5802Z"
-												stroke="#144443" stroke-linecap="round" stroke-linejoin="round" />
-										</svg>
-										3 Comments
-									</li>
-								</ul>
-								<h3>
-									<a href="news-details.html">Mastering Work-Life On
-										Target Business Goal </a>
-								</h3>
-								<a href="news-details.html" class="link-btn">
-									Learn More
-									<span class="icon"><i class="lnr-icon-arrow-right"></i></span>
-								</a>
-							</div>
-						</div>
+					<div class="news-content">
+						<ul class="comments-list">
+							<li>
+								<i class="fa-solid fa-clock" style="color: #144443; font-size: 14px; margin-right: 5px;"></i>
+								5 min read
+							</li>
+						</ul>
+						<h3>
+							<a href="news-grid.html">Why 80% of Indians Don't Have a Financial Plan</a>
+						</h3>
+						<p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 15px;">
+							Most families handle money reactively—paying bills, making random investments, buying insurance when pushed. Without a plan, you're navigating blind.
+						</p>
+						<a href="news-grid.html" class="link-btn">
+							Learn More
+							<span class="icon"><i class="lnr-icon-arrow-right"></i></span>
+						</a>
 					</div>
 				</div>
 			</div>
-		</section>
 
+			<!-- Blog 2 -->
+			<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+				<div class="news-box-items">
+					<div class="news-image">
+						<img src="images/home-1/news/news-02.jpg" alt="Investment Mistakes">
+						<img src="images/home-1/news/news-02.jpg" alt="Investment Mistakes">
+						<span class="post-box">
+							<span class="date">03</span>
+							<span class="month">Dec</span>
+						</span>
+					</div>
+					<div class="news-content">
+						<ul class="comments-list">
+							<li>
+								<i class="fa-solid fa-clock" style="color: #144443; font-size: 14px; margin-right: 5px;"></i>
+								6 min read
+							</li>
+						</ul>
+						<h3>
+							<a href="news-grid.html">The Costly Mistakes Investors Keep Making</a>
+						</h3>
+						<p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 15px;">
+							Chasing past returns and timing the market destroys wealth. The fix: Invest based on your goals and risk capacity, not market noise.
+						</p>
+						<a href="news-grid.html" class="link-btn">
+							Learn More
+							<span class="icon"><i class="lnr-icon-arrow-right"></i></span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Blog 3 -->
+			<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+				<div class="news-box-items">
+					<div class="news-image">
+						<img src="images/home-1/news/news-03.jpg" alt="Emergency Fund">
+						<img src="images/home-1/news/news-03.jpg" alt="Emergency Fund">
+						<span class="post-box">
+							<span class="date">01</span>
+							<span class="month">Dec</span>
+						</span>
+					</div>
+					<div class="news-content">
+						<ul class="comments-list">
+							<li>
+								<i class="fa-solid fa-clock" style="color: #144443; font-size: 14px; margin-right: 5px;"></i>
+								4 min read
+							</li>
+						</ul>
+						<h3>
+							<a href="news-grid.html">Emergency Fund: Your First Financial Priority</a>
+						</h3>
+						<p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 15px;">
+							3-6 months of essential expenses in liquid funds. Job loss, medical emergency—life happens. An emergency fund prevents financial disasters.
+						</p>
+						<a href="news-grid.html" class="link-btn">
+							Learn More
+							<span class="icon"><i class="lnr-icon-arrow-right"></i></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 		<!-- Footer Section Start -->
 		<footer class="footer-section-1 fix footer-bg bg-cover"
 			style="background-image: url(images/home-1/footer-shape.png)">
@@ -1732,6 +1914,177 @@
 
 	</div><!-- End Page Wrapper -->
 
+	 <!-- Floating Calculator Buttons -->
+    <div class="calculator-float-buttons">
+        <button class="calc-btn" onclick="openCalculator('emi')">
+            <i class="fas fa-calculator"></i>
+            <span class="calc-btn-tooltip">EMI Calculator</span>
+        </button>
+        
+        <button class="calc-btn" onclick="openCalculator('sip')">
+            <i class="fas fa-chart-line"></i>
+            <span class="calc-btn-tooltip">SIP Calculator</span>
+        </button>
+        
+        <button class="calc-btn" onclick="openCalculator('budget')">
+            <i class="fas fa-wallet"></i>
+            <span class="calc-btn-tooltip">Budget Tracker</span>
+        </button>
+    </div>
+
+    <!-- EMI Calculator Modal -->
+    <div id="emiModal" class="calc-modal">
+        <div class="calc-modal-content">
+            <button class="calc-modal-close" onclick="closeCalculator('emi')">&times;</button>
+            <h2 class="calc-modal-title">EMI Calculator</h2>
+            <p class="calc-modal-subtitle">Calculate your monthly loan payments</p>
+            
+            <form onsubmit="calculateEMI(event)">
+                <div class="calc-form-group">
+                    <label class="calc-form-label">Loan Amount (₹)</label>
+                    <input type="number" id="emiPrincipal" class="calc-form-input" placeholder="500000" required>
+                </div>
+                
+                <div class="calc-form-row">
+                    <div class="calc-form-group">
+                        <label class="calc-form-label">Interest Rate (% p.a.)</label>
+                        <input type="number" step="0.1" id="emiRate" class="calc-form-input" placeholder="8.5" required>
+                    </div>
+                    
+                    <div class="calc-form-group">
+                        <label class="calc-form-label">Loan Tenure (Years)</label>
+                        <input type="number" id="emiTenure" class="calc-form-input" placeholder="10" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="calc-btn-calculate">Calculate EMI</button>
+            </form>
+            
+            <div id="emiResult" class="calc-result-box">
+                <div class="calc-result-title">Your Monthly EMI</div>
+                <div class="calc-result-value" id="emiValue">₹0</div>
+                <div class="calc-result-details" id="emiDetails"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SIP Calculator Modal -->
+    <div id="sipModal" class="calc-modal">
+        <div class="calc-modal-content">
+            <button class="calc-modal-close" onclick="closeCalculator('sip')">&times;</button>
+            <h2 class="calc-modal-title">SIP Calculator</h2>
+            <p class="calc-modal-subtitle">Calculate your investment returns</p>
+            
+            <form onsubmit="calculateSIP(event)">
+                <div class="calc-form-group">
+                    <label class="calc-form-label">Monthly Investment (₹)</label>
+                    <input type="number" id="sipAmount" class="calc-form-input" placeholder="5000" required>
+                </div>
+                
+                <div class="calc-form-row">
+                    <div class="calc-form-group">
+                        <label class="calc-form-label">Expected Return (% p.a.)</label>
+                        <input type="number" step="0.1" id="sipReturn" class="calc-form-input" placeholder="12" required>
+                    </div>
+                    
+                    <div class="calc-form-group">
+                        <label class="calc-form-label">Time Period (Years)</label>
+                        <input type="number" id="sipTenure" class="calc-form-input" placeholder="10" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="calc-btn-calculate">Calculate Returns</button>
+            </form>
+            
+            <div id="sipResult" class="calc-result-box">
+                <div class="calc-result-title">Future Value</div>
+                <div class="calc-result-value" id="sipValue">₹0</div>
+                <div class="calc-result-details" id="sipDetails"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Budget Tracker Modal -->
+    <div id="budgetModal" class="calc-modal">
+        <div class="calc-modal-content">
+            <button class="calc-modal-close" onclick="closeCalculator('budget')">&times;</button>
+            <h2 class="calc-modal-title">Budget Tracker</h2>
+            <p class="calc-modal-subtitle">Track your monthly income and expenses</p>
+            
+            <form onsubmit="calculateBudget(event)">
+                <div class="calc-form-group">
+                    <label class="calc-form-label">Monthly Income (₹)</label>
+                    <input type="number" id="budgetIncome" class="calc-form-input" placeholder="50000" required>
+                </div>
+                
+                <div class="calc-form-group">
+                    <label class="calc-form-label">Housing (Rent/EMI) (₹)</label>
+                    <input type="number" id="budgetHousing" class="calc-form-input" placeholder="15000" required>
+                </div>
+                
+                <div class="calc-form-row">
+                    <div class="calc-form-group">
+                        <label class="calc-form-label">Food & Groceries (₹)</label>
+                        <input type="number" id="budgetFood" class="calc-form-input" placeholder="8000" required>
+                    </div>
+                    
+                    <div class="calc-form-group">
+                        <label class="calc-form-label">Transportation (₹)</label>
+                        <input type="number" id="budgetTransport" class="calc-form-input" placeholder="5000" required>
+                    </div>
+                </div>
+                
+                <div class="calc-form-row">
+                    <div class="calc-form-group">
+                        <label class="calc-form-label">Utilities (₹)</label>
+                        <input type="number" id="budgetUtilities" class="calc-form-input" placeholder="3000" required>
+                    </div>
+                    
+                    <div class="calc-form-group">
+                        <label class="calc-form-label">Entertainment (₹)</label>
+                        <input type="number" id="budgetEntertainment" class="calc-form-input" placeholder="5000" required>
+                    </div>
+                </div>
+                
+                <div class="calc-form-group">
+                    <label class="calc-form-label">Other Expenses (₹)</label>
+                    <input type="number" id="budgetOther" class="calc-form-input" placeholder="4000" required>
+                </div>
+                
+                <button type="submit" class="calc-btn-calculate">Calculate Budget</button>
+            </form>
+            
+            <div id="budgetResult" class="calc-result-box">
+                <div class="budget-summary">
+                    <div class="budget-summary-item">
+                        <div class="budget-summary-label">Total Expenses</div>
+                        <div class="budget-summary-value" id="budgetTotalExpenses">₹0</div>
+                    </div>
+                    <div class="budget-summary-item">
+                        <div class="budget-summary-label">Monthly Savings</div>
+                        <div class="budget-summary-value" id="budgetSavings">₹0</div>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; text-align: center;">
+                    <div class="calc-result-details" id="budgetPercentage"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	 <!-- Floating contact icons -->
+        <div class="edug-contact-icons" id="contactIcons">
+            <a href="https://wa.me/+918655897610" target="_blank" class="edug-contact-icon"
+                data-tooltip="Chat on WhatsApp">
+                <i class="lni lni-whatsapp"></i>
+            </a>
+
+            <a href="tel:+918655897610" class="edug-contact-icon" data-tooltip="Call us Now">
+                <i class="lni lni-phone"></i>
+            </a>
+
+        </div>
+
 
 	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 	<script src="js/jquery.js"></script>
@@ -1759,7 +2112,141 @@
 		integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
 		data-cf-beacon='{"version":"2024.11.0","token":"88f4fa328f314d4c95a104b4a60b2313","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
 		crossorigin="anonymous"></script>
-</body>
+
+		 <script>
+        // Open Calculator Modal
+        function openCalculator(type) {
+            const modal = document.getElementById(`${type}Modal`);
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close Calculator Modal
+        function closeCalculator(type) {
+            const modal = document.getElementById(`${type}Modal`);
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.calc-modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // EMI Calculator
+        function calculateEMI(event) {
+            event.preventDefault();
+            
+            const principal = parseFloat(document.getElementById('emiPrincipal').value);
+            const annualRate = parseFloat(document.getElementById('emiRate').value);
+            const years = parseFloat(document.getElementById('emiTenure').value);
+            
+            const monthlyRate = annualRate / (12 * 100);
+            const months = years * 12;
+            
+            const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) / 
+                        (Math.pow(1 + monthlyRate, months) - 1);
+            
+            const totalAmount = emi * months;
+            const totalInterest = totalAmount - principal;
+            
+            document.getElementById('emiValue').textContent = `₹${emi.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+            document.getElementById('emiDetails').innerHTML = `
+                Total Amount Payable: ₹${totalAmount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}<br>
+                Total Interest: ₹${totalInterest.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}<br>
+                Principal Amount: ₹${principal.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            `;
+            
+            document.getElementById('emiResult').classList.add('show');
+        }
+
+        // SIP Calculator
+        function calculateSIP(event) {
+            event.preventDefault();
+            
+            const monthly = parseFloat(document.getElementById('sipAmount').value);
+            const annualReturn = parseFloat(document.getElementById('sipReturn').value);
+            const years = parseFloat(document.getElementById('sipTenure').value);
+            
+            const monthlyRate = annualReturn / (12 * 100);
+            const months = years * 12;
+            
+            const futureValue = monthly * (((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate));
+            
+            const totalInvested = monthly * months;
+            const returns = futureValue - totalInvested;
+            
+            document.getElementById('sipValue').textContent = `₹${futureValue.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+            document.getElementById('sipDetails').innerHTML = `
+                Total Invested: ₹${totalInvested.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}<br>
+                Expected Returns: ₹${returns.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}<br>
+                Return on Investment: ${((returns / totalInvested) * 100).toFixed(2)}%
+            `;
+            
+            document.getElementById('sipResult').classList.add('show');
+        }
+
+        // Budget Tracker
+        function calculateBudget(event) {
+            event.preventDefault();
+            
+            const income = parseFloat(document.getElementById('budgetIncome').value);
+            const housing = parseFloat(document.getElementById('budgetHousing').value);
+            const food = parseFloat(document.getElementById('budgetFood').value);
+            const transport = parseFloat(document.getElementById('budgetTransport').value);
+            const utilities = parseFloat(document.getElementById('budgetUtilities').value);
+            const entertainment = parseFloat(document.getElementById('budgetEntertainment').value);
+            const other = parseFloat(document.getElementById('budgetOther').value);
+            
+            const totalExpenses = housing + food + transport + utilities + entertainment + other;
+            const savings = income - totalExpenses;
+            const savingsPercentage = ((savings / income) * 100).toFixed(1);
+            
+            document.getElementById('budgetTotalExpenses').textContent = `₹${totalExpenses.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+            document.getElementById('budgetSavings').textContent = `₹${savings.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+            
+            let message = '';
+            if (savingsPercentage >= 20) {
+                message = `🎉 Excellent! You're saving ${savingsPercentage}% of your income.`;
+            } else if (savingsPercentage >= 10) {
+                message = `👍 Good job! You're saving ${savingsPercentage}% of your income.`;
+            } else if (savingsPercentage > 0) {
+                message = `⚠️ Try to increase savings. Currently at ${savingsPercentage}%.`;
+            } else {
+                message = `🚨 Warning! Expenses exceed income by ₹${Math.abs(savings).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+            }
+            
+            document.getElementById('budgetPercentage').textContent = message;
+            document.getElementById('budgetResult').classList.add('show');
+        }
+    </script>
+
+ <script>
+            // Grab the contact icons container
+            const contactIcons = document.getElementById('contactIcons');
+
+            // Show or hide the icons when the user scrolls
+            function toggleContactIcons() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                // Adjust the 300 value if you want them to appear sooner/later
+                if (scrollTop > 300) {
+                    contactIcons.classList.add('visible');
+                } else {
+                    contactIcons.classList.remove('visible');
+                }
+            }
+
+            // Listen for scrolling
+            window.addEventListener('scroll', toggleContactIcons);
+        </script>
+
+	</body>
 
 <!-- Mirrored from html.kodesolution.com/2025/finclix-html/index-2-dark.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Dec 2025 05:01:37 GMT -->
 

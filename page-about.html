@@ -18,6 +18,319 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<style>
+	 .abt-founder-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 20px;
+        }
+
+        .abt-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .abt-section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .abt-section-subtitle {
+            color: #099696;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .abt-triangle {
+            width: 8px;;
+            height: 8px;
+            background: var(--gradient-1);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        .abt-section-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .abt-section-description {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .abt-founder-content {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-top: 40px;
+        }
+
+        .abt-founder-image-wrapper {
+             position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .abt-founder-image {
+           width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 2;
+            display: block;
+        }
+
+        .abt-image-backdrop {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: -20px;
+            bottom: -20px;
+            background: var(--gradient-1);
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        .abt-credentials-badge {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .abt-credentials-badge h4 {
+            font-size: 16px;
+            color: #099696;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .abt-credentials-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .abt-credential-tag {
+            background:var(--gradient-1);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .abt-founder-bio {
+            padding: 20px 0;
+        }
+
+        .abt-bio-intro {
+            font-size: 20px;
+            color: #099696;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .abt-bio-text {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .abt-highlight-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .abt-stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .abt-stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .abt-stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .abt-stat-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .abt-expertise-section {
+            margin-top: 40px;
+        }
+
+        .abt-expertise-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+        }
+
+        .abt-expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .abt-expertise-item {
+            display: flex;
+            align-items: start;
+            gap: 15px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .abt-expertise-item:hover {
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            transform: translateX(5px);
+        }
+
+        .abt-expertise-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .abt-expertise-content h4 {
+            font-size: 16px;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .abt-expertise-content p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .abt-philosophy-section {
+            background: var(--gradient-1);
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+            color: white;
+        }
+
+        .abt-philosophy-quote {
+            font-size: 24px;
+            font-style: italic;
+            text-align: center;
+            line-height: 1.6;
+            position: relative;
+            padding: 0 40px;
+        }
+
+        .abt-philosophy-quote::before,
+        .abt-philosophy-quote::after {
+            content: '"';
+            font-size: 60px;
+            position: absolute;
+            opacity: 0.3;
+        }
+
+        .abt-philosophy-quote::before {
+            left: 0;
+            top: -10px;
+        }
+
+        .abt-philosophy-quote::after {
+            right: 0;
+            bottom: -30px;
+        }
+
+        .abt-philosophy-author {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 968px) {
+            .abt-founder-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .abt-founder-image-wrapper {
+				
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .abt-highlight-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .abt-expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .abt-section-title {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .abt-section-title {
+                font-size: 28px;
+            }
+
+            .abt-philosophy-quote {
+                font-size: 18px;
+                padding: 0 20px;
+            }
+        }
+</style>
 
 <body>
 
@@ -230,7 +543,7 @@
 		<!--End Main Header -->
 
 		<!-- Start main-content -->
-		<section class="page-title" style="background-image: url(images/inner/page-title-bg.jpg);">
+		<section class="page-title" style="background-image: url(/images/planmyfin-imgs/about/about-banner.jpg);">
 			<div class="auto-container">
 				<div class="title-outer">
 					<ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
@@ -250,13 +563,13 @@
 						<div class="image-column-3">
 							<div class="inner-column">
 								<div class="image1 overlay-anim wow fadeInUp" data-wow-delay=".3s">
-									<img src="images/home-3/about/about-01.jpg" alt="Image">
+									<img src="/images/planmyfin-imgs/about/about-sect111.png" alt="Image">
 								</div>
 								<div class="info float-bob-x">
-									<img src="images/home-3/about/about-info.png" alt="Image">
+									<img src="/images/planmyfin-imgs/about/about-sect131.png" alt="Image">
 								</div>
 								<div class="image2 wow fadeInUp" data-wow-delay=".5s">
-									<img src="images/home-3/about/about-02.jpg" alt="Image">
+									<img src="/images/planmyfin-imgs/about/about-sect121.png" alt="Image">
 								</div>
 							</div>
 						</div>
@@ -322,10 +635,10 @@
 								</a>
 								<div class="user">
 									<div class="image">
-										<img src="images/home-3/about/about-user.png" alt="Image">
+										<img src="/images/planmyfin-imgs/about/about-sect21.jpeg" alt="Image">
 									</div>
 									<div>
-										<img src="images/home-3/about/signature.png" alt="Image">
+										<!--<img src="images/home-3/about/signature.png" alt="Image">-->
 										<p class="sub-title">Founder</p>
 									</div>
 								</div>
@@ -335,6 +648,125 @@
 				</div>
 			</div>
 		</section>
+
+
+		 <section class="abt-founder-section">
+        <div class="abt-container">
+            <div class="abt-section-header">
+                <div class="abt-section-subtitle">
+                    <span class="abt-triangle"></span>
+                    <span class="abt-triangle"></span>
+                    Meet The Founder
+                </div>
+                <h2 class="abt-section-title">The Visionary Behind PlanMyFin</h2>
+                <p class="abt-section-description">
+                    Pioneer in financial wellness coaching, transforming how Indians approach personal finance
+                </p>
+            </div>
+
+            <div class="abt-founder-content">
+                <div class="abt-founder-image-wrapper">
+                    <div class="abt-image-backdrop"></div>
+                    <img src="/images/planmyfin-imgs/about/about-sect22.jpeg" alt="Arun Joseph" class="abt-founder-image">
+                    
+                    <div class="abt-credentials-badge">
+                        <h4>Professional Qualifications</h4>
+                        <div class="abt-credentials-list">
+                            <span class="abt-credential-tag">MBA</span>
+                            <span class="abt-credential-tag">LLB</span>
+                            <span class="abt-credential-tag">B.Com</span>
+                            <span class="abt-credential-tag">CFP®</span>
+                            <span class="abt-credential-tag">FIII</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="abt-founder-bio">
+                    <p class="abt-bio-intro">
+                        Arun Joseph MBA, LLB, CFP®, FIII — Leading India's Financial Wellness Revolution
+                    </p>
+
+                    <p class="abt-bio-text">
+                        With credentials spanning business, law, and finance, Arun Joseph brings a rare multidisciplinary perspective to financial planning. His journey began over 15 years ago when he recognized a critical gap in India's financial services landscape—the absence of unbiased, client-first guidance that empowers rather than sells.
+                    </p>
+
+                    <p class="abt-bio-text">
+                        As one of India's first-generation financial wellness coaches, Arun pioneered a holistic approach that treats financial planning not as a product sale, but as an essential life skill everyone deserves to master. His philosophy is simple yet revolutionary: financial decisions should emerge from clarity and conviction, not confusion and pressure.
+                    </p>
+
+                    <div class="abt-highlight-stats">
+                        <div class="abt-stat-card">
+                            <div class="abt-stat-number">15+</div>
+                            <div class="abt-stat-label">Years of Experience</div>
+                        </div>
+                        <div class="abt-stat-card">
+                            <div class="abt-stat-number">1000+</div>
+                            <div class="abt-stat-label">Families Empowered</div>
+                        </div>
+                        <div class="abt-stat-card">
+                            <div class="abt-stat-number">CFP®</div>
+                            <div class="abt-stat-label">Certified Since 2010</div>
+                        </div>
+                    </div>
+
+                    <div class="abt-expertise-section">
+                        <h3 class="abt-expertise-title">Specialized Expertise</h3>
+                        <div class="abt-expertise-grid">
+                            <div class="abt-expertise-item">
+                                <div class="abt-expertise-icon">📊</div>
+                                <div class="abt-expertise-content">
+                                    <h4>Financial Wellness Coaching</h4>
+                                    <p>Empowering individuals with comprehensive financial literacy and personalized planning frameworks</p>
+                                </div>
+                            </div>
+                            <div class="abt-expertise-item">
+                                <div class="abt-expertise-icon">🎯</div>
+                                <div class="abt-expertise-content">
+                                    <h4>Goal-Based Planning</h4>
+                                    <p>Scientific approach to retirement, education, and legacy planning with inflation-adjusted projections</p>
+                                </div>
+                            </div>
+                            <div class="abt-expertise-item">
+                                <div class="abt-expertise-icon">🛡️</div>
+                                <div class="abt-expertise-content">
+                                    <h4>Risk Management</h4>
+                                    <p>Comprehensive insurance planning and portfolio risk assessment strategies</p>
+                                </div>
+                            </div>
+                            <div class="abt-expertise-item">
+                                <div class="abt-expertise-icon">🎓</div>
+                                <div class="abt-expertise-content">
+                                    <h4>Financial Education</h4>
+                                    <p>Resource person for leading business schools, conducting workshops and seminars nationwide</p>
+                                </div>
+                            </div>
+                            <div class="abt-expertise-item">
+                                <div class="abt-expertise-icon">🔍</div>
+                                <div class="abt-expertise-content">
+                                    <h4>Product Research</h4>
+                                    <p>Deep analysis of financial products to separate genuine value from marketing hype</p>
+                                </div>
+                            </div>
+                            <div class="abt-expertise-item">
+                                <div class="abt-expertise-icon">🏢</div>
+                                <div class="abt-expertise-content">
+                                    <h4>Corporate Consulting</h4>
+                                    <p>Employee financial wellness programs and treasury management solutions for organizations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="abt-philosophy-section">
+                        <div class="abt-philosophy-quote">
+                            Financial wellness isn't about having the most money—it's about having the right knowledge, making informed decisions, and experiencing the confidence that comes from being in control of your financial destiny
+                        </div>
+                        <div class="abt-philosophy-author">— Arun Joseph</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 				<!-- Service Section Start -->
 		<section class="service-section-2 section-padding fix">
@@ -388,11 +820,11 @@
 										fill="none">
 										<path
 											d="M9.41211 21.4133H35.3749H40.7871V40.7874H12.1574C10.6671 40.7874 9.41211 39.5324 9.41211 38.0421V17.7268C9.41211 16.2364 10.6671 14.9814 12.1574 14.9814H35.218V21.4133"
-											stroke="#C8F169" stroke-width="2" stroke-miterlimit="10"
+											stroke="#C9A961" stroke-width="2" stroke-miterlimit="10"
 											stroke-linecap="round" stroke-linejoin="round" />
 										<path
 											d="M35.218 33.4138H40.787V27.8447H35.218C33.7277 27.8447 32.4727 29.0997 32.4727 30.59C32.4727 32.1588 33.7277 33.4138 35.218 33.4138Z"
-											stroke="#C8F169" stroke-width="2" stroke-miterlimit="10"
+											stroke="#C9A961" stroke-width="2" stroke-miterlimit="10"
 											stroke-linecap="round" stroke-linejoin="round" />
 									</svg>
 									<div class="arrow-shape">
@@ -423,7 +855,7 @@
 										fill="none">
 										<path
 											d="M8.17047 17.8567L1.12109 22.2004L22.5442 34.4663L42.8646 22.2002L36.1303 18.089M8.47224 26.2513L1.42286 30.5944L22.8459 42.8607L43.1664 30.5944L36.432 26.4832M42.8646 13.9367L22.5442 1.5498L1.56214 13.9367L22.5442 26.3236L42.8646 13.9367Z"
-											stroke="#C8F169" stroke-width="2" stroke-linecap="round"
+											stroke="#C9A961" stroke-width="2" stroke-linecap="round"
 											stroke-linejoin="round" />
 									</svg>
 									<div class="arrow-shape">
@@ -470,7 +902,7 @@
 		</section>
 		
 		<!-- Testimonial Section Start -->
-		<section class="testimonial-section fix section-padding pt-0">
+		<!--<section class="testimonial-section fix section-padding pt-0">
 			<div class="auto-container">
 				<div class="testimonial-wrapper bg-cover"
 					style="background-image: url(images/home-1/testimonial/testimonial-bg.png);">
@@ -571,7 +1003,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section>-->
 
 		<!-- Contact Section Start -->
 		<section class="contact-section fix section-padding">
