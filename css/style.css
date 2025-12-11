@@ -3842,7 +3842,7 @@ Section Title
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
+          align-items: stretch;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
@@ -3868,6 +3868,8 @@ Section Title
   backdrop-filter: blur(20px);
   padding: 30px 25px;
   max-width: 300px;
+  display:flex;
+  flex-direction: column;
 }
 [data-tm-layout=dark] .hero-2 .hero-box-items .hero-box {
   backdrop-filter: blur(40px);
@@ -21609,7 +21611,7 @@ Sidebar
 /* Responsive */
 @media (max-width: 768px) {
   .edug-contact-icons {
-    bottom: 260px;
+    bottom: 75px;
     right: 20px;
   }
 

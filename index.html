@@ -39,7 +39,7 @@
 		.calculator-float-buttons {
 			position: fixed;
 			left: 20px;
-			top: 50%;
+			top: 80%;
 			transform: translateY(-50%);
 			z-index: 9999;
 			display: flex;
@@ -48,8 +48,8 @@
 		}
 
 		.calc-btn {
-			width: 60px;
-			height: 60px;
+			width: 50px;
+			height: 50px;
 			border-radius: 50%;
 			background: var(--gradient-1);
 			border: none;
@@ -291,6 +291,19 @@
 			.calc-form-row {
 				grid-template-columns: 1fr;
 			}
+		}
+
+		@media (max-width:480px) {
+			.calc-btn-tooltip {
+				left: 65px;
+				font-size: 12px;
+			}
+
+			.calc-btn {
+				width: 40px;
+				height: 40px;
+			}
+
 		}
 	</style>
 
@@ -548,6 +561,32 @@
 								<h3>Corporate Wellness Programme</h3>
 								<p>
 									Financially healthy employees. More productive workplace.
+								</p>
+							</div>
+						</div>
+						<div class="hero-box wow fadeInUp" data-wow-delay=".3s">
+							<div class="icon">
+								<img src="/images/planmyfin-imgs/handshake.svg" alt="img">
+							</div>
+							<div class="content">
+								<h3>Partnership Program for Investment Advisors</h3>
+								<p>
+									Partner to deliver comprehensive financial wellness alongside your investment
+									services.
+								</p>
+							</div>
+						</div>
+						<div class="hero-box wow fadeInUp" data-wow-delay=".3s">
+							<div class="icon">
+								<img src="/images/planmyfin-imgs/graduation-cap.svg" alt="">
+							</div>
+							<div class="content">
+								<h3>
+									Educational Programs for Future Professionals</h3>
+								<p>
+
+									Deliver real-world financial wellness training for MBA students and business
+									graduates.
 								</p>
 							</div>
 						</div>
@@ -1672,12 +1711,16 @@
 						<div class="col-lg-8">
 							<div class="lets-talk-banner-content">
 								<h2 class="wow fadeInUp" data-wow-delay=".2s" style="font-size: 3.5em;">
-									Unsure Where Your Money Should Go? <br> let's talk
+									Partner with Us:<br> Grow Your Practice While We Empower Your Clients
 								</h2>
 								<p class="wow fadeInUp" data-wow-delay=".4s">
-									Take control of your financial future with expert guidance tailored to your unique
-									goals. From retirement planning to wealth building, we transform financial confusion
-									into clarity—helping you make informed decisions that secure your family's future.
+									As a financial wellness coach, I help individuals build solid financial
+									foundations—budgeting, goal planning, risk management, and financial literacy. But
+									when it comes to investment execution, that's where YOU come in. <br>
+									I work with clients who need investment advisors to implement their plans. Instead
+									of competing, we collaborate—I prepare financially literate clients with clear goals
+									and realistic plans, and you help them invest wisely to achieve those goals. It's a
+									win-win partnership that serves clients better
 								</p>
 								<div class="count-item">
 									<div class="count-box wow fadeInUp" data-wow-delay=".6s">
@@ -1685,15 +1728,15 @@
 											<span class="count-text" data-speed="3000" data-stop="100">0</span>%
 										</h2>
 										<span>
-											Objective Advice
+											Objective Planning
 										</span>
 									</div>
 									<div class="count-box wow fadeInUp" data-wow-delay=".6s">
 										<h2>
-											<span class="count-text" data-speed="3000" data-stop="98">0</span>%
+											<span class="count-text">Win-Win</span>
 										</h2>
 										<span>
-											Goal Achievement
+											Mutual Growth Model
 										</span>
 									</div>
 								</div>
@@ -1702,8 +1745,7 @@
 						<div class="col-lg-3 text-end wow fadeInUp" data-wow-delay=".3s">
 							<a href="page-contact.html" class="circle-box">
 								<span>
-									Contact
-									with us
+									Let's Partner
 									<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
 										fill="none">
 										<path
