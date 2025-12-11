@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Financial Wellness Programme | PlanMyFin</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+	.risk-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .risk-page-wrapper {
+            padding: 80px 0;
+        }
+
+        .risk-layout-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+        }
+
+        /* Hero Section */
+        .risk-hero-section {
+            background: var(--gradient-2);
+            padding: 90px 0;
+            color: white;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .risk-hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 300px;
+            height: 300px;
+            background: rgba(200, 241, 105, 0.1);
+            border-radius: 50%;
+        }
+
+        .risk-hero-content-wrapper {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .risk-hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(200, 241, 105, 0.2);
+            color: var(--theme-color1);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .risk-hero-heading {
+            font-family: var(--heading-font-family);
+            font-size: 54px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .risk-hero-accent {
+            color: var(--theme-color1);
+        }
+
+        .risk-hero-text {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .risk-hero-quote {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-left: 4px solid var(--theme-color1);
+            border-radius: 8px;
+            font-style: italic;
+            backdrop-filter: blur(10px);
+        }
+
+        .risk-hero-image {
+            position: relative;
+            height: 450px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .risk-hero-image::before {
+            content: 'Protection Shield Illustration';
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Risk Types Section */
+        .risk-types-section {
+            margin-bottom: 60px;
+        }
+
+        .risk-section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .risk-section-label {
+            color: var(--theme-color7);
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .risk-section-heading {
+            font-family: var(--heading-font-family);
+            font-size: 42px;
+            font-weight: 600;
+            color: var(--headings-color);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .risk-section-text {
+            font-size: 16px;
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .risk-types-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .risk-type-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 15px;
+            border: 2px solid var(--theme-color-light);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .risk-type-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-1);
+            border-radius: 15px 15px 0 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .risk-type-card:hover {
+            border-color: var(--theme-color1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(20, 68, 67, 0.15);
+        }
+
+        .risk-type-card:hover::before {
+            opacity: 1;
+        }
+
+        .risk-type-emoji {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .risk-type-card h4 {
+            font-family: var(--heading-font-family);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--headings-color);
+            margin-bottom: 12px;
+        }
+
+        .risk-type-card p {
+            font-size: 15px;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        /* Insurance Types Section */
+        .risk-insurance-section {
+            background: var(--theme-color-light);
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+
+        .risk-insurance-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .risk-insurance-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(20, 68, 67, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .risk-insurance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 45px rgba(20, 68, 67, 0.15);
+        }
+
+        .risk-insurance-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .risk-insurance-icon {
+            width: 65px;
+            height: 65px;
+            background: var(--gradient-1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .risk-insurance-card h4 {
+            font-family: var(--heading-font-family);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--headings-color);
+        }
+
+        .risk-insurance-card p {
+            font-size: 15px;
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .risk-insurance-features {
+            background: var(--theme-color-light);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .risk-insurance-features h5 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--headings-color);
+            margin-bottom: 12px;
+        }
+
+        .risk-feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .risk-feature-list li {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 6px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .risk-feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 5px;
+            color: var(--theme-color7);
+            font-weight: 700;
+        }
+
+        /* Approach Section */
+        .risk-approach-section {
+            margin-bottom: 60px;
+        }
+
+        .risk-approach-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .risk-approach-visual {
+            position: relative;
+            height: 500px;
+            background: var(--gradient-1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .risk-approach-visual::before {
+            content: 'Risk Assessment Process';
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .risk-approach-content h2 {
+            font-family: var(--heading-font-family);
+            font-size: 42px;
+            font-weight: 600;
+            color: var(--headings-color);
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .risk-approach-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .risk-step-item {
+            display: flex;
+            gap: 20px;
+            padding: 25px;
+            background: var(--theme-color-light);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .risk-step-item:hover {
+            background: white;
+            box-shadow: 0 8px 25px rgba(20, 68, 67, 0.1);
+        }
+
+        .risk-step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .risk-step-content h5 {
+            font-family: var(--heading-font-family);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--headings-color);
+            margin-bottom: 8px;
+        }
+
+        .risk-step-content p {
+            font-size: 15px;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        /* Principles Section */
+        .risk-principles-section {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            border: 2px solid var(--theme-color-light);
+            margin-bottom: 60px;
+        }
+
+        .risk-principles-title {
+            font-family: var(--heading-font-family);
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--headings-color);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .risk-principles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .risk-principle-box {
+            padding: 30px;
+            background: var(--theme-color-light);
+            border-radius: 12px;
+            border-left: 4px solid var(--theme-color7);
+        }
+
+        .risk-principle-box h5 {
+            font-family: var(--heading-font-family);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--headings-color);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .risk-principle-box h5::before {
+            content: '▶';
+            color: var(--theme-color7);
+            font-size: 14px;
+        }
+
+        .risk-principle-box p {
+            font-size: 15px;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .risk-cta-section {
+            background: var(--gradient-1);
+            padding: 60px 50px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+        }
+
+        .risk-cta-heading {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .risk-cta-description {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .risk-cta-btn {
+            display: inline-block;
+            background: var(--theme-color2);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .risk-cta-btn:hover {
+            background: var(--theme-color8);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sidebar */
+        .risk-sidebar {
+            position: sticky;
+            top: 20px;
+        }
+
+        .risk-sidebar-box {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .risk-sidebar-heading {
+            background: var(--gradient-1);
+            color: white;
+            padding: 20px 25px;
+            font-family: var(--heading-font-family);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .risk-services-menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .risk-services-menu li {
+            border-bottom: 1px solid var(--theme-color-light);
+        }
+
+        .risk-services-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .risk-services-menu a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 25px;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .risk-services-menu a:hover {
+            background: var(--theme-color-light);
+            color: var(--theme-color7);
+            padding-left: 30px;
+        }
+
+        .risk-services-menu li.active a {
+            background: var(--theme-color-light);
+            color: var(--theme-color7);
+            font-weight: 600;
+        }
+
+        .risk-services-menu i {
+            color: var(--theme-color7);
+        }
+
+        .risk-contact-box {
+            padding: 25px;
+        }
+
+        .risk-contact-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        .risk-contact-items li {
+            margin-bottom: 15px;
+            color: var(--text-color);
+            font-size: 15px;
+        }
+
+        .risk-contact-items a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .risk-contact-items a:hover {
+            color: var(--theme-color7);
+        }
+
+        .risk-form-box {
+            padding: 25px;
+        }
+
+        .risk-form-field {
+            margin-bottom: 20px;
+        }
+
+        .risk-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--theme-color-light);
+            border-radius: 8px;
+            font-family: var(--body-font-family);
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .risk-input:focus {
+            outline: none;
+            border-color: var(--theme-color7);
+        }
+
+        .risk-submit-btn {
+            width: 100%;
+            background: var(--gradient-1);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .risk-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(20, 68, 67, 0.2);
+        }
+
+        @media (max-width: 1024px) {
+            .risk-layout-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .risk-hero-content-wrapper,
+            .risk-approach-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .risk-types-grid,
+            .risk-insurance-grid,
+            .risk-principles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .risk-sidebar {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .risk-hero-heading,
+            .risk-section-heading {
+                font-size: 36px;
+            }
+
+            .risk-hero-image,
+            .risk-approach-visual {
+                height: 300px;
+            }
+        }
+</style>
+</head>
+
+<body>
+<div class="page-wrapper">
+	<!-- Preloader Start -->
+	<div id="preloader" class="preloader">
+		<div class="animation-preloader">
+			<div class="spinner"></div>
+			<div class="txt-loading">
+				<span data-text-preloader="P" class="letters-loading">P</span>
+				<span data-text-preloader="L" class="letters-loading">L</span>
+				<span data-text-preloader="A" class="letters-loading">A</span>
+				<span data-text-preloader="N" class="letters-loading">N</span>
+				<span data-text-preloader="M" class="letters-loading">M</span>
+				<span data-text-preloader="Y" class="letters-loading">Y</span>
+				<span data-text-preloader="F" class="letters-loading">F</span>
+				<span data-text-preloader="I" class="letters-loading">I</span>
+				<span data-text-preloader="N" class="letters-loading">N</span>
+			</div>
+			<p class="text-center">Loading</p>
+		</div>
+		<div class="loader">
+			<div class="row">
+				<div class="col-3 loader-section section-left"><div class="bg"></div></div>
+				<div class="col-3 loader-section section-left"><div class="bg"></div></div>
+				<div class="col-3 loader-section section-right"><div class="bg"></div></div>
+				<div class="col-3 loader-section section-right"><div class="bg"></div></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Scroll To Top -->
+	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+	<!-- Main Header-->
+	<header class="main-header header-style-one header-1">
+		<!-- Header Lower -->
+			<div class="header-lower header-lower2 show-header-section">
+				<!-- Main box -->
+				<div class="main-box">
+
+					<!--Nav Box-->
+					<div class="nav-outer">
+						<div class="logo-box">
+							<div class="logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""
+										title="planmyfin" style="height: 80px; width: auto;"></a></div>
+						</div>
+						<nav class="nav main-menu">
+							<ul class="navigation">
+
+								<li class="dropdown"><a href="index.html">Home</a></li>
+								<li class="dropdown"><a href="page-about.html">About</a></li>
+
+
+								<li class="dropdown"><a href="page-services.html">Services</a>
+									<ul>
+										<!--<li><a href="page-services.html">Our Services</a></li>-->
+										<li><a href="fin-wellness-plan1.html">Financial Wellness Programme</a></li>
+										<li><a href="invest-plan2.html">Investment Planning</a></li>
+										<li><a href="retirement-plan3.html">Retirement Planning</a></li>
+										<li><a href="risk-manage-plan4.html">Risk Management & Insurance Planning</a></li>
+										<li><a href="emergency-fund-plan5.html">Emergency Fund Planning</a></li>
+										<li><a href="debt-manage-plan6.html">Debt Management</a></li>
+										<li><a href="cashflow7.html">Cashflow Analysis</a></li>
+										<li><a href="asset-allocat8.html">Asset Allocation Strategy</a></li>
+										<li><a href="risk-profiling9.html">Risk Profiling</a></li>										
+										<li><a href="legacy-plan10.html">Legacy Planning (Estate Planning & Will)</a></li>
+										<li><a href="fin-goal-plan11.html">Financial Goal Planning </a></li>
+									</ul>
+								</li>
+								<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a>
+
+								<li class="dropdown"><a href="news-grid.html">Blogs</a>
+								<!--	<ul>
+										<li><a href="news-grid.html">News Grid</a></li>
+										<li><a href="news-details.html">News Details</a></li>
+									</ul>-->
+								</li>
+								<li><a href="page-contact.html">Contact</a></li>
+							</ul>
+						</nav>
+						<!-- Main Menu End-->
+						<div class="outer-box">
+							<a href="tel:+92(8800)9806" class="info-btn">
+								<i class="icon fa fa-phone"></i>
+								+91 97785 96947
+							</a>
+
+							<a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
+
+							<!-- Mobile Nav toggler -->
+							<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Header Lower -->
+
+
+		<!-- Mobile Menu -->
+		<div class="mobile-menu">
+			<div class="menu-backdrop"></div>
+			<nav class="menu-box">
+				<div class="upper-box">
+					<div class="nav-logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""></a></div>
+					<div class="close-btn"><i class="icon fa fa-times"></i></div>
+				</div>
+				<ul class="navigation clearfix"></ul>
+				<ul class="contact-list-one">
+					<li>
+						<div class="contact-info-box">
+							<i class="icon lnr-icon-phone-handset"></i>
+							<span class="title">Call Now</span>
+							<a href="tel:+919778596947">+91 97785 96947</a>
+						</div>
+					</li>
+					<li>
+						<div class="contact-info-box">
+							<span class="icon lnr-icon-envelope1"></span>
+							<span class="title">Send Email</span>
+							<a href="mailto:info@planmyfin.com">info@planmyfin.com</a>
+						</div>
+					</li>
+				</ul>
+				<ul class="social-links">
+					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<!-- Sticky Header -->
+		<div class="sticky-header">
+			<div class="auto-container">
+				<div class="inner-container">
+					<div class="logo">
+						<a href="index.html"><img src="images/planmyfin-logo.png" alt="img"></a>
+					</div>
+					<div class="nav-outer">
+						<nav class="main-menu">
+							<div class="navbar-collapse show collapse clearfix">
+								<ul class="navigation clearfix"></ul>
+							</div>
+						</nav>
+						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Page Title -->
+	<section class="page-title" style="background-image: url(/images/planmyfin-imgs/about/about-banner.jpg);">
+		<div class="auto-container">
+			<div class="title-outer">
+				<ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="page-services.html">Services</a></li>
+					<li>Risk Management</li>
+				</ul>
+				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Risk Management</h1>
+			</div>
+		</div>
+	</section>
+
+	 <!-- Hero Section -->
+    <section class="risk-hero-section">
+        <div class="risk-container">
+            <div class="risk-hero-content-wrapper">
+                <div class="risk-hero-content">
+                    <span class="risk-hero-label">Financial Protection</span>
+                    <h1 class="risk-hero-heading">
+                        Shield Your Future:<br>
+                        <span class="risk-hero-accent">Comprehensive Risk Management</span>
+                    </h1>
+                    <p class="risk-hero-text">
+                        Life is unpredictable. The risks we face—premature death, disability, critical illness, 
+                        property loss—can devastate our financial foundation. Risk management isn't about fear; 
+                        it's about ensuring that life's uncertainties don't derail your family's financial security.
+                    </p>
+                    <div class="risk-hero-quote">
+                        "The best time to plan for risks is before they happen. Protection today ensures peace of mind tomorrow."
+                    </div>
+                </div>
+                <div class="risk-hero-image">
+                    <!-- Placeholder for illustration -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content with Sidebar -->
+    <div class="risk-page-wrapper">
+        <div class="risk-container">
+            <div class="risk-layout-grid">
+                <!-- Main Content -->
+                <div class="risk-content-main">
+                    <!-- Risk Types Section -->
+                    <div class="risk-types-section">
+                        <div class="risk-section-header">
+                            <div class="risk-section-label">Understanding Risks</div>
+                            <h2 class="risk-section-heading">Key Financial Risks You Face</h2>
+                            <p class="risk-section-text">
+                                Every individual and family faces multiple financial risks that can impact long-term security
+                            </p>
+                        </div>
+
+                        <div class="risk-types-grid">
+                            <div class="risk-type-card">
+                                <span class="risk-type-emoji">💔</span>
+                                <h4>Premature Death</h4>
+                                <p>The sudden loss of a family breadwinner can leave dependents without financial support, unpaid loans, and unfulfilled responsibilities.</p>
+                            </div>
+
+                            <div class="risk-type-card">
+                                <span class="risk-type-emoji">🏥</span>
+                                <h4>Hospitalization</h4>
+                                <p>Medical emergencies and extended hospital stays can drain savings quickly, especially with rising healthcare costs.</p>
+                            </div>
+
+                            <div class="risk-type-card">
+                                <span class="risk-type-emoji">♿</span>
+                                <h4>Disability</h4>
+                                <p>Accidents or critical illnesses can result in permanent or temporary disability, affecting earning capacity significantly.</p>
+                            </div>
+
+                            <div class="risk-type-card">
+                                <span class="risk-type-emoji">🏠</span>
+                                <h4>Property Loss</h4>
+                                <p>Fire, theft, natural disasters, or accidents can destroy property and assets that took years to build.</p>
+                            </div>
+
+                            <div class="risk-type-card">
+                                <span class="risk-type-emoji">⚖️</span>
+                                <h4>Liability Risks</h4>
+                                <p>Legal liability from accidents or damages can result in substantial financial obligations beyond your control.</p>
+                            </div>
+
+                            <div class="risk-type-card">
+                                <span class="risk-type-emoji">🚨</span>
+                                <h4>Emergency Expenses</h4>
+                                <p>Unexpected costs or income loss can disrupt financial stability without adequate emergency preparation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Insurance Types Section -->
+                    <div class="risk-insurance-section">
+                        <div class="risk-container">
+                            <div class="risk-section-header">
+                                <div class="risk-section-label">Protection Solutions</div>
+                                <h2 class="risk-section-heading">Essential Insurance Coverage</h2>
+                                <p class="risk-section-text">
+                                    Different risks require different protection strategies. Here's what you need to know.
+                                </p>
+                            </div>
+
+                            <div class="risk-insurance-grid">
+                                <div class="risk-insurance-card">
+                                    <div class="risk-insurance-header">
+                                        <div class="risk-insurance-icon">🛡️</div>
+                                        <h4>Term Life Insurance</h4>
+                                    </div>
+                                    <p>
+                                        Provides financial protection to your family in case of untimely death. Pure protection 
+                                        without investment component, making it affordable and effective.
+                                    </p>
+                                    <div class="risk-insurance-features">
+                                        <h5>Key Benefits:</h5>
+                                        <ul class="risk-feature-list">
+                                            <li>Income replacement for dependents</li>
+                                            <li>Loan and liability coverage</li>
+                                            <li>Education and marriage funds</li>
+                                            <li>Affordable premiums</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="risk-insurance-card">
+                                    <div class="risk-insurance-header">
+                                        <div class="risk-insurance-icon">🏥</div>
+                                        <h4>Health Insurance</h4>
+                                    </div>
+                                    <p>
+                                        Covers hospitalization expenses, protecting your savings from being wiped out by 
+                                        medical emergencies. Essential given rising healthcare costs.
+                                    </p>
+                                    <div class="risk-insurance-features">
+                                        <h5>Coverage Includes:</h5>
+                                        <ul class="risk-feature-list">
+                                            <li>Hospitalization costs</li>
+                                            <li>Pre and post-hospitalization</li>
+                                            <li>Day-care procedures</li>
+                                            <li>Cashless treatment facility</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="risk-insurance-card">
+                                    <div class="risk-insurance-header">
+                                        <div class="risk-insurance-icon">💪</div>
+                                        <h4>Critical Illness Insurance</h4>
+                                    </div>
+                                    <p>
+                                        Provides lump sum payment upon diagnosis of specified critical illnesses, helping you 
+                                        manage income loss and treatment costs during recovery.
+                                    </p>
+                                    <div class="risk-insurance-features">
+                                        <h5>Why It Matters:</h5>
+                                        <ul class="risk-feature-list">
+                                            <li>Covers major illnesses</li>
+                                            <li>Lump sum payout</li>
+                                            <li>Income replacement</li>
+                                            <li>Treatment flexibility</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="risk-insurance-card">
+                                    <div class="risk-insurance-header">
+                                        <div class="risk-insurance-icon">🚗</div>
+                                        <h4>Personal Accident & Property</h4>
+                                    </div>
+                                    <p>
+                                        Covers accidental disability, death, and property damages from various perils. 
+                                        Protects your assets and provides accident-related financial support.
+                                    </p>
+                                    <div class="risk-insurance-features">
+                                        <h5>Protection For:</h5>
+                                        <ul class="risk-feature-list">
+                                            <li>Accidental death/disability</li>
+                                            <li>Property damage/theft</li>
+                                            <li>Vehicle insurance</li>
+                                            <li>Liability coverage</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Approach Section -->
+                    <div class="risk-approach-section">
+                        <div class="risk-approach-wrapper">
+                            <div class="risk-approach-visual">
+                                <!-- Placeholder for illustration -->
+                            </div>
+
+                            <div class="risk-approach-content">
+                                <h2>Our Risk Assessment Approach</h2>
+                                
+                                <div class="risk-approach-steps">
+                                    <div class="risk-step-item">
+                                        <div class="risk-step-number">1</div>
+                                        <div class="risk-step-content">
+                                            <h5>Risk Identification</h5>
+                                            <p>We identify all potential risks specific to your life stage, profession, and family structure.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="risk-step-item">
+                                        <div class="risk-step-number">2</div>
+                                        <div class="risk-step-content">
+                                            <h5>Coverage Quantification</h5>
+                                            <p>Calculate the exact coverage needed based on your income, liabilities, and future obligations.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="risk-step-item">
+                                        <div class="risk-step-number">3</div>
+                                        <div class="risk-step-content">
+                                            <h5>Gap Analysis</h5>
+                                            <p>Evaluate your existing coverage and identify gaps that need to be addressed.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="risk-step-item">
+                                        <div class="risk-step-number">4</div>
+                                        <div class="risk-step-content">
+                                            <h5>Solution Design</h5>
+                                            <p>Create a comprehensive protection plan tailored to your unique needs and budget.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<!-- Principles Section -->
+
+				<!--	Principles Section -->
+                    <div class="risk-principles-section">
+                        <h2 class="risk-principles-title">Key Principles of Effective Risk Management</h2>
+						<div class="risk-principles-grid">
+                        <div class="risk-principle-box">
+                            <h5>Prioritize Pure Protection</h5>
+                            <p>Focus on term insurance for life cover—pure protection without investment mixing. It's affordable and provides maximum coverage.</p>
+                        </div>
+
+                        <div class="risk-principle-box">
+                            <h5>Adequate Coverage is Essential</h5>
+                            <p>Under-insurance is as risky as no insurance. Ensure coverage matches your actual financial responsibilities and future needs.</p>
+                        </div>
+
+                        <div class="risk-principle-box">
+                            <h5>Start Early, Pay Less</h5>
+                            <p>Insurance premiums are age-based. Starting early means lower premiums and longer protection period for your family.</p>
+                        </div>
+
+                        <div class="risk-principle-box">
+                            <h5>Regular Reviews Matter</h5>
+                            <p>Life changes—marriage, children, promotions, loans. Review and update your coverage as your life evolves.</p>
+                        </div>
+
+                        <div class="risk-principle-box">
+                            <h5>Don't Mix Insurance & Investment</h5>
+                            <p>Traditional insurance-cum-investment plans often provide inadequate coverage. Keep them separate for better results.</p>
+                        </div>
+
+                        <div class="risk-principle-box">
+                            <h5>Disclosure is Critical</h5>
+                            <p>Always provide accurate information. Non-disclosure can lead to claim rejection when your family needs it most.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="risk-cta-section">
+                    <h2 class="risk-cta-heading">Ready to Protect Your Financial Future?</h2>
+                    <p class="risk-cta-description">
+                        Let's assess your risks and create a comprehensive protection plan for you and your family
+                    </p>
+                    <a href="#contact" class="risk-cta-btn">Get Your Risk Assessment</a>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="risk-sidebar">
+                <!-- Services Menu -->
+                <div class="risk-sidebar-box">
+                    <h4 class="risk-sidebar-heading">All Services</h4>
+                    <ul class="risk-services-menu">
+                        <li><a href="fin-wellness-programme.html">
+                            <span>Financial Wellness Programme</span>
+                            <i>→</i>
+                        </a></li>
+                        <li><a href="investment-planning.html">
+                            <span>Investment Planning</span>
+                            <i>→</i>
+                        </a></li>
+                        <li><a href="retirement-planning.html">
+                            <span>Retirement Planning</span>
+                            <i>→</i>
+                        </a></li>
+                        <li class="active"><a href="risk-management.html">
+                            <span>Risk Management</span>
+                            <i>→</i>
+                        </a></li>
+                        <li><a href="emergency-fund.html">
+                            <span>Emergency Fund Planning</span>
+                            <i>→</i>
+                        </a></li>
+                        <li><a href="debt-management.html">
+                            <span>Debt Management</span>
+                            <i>→</i>
+                        </a></li>
+                        <li><a href="cashflow-analysis.html">
+                            <span>Cashflow Analysis</span>
+                            <i>→</i>
+                        </a></li>
+                        <li><a href="asset-allocation.html">
+                            <span>Asset Allocation</span>
+                            <i>→</i>
+                        </a></li>
+                        <li><a href="risk-profiling.html">
+                            <span>Risk Profiling</span>
+                            <i>→</i>
+                        </a></li>
+                        <li><a href="legacy-planning.html">
+                            <span>Legacy Planning</span>
+                            <i>→</i>
+                        </a></li>
+                        <li><a href="goal-planning.html">
+                            <span>Financial Goal Planning</span>
+                            <i>→</i>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Widget -->
+                <div class="risk-sidebar-box">
+                    <h4 class="risk-sidebar-heading">Contact Us</h4>
+                    <div class="risk-contact-box">
+                        <ul class="risk-contact-items">
+                            <li>📍 Bengaluru, Karnataka, IN</li>
+                            <li>✉️ <a href="mailto:info@planmyfin.com">info@planmyfin.com</a></li>
+                            <li>📞 <a href="tel:+919778596947">+91 97785 96947</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="risk-sidebar-box">
+                    <h4 class="risk-sidebar-heading">Get In Touch</h4>
+                    <div class="risk-form-box">
+                        <form action="#" method="post">
+                            <div class="risk-form-field">
+                                <input type="text" class="risk-input" placeholder="Your Name" required>
+                            </div>
+                            <div class="risk-form-field">
+                                <input type="email" class="risk-input" placeholder="Email Address" required>
+                            </div>
+                            <div class="risk-form-field">
+                                <textarea class="risk-input" rows="5" placeholder="Write a Message" required></textarea>
+                            </div>
+                            <button type="submit" class="risk-submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+						
+	<!-- Footer Section Start -->
+		<footer class="footer-section-1 fix footer-bg bg-cover"
+			style="background-image: url(images/home-1/footer-shape.png)">
+			<span class="circle-shape"></span>
+			<span class="circle-shape-2"></span>
+			<div class="auto-container">
+				
+				<div class="footer-widget-wrapper">
+					<div class="row justify-content-between">
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<a href="index.html" class="footer-logo">
+										<img src="/images/planmyfin-logo.png" alt="img"  style="height: 80px; width: auto;" />
+									</a>
+								</div>
+								<div class="footer-content">
+									<p>PlanMyFin is a financial wellness platform helping individuals and businesses achieve long-term stability through personalized planning.</p>
+									
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Company</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="page-about.html">About us</a></li>
+									<li><a href="page-services.html">Blogs</a></li>
+									<li><a href="page-contact.html">Contact Us</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Main Services</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Financial Advising</a></li>
+									<li><a href="page-about.html">Investment Planning</a></li>
+									<li><a href="page-services.html">Risk Profiling</a></li>
+									<li><a href="page-contact.html">Retirement Planning</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
+								</div>
+								<ul class="contact-list">
+									<li>
+										<i class="lnr-icon-phone-handset"></i>
+										<p><a href="tel:+1050055900">+91 97785 96947</a></p>
+									</li>
+									<li>
+										<i class="lnr-icon-envelope"></i>
+										<p><a
+												href="https://html.kodesolution.com/cdn-cgi/l/email-protection#a3c5cacdc0cfcadbe3cbc6cfd38dd6d0"><span
+													class="__cf_email__"
+													data-cfemail="ce88a7a0ada2a7b68ea6aba2bee0bbbd">info@planmyfin.com</span></a>
+										</p>
+									</li>
+									<li>
+										<div class="social-icon">
+										<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+										<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+										<a href="#"><i class="fa-brands fa-instagram"></i></a>
+									</div>
+										<!--<i class="lnr-icon-map-marker"></i>-->
+										<!--<p>44 Danwers, NY City, USA, 70-102</p>-->
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="auto-container">
+					<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved. Designed & Developed by Trivlogic.</p>
+				</div>
+			</div>
+		</footer>
+
+
+</div>
+
+<script src="js/jquery.js"></script> 
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/gsap.js"></script>
+<script src="js/gsap-scroll-to-plugin.js"></script>
+<script src="js/gsap-scroll-smoother.js"></script>
+<script src="js/gsap-scroll-trigger.js"></script>
+<script src="js/gsap-split-text.js"></script>
+<script src="js/split-type.min.js"></script>
+<script src="js/parallaxie.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/bxslider.js"></script>
+<script src="js/nice-select.min.js"></script>
+<script src="js/knob.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/mixitup.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

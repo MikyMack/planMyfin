@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Financial Wellness Programme | PlanMyFin</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+	.debt-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .debt-page-wrapper {
+            padding: 80px 0;
+        }
+
+        .debt-main-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+        }
+
+        /* Hero Section */
+        .debt-hero-section {
+            background: var(--gradient-2);
+            padding: 80px 0;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .debt-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .debt-hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(200, 241, 105, 0.2);
+            color: var(--theme-color1);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .debt-hero-title {
+            font-family: var(--heading-font-family);
+            font-size: 52px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .debt-hero-highlight {
+            color: var(--theme-color1);
+        }
+
+        .debt-hero-description {
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .debt-hero-stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .debt-stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .debt-stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--theme-color1);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .debt-stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .debt-hero-visual {
+            position: relative;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .debt-hero-visual::before {
+            content: 'Debt Freedom Journey';
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Problem Section */
+        .debt-problem-section {
+            background: #fff3e0;
+            padding: 50px 40px;
+            border-radius: 15px;
+            margin-bottom: 60px;
+            border-left: 6px solid #ff6b6b;
+        }
+
+        .debt-problem-title {
+            font-family: var(--heading-font-family);
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--headings-color);
+            margin-bottom: 20px;
+        }
+
+        .debt-problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .debt-problem-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .debt-problem-icon {
+            width: 50px;
+            height: 50px;
+            background: #ffebee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .debt-problem-item h5 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--headings-color);
+            margin-bottom: 8px;
+        }
+
+        .debt-problem-item p {
+            font-size: 14px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Strategy Section */
+        .debt-strategy-section {
+            margin-bottom: 60px;
+        }
+
+        .debt-section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .debt-section-subtitle {
+            color: var(--theme-color7);
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .debt-section-title {
+            font-family: var(--heading-font-family);
+            font-size: 42px;
+            font-weight: 600;
+            color: var(--headings-color);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .debt-strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .debt-strategy-card {
+            background: var(--theme-color-light);
+            padding: 35px;
+            border-radius: 15px;
+            border-top: 4px solid var(--theme-color1);
+            transition: all 0.3s ease;
+        }
+
+        .debt-strategy-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(20, 68, 67, 0.15);
+        }
+
+        .debt-strategy-number {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .debt-strategy-card h4 {
+            font-family: var(--heading-font-family);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--headings-color);
+            margin-bottom: 15px;
+        }
+
+        .debt-strategy-card p {
+            font-size: 15px;
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .debt-strategy-steps {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .debt-strategy-steps li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: var(--text-color);
+        }
+
+        .debt-strategy-steps li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--theme-color7);
+            font-weight: 700;
+        }
+
+        /* Comparison Section */
+        .debt-comparison-section {
+            background: var(--theme-color-light);
+            padding: 60px 40px;
+            border-radius: 15px;
+            margin-bottom: 60px;
+        }
+
+        .debt-comparison-title {
+            font-family: var(--heading-font-family);
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--headings-color);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .debt-types-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .debt-type-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .debt-type-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .debt-type-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .debt-good-icon {
+            background: linear-gradient(135deg, #C9A961 0%, #039397 100%);
+        }
+
+        .debt-bad-icon {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+        }
+
+        .debt-type-card h4 {
+            font-family: var(--heading-font-family);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--headings-color);
+        }
+
+        .debt-type-card p {
+            font-size: 15px;
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .debt-examples {
+            background: var(--theme-color-light);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .debt-examples-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--headings-color);
+            margin-bottom: 10px;
+        }
+
+        .debt-examples-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .debt-examples-list li {
+            font-size: 13px;
+            color: var(--text-color);
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .debt-examples-list li::before {
+            content: '•';
+            position: absolute;
+            left: 5px;
+            color: var(--theme-color7);
+        }
+
+        /* Tips Section */
+        .debt-tips-section {
+            margin-bottom: 60px;
+        }
+
+        .debt-tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .debt-tip-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid var(--theme-color-light);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .debt-tip-card:hover {
+            border-color: var(--theme-color1);
+            box-shadow: 0 10px 30px rgba(20, 68, 67, 0.1);
+        }
+
+        .debt-tip-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 20px;
+        }
+
+        .debt-tip-card h5 {
+            font-family: var(--heading-font-family);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--headings-color);
+            margin-bottom: 12px;
+        }
+
+        .debt-tip-card p {
+            font-size: 14px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .debt-cta-section {
+            background: var(--gradient-1);
+            padding: 60px 50px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+        }
+
+        .debt-cta-title {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .debt-cta-description {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .debt-cta-button {
+            display: inline-block;
+            background: var(--theme-color2);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .debt-cta-button:hover {
+            background: var(--theme-color8);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sidebar Styles */
+        .debt-sidebar {
+            position: sticky;
+            top: 20px;
+        }
+
+        .debt-sidebar-widget {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .debt-sidebar-title {
+            background: var(--gradient-1);
+            color: white;
+            padding: 20px 25px;
+            font-family: var(--heading-font-family);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .debt-services-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .debt-services-list li {
+            border-bottom: 1px solid var(--theme-color-light);
+        }
+
+        .debt-services-list li:last-child {
+            border-bottom: none;
+        }
+
+        .debt-services-list a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 25px;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .debt-services-list a:hover {
+            background: var(--theme-color-light);
+            color: var(--theme-color7);
+            padding-left: 30px;
+        }
+
+        .debt-services-list li.current a {
+            background: var(--theme-color-light);
+            color: var(--theme-color7);
+            font-weight: 600;
+        }
+
+        .debt-services-list i {
+            color: var(--theme-color7);
+        }
+
+        .debt-contact-widget {
+            padding: 25px;
+        }
+
+        .debt-contact-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .debt-contact-list li {
+            margin-bottom: 15px;
+            color: var(--text-color);
+            font-size: 15px;
+        }
+
+        .debt-contact-list a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .debt-contact-list a:hover {
+            color: var(--theme-color7);
+        }
+
+        .debt-form-widget {
+            padding: 25px;
+        }
+
+        .debt-form-group {
+            margin-bottom: 20px;
+        }
+
+        .debt-form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--theme-color-light);
+            border-radius: 8px;
+            font-family: var(--body-font-family);
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .debt-form-control:focus {
+            outline: none;
+            border-color: var(--theme-color7);
+        }
+
+        .debt-form-button {
+            width: 100%;
+            background: var(--gradient-1);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .debt-form-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(20, 68, 67, 0.2);
+        }
+
+        @media (max-width: 1024px) {
+            .debt-main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .debt-hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .debt-strategy-grid,
+            .debt-types-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .debt-tips-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .debt-problem-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .debt-hero-title {
+                font-size: 36px;
+            }
+
+            .debt-section-title {
+                font-size: 32px;
+            }
+
+            .debt-hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .debt-tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .debt-sidebar {
+                position: static;
+            }
+        }
+</style>
+</head>
+
+<body>
+<div class="page-wrapper">
+	<!-- Preloader Start -->
+	<div id="preloader" class="preloader">
+		<div class="animation-preloader">
+			<div class="spinner"></div>
+			<div class="txt-loading">
+				<span data-text-preloader="P" class="letters-loading">P</span>
+				<span data-text-preloader="L" class="letters-loading">L</span>
+				<span data-text-preloader="A" class="letters-loading">A</span>
+				<span data-text-preloader="N" class="letters-loading">N</span>
+				<span data-text-preloader="M" class="letters-loading">M</span>
+				<span data-text-preloader="Y" class="letters-loading">Y</span>
+				<span data-text-preloader="F" class="letters-loading">F</span>
+				<span data-text-preloader="I" class="letters-loading">I</span>
+				<span data-text-preloader="N" class="letters-loading">N</span>
+			</div>
+			<p class="text-center">Loading</p>
+		</div>
+		<div class="loader">
+			<div class="row">
+				<div class="col-3 loader-section section-left"><div class="bg"></div></div>
+				<div class="col-3 loader-section section-left"><div class="bg"></div></div>
+				<div class="col-3 loader-section section-right"><div class="bg"></div></div>
+				<div class="col-3 loader-section section-right"><div class="bg"></div></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Scroll To Top -->
+	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+	<!-- Main Header-->
+	<header class="main-header header-style-one header-1">
+		<!-- Header Lower -->
+			<div class="header-lower header-lower2 show-header-section">
+				<!-- Main box -->
+				<div class="main-box">
+
+					<!--Nav Box-->
+					<div class="nav-outer">
+						<div class="logo-box">
+							<div class="logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""
+										title="planmyfin" style="height: 80px; width: auto;"></a></div>
+						</div>
+						<nav class="nav main-menu">
+							<ul class="navigation">
+
+								<li class="dropdown"><a href="index.html">Home</a></li>
+								<li class="dropdown"><a href="page-about.html">About</a></li>
+
+
+								<li class="dropdown"><a href="page-services.html">Services</a>
+									<ul>
+										<!--<li><a href="page-services.html">Our Services</a></li>-->
+										<li><a href="fin-wellness-plan1.html">Financial Wellness Programme</a></li>
+										<li><a href="invest-plan2.html">Investment Planning</a></li>
+										<li><a href="retirement-plan3.html">Retirement Planning</a></li>
+										<li><a href="risk-manage-plan4.html">Risk Management & Insurance Planning</a></li>
+										<li><a href="emergency-fund-plan5.html">Emergency Fund Planning</a></li>
+										<li><a href="debt-manage-plan6.html">Debt Management</a></li>
+										<li><a href="cashflow7.html">Cashflow Analysis</a></li>
+										<li><a href="asset-allocat8.html">Asset Allocation Strategy</a></li>
+										<li><a href="risk-profiling9.html">Risk Profiling</a></li>										
+										<li><a href="legacy-plan10.html">Legacy Planning (Estate Planning & Will)</a></li>
+										<li><a href="fin-goal-plan11.html">Financial Goal Planning </a></li>
+									</ul>
+								</li>
+								<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a>
+
+								<li class="dropdown"><a href="news-grid.html">Blogs</a>
+								<!--	<ul>
+										<li><a href="news-grid.html">News Grid</a></li>
+										<li><a href="news-details.html">News Details</a></li>
+									</ul>-->
+								</li>
+								<li><a href="page-contact.html">Contact</a></li>
+							</ul>
+						</nav>
+						<!-- Main Menu End-->
+						<div class="outer-box">
+							<a href="tel:+92(8800)9806" class="info-btn">
+								<i class="icon fa fa-phone"></i>
+								+91 97785 96947
+							</a>
+
+							<a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
+
+							<!-- Mobile Nav toggler -->
+							<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Header Lower -->
+
+
+		<!-- Mobile Menu -->
+		<div class="mobile-menu">
+			<div class="menu-backdrop"></div>
+			<nav class="menu-box">
+				<div class="upper-box">
+					<div class="nav-logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""></a></div>
+					<div class="close-btn"><i class="icon fa fa-times"></i></div>
+				</div>
+				<ul class="navigation clearfix"></ul>
+				<ul class="contact-list-one">
+					<li>
+						<div class="contact-info-box">
+							<i class="icon lnr-icon-phone-handset"></i>
+							<span class="title">Call Now</span>
+							<a href="tel:+919778596947">+91 97785 96947</a>
+						</div>
+					</li>
+					<li>
+						<div class="contact-info-box">
+							<span class="icon lnr-icon-envelope1"></span>
+							<span class="title">Send Email</span>
+							<a href="mailto:info@planmyfin.com">info@planmyfin.com</a>
+						</div>
+					</li>
+				</ul>
+				<ul class="social-links">
+					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<!-- Sticky Header -->
+		<div class="sticky-header">
+			<div class="auto-container">
+				<div class="inner-container">
+					<div class="logo">
+						<a href="index.html"><img src="images/planmyfin-logo.png" alt="img"></a>
+					</div>
+					<div class="nav-outer">
+						<nav class="main-menu">
+							<div class="navbar-collapse show collapse clearfix">
+								<ul class="navigation clearfix"></ul>
+							</div>
+						</nav>
+						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Page Title -->
+	<section class="page-title" style="background-image: url(/images/planmyfin-imgs/about/about-banner.jpg);">
+		<div class="auto-container">
+			<div class="title-outer">
+				<ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="page-services.html">Services</a></li>
+					<li>Debt Management</li>
+				</ul>
+				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Debt Management</h1>
+			</div>
+		</div>
+	</section>
+
+	 <!-- Hero Section -->
+    <section class="debt-hero-section">
+        <div class="debt-container">
+            <div class="debt-hero-grid">
+                <div class="debt-hero-content">
+                    <span class="debt-hero-tag">Financial Freedom Strategy</span>
+                    <h1 class="debt-hero-title">
+                        Break Free from Debt:<br>
+                        <span class="debt-hero-highlight">Your Path to Financial Liberation</span>
+                    </h1>
+                    <p class="debt-hero-description">
+                        Debt doesn't have to be a life sentence. With the right strategy and disciplined approach, 
+                        you can regain control of your finances, reduce stress, and build the life you deserve.
+                    </p>
+                    <div class="debt-hero-stats">
+                        <div class="debt-stat-card">
+                            <div class="debt-stat-number">33%</div>
+                            <div class="debt-stat-label">Average EMI to Income Ratio</div>
+                        </div>
+                        <div class="debt-stat-card">
+                            <div class="debt-stat-number">2 Types</div>
+                            <div class="debt-stat-label">Good vs Bad Debt</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="debt-hero-visual">
+                    <!-- Placeholder for illustration -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content with Sidebar -->
+    <div class="debt-page-wrapper">
+        <div class="debt-container">
+            <div class="debt-main-content">
+                <!-- Main Content Area -->
+                <div class="debt-content-area">
+                    <!-- Problem Section -->
+                    <div class="debt-problem-section">
+                        <h2 class="debt-problem-title">Why Debt Management Matters</h2>
+                        <p style="font-size: 16px; line-height: 1.8; margin-bottom: 20px;">
+                            Unmanaged debt can derail your financial goals, increase stress, and limit your financial freedom. 
+                            Understanding and managing your debt is crucial for long-term financial wellness.
+                        </p>
+                        <div class="debt-problem-grid">
+                            <div class="debt-problem-item">
+                                <div class="debt-problem-icon">😰</div>
+                                <h5>Financial Stress</h5>
+                                <p>High debt loads increase anxiety and impact mental health</p>
+                            </div>
+                            <div class="debt-problem-item">
+                                <div class="debt-problem-icon">📉</div>
+                                <h5>Limited Savings</h5>
+                                <p>EMI payments reduce your ability to save and invest</p>
+                            </div>
+                            <div class="debt-problem-item">
+                                <div class="debt-problem-icon">🎯</div>
+                                <h5>Goal Delays</h5>
+                                <p>Debt obligations postpone important life milestones</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Strategy Section -->
+                    <div class="debt-strategy-section">
+                        <div class="debt-section-header">
+                            <div class="debt-section-subtitle">Proven Methods</div>
+                            <h2 class="debt-section-title">Effective Debt Reduction Strategies</h2>
+                            <p style="font-size: 16px; color: var(--text-color);">
+                                Two powerful approaches to systematically eliminate your debt and regain financial control
+                            </p>
+                        </div>
+
+                        <div class="debt-strategy-grid">
+                            <div class="debt-strategy-card">
+                                <div class="debt-strategy-number">1</div>
+                                <h4>Debt Avalanche Method</h4>
+                                <p>
+                                    Focus on paying off debts with the highest interest rates first. This mathematically 
+                                    optimal approach saves you the most money in interest payments over time.
+                                </p>
+                                <ul class="debt-strategy-steps">
+                                    <li>List all debts by interest rate (highest to lowest)</li>
+                                    <li>Make minimum payments on all debts</li>
+                                    <li>Put extra money toward the highest interest debt</li>
+                                    <li>Once paid off, move to the next highest rate</li>
+                                    <li>Repeat until debt-free</li>
+                                </ul>
+                            </div>
+
+                            <div class="debt-strategy-card">
+                                <div class="debt-strategy-number">2</div>
+                                <h4>Debt Snowball Method</h4>
+                                <p>
+                                    Pay off your smallest debts first, regardless of interest rate. This creates quick wins 
+                                    and psychological momentum that keeps you motivated.
+                                </p>
+                                <ul class="debt-strategy-steps">
+                                    <li>List all debts by balance (smallest to largest)</li>
+                                    <li>Make minimum payments on all debts</li>
+                                    <li>Put extra money toward the smallest debt</li>
+                                    <li>Celebrate each paid-off debt</li>
+                                    <li>Snowball payments to the next smallest debt</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comparison Section -->
+                    <div class="debt-comparison-section">
+                        <h2 class="debt-comparison-title">Understanding Good Debt vs Bad Debt</h2>
+                        <div class="debt-types-grid">
+                            <div class="debt-type-card">
+                                <div class="debt-type-header">
+                                    <div class="debt-type-icon debt-good-icon">✓</div>
+                                    <h4>Good Debt</h4>
+                                </div>
+                                <p>
+                                    Debt that helps you acquire assets that appreciate in value or generate income. 
+                                    These investments can improve your financial position over time.
+                                </p>
+                                <div class="debt-examples">
+                                    <div class="debt-examples-title">Examples:</div>
+                                    <ul class="debt-examples-list">
+                                        <li>Home loans (Property appreciates)</li>
+                                        <li>Education loans (Increases earning potential)</li>
+                                        <li>Business loans (Generates income)</li>
+                                        <li>Investment property loans</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="debt-type-card">
+                                <div class="debt-type-header">
+                                    <div class="debt-type-icon debt-bad-icon">✕</div>
+                                    <h4>Bad Debt</h4>
+                                </div>
+                                <p>
+                                    Debt used to purchase depreciating assets or consumables. These don't build wealth 
+                                    and often come with high interest rates that compound your financial burden.
+                                </p>
+                                <div class="debt-examples">
+                                    <div class="debt-examples-title">Examples:</div>
+                                    <ul class="debt-examples-list">
+                                        <li>Credit card debt for shopping</li>
+                                        <li>Personal loans for vacations</li>
+                                        <li>Vehicle loans (Depreciates quickly)</li>
+                                        <li>Payday loans or high-interest loans</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tips Section -->
+                    <div class="debt-tips-section">
+                        <div class="debt-section-header">
+                            <div class="debt-section-subtitle">Best Practices</div>
+                            <h2 class="debt-section-title">Smart Debt Management Tips</h2>
+                        </div>
+
+                        <div class="debt-tips-grid">
+                            <div class="debt-tip-card">
+                                <div class="debt-tip-icon">📊</div>
+                                <h5>Track Your Debt-to-Income Ratio</h5>
+                                <p>Keep your EMI payments below 40% of your monthly income for healthy financial management</p>
+                            </div>
+
+                            <div class="debt-tip-card">
+                                <div class="debt-tip-icon">💰</div>
+                                <h5>Create a Debt Repayment Budget</h5>
+                                <p>Allocate specific amounts monthly toward debt reduction and stick to your plan</p>
+                            </div>
+
+                            <div class="debt-tip-card">
+                                <div class="debt-tip-icon">🚫</div>
+                                <h5>Avoid New Debt</h5>
+                                <p>Stop accumulating new debt while paying off existing obligations</p>
+                            </div>
+
+                            <div class="debt-tip-card">
+                                <div class="debt-tip-icon">💳</div>
+                                <h5>Consolidate When Possible</h5>
+                                <p>Consider debt consolidation to lower interest rates and simplify payments</p>
+                            </div>
+
+                            <div class="debt-tip-card">
+                                <div class="debt-tip-icon">📞</div>
+                                <h5>Negotiate with Lenders</h5>
+                                <p>Contact creditors to negotiate lower interest rates or better repayment terms</p>
+                            </div>
+
+                            <div class="debt-tip-card">
+                                <div class="debt-tip-icon">🎯</div>
+                                <h5>Build Emergency Fund</h5>
+                                <p>Even while paying debt, maintain a small emergency fund to avoid new borrowing</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="debt-cta-section">
+                        <h2 class="debt-cta-title">Ready to Take Control of Your Debt?</h2>
+                        <p class="debt-cta-description">
+                            Let's create a personalized debt management strategy that works for your unique situation
+                        </p>
+                        <a href="#contact" class="debt-cta-button">Get Your Free Consultation</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="debt-sidebar">
+                    <!-- Services List Widget -->
+                    <div class="debt-sidebar-widget">
+                        <h4 class="debt-sidebar-title">All Services</h4>
+                        <ul class="debt-services-list">
+                            <li><a href="fin-wellness-programme.html">
+                                <span>Financial Wellness Programme</span>
+                                <i class="→">→</i>
+                            </a></li>
+                            <li><a href="investment-planning.html">
+                                <span>Investment Planning</span>
+                                <i class="→">→</i>
+                            </a></li>
+                            <li><a href="retirement-planning.html">
+                                <span>Retirement Planning</span>
+                                <i class="→">→</i>
+                            </a></li>
+                            <li><a href="risk-management.html">
+                                <span>Risk Management</span>
+                                <i class="→">→</i>
+                            </a></li>
+                            <li><a href="emergency-fund.html">
+                                <span>Emergency Fund Planning</span>
+                                <i class="→">→</i>
+                            </a></li>
+                            <li class="current"><a href="debt-management.html">
+                                <span>Debt Management</span>
+                                <i class="→">→</i>
+                            </a></li>
+                            <li><a href="cashflow-analysis.html">
+                                <span>Cashflow Analysis</span>
+                                <i class="→">→</i>
+                            </a></li>
+                            <li><a href="asset-allocation.html">
+                                <span>Asset Allocation</span>
+                                <i class="→">→</i>
+                            </a></li>
+                            <li><a href="risk-profiling.html">
+                                <span>Risk Profiling</span>
+                                <i class="→">→</i>
+                            </a></li>
+                            <li><a href="legacy-planning.html">
+                                <span>Legacy Planning</span>
+                                <i class="→">→</i>
+                            </a></li>
+                            <li><a href="goal-planning.html">
+                                <span>Financial Goal Planning</span>
+                                <i class="→">→</i>
+                            </a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Widget -->
+                    <div class="debt-sidebar-widget">
+                        <h4 class="debt-sidebar-title">Contact Us</h4>
+                        <div class="debt-contact-widget">
+                            <ul class="debt-contact-list">
+                                <li>📍 Bengaluru, Karnataka, IN</li>
+                                <li>✉️ <a href="mailto:info@planmyfin.com">info@planmyfin.com</a></li>
+                                <li>📞 <a href="tel:+919778596947">+91 97785 96947</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Widget -->
+                    <div class="debt-sidebar-widget">
+                        <h4 class="debt-sidebar-title">Get In Touch</h4>
+                        <div class="debt-form-widget">
+                            <form action="#" method="post">
+                                <div class="debt-form-group">
+                                    <input type="text" class="debt-form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="debt-form-group">
+                                    <input type="email" class="debt-form-control" placeholder="Email Address" required>
+                                </div>
+                                <div class="debt-form-group">
+                                    <textarea class="debt-form-control" rows="5" placeholder="Write a Message" required></textarea>
+                                </div>
+                                <button type="submit" class="debt-form-button">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+<!-- Footer Section Start -->
+		<footer class="footer-section-1 fix footer-bg bg-cover"
+			style="background-image: url(images/home-1/footer-shape.png)">
+			<span class="circle-shape"></span>
+			<span class="circle-shape-2"></span>
+			<div class="auto-container">
+				
+				<div class="footer-widget-wrapper">
+					<div class="row justify-content-between">
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<a href="index.html" class="footer-logo">
+										<img src="/images/planmyfin-logo.png" alt="img"  style="height: 80px; width: auto;" />
+									</a>
+								</div>
+								<div class="footer-content">
+									<p>PlanMyFin is a financial wellness platform helping individuals and businesses achieve long-term stability through personalized planning.</p>
+									
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Company</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="page-about.html">About us</a></li>
+									<li><a href="page-services.html">Blogs</a></li>
+									<li><a href="page-contact.html">Contact Us</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Main Services</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Financial Advising</a></li>
+									<li><a href="page-about.html">Investment Planning</a></li>
+									<li><a href="page-services.html">Risk Profiling</a></li>
+									<li><a href="page-contact.html">Retirement Planning</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
+								</div>
+								<ul class="contact-list">
+									<li>
+										<i class="lnr-icon-phone-handset"></i>
+										<p><a href="tel:+1050055900">+91 97785 96947</a></p>
+									</li>
+									<li>
+										<i class="lnr-icon-envelope"></i>
+										<p><a
+												href="https://html.kodesolution.com/cdn-cgi/l/email-protection#a3c5cacdc0cfcadbe3cbc6cfd38dd6d0"><span
+													class="__cf_email__"
+													data-cfemail="ce88a7a0ada2a7b68ea6aba2bee0bbbd">info@planmyfin.com</span></a>
+										</p>
+									</li>
+									<li>
+										<div class="social-icon">
+										<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+										<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+										<a href="#"><i class="fa-brands fa-instagram"></i></a>
+									</div>
+										<!--<i class="lnr-icon-map-marker"></i>-->
+										<!--<p>44 Danwers, NY City, USA, 70-102</p>-->
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="auto-container">
+					<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved. Designed & Developed by Trivlogic.</p>
+				</div>
+			</div>
+		</footer>
+
+
+
+</div>
+
+<script src="js/jquery.js"></script> 
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/gsap.js"></script>
+<script src="js/gsap-scroll-to-plugin.js"></script>
+<script src="js/gsap-scroll-smoother.js"></script>
+<script src="js/gsap-scroll-trigger.js"></script>
+<script src="js/gsap-split-text.js"></script>
+<script src="js/split-type.min.js"></script>
+<script src="js/parallaxie.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/bxslider.js"></script>
+<script src="js/nice-select.min.js"></script>
+<script src="js/knob.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/mixitup.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

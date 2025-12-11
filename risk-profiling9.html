@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Financial Wellness Programme | PlanMyFin</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+
+/* Main Content */
+.section-padding {
+  padding: 80px 0;
+}
+
+.auto-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.sec-title {
+  margin-bottom: 40px;
+}
+
+.sub-title {
+  color: #f39c12;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.sec-title h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.3;
+}
+
+/* Risk Assessment Card */
+.risk-assessment-card {
+  background: white;
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.score-display {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.score-circle {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+  background: var(--gradient-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+}
+
+.score-number {
+  font-size: 72px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.risk-group-badge {
+  display: inline-block;
+  background: var(--gradient-1);
+  color: white;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.risk-description {
+  font-size: 18px;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Risk Groups Table */
+.risk-groups-section {
+  background: white;
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.risk-group-item {
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: all 0.3s;
+  border-left: 4px solid #e0e0e0;
+}
+
+.risk-group-item:hover {
+  background: #f8f9fa;
+  transform: translateX(5px);
+}
+
+.risk-group-item.active {
+  background: var(--theme-color1);
+  border-left-color: #f39c12;
+  box-shadow: 0 5px 20px rgba(243, 156, 18, 0.15);
+}
+
+.risk-group-number {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-2);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.risk-group-item.active .risk-group-number {
+  background: var(--gradient-1);
+}
+
+.risk-group-content {
+  flex: 1;
+}
+
+.risk-group-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+.risk-group-desc {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.risk-group-return {
+  color: #f39c12;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Asset Allocation */
+.asset-allocation-section {
+  background: white;
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.allocation-chart {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.allocation-bar {
+  display: flex;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.equity-part {
+  background: var(--gradient-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.debt-part {
+  background: var(--gradient-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.allocation-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.legend-item {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.legend-color {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+}
+
+.legend-equity {
+  background: var(--gradient-1);
+}
+
+.legend-debt {
+  background: var(--gradient-2);
+}
+
+.legend-label {
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 5px;
+}
+
+.legend-range {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Footer */
+.footer-section {
+  background: #1a1a2e;
+  color: white;
+  padding: 60px 0 20px;
+  margin-top: 80px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-widget h3 {
+  color: #f39c12;
+  margin-bottom: 20px;
+}
+
+.footer-widget ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-widget ul li {
+  margin-bottom: 10px;
+}
+
+.footer-widget ul li a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-widget ul li a:hover {
+  color: #f39c12;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-menu, .outer-box {
+    display: none;
+  }
+  
+  .page-title h1 {
+    font-size: 32px;
+  }
+  
+  .sec-title h2 {
+    font-size: 28px;
+  }
+  
+  .risk-assessment-card,
+  .risk-groups-section,
+  .asset-allocation-section {
+    padding: 30px 20px;
+  }
+  
+  .score-circle {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .score-number {
+    font-size: 56px;
+  }
+  
+  .allocation-legend {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="page-wrapper">
+	<!-- Preloader Start -->
+	<div id="preloader" class="preloader">
+		<div class="animation-preloader">
+			<div class="spinner"></div>
+			<div class="txt-loading">
+				<span data-text-preloader="P" class="letters-loading">P</span>
+				<span data-text-preloader="L" class="letters-loading">L</span>
+				<span data-text-preloader="A" class="letters-loading">A</span>
+				<span data-text-preloader="N" class="letters-loading">N</span>
+				<span data-text-preloader="M" class="letters-loading">M</span>
+				<span data-text-preloader="Y" class="letters-loading">Y</span>
+				<span data-text-preloader="F" class="letters-loading">F</span>
+				<span data-text-preloader="I" class="letters-loading">I</span>
+				<span data-text-preloader="N" class="letters-loading">N</span>
+			</div>
+			<p class="text-center">Loading</p>
+		</div>
+		<div class="loader">
+			<div class="row">
+				<div class="col-3 loader-section section-left"><div class="bg"></div></div>
+				<div class="col-3 loader-section section-left"><div class="bg"></div></div>
+				<div class="col-3 loader-section section-right"><div class="bg"></div></div>
+				<div class="col-3 loader-section section-right"><div class="bg"></div></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Scroll To Top -->
+	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+	<!-- Main Header-->
+	<header class="main-header header-style-one header-1">
+		<!-- Header Lower -->
+			<div class="header-lower header-lower2 show-header-section">
+				<!-- Main box -->
+				<div class="main-box">
+
+					<!--Nav Box-->
+					<div class="nav-outer">
+						<div class="logo-box">
+							<div class="logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""
+										title="planmyfin" style="height: 80px; width: auto;"></a></div>
+						</div>
+						<nav class="nav main-menu">
+							<ul class="navigation">
+
+								<li class="dropdown"><a href="index.html">Home</a></li>
+								<li class="dropdown"><a href="page-about.html">About</a></li>
+
+
+								<li class="dropdown"><a href="page-services.html">Services</a>
+									<ul>
+										<!--<li><a href="page-services.html">Our Services</a></li>-->
+										<li><a href="fin-wellness-plan1.html">Financial Wellness Programme</a></li>
+										<li><a href="invest-plan2.html">Investment Planning</a></li>
+										<li><a href="retirement-plan3.html">Retirement Planning</a></li>
+										<li><a href="risk-manage-plan4.html">Risk Management & Insurance Planning</a></li>
+										<li><a href="emergency-fund-plan5.html">Emergency Fund Planning</a></li>
+										<li><a href="debt-manage-plan6.html">Debt Management</a></li>
+										<li><a href="cashflow7.html">Cashflow Analysis</a></li>
+										<li><a href="asset-allocat8.html">Asset Allocation Strategy</a></li>
+										<li><a href="risk-profiling9.html">Risk Profiling</a></li>										
+										<li><a href="legacy-plan10.html">Legacy Planning (Estate Planning & Will)</a></li>
+										<li><a href="fin-goal-plan11.html">Financial Goal Planning </a></li>
+									</ul>
+								</li>
+								<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a>
+
+								<li class="dropdown"><a href="news-grid.html">Blogs</a>
+								<!--	<ul>
+										<li><a href="news-grid.html">News Grid</a></li>
+										<li><a href="news-details.html">News Details</a></li>
+									</ul>-->
+								</li>
+								<li><a href="page-contact.html">Contact</a></li>
+							</ul>
+						</nav>
+						<!-- Main Menu End-->
+						<div class="outer-box">
+							<a href="tel:+92(8800)9806" class="info-btn">
+								<i class="icon fa fa-phone"></i>
+								+91 97785 96947
+							</a>
+
+							<a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
+
+							<!-- Mobile Nav toggler -->
+							<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Header Lower -->
+
+
+		<!-- Mobile Menu -->
+		<div class="mobile-menu">
+			<div class="menu-backdrop"></div>
+			<nav class="menu-box">
+				<div class="upper-box">
+					<div class="nav-logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""></a></div>
+					<div class="close-btn"><i class="icon fa fa-times"></i></div>
+				</div>
+				<ul class="navigation clearfix"></ul>
+				<ul class="contact-list-one">
+					<li>
+						<div class="contact-info-box">
+							<i class="icon lnr-icon-phone-handset"></i>
+							<span class="title">Call Now</span>
+							<a href="tel:+919778596947">+91 97785 96947</a>
+						</div>
+					</li>
+					<li>
+						<div class="contact-info-box">
+							<span class="icon lnr-icon-envelope1"></span>
+							<span class="title">Send Email</span>
+							<a href="mailto:info@planmyfin.com">info@planmyfin.com</a>
+						</div>
+					</li>
+				</ul>
+				<ul class="social-links">
+					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<!-- Sticky Header -->
+		<div class="sticky-header">
+			<div class="auto-container">
+				<div class="inner-container">
+					<div class="logo">
+						<a href="index.html"><img src="images/planmyfin-logo.png" alt="img"></a>
+					</div>
+					<div class="nav-outer">
+						<nav class="main-menu">
+							<div class="navbar-collapse show collapse clearfix">
+								<ul class="navigation clearfix"></ul>
+							</div>
+						</nav>
+						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Page Title -->
+	<section class="page-title" style="background-image: url(/images/planmyfin-imgs/about/about-banner.jpg);">
+		<div class="auto-container">
+			<div class="title-outer">
+				<ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="page-services.html">Services</a></li>
+					<li>Risk Profiling</li>
+				</ul>
+				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Risk Profiling</h1>
+			</div>
+		</div>
+	</section>
+
+	 <!-- Risk Profile Content -->
+  <section class="section-padding">
+    <div class="auto-container">
+      
+      <!-- Introduction -->
+      <div class="row mb-5">
+        <div class="col-lg-8 mx-auto text-center">
+          <div class="sec-title">
+            <span class="sub-title">Understanding Your Investment Personality</span>
+            <h2>Risk Profile Analysis</h2>
+          </div>
+          <p style="font-size: 18px; color: #666;">
+            The second step towards your investment planning is to understand your risk profile as an investor. 
+            Different investment products carry different risks—some are considered safe, while others are riskier. 
+            An assessment of your risk profile helps you understand the risk you can take as an investor, 
+            and accordingly, your asset allocation can be decided.
+          </p>
+        </div>
+      </div>
+
+      <!-- Risk Score Display -->
+      <div class="risk-assessment-card">
+        <div class="score-display">
+          <div class="score-circle">
+            <div class="score-number">52</div>
+            <div class="score-label">Risk Score</div>
+          </div>
+          <div class="risk-group-badge">Risk Group 4 - Moderate Risk Profile</div>
+          <p class="risk-description">
+            As an investor, you are looking for relatively higher returns over medium to long term with modest risk. 
+            This score indicates your risk group and your indicative risk-taking ability and investor category.
+          </p>
+          <div style="margin-top: 30px;">
+            <strong style="color: #f39c12; font-size: 20px;">Expected Return Range: 8.9% - 10.3%</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Risk Groups Overview -->
+      <div class="risk-groups-section">
+        <div class="sec-title text-center mb-5">
+          <h2>Understanding Risk Groups</h2>
+          <p style="color: #666; max-width: 800px; margin: 0 auto;">
+            Based on risk profile, investors can be grouped under 7 categories, 
+            ranging from Extremely Conservative to Extremely Aggressive. Here's where you stand:
+          </p>
+        </div>
+
+        <div class="risk-group-item">
+          <div class="risk-group-number">1</div>
+          <div class="risk-group-content">
+            <div class="risk-group-title">Extremely Conservative</div>
+            <div class="risk-group-desc">Capital preservation with minimal risk tolerance</div>
+            <div class="risk-group-return">Expected Return: 4% - 6%</div>
+          </div>
+        </div>
+
+        <div class="risk-group-item">
+          <div class="risk-group-number">2</div>
+          <div class="risk-group-content">
+            <div class="risk-group-title">Conservative</div>
+            <div class="risk-group-desc">Low risk appetite with stable income focus</div>
+            <div class="risk-group-return">Expected Return: 5% - 7%</div>
+          </div>
+        </div>
+
+        <div class="risk-group-item">
+          <div class="risk-group-number">3</div>
+          <div class="risk-group-content">
+            <div class="risk-group-title">Moderately Conservative</div>
+            <div class="risk-group-desc">Balanced approach with slight equity exposure</div>
+            <div class="risk-group-return">Expected Return: 6.5% - 8.5%</div>
+          </div>
+        </div>
+
+        <div class="risk-group-item active">
+          <div class="risk-group-number">4</div>
+          <div class="risk-group-content">
+            <div class="risk-group-title">Moderate (Your Profile)</div>
+            <div class="risk-group-desc">Balanced portfolio seeking growth with manageable risk</div>
+            <div class="risk-group-return">Expected Return: 8.9% - 10.3%</div>
+          </div>
+        </div>
+
+        <div class="risk-group-item">
+          <div class="risk-group-number">5</div>
+          <div class="risk-group-content">
+            <div class="risk-group-title">Moderately Aggressive</div>
+            <div class="risk-group-desc">Higher equity allocation for enhanced growth</div>
+            <div class="risk-group-return">Expected Return: 10% - 12%</div>
+          </div>
+        </div>
+
+        <div class="risk-group-item">
+          <div class="risk-group-number">6</div>
+          <div class="risk-group-content">
+            <div class="risk-group-title">Aggressive</div>
+            <div class="risk-group-desc">High risk tolerance for maximum growth potential</div>
+            <div class="risk-group-return">Expected Return: 11% - 14%</div>
+          </div>
+        </div>
+
+        <div class="risk-group-item">
+          <div class="risk-group-number">7</div>
+          <div class="risk-group-content">
+            <div class="risk-group-title">Extremely Aggressive</div>
+            <div class="risk-group-desc">Maximum risk for potentially highest returns</div>
+            <div class="risk-group-return">Expected Return: 12% - 16%+</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Asset Allocation -->
+      <div class="asset-allocation-section">
+        <div class="sec-title text-center mb-5">
+          <h2>Your Ideal Asset Allocation</h2>
+          <p style="color: #666; max-width: 800px; margin: 0 auto;">
+            Based on your Moderate Risk Profile (Group 4), here is your recommended asset allocation strategy. 
+            This mix balances growth potential with risk management.
+          </p>
+        </div>
+
+        <div class="allocation-chart">
+          <div class="allocation-bar">
+            <div class="equity-part" style="width: 50%;">
+              EQUITY<br>40-60%
+            </div>
+            <div class="debt-part" style="width: 50%;">
+              DEBT & OTHERS<br>40-60%
+            </div>
+          </div>
+
+          <div class="allocation-legend">
+            <div class="legend-item">
+              <div class="legend-color legend-equity"></div>
+              <div class="legend-label">Equity Allocation</div>
+              <div class="legend-range">Minimum: 40% | Maximum: 60%</div>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color legend-debt"></div>
+              <div class="legend-label">Debt & Others</div>
+              <div class="legend-range">Minimum: 40% | Maximum: 60%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <div style="background: #f8f9fa; padding: 30px; border-radius: 10px; max-width: 800px; margin: 0 auto;">
+            <h4 style="color: #1a1a2e; margin-bottom: 15px;">Important Note</h4>
+            <p style="color: #666; margin: 0;">
+              The asset allocation decision is personal and there is no perfect model. The allocation that works 
+              best for you changes at different times of your life and therefore requires modification as your age, 
+              goals, and risk profile evolve.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+				<!-- Sidebar -->
+				<!--<div class="col-lg-4">
+					<div class="service-sidebar mt-5 mt-lg-0">
+						<div class="sidebar-widget service-sidebar-single">
+							<div class="sidebar-service-list mb-30">
+								<h4 class="title">All Services</h4>
+								<ul>
+									<li class="current"><a href="fin-wellness-programme.html"><i class="far fa-arrow-right"></i><span>Financial Wellness Programme</span></a></li>
+									<li><a href="investment-planning.html"><i class="far fa-arrow-right"></i><span>Investment Planning</span></a></li>
+									<li><a href="retirement-planning.html"><i class="far fa-arrow-right"></i><span>Retirement Planning</span></a></li>
+									<li><a href="risk-management.html"><i class="far fa-arrow-right"></i><span>Risk Management</span></a></li>
+									<li><a href="emergency-fund.html"><i class="far fa-arrow-right"></i><span>Emergency Fund Planning</span></a></li>
+									<li><a href="debt-management.html"><i class="far fa-arrow-right"></i><span>Debt Management</span></a></li>
+									<li><a href="cashflow-analysis.html"><i class="far fa-arrow-right"></i><span>Cashflow Analysis</span></a></li>
+									<li><a href="asset-allocation.html"><i class="far fa-arrow-right"></i><span>Asset Allocation</span></a></li>
+									<li><a href="risk-profiling.html"><i class="far fa-arrow-right"></i><span>Risk Profiling</span></a></li>
+									<li><a href="legacy-planning.html"><i class="far fa-arrow-right"></i><span>Legacy Planning</span></a></li>
+									<li><a href="goal-planning.html"><i class="far fa-arrow-right"></i><span>Financial Goal Planning</span></a></li>
+								</ul>
+							</div>
+							<div class="sidebar-service-list mb-30">
+								<h4 class="title">Contact Us</h4>
+								<ul class="address">
+									<li>Bengaluru, Karnataka, IN</li>
+									<li><a href="mailto:info@planmyfin.com">info@planmyfin.com</a></li>
+									<li><a href="tel:+919778596947">+91 97785 96947</a></li>
+								</ul>
+							</div>
+							<div class="sidebar-service-list">
+								<h4 class="title">Get In Touch</h4>
+								<form action="#0">
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="mb-20">
+												<input class="form-control" type="text" placeholder="Your Name">
+											</div>
+										</div>
+										<div class="col-sm-12">
+											<div class="mb-20">
+												<input class="form-control" type="email" placeholder="Email Address">
+											</div>
+										</div>
+										<div class="col-sm-12">
+											<div class="mb-20">
+												<textarea class="form-control" name="message" id="message" rows="5" placeholder="Write a Message"></textarea>
+												<button class="theme-btn btn-style-one rounded-1 mt-30">Send Message</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>-->
+
+	<!-- Footer Section Start -->
+		<footer class="footer-section-1 fix footer-bg bg-cover"
+			style="background-image: url(images/home-1/footer-shape.png)">
+			<span class="circle-shape"></span>
+			<span class="circle-shape-2"></span>
+			<div class="auto-container">
+				
+				<div class="footer-widget-wrapper">
+					<div class="row justify-content-between">
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<a href="index.html" class="footer-logo">
+										<img src="/images/planmyfin-logo.png" alt="img"  style="height: 80px; width: auto;" />
+									</a>
+								</div>
+								<div class="footer-content">
+									<p>PlanMyFin is a financial wellness platform helping individuals and businesses achieve long-term stability through personalized planning.</p>
+									
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Company</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="page-about.html">About us</a></li>
+									<li><a href="page-services.html">Blogs</a></li>
+									<li><a href="page-contact.html">Contact Us</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Main Services</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Financial Advising</a></li>
+									<li><a href="page-about.html">Investment Planning</a></li>
+									<li><a href="page-services.html">Risk Profiling</a></li>
+									<li><a href="page-contact.html">Retirement Planning</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
+								</div>
+								<ul class="contact-list">
+									<li>
+										<i class="lnr-icon-phone-handset"></i>
+										<p><a href="tel:+1050055900">+91 97785 96947</a></p>
+									</li>
+									<li>
+										<i class="lnr-icon-envelope"></i>
+										<p><a
+												href="https://html.kodesolution.com/cdn-cgi/l/email-protection#a3c5cacdc0cfcadbe3cbc6cfd38dd6d0"><span
+													class="__cf_email__"
+													data-cfemail="ce88a7a0ada2a7b68ea6aba2bee0bbbd">info@planmyfin.com</span></a>
+										</p>
+									</li>
+									<li>
+										<div class="social-icon">
+										<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+										<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+										<a href="#"><i class="fa-brands fa-instagram"></i></a>
+									</div>
+										<!--<i class="lnr-icon-map-marker"></i>-->
+										<!--<p>44 Danwers, NY City, USA, 70-102</p>-->
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="auto-container">
+					<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved. Designed & Developed by Trivlogic.</p>
+				</div>
+			</div>
+		</footer>
+
+
+</div>
+
+<script src="js/jquery.js"></script> 
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/gsap.js"></script>
+<script src="js/gsap-scroll-to-plugin.js"></script>
+<script src="js/gsap-scroll-smoother.js"></script>
+<script src="js/gsap-scroll-trigger.js"></script>
+<script src="js/gsap-split-text.js"></script>
+<script src="js/split-type.min.js"></script>
+<script src="js/parallaxie.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/bxslider.js"></script>
+<script src="js/nice-select.min.js"></script>
+<script src="js/knob.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/mixitup.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

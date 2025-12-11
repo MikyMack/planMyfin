@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Financial Wellness Programme | PlanMyFin</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+	 * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .services-details {
+            padding: 80px 0;
+        }
+        
+        .auto-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+        
+        .col-lg-6, .col-lg-8, .col-lg-4, .col-md-6, .col-md-4 {
+            padding: 0 15px;
+        }
+        
+        .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+        .col-lg-8 { flex: 0 0 66.666%; max-width: 66.666%; }
+        .col-lg-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+        .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+        .col-md-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+        
+        .sec-title {
+            margin-bottom: 40px;
+        }
+        
+        .sub-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #f39c12;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 10px solid #f39c12;
+        }
+        
+        h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        
+        h4 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+        
+        h5 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .text {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Statistics Section */
+        .stats-row {
+            margin: 60px 0;
+        }
+        
+        .fin-stats-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .fin-stats-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .fin-stats-box h2 {
+            font-size: 56px;
+            color: white;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .fin-stats-box p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.95);
+            margin: 0;
+        }
+        
+        /* Highlight Box */
+        .fin-highlight-box {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+        }
+        
+        .fin-highlight-box p {
+            color: white;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        
+        /* Quote Box */
+        .fin-quote-box {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            font-size: 28px;
+            font-style: italic;
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .fin-quote-box:before {
+            content: '"';
+            font-size: 80px;
+            color: #f39c12;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-family: Georgia, serif;
+        }
+        
+        /* Outcome Boxes */
+        .fin-outcome-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #f39c12;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .fin-outcome-box:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .fin-outcome-box h5 {
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .fin-outcome-box p {
+            color: #666;
+            font-size: 15px;
+            margin: 0;
+        }
+        
+        /* Goal Type Cards */
+        .fin-goal-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border-top: 4px solid #f39c12;
+            display:flex;
+            flex-direction: column;
+            align-items: center;          
+            justify-content: center;
+            height:100%;
+            
+        }
+        
+        .fin-goal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .goal-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        /* Timeline Visual */
+        .fin-timeline {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 29px;
+            top: 60px;
+            width: 2px;
+            height: 100%;
+            background: #f39c12;
+        }
+        
+        .timeline-dot {
+            width: 60px;
+            height: 60px;
+            background: #f39c12;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+        
+        .timeline-content {
+            margin-left: 30px;
+            flex: 1;
+        }
+        
+        /* Steps Section */
+        .fin-step-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .fin-step-card:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        /* Warning Box */
+        .fin-warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .fin-warning-box h5 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .fin-warning-box p {
+            color: #856404;
+            margin: 0;
+        }
+        
+        /* Success Box */
+        .fin-success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .fin-success-box h5 {
+            color: #155724;
+            margin-bottom: 10px;
+        }
+        
+        .fin-success-box ul {
+            margin: 15px 0 0 20px;
+            color: #155724;
+        }
+        
+        .fin-success-box li {
+            margin-bottom: 8px;
+        }
+        
+        /* Benefit Cards */
+        .fin-benefit-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .fin-benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .fin-benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .fin-benefit-icon i {
+            font-size: 28px;
+            color: white;
+        }
+        
+        /* Sidebar */
+        .service-sidebar {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar-service-list {
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-service-list h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f39c12;
+        }
+        
+        .sidebar-service-list ul {
+            list-style: none;
+        }
+        
+        .sidebar-service-list ul li {
+            margin-bottom: 12px;
+        }
+        
+        .sidebar-service-list ul li a {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-service-list ul li a:hover,
+        .sidebar-service-list ul li.current a {
+            background: #f39c12;
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .sidebar-service-list ul li a i {
+            margin-right: 10px;
+            color: #f39c12;
+            transition: color 0.3s ease;
+        }
+        
+        .sidebar-service-list ul li a:hover i,
+        .sidebar-service-list ul li.current a i {
+            color: white;
+        }
+        
+        .address {
+            list-style: none;
+        }
+        
+        .address li {
+            padding: 10px 0;
+            color: #666;
+        }
+        
+        .address li a {
+            color: #f39c12;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .address li a:hover {
+            color: #e67e22;
+        }
+        
+        /* Form Styles */
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #f39c12;
+        }
+        
+        .theme-btn {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+        }
+        
+        .mb-20 { margin-bottom: 20px; }
+        .mb-30 { margin-bottom: 30px; }
+        .mb-40 { margin-bottom: 40px; }
+        .mt-30 { margin-top: 30px; }
+        .mt-40 { margin-top: 40px; }
+        .mt-5 { margin-top: 50px; }
+        .mt-lg-5 { margin-top: 50px; }
+        .g-4 > * { margin-bottom: 20px; }
+        
+        /* Responsive */
+        @media (max-width: 991px) {
+            .col-lg-6, .col-lg-8, .col-lg-4 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            
+            h2 { font-size: 32px; }
+            h3 { font-size: 26px; }
+            
+            .fin-quote-box {
+                font-size: 22px;
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .col-md-6, .col-md-4 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            
+            .services-details {
+                padding: 40px 0;
+            }
+            
+            .fin-stats-box h2 {
+                font-size: 42px;
+            }
+        }
+        
+        /* FAQ Styles */
+        .accordion-box {
+            list-style: none;
+        }
+        
+        .accordion {
+            margin-bottom: 15px;
+        }
+        
+        .acc-btn {
+            background: white;
+            padding: 20px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 18px;
+            color: #1a1a1a;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            padding-right: 50px;
+        }
+        
+        .acc-btn:hover {
+            background: #f39c12;
+            color: white;
+        }
+        
+        .acc-btn .icon {
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+        }
+        
+        .active-block .acc-btn .icon {
+            transform: translateY(-50%) rotate(45deg);
+        }
+        
+        .acc-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .acc-content.current {
+            max-height: 500px;
+        }
+        
+        .acc-content .content {
+            padding: 20px 25px;
+            background: #f8f9fa;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+        
+        .acc-content .text {
+            color: #666;
+            margin: 0;
+        }
+</style>
+</head>
+
+<body>
+<div class="page-wrapper">
+	<!-- Preloader Start -->
+	<div id="preloader" class="preloader">
+		<div class="animation-preloader">
+			<div class="spinner"></div>
+			<div class="txt-loading">
+				<span data-text-preloader="P" class="letters-loading">P</span>
+				<span data-text-preloader="L" class="letters-loading">L</span>
+				<span data-text-preloader="A" class="letters-loading">A</span>
+				<span data-text-preloader="N" class="letters-loading">N</span>
+				<span data-text-preloader="M" class="letters-loading">M</span>
+				<span data-text-preloader="Y" class="letters-loading">Y</span>
+				<span data-text-preloader="F" class="letters-loading">F</span>
+				<span data-text-preloader="I" class="letters-loading">I</span>
+				<span data-text-preloader="N" class="letters-loading">N</span>
+			</div>
+			<p class="text-center">Loading</p>
+		</div>
+		<div class="loader">
+			<div class="row">
+				<div class="col-3 loader-section section-left"><div class="bg"></div></div>
+				<div class="col-3 loader-section section-left"><div class="bg"></div></div>
+				<div class="col-3 loader-section section-right"><div class="bg"></div></div>
+				<div class="col-3 loader-section section-right"><div class="bg"></div></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Scroll To Top -->
+	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+	<!-- Main Header-->
+	<header class="main-header header-style-one header-1">
+		<!-- Header Lower -->
+			<div class="header-lower header-lower2 show-header-section">
+				<!-- Main box -->
+				<div class="main-box">
+
+					<!--Nav Box-->
+					<div class="nav-outer">
+						<div class="logo-box">
+							<div class="logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""
+										title="planmyfin" style="height: 80px; width: auto;"></a></div>
+						</div>
+						<nav class="nav main-menu">
+							<ul class="navigation">
+
+								<li class="dropdown"><a href="index.html">Home</a></li>
+								<li class="dropdown"><a href="page-about.html">About</a></li>
+
+
+								<li class="dropdown"><a href="page-services.html">Services</a>
+									<ul>
+										<!--<li><a href="page-services.html">Our Services</a></li>-->
+										<li><a href="fin-wellness-plan1.html">Financial Wellness Programme</a></li>
+										<li><a href="invest-plan2.html">Investment Planning</a></li>
+										<li><a href="retirement-plan3.html">Retirement Planning</a></li>
+										<li><a href="risk-manage-plan4.html">Risk Management & Insurance Planning</a></li>
+										<li><a href="emergency-fund-plan5.html">Emergency Fund Planning</a></li>
+										<li><a href="debt-manage-plan6.html">Debt Management</a></li>
+										<li><a href="cashflow7.html">Cashflow Analysis</a></li>
+										<li><a href="asset-allocat8.html">Asset Allocation Strategy</a></li>
+										<li><a href="risk-profiling9.html">Risk Profiling</a></li>										
+										<li><a href="legacy-plan10.html">Legacy Planning (Estate Planning & Will)</a></li>
+										<li><a href="fin-goal-plan11.html">Financial Goal Planning </a></li>
+									</ul>
+								</li>
+								<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a>
+
+								<li class="dropdown"><a href="news-grid.html">Blogs</a>
+								<!--	<ul>
+										<li><a href="news-grid.html">News Grid</a></li>
+										<li><a href="news-details.html">News Details</a></li>
+									</ul>-->
+								</li>
+								<li><a href="page-contact.html">Contact</a></li>
+							</ul>
+						</nav>
+						<!-- Main Menu End-->
+						<div class="outer-box">
+							<a href="tel:+92(8800)9806" class="info-btn">
+								<i class="icon fa fa-phone"></i>
+								+91 97785 96947
+							</a>
+
+							<a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
+
+							<!-- Mobile Nav toggler -->
+							<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Header Lower -->
+
+		<!-- Mobile Menu -->
+		<div class="mobile-menu">
+			<div class="menu-backdrop"></div>
+			<nav class="menu-box">
+				<div class="upper-box">
+					<div class="nav-logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""></a></div>
+					<div class="close-btn"><i class="icon fa fa-times"></i></div>
+				</div>
+				<ul class="navigation clearfix"></ul>
+				<ul class="contact-list-one">
+					<li>
+						<div class="contact-info-box">
+							<i class="icon lnr-icon-phone-handset"></i>
+							<span class="title">Call Now</span>
+							<a href="tel:+919778596947">+91 97785 96947</a>
+						</div>
+					</li>
+					<li>
+						<div class="contact-info-box">
+							<span class="icon lnr-icon-envelope1"></span>
+							<span class="title">Send Email</span>
+							<a href="mailto:info@planmyfin.com">info@planmyfin.com</a>
+						</div>
+					</li>
+				</ul>
+				<ul class="social-links">
+					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<!-- Sticky Header -->
+		<div class="sticky-header">
+			<div class="auto-container">
+				<div class="inner-container">
+					<div class="logo">
+						<a href="index.html"><img src="images/planmyfin-logo.png" alt="img"></a>
+					</div>
+					<div class="nav-outer">
+						<nav class="main-menu">
+							<div class="navbar-collapse show collapse clearfix">
+								<ul class="navigation clearfix"></ul>
+							</div>
+						</nav>
+						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Page Title -->
+	<section class="page-title" style="background-image: url(/images/planmyfin-imgs/about/about-banner.jpg);">
+		<div class="auto-container">
+			<div class="title-outer">
+				<ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="page-services.html">Services</a></li>
+					<li>Financial goal Planning</li>
+				</ul>
+				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Financial goal Planning</h1>
+			</div>
+		</div>
+	</section>
+
+	 <!-- Services Details -->
+    <section class="services-details section-padding">
+        <div class="auto-container">
+            <div class="row align-items-lg-center g-4">
+                <div class="col-lg-6">
+                    <div class="sec-title mb-40">
+                        <h6 class="sub-title">
+                            <span class="triangle triangle1"></span>
+                            <span class="triangle triangle2"></span>
+                            Strategic Financial Goal Planning
+                        </h6>
+                        <h2>
+                            Transform Your Dreams into <br class="d-none d-lg-block"> Achievable Financial Milestones
+                        </h2>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="project-details__top mt-lg-5">
+                        <div class="text mb-40">Financial goal planning is not about choosing investment products—it's about creating a scientific, structured roadmap that connects your current reality with your aspirations. Our comprehensive approach helps you identify, quantify, and systematically achieve every major milestone in your financial journey.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="row stats-row mt-5 mb-5">
+                <div class="col-lg-12">
+                    <h3 class="text-center mb-4">The Power of Systematic Goal Planning</h3>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fin-stats-box">
+                        <h2>5X</h2>
+                        <p>higher likelihood of achieving goals with written plans</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fin-stats-box">
+                        <h2>42%</h2>
+                        <p>more wealth accumulated with systematic planning</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fin-stats-box">
+                        <h2>68%</h2>
+                        <p>reduction in financial stress with clear goal frameworks</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="fin-highlight-box">
+                        <p class="mb-0"><strong>Critical Insight:</strong> Most people fail to achieve their financial goals not because they can't save, but because they never properly define, quantify, and plan for them. Goal planning transforms vague aspirations into concrete, achievable targets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="services-details__content">
+                        
+                        <!-- Quote Section -->
+                        <div class="fin-quote-box">
+                            "A goal without a plan is just a wish. Planning is bringing your future into the present so you can do something about it now."
+                        </div>
+
+                        <!-- What is Financial Goal Planning -->
+                        <h3 class="mb-4">What is Financial Goal Planning?</h3>
+                        <p class="mb-4">Financial goal planning is a comprehensive process that goes far beyond simply setting targets. It involves:</p>
+                        
+                        <div class="row g-4 mb-5">
+                            <div class="col-md-6">
+                                <div class="fin-outcome-box">
+                                    <h5><i class="far fa-calendar-check" style="color: #f39c12; margin-right: 10px;"></i>Timeline Charting</h5>
+                                    <p>Understanding when each major financial milestone will occur in your life journey</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="fin-outcome-box">
+                                    <h5><i class="far fa-calculator" style="color: #f39c12; margin-right: 10px;"></i>Goal Quantification</h5>
+                                    <p>Converting aspirations into specific rupee amounts adjusted for inflation</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="fin-outcome-box">
+                                    <h5><i class="far fa-chart-line" style="color: #f39c12; margin-right: 10px;"></i>Investment Strategy</h5>
+                                    <p>Determining how much to invest monthly to reach each goal systematically</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="fin-outcome-box">
+                                    <h5><i class="far fa-sync" style="color: #f39c12; margin-right: 10px;"></i>Regular Monitoring</h5>
+                                    <p>Tracking progress and adjusting the plan as life circumstances evolve</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Types of Financial Goals -->
+                        <h3 class="mb-4">Your Major Financial Goals: A Comprehensive Framework</h3>
+                        <p class="mb-4">We help you plan for every significant financial milestone across your entire life journey:</p>
+
+                        <div class="row g-4 mb-5">
+                            <div class="col-md-6">
+                                <div class="fin-goal-card">
+                                    <div class="goal-icon">🎓</div>
+                                    <h4>Education Planning</h4>
+                                    <p>Planning for children's education—from school fees to higher education, including professional courses and international studies. We factor in education inflation (typically 8-10% annually) to ensure adequate corpus building.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="fin-goal-card">
+                                    <div class="goal-icon">🏠</div>
+                                    <h4>Home Purchase</h4>
+                                    <p>Whether it's your first home, upgrading to a larger property, or buying a vacation home—we help you plan for down payments, EMIs, and associated costs with realistic timelines.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="fin-goal-card">
+                                    <div class="goal-icon">💍</div>
+                                    <h4>Life Establishment Fund</h4>
+                                    <p>Planning for children's marriage, helping them establish their lives, or supporting major life transitions. These goals require careful long-term planning given their substantial financial requirements.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="fin-goal-card">
+                                    <div class="goal-icon">🚗</div>
+                                    <h4>Lifestyle Assets</h4>
+                                    <p>Planning for vehicle purchases, home renovations, or other significant lifestyle upgrades without derailing your primary financial objectives.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="fin-goal-card">
+                                    <div class="goal-icon">✈️</div>
+                                    <h4>Travel & Experiences</h4>
+                                    <p>Creating dedicated funds for family vacations, international travel, or once-in-a-lifetime experiences—because life is meant to be enjoyed along the journey.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="fin-goal-card">
+                                    <div class="goal-icon">💼</div>
+                                    <h4>Business Ventures</h4>
+                                    <p>If entrepreneurship is in your future, we help you accumulate the necessary capital without compromising other financial commitments.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- The Scientific Approach -->
+                        <h3 class="mb-4">Our Scientific Approach to Goal Planning</h3>
+                        
+                        <div class="fin-timeline mb-5">
+                            <div class="timeline-item">
+                                <div class="timeline-dot">1</div>
+                                <div class="timeline-content">
+                                    <h5>Goal Identification & Timeline Charting</h5>
+                                    <p>We begin by identifying all your major financial goals and mapping them on a timeline. This creates a visual representation of when each goal will arrive—from immediate needs (1-3 years) to long-term aspirations (20-30 years).</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot">2</div>
+                                <div class="timeline-content">
+                                    <h5>Inflation-Adjusted Quantification</h5>
+                                    <p>We calculate exactly how much each goal will cost at the time you need it, accounting for inflation. For example, ₹10 lakhs needed 15 years from now will actually require ₹23.97 lakhs at 6% inflation.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot">3</div>
+                                <div class="timeline-content">
+                                    <h5>Multiple Inflation Scenarios</h5>
+                                    <p>We analyze your goals under low (2%), moderate (4%), and high (6%) inflation scenarios, giving you a complete picture of potential fund requirements and helping you prepare for different economic conditions.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot">4</div>
+                                <div class="timeline-content">
+                                    <h5>Investment Requirement Calculation</h5>
+                                    <p>Based on your risk profile and expected returns, we calculate precisely how much you need to invest monthly to reach each goal. We also show you the cost of delaying these investments by even 3 years.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot">5</div>
+                                <div class="timeline-content">
+                                    <h5>Cashflow Analysis & Integration</h5>
+                                    <p>We ensure your goal planning is realistic by analyzing your current income, expenses, and savings capacity. This integration ensures your plan is achievable, not just aspirational.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                        <!-- Understanding Inflation Impact -->
+                      <!--  <h3 class="mb-4">Understanding the Inflation Impact</h3>
+                        <p class="mb-4">One of the most critical yet overlooked aspects of goal planning is understanding how inflation erodes purchasing power over time. Consider this example:</p>
+                        
+                        <div class="fin-warning-box">
+                            <h5>⚠️ Real-Life Example: Education Fund Planning</h5>
+                            <p>If you need ₹10 lakhs for your child's education in today's terms, but the goal is 15 years away:</p>
+                            <ul style="margin-top: 15px; margin-left: 20px;">
+                                <li><strong>At 2% inflation:</strong> You'll need ₹13.46 lakhs</li>
+                                <li><strong>At 4% inflation:</strong> You'll need ₹18.01 lakhs</li>
+                                <li><strong>At 6% inflation:</strong> You'll need ₹23.97 lakhs</li>
+                            </ul>
+                            <p style="margin-top: 15px;">This means ignoring inflation could leave you with a shortfall of nearly ₹14 lakhs!</p>
+                        </div>-->
+
+                        <!-- Investment Strategy -->
+                        <h3 class="mb-4">From Goals to Investment Strategy</h3>
+                        <p class="mb-4">Once we've quantified your goals, we create a customized investment strategy that considers:</p>
+                        
+                        <div class="row g-4 mb-5">
+                            <div class="col-md-12">
+                                <div class="fin-step-card">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h5>Your Risk Profile</h5>
+                                        <p>Investment strategy aligned with your risk tolerance—whether moderate, moderately aggressive, or conservative—ensuring returns expectations of 8.9%-10.3% for moderate risk profiles.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <div class="fin-step-card">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h5>Goal Time Horizons</h5>
+                                        <p>Different goals have different timelines. Short-term goals (under 3 years) require different strategies than long-term goals (15-30 years).</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <div class="fin-step-card">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h5>Asset Allocation</h5>
+                                        <p>Based on your risk profile, we suggest optimal allocation between equity (40-60%) and debt instruments (40-60%) to maximize returns while managing risk.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <div class="fin-step-card">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h5>Regular Top-ups</h5>
+                                        <p>We recommend increasing investments annually (7-11% year-on-year) to account for income growth and avoid shortfalls, ensuring you stay on track to meet goals.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- The Cost of Delay -->
+                        <h3 class="mb-4">The Hidden Cost of Delaying Your Goals</h3>
+                        <p class="mb-4">One of the most powerful insights we provide is showing you exactly how much procrastination costs. Consider this example:</p>
+                        
+                        <div class="fin-success-box">
+                            <h5>💡 The Power of Starting Now</h5>
+                            <p>For a goal requiring ₹44.58 lakhs in 30 years (retirement at 4% inflation):</p>
+                            <ul>
+                                <li><strong>Starting today with 9.6% returns:</strong> ₹21,299 per month</li>
+                                <li><strong>Delaying by 3 years:</strong> ₹28,498 per month</li>
+                                <li><strong>Additional cost of delay:</strong> ₹7,199 per month (34% more!)</li>
+                            </ul>
+                            <p style="margin-top: 15px;"><strong>Key Takeaway:</strong> Every year you delay planning increases your required investment significantly due to lost compounding time.</p>
+                        </div>
+
+                        <!-- Comprehensive Coverage -->
+                        <h3 class="mb-4">What Our Goal Planning Service Includes</h3>
+                        
+                        <div class="row g-4 mb-5">
+                            <div class="col-md-6">
+                                <div class="fin-outcome-box">
+                                    <h5><i class="far fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Goal Timeline Visualization</h5>
+                                    <p>Clear visual representation of when each major financial milestone will arrive in your life</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="fin-outcome-box">
+                                    <h5><i class="far fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Multi-Scenario Analysis</h5>
+                                    <p>Assessment of fund requirements under various inflation scenarios (2%, 4%, 6%)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="fin-outcome-box">
+                                    <h5><i class="far fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Precise Investment Requirements</h5>
+                                    <p>Monthly, yearly, and lump-sum investment calculations for each goal</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="fin-outcome-box">
+                                    <h5><i class="far fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Cashflow Integration</h5>
+                                    <p>Ensuring your savings capacity aligns with goal requirements</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="fin-outcome-box">
+                                    <h5><i class="far fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Gap Analysis</h5>
+                                    <p>Identifying shortfalls and creating strategies to bridge them</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="fin-outcome-box">
+                                    <h5><i class="far fa-check-circle" style="color: #f39c12; margin-right: 10px;"></i>Year-by-Year Projections</h5>
+                                    <p>Detailed projections showing how investments grow with annual top-ups</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Why It Matters -->
+                        <h3 class="mb-4">Why Professional Goal Planning Matters</h3>
+                        <p class="mb-4">Most people approach financial goals haphazardly—saving randomly without clear targets, underestimating future costs, or overestimating their ability to catch up later. Professional goal planning prevents these costly mistakes by:</p>
+                        
+                        <div class="row g-4 mb-5">
+                            <div class="col-md-6">
+                                <div class="fin-benefit-card">
+                                    <div class="fin-benefit-icon">
+                                        <i class="lnr-icon-chart-bars" style="font-size: 24px;">📊</i>
+                                    </div>
+                                    <h5>Creating Clarity</h5>
+                                    <p>Transforming vague aspirations into concrete, measurable targets with specific timelines and amounts</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="fin-benefit-card">
+                                    <div class="fin-benefit-icon">
+                                        <i class="lnr-icon-shield" style="font-size: 24px;">🛡️</i>
+                                    </div>
+                                    <h5>Preventing Shortfalls</h5>
+                                    <p>Ensuring you have adequate funds when goals arrive, not scrambling at the last moment or compromising on quality</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="fin-benefit-card">
+                                    <div class="fin-benefit-icon">
+                                        <i class="lnr-icon-sync" style="font-size: 24px;">🔄</i>
+                                    </div>
+                                    <h5>Enabling Prioritization</h5>
+                                    <p>When resources are limited, helping you prioritize goals and allocate savings optimally across competing objectives</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="fin-benefit-card">
+                                    <div class="fin-benefit-icon">
+                                        <i class="lnr-icon-checkmark-circle" style="font-size: 24px;">✅</i>
+                                    </div>
+                                    <h5>Reducing Stress</h5>
+                                    <p>Providing peace of mind that you're on track, with a clear roadmap to achievement rather than anxious uncertainty</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Real-Life Application -->
+                      <!--  <h3 class="mb-4">Real-Life Application: Complete Goal Framework</h3>
+                        <p class="mb-4">Here's how we approach a typical family's complete financial goal planning:</p>
+                        
+                        <div class="fin-timeline mb-5">
+                            <div class="timeline-item">
+                                <div class="timeline-dot">5Y</div>
+                                <div class="timeline-content">
+                                    <h5>Family Vacation Fund (2030)</h5>
+                                    <p><strong>Today's Value:</strong> ₹10 lakhs | <strong>Future Value (6% inflation):</strong> ₹13.38 lakhs<br>
+                                    <strong>Monthly Investment Required:</strong> ₹17,326 at 9.6% returns</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot">15Y</div>
+                                <div class="timeline-content">
+                                    <h5>Son's Education Fund (2040)</h5>
+                                    <p><strong>Today's Value:</strong> ₹10 lakhs | <strong>Future Value (6% inflation):</strong> ₹23.97 lakhs<br>
+                                    <strong>Monthly Investment Required:</strong> ₹5,950 at 9.6% returns</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot">17Y</div>
+                                <div class="timeline-content">
+                                    <h5>Daughter's Education Fund (2042)</h5>
+                                    <p><strong>Today's Value:</strong> ₹10 lakhs | <strong>Future Value (6% inflation):</strong> ₹26.93 lakhs<br>
+                                    <strong>Monthly Investment Required:</strong> ₹5,237 at 9.6% returns</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot">22Y</div>
+                                <div class="timeline-content">
+                                    <h5>Daughter's Life Establishment (2047)</h5>
+                                    <p><strong>Today's Value:</strong> ₹20 lakhs | <strong>Future Value (6% inflation):</strong> ₹72.07 lakhs<br>
+                                    <strong>Monthly Investment Required:</strong> ₹7,949 at 9.6% returns</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot">24Y</div>
+                                <div class="timeline-content">
+                                    <h5>Son's Life Establishment (2049)</h5>
+                                    <p><strong>Today's Value:</strong> ₹20 lakhs | <strong>Future Value (6% inflation):</strong> ₹80.98 lakhs<br>
+                                    <strong>Monthly Investment Required:</strong> ₹7,203 at 9.6% returns</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot">30Y</div>
+                                <div class="timeline-content">
+                                    <h5>Retirement Fund (2055)</h5>
+                                    <p><strong>Today's Value:</strong> ₹86.25 lakhs | <strong>Future Value (4% inflation):</strong> ₹4.46 crores<br>
+                                    <strong>Monthly Investment Required:</strong> ₹21,299 at 9.6% returns</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="mb-4"><strong>Total Monthly Investment Needed:</strong> ₹64,964 across all goals<br>
+                        <strong>Current Monthly Savings:</strong> ₹35,000<br>
+                        <strong>Gap to Bridge:</strong> ₹29,964 (requires income growth or expense optimization)</p>-->
+
+                        <!-- Actionable Steps -->
+                        <h3 class="mb-4">Your Journey to Goal Achievement</h3>
+                        <p class="mb-4">Working with us on your financial goal planning involves these key steps:</p>
+                        
+                        <div class="row g-4 mb-5">
+                            <div class="col-md-12">
+                                <div class="fin-step-card">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h5>Comprehensive Discovery Session</h5>
+                                        <p>We discuss all your major life goals, aspirations, and timelines to create a complete picture of your financial future.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <div class="fin-step-card">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h5>Detailed Quantification & Analysis</h5>
+                                        <p>We calculate inflation-adjusted requirements for each goal under multiple scenarios and determine precise investment needs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <div class="fin-step-card">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h5>Personalized Goal Plan Preparation</h5>
+                                        <p>You receive a comprehensive document detailing each goal, required investments, year-by-year projections, and actionable steps.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <div class="fin-step-card">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h5>Implementation Support</h5>
+                                        <p>We guide you in aligning existing investments and starting new systematic investment plans to achieve your goals.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <div class="fin-step-card">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">
+                                        <h5>Periodic Reviews & Adjustments</h5>
+                                        <p>Annual reviews ensure you're on track, with adjustments made for life changes, income growth, or goal modifications.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Section -->
+                        <div class="innerpage mt-5">
+                            <h3 class="mb-4">Frequently Asked Questions</h3>
+                            <div class="faq-content-1">
+                                <ul class="accordion-box">
+                                    <li class="accordion block active-block">
+                                        <div class="acc-btn">What if I don't know all my financial goals right now?
+                                            <div class="icon fa fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content current">
+                                            <div class="content">
+                                                <div class="text">
+                                                    That's perfectly normal. Goal planning is an iterative process. We start with the goals you're certain about (like retirement, children's education) and build a framework that can accommodate new goals as they emerge. Your plan is living document that evolves with your life circumstances.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="accordion block">
+                                        <div class="acc-btn">How often should I review my financial goals?
+                                            <div class="icon fa fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">
+                                                    We recommend annual reviews to track progress and make necessary adjustments. However, major life events (job change, marriage, birth of child, inheritance, health issues) should trigger immediate reviews to ensure your plan remains aligned with your new reality.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="accordion block">
+                                        <div class="acc-btn">What if I can't afford the required monthly investments right now?
+                                            <div class="icon fa fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">
+                                                    Goal planning helps you understand the gap between your current capacity and requirements. We then work on strategies like prioritizing critical goals first, planning for income growth, optimizing expenses, or adjusting timelines where possible. The plan shows you what's needed—implementation can be phased based on your circumstances.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="accordion block">
+                                        <div class="acc-btn">How accurate are inflation-adjusted projections?
+                                            <div class="icon fa fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">
+                                                    While we can't predict exact inflation rates, we use historical data and multiple scenarios (low, moderate, high inflation) to create a realistic range. This approach ensures you're prepared for various economic conditions rather than relying on a single assumption that could prove inaccurate.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="accordion block">
+                                        <div class="acc-btn">Can I adjust my goals later if priorities change?
+                                            <div class="icon fa fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">
+                                                    Absolutely. Financial goal planning is flexible by design. Life circumstances change—career shifts, health situations, family dynamics—and your financial plan should adapt accordingly. We help you reassess priorities and reallocate resources as needed while keeping you on track for your most important objectives.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="service-sidebar mt-5 mt-lg-0">
+                        <div class="sidebar-widget service-sidebar-single">
+                            <div class="sidebar-service-list mb-30">
+                                <h4 class="title">All Services</h4>
+                                <ul>
+                                    <li><a href="fin-wellness-programme.html"><i class="far fa-arrow-right"></i><span>Financial Wellness Programme</span></a></li>
+                                    <li><a href="investment-planning.html"><i class="far fa-arrow-right"></i><span>Investment Planning</span></a></li>
+                                    <li><a href="retirement-planning.html"><i class="far fa-arrow-right"></i><span>Retirement Planning</span></a></li>
+                                    <li><a href="risk-management.html"><i class="far fa-arrow-right"></i><span>Risk Management</span></a></li>
+                                    <li><a href="emergency-fund.html"><i class="far fa-arrow-right"></i><span>Emergency Fund Planning</span></a></li>
+                                    <li><a href="debt-management.html"><i class="far fa-arrow-right"></i><span>Debt Management</span></a></li>
+                                    <li><a href="cashflow-analysis.html"><i class="far fa-arrow-right"></i><span>Cashflow Analysis</span></a></li>
+                                    <li><a href="asset-allocation.html"><i class="far fa-arrow-right"></i><span>Asset Allocation</span></a></li>
+                                    <li><a href="risk-profiling.html"><i class="far fa-arrow-right"></i><span>Risk Profiling</span></a></li>
+                                    <li><a href="legacy-planning.html"><i class="far fa-arrow-right"></i><span>Legacy Planning</span></a></li>
+                                    <li class="current"><a href="goal-planning.html"><i class="far fa-arrow-right"></i><span>Financial Goal Planning</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="sidebar-service-list mb-30">
+                                <h4 class="title">Contact Us</h4>
+                                <ul class="address">
+                                    <li>Bengaluru, Karnataka, IN</li>
+                                    <li><a href="mailto:info@planmyfin.com">info@planmyfin.com</a></li>
+                                    <li><a href="tel:+919778596947">+91 97785 96947</a></li>
+                                </ul>
+                            </div>
+                            <div class="sidebar-service-list">
+                                <h4 class="title">Get In Touch</h4>
+                                <form action="#0">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="mb-20">
+                                                <input class="form-control" type="text" placeholder="Your Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="mb-20">
+                                                <input class="form-control" type="email" placeholder="Email Address">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="mb-20">
+                                                <textarea class="form-control" name="message" id="message" rows="5" placeholder="Write a Message"></textarea>
+                                                <button class="theme-btn btn-style-one rounded-1 mt-30">Send Message</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+<!-- Footer Section Start -->
+		<footer class="footer-section-1 fix footer-bg bg-cover"
+			style="background-image: url(images/home-1/footer-shape.png)">
+			<span class="circle-shape"></span>
+			<span class="circle-shape-2"></span>
+			<div class="auto-container">
+				
+				<div class="footer-widget-wrapper">
+					<div class="row justify-content-between">
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<a href="index.html" class="footer-logo">
+										<img src="/images/planmyfin-logo.png" alt="img"  style="height: 80px; width: auto;" />
+									</a>
+								</div>
+								<div class="footer-content">
+									<p>PlanMyFin is a financial wellness platform helping individuals and businesses achieve long-term stability through personalized planning.</p>
+									
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Company</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="page-about.html">About us</a></li>
+									<li><a href="page-services.html">Blogs</a></li>
+									<li><a href="page-contact.html">Contact Us</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Main Services</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Financial Advising</a></li>
+									<li><a href="page-about.html">Investment Planning</a></li>
+									<li><a href="page-services.html">Risk Profiling</a></li>
+									<li><a href="page-contact.html">Retirement Planning</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
+								</div>
+								<ul class="contact-list">
+									<li>
+										<i class="lnr-icon-phone-handset"></i>
+										<p><a href="tel:+1050055900">+91 97785 96947</a></p>
+									</li>
+									<li>
+										<i class="lnr-icon-envelope"></i>
+										<p><a
+												href="https://html.kodesolution.com/cdn-cgi/l/email-protection#a3c5cacdc0cfcadbe3cbc6cfd38dd6d0"><span
+													class="__cf_email__"
+													data-cfemail="ce88a7a0ada2a7b68ea6aba2bee0bbbd">info@planmyfin.com</span></a>
+										</p>
+									</li>
+									<li>
+										<div class="social-icon">
+										<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+										<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+										<a href="#"><i class="fa-brands fa-instagram"></i></a>
+									</div>
+										<!--<i class="lnr-icon-map-marker"></i>-->
+										<!--<p>44 Danwers, NY City, USA, 70-102</p>-->
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="auto-container">
+					<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved. Designed & Developed by Trivlogic.</p>
+				</div>
+			</div>
+		</footer>
+
+
+
+</div>
+
+<script src="js/jquery.js"></script> 
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/gsap.js"></script>
+<script src="js/gsap-scroll-to-plugin.js"></script>
+<script src="js/gsap-scroll-smoother.js"></script>
+<script src="js/gsap-scroll-trigger.js"></script>
+<script src="js/gsap-split-text.js"></script>
+<script src="js/split-type.min.js"></script>
+<script src="js/parallaxie.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/bxslider.js"></script>
+<script src="js/nice-select.min.js"></script>
+<script src="js/knob.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/mixitup.js"></script>
+<script src="js/script.js"></script>
+
+ <script>
+        // FAQ Accordion functionality
+        document.querySelectorAll('.acc-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionItem = button.parentElement;
+                const accordionContent = accordionItem.querySelector('.acc-content');
+                
+                // Close all other accordions
+                document.querySelectorAll('.accordion').forEach(item => {
+                    if (item !== accordionItem) {
+                        item.classList.remove('active-block');
+                        item.querySelector('.acc-content').classList.remove('current');
+                    }
+                });
+                
+                // Toggle current accordion
+                accordionItem.classList.toggle('active-block');
+                accordionContent.classList.toggle('current');
+            });
+        });
+    </script>
+</body>
+</html>

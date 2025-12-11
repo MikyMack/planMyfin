@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Legacy Planning | PlanMyFin</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+	.legacy-stats-box {
+		background: var(--gradient-2);
+		padding: 30px;
+		border-radius: 10px;
+		color: white;
+		text-align: center;
+		margin-bottom: 20px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.legacy-stats-box h2 {
+		font-size: 48px;
+		font-weight: 700;
+		margin-bottom: 10px;
+		color: white;
+	}
+	.legacy-stats-box p {
+		font-size: 16px;
+		margin-bottom: 0;
+		color: white;
+	}
+	.legacy-step-box {
+		background: var(--theme-color6);
+		padding: 30px;
+		border-radius: 8px;
+		margin-bottom: 20px;
+		border-left: 4px solid var(--theme-color1);
+		transition: all 0.3s;
+		height: 100%;
+	}
+	.legacy-step-box:hover {
+		box-shadow: 0 5px 20px var(--theme-color2);
+		transform: translateY(-3px);
+	}
+	.legacy-step-number {
+		width: 50px;
+		height: 50px;
+		background: var(--gradient-1);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 24px;
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
+	.legacy-step-box h5 {
+		color: var(--theme-color5);
+		font-weight: 600;
+		margin-bottom: 15px;
+		font-size: 20px;
+	}
+	.legacy-step-box p {
+		color: #666;
+		margin-bottom: 0;
+		font-size: 14px;
+		line-height: 1.8;
+	}
+	.legacy-highlight-box {
+		background: var(--theme-color1);
+		border-left: 4px solid var(--dark-color2);
+		padding: 25px;
+		margin: 30px 0;
+		border-radius: 5px;
+	}
+	.legacy-quote-box {
+		background: var(--theme-color8);
+		color: white;
+		padding: 40px;
+		border-radius: 10px;
+		text-align: center;
+		font-size: 22px;
+		font-weight: 500;
+		margin: 40px 0;
+	}
+	.legacy-will-card {
+		background: white;
+		border: 2px solid var(--gradient-1);
+		padding: 25px;
+		border-radius: 10px;
+		margin-bottom: 20px;
+		transition: all 0.3s;
+		height: 100%;
+	}
+	.legacy-will-card:hover {
+		background: var(--gradient-2);
+		color: white;
+		border-color: var(--gradient-2);
+	}
+	.legacy-will-card:hover h5,
+	.legacy-will-card:hover p {
+		color: white;
+	}
+	.legacy-will-card i {
+		font-size: 42px;
+		color: var(--dark-color2);
+		margin-bottom: 20px;
+		display: block;
+	}
+	.legacy-will-card:hover i {
+		color: white;
+	}
+	.legacy-will-card h5 {
+		color: var(--theme-color5);
+		font-weight: 600;
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+</style>
+</head>
+
+<body>
+<div class="page-wrapper">
+	<!-- Preloader Start -->
+	<div id="preloader" class="preloader">
+		<div class="animation-preloader">
+			<div class="spinner"></div>
+			<div class="txt-loading">
+				<span data-text-preloader="P" class="letters-loading">P</span>
+				<span data-text-preloader="L" class="letters-loading">L</span>
+				<span data-text-preloader="A" class="letters-loading">A</span>
+				<span data-text-preloader="N" class="letters-loading">N</span>
+				<span data-text-preloader="M" class="letters-loading">M</span>
+				<span data-text-preloader="Y" class="letters-loading">Y</span>
+				<span data-text-preloader="F" class="letters-loading">F</span>
+				<span data-text-preloader="I" class="letters-loading">I</span>
+				<span data-text-preloader="N" class="letters-loading">N</span>
+			</div>
+			<p class="text-center">Loading</p>
+		</div>
+		<div class="loader">
+			<div class="row">
+				<div class="col-3 loader-section section-left"><div class="bg"></div></div>
+				<div class="col-3 loader-section section-left"><div class="bg"></div></div>
+				<div class="col-3 loader-section section-right"><div class="bg"></div></div>
+				<div class="col-3 loader-section section-right"><div class="bg"></div></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Scroll To Top -->
+	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+	<!-- Main Header-->
+	<header class="main-header header-style-one header-1">
+	<!-- Header Lower -->
+			<div class="header-lower header-lower2 show-header-section">
+				<!-- Main box -->
+				<div class="main-box">
+
+					<!--Nav Box-->
+					<div class="nav-outer">
+						<div class="logo-box">
+							<div class="logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""
+										title="planmyfin" style="height: 80px; width: auto;"></a></div>
+						</div>
+						<nav class="nav main-menu">
+							<ul class="navigation">
+
+								<li class="dropdown"><a href="index.html">Home</a></li>
+								<li class="dropdown"><a href="page-about.html">About</a></li>
+
+
+								<li class="dropdown"><a href="page-services.html">Services</a>
+									<ul>
+										<!--<li><a href="page-services.html">Our Services</a></li>-->
+										<li><a href="fin-wellness-plan1.html">Financial Wellness Programme</a></li>
+										<li><a href="invest-plan2.html">Investment Planning</a></li>
+										<li><a href="retirement-plan3.html">Retirement Planning</a></li>
+										<li><a href="risk-manage-plan4.html">Risk Management & Insurance Planning</a></li>
+										<li><a href="emergency-fund-plan5.html">Emergency Fund Planning</a></li>
+										<li><a href="debt-manage-plan6.html">Debt Management</a></li>
+										<li><a href="cashflow7.html">Cashflow Analysis</a></li>
+										<li><a href="asset-allocat8.html">Asset Allocation Strategy</a></li>
+										<li><a href="risk-profiling9.html">Risk Profiling</a></li>										
+										<li><a href="legacy-plan10.html">Legacy Planning (Estate Planning & Will)</a></li>
+										<li><a href="fin-goal-plan11.html">Financial Goal Planning </a></li>
+									</ul>
+								</li>
+								<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a>
+
+								<li class="dropdown"><a href="news-grid.html">Blogs</a>
+								<!--	<ul>
+										<li><a href="news-grid.html">News Grid</a></li>
+										<li><a href="news-details.html">News Details</a></li>
+									</ul>-->
+								</li>
+								<li><a href="page-contact.html">Contact</a></li>
+							</ul>
+						</nav>
+						<!-- Main Menu End-->
+						<div class="outer-box">
+							<a href="tel:+92(8800)9806" class="info-btn">
+								<i class="icon fa fa-phone"></i>
+								+91 97785 96947
+							</a>
+
+							<a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
+
+							<!-- Mobile Nav toggler -->
+							<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Header Lower -->
+
+
+		<!-- Mobile Menu -->
+		<div class="mobile-menu">
+			<div class="menu-backdrop"></div>
+			<nav class="menu-box">
+				<div class="upper-box">
+					<div class="nav-logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""></a></div>
+					<div class="close-btn"><i class="icon fa fa-times"></i></div>
+				</div>
+				<ul class="navigation clearfix"></ul>
+				<ul class="contact-list-one">
+					<li>
+						<div class="contact-info-box">
+							<i class="icon lnr-icon-phone-handset"></i>
+							<span class="title">Call Now</span>
+							<a href="tel:+919778596947">+91 97785 96947</a>
+						</div>
+					</li>
+					<li>
+						<div class="contact-info-box">
+							<span class="icon lnr-icon-envelope1"></span>
+							<span class="title">Send Email</span>
+							<a href="mailto:info@planmyfin.com">info@planmyfin.com</a>
+						</div>
+					</li>
+				</ul>
+				<ul class="social-links">
+					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<!-- Sticky Header -->
+		<div class="sticky-header">
+			<div class="auto-container">
+				<div class="inner-container">
+					<div class="logo">
+						<a href="index.html"><img src="images/planmyfin-logo.png" alt="img"></a>
+					</div>
+					<div class="nav-outer">
+						<nav class="main-menu">
+							<div class="navbar-collapse show collapse clearfix">
+								<ul class="navigation clearfix"></ul>
+							</div>
+						</nav>
+						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Page Title -->
+	<section class="page-title" style="background-image: url(/images/planmyfin-imgs/about/about-banner.jpg);">
+		<div class="auto-container">
+			<div class="title-outer">
+				<ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="page-services.html">Services</a></li>
+					<li>Legacy Planning</li>
+				</ul>
+				<h1 class="title wow fadeInUp" data-wow-delay=".5s">Legacy Planning</h1>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services Details -->
+	<section class="services-details section-padding">
+		<div class="auto-container">
+			<div class="row align-items-lg-center g-4">
+				<div class="col-lg-6">
+					<div class="sec-title mb-40">
+						<h6 class="sub-title wow fadeInUp">
+							<span class="triangle triangle1"></span>
+							<span class="triangle triangle2"></span>
+							Estate Planning & Will Creation
+						</h6>
+						<h2 class="wow fadeInUp" data-wow-delay=".2s">
+							Secure Your Legacy and <br class="d-none d-lg-block"> Protect Your Loved Ones
+						</h2>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="project-details__top mt-lg-5">
+						<div class="text mb-40">Legacy planning is considered to be one of the most important financial obligations for any individual. It's about determining how an individual's assets, liabilities and obligations will be handled in the event of death or incapacity. Drafting a will is the simplest method for legacy planning.</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="legacy-quote-box wow fadeInUp">
+						"Estate planning is not just about distributing assets; it's about preserving your values, ensuring your loved ones are cared for, and leaving a positive impact on the world."
+					</div>
+				</div>
+			</div>
+
+			<!-- Main Content -->
+			<div class="row">
+				<div class="col-xl-8 col-lg-8">
+					<div class="services-details__content">
+						
+						<!-- What is Legacy Planning -->
+						<h3 class="mb-4">What is Legacy Planning?</h3>
+						<p class="mb-4">Legacy planning is about determining how your assets, liabilities, and obligations will be handled in the event of your death or incapacity. Without proper planning, asset distribution will be based on laws applicable to your religion, which may not align with your wishes. A well-structured legacy plan ensures:</p>
+
+						<ul class="outcome-list mb-5">
+							<li><i class="fal fa-check"></i> Your assets are distributed according to YOUR wishes</li>
+							<li><i class="fal fa-check"></i> Your loved ones are financially protected</li>
+							<li><i class="fal fa-check"></i> Tax implications are minimized</li>
+							<li><i class="fal fa-check"></i> Family disputes are prevented</li>
+							<li><i class="fal fa-check"></i> Your values and legacy continue</li>
+						</ul>
+
+						<div class="legacy-highlight-box wow fadeInUp mb-5">
+							<p class="mb-0"><strong>Important Note:</strong> Without a will, distribution will be based on the law applicable to your religion. Taking the time to plan now can provide peace of mind and ensure that your legacy lives on as you intend.</p>
+						</div>
+
+						<!-- Actionable Steps Section -->
+						<h3 class="mb-4">Actionable Steps in Order of Priority</h3>
+						<div class="row g-4 mb-5">
+							<div class="col-lg-6 wow fadeInUp" data-wow-delay=".2s">
+								<div class="legacy-step-box">
+									<div class="legacy-step-number">1</div>
+									<h5>Organize Your Assets</h5>
+									<p>Begin estate planning by listing out your Assets, Accounts, Investments, Loans and Liabilities. This comprehensive inventory forms the foundation of your legacy plan.</p>
+								</div>
+							</div>
+							<div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+								<div class="legacy-step-box">
+									<div class="legacy-step-number">2</div>
+									<h5>Name Nominees</h5>
+									<p>Designate nominees for assets, especially the intangible ones like bank accounts, insurance policies, mutual funds and retirement funds. This ensures smooth transfer of assets.</p>
+								</div>
+							</div>
+							<div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
+								<div class="legacy-step-box">
+									<div class="legacy-step-number">3</div>
+									<h5>Create a Will</h5>
+									<p>A will outlines asset distribution after you pass. Without it, distribution will be based on the law applicable to your religion. This is the most critical document in legacy planning.</p>
+								</div>
+							</div>
+							<div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+								<div class="legacy-step-box">
+									<div class="legacy-step-number">4</div>
+									<h5>Establish Trusts (If Needed)</h5>
+									<p>Trusts manage assets as per your instructions, useful for taxes, minors, or special needs beneficiaries. They provide additional control over asset distribution.</p>
+								</div>
+							</div>
+							<div class="col-lg-6 wow fadeInUp" data-wow-delay=".6s">
+								<div class="legacy-step-box">
+									<div class="legacy-step-number">5</div>
+									<h5>Regular Updates</h5>
+									<p>Review and adjust for family changes, financial shifts, and legal updates. Life events like marriage, divorce, birth of children require plan modifications.</p>
+								</div>
+							</div>
+							<div class="col-lg-6 wow fadeInUp" data-wow-delay=".7s">
+								<div class="legacy-step-box">
+									<div class="legacy-step-number">6</div>
+									<h5>Seek Professional Help</h5>
+									<p>Estate planning experts ensure a legally sound plan. Professional guidance helps navigate complex legal and tax implications.</p>
+								</div>
+							</div>
+							<div class="col-lg-12 wow fadeInUp" data-wow-delay=".8s">
+								<div class="legacy-step-box">
+									<div class="legacy-step-number">7</div>
+									<h5>Advance Medical Directives</h5>
+									<p>Choose a trusted person for financial and medical decisions if you're unable to make them yourself. This includes Power of Attorney and Living Will documents.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- What's Included in a Will -->
+						<h3 class="mb-4">What Should Your Will Include?</h3>
+						<p class="mb-4">A comprehensive will should cover all aspects of your estate. Here are the key components:</p>
+						
+						<div class="row g-4">
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
+								<div class="legacy-will-card">
+									<i class="lnr-icon-home"></i>
+									<h5>Immovable Assets</h5>
+									<p>House, Flat, Shop, Land, and other real estate properties with clear beneficiary details</p>
+								</div>
+							</div>
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
+								<div class="legacy-will-card">
+									<i class="lnr-icon-database"></i>
+									<h5>Bank Accounts & FDs</h5>
+									<p>Savings accounts, fixed deposits, lockers, and cash holdings with account numbers and institutions</p>
+								</div>
+							</div>
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".4s">
+								<div class="legacy-will-card">
+									<i class="lnr-icon-chart-bars"></i>
+									<h5>Investments</h5>
+									<p>Mutual Funds, stocks, bonds, debentures, MLDs, AIF, PMS, and other investment accounts</p>
+								</div>
+							</div>
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".5s">
+								<div class="legacy-will-card">
+									<i class="lnr-icon-shield"></i>
+									<h5>Insurance Policies</h5>
+									<p>Life insurance, health insurance, and other policy details with beneficiary information</p>
+								</div>
+							</div>
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".6s">
+								<div class="legacy-will-card">
+									<i class="lnr-icon-car"></i>
+									<h5>Motor Vehicles</h5>
+									<p>Cars, bikes, and other vehicles with registration numbers and ownership details</p>
+								</div>
+							</div>
+							<div class="col-md-6 wow fadeInUp" data-wow-delay=".7s">
+								<div class="legacy-will-card">
+									<i class="lnr-icon-diamond"></i>
+									<h5>Movable Property</h5>
+									<p>Gold, jewelry, precious metals, and other valuable personal belongings</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- FAQ Section -->
+						<div class="innerpage mt-5">
+							<h3 class="mb-4">Frequently Asked Questions</h3>
+							<div class="faq-content-1">
+								<ul class="accordion-box">
+									<li class="accordion block active-block wow fadeInUp">
+										<div class="acc-btn">Why is creating a will important?
+											<div class="icon fa fa-plus"></div>
+										</div>
+										<div class="acc-content current">
+											<div class="content">
+												<div class="text">
+													Without a will, your assets will be distributed according to laws applicable to your religion, which may not reflect your wishes. A will ensures your assets go to the people you choose, prevents family disputes, minimizes tax implications, and provides peace of mind knowing your loved ones will be taken care of according to your wishes.
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="accordion block wow fadeInUp" data-wow-delay=".2s">
+										<div class="acc-btn">Can I change my will after creating it?
+											<div class="icon fa fa-plus"></div>
+										</div>
+										<div class="acc-content">
+											<div class="content">
+												<div class="text">
+													Yes, you can and should update your will regularly. Life events like marriage, divorce, birth of children, acquisition of new assets, or changes in relationships may require modifications to your will. It's recommended to review your will every 3-5 years or after any major life event.
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="accordion block wow fadeInUp" data-wow-delay=".4s">
+										<div class="acc-btn">Do I need a lawyer to create a will?
+											<div class="icon fa fa-plus"></div>
+										</div>
+										<div class="acc-content">
+											<div class="content">
+												<div class="text">
+													While you can create a basic will yourself, it's highly recommended to seek professional help. Estate planning experts ensure your will is legally sound, covers all necessary aspects, minimizes tax implications, and stands up to legal scrutiny. Professional guidance is especially important for complex estates or family situations.
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="accordion block wow fadeInUp" data-wow-delay=".6s">
+										<div class="acc-btn">What happens if I don't have a will?
+											<div class="icon fa fa-plus"></div>
+										</div>
+										<div class="acc-content">
+											<div class="content">
+												<div class="text">
+													If you die without a will (intestate), your assets will be distributed according to succession laws applicable to your religion in India. This may not align with your wishes and can lead to family disputes, delayed distribution, higher legal costs, and your loved ones may not receive what you intended for them.
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- Sidebar -->
+				<div class="col-lg-4">
+					<div class="service-sidebar mt-5 mt-lg-0">
+						<div class="sidebar-widget service-sidebar-single">
+							<div class="sidebar-service-list mb-30">
+								<h4 class="title">All Services</h4>
+								<ul>
+									<li><a href="fin-wellness-programme.html"><i class="far fa-arrow-right"></i><span>Financial Wellness Programme</span></a></li>
+									<li><a href="investment-planning.html"><i class="far fa-arrow-right"></i><span>Investment Planning</span></a></li>
+									<li><a href="retirement-planning.html"><i class="far fa-arrow-right"></i><span>Retirement Planning</span></a></li>
+									<li><a href="risk-management.html"><i class="far fa-arrow-right"></i><span>Risk Management</span></a></li>
+									<li><a href="emergency-fund.html"><i class="far fa-arrow-right"></i><span>Emergency Fund Planning</span></a></li>
+									<li><a href="debt-management.html"><i class="far fa-arrow-right"></i><span>Debt Management</span></a></li>
+									<li><a href="cashflow-analysis.html"><i class="far fa-arrow-right"></i><span>Cashflow Analysis</span></a></li>
+									<li><a href="asset-allocation.html"><i class="far fa-arrow-right"></i><span>Asset Allocation</span></a></li>
+									<li><a href="risk-profiling.html"><i class="far fa-arrow-right"></i><span>Risk Profiling</span></a></li>
+									<li class="current"><a href="legacy-planning.html"><i class="far fa-arrow-right"></i><span>Legacy Planning</span></a></li>
+									<li><a href="goal-planning.html"><i class="far fa-arrow-right"></i><span>Financial Goal Planning</span></a></li>
+								</ul>
+							</div>
+							<div class="sidebar-service-list mb-30">
+								<h4 class="title">Contact Us</h4>
+								<ul class="address">
+									<li>Bengaluru, Karnataka, IN</li>
+									<li><a href="mailto:info@planmyfin.com">info@planmyfin.com</a></li>
+									<li><a href="tel:+919778596947">+91 97785 96947</a></li>
+								</ul>
+							</div>
+							<div class="sidebar-service-list">
+								<h4 class="title">Get In Touch</h4>
+								<form action="#0">
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="mb-20">
+												<input class="form-control" type="text" placeholder="Your Name">
+											</div>
+										</div>
+										<div class="col-sm-12">
+											<div class="mb-20">
+												<input class="form-control" type="email" placeholder="Email Address">
+											</div>
+										</div>
+										<div class="col-sm-12">
+											<div class="mb-20">
+												<textarea class="form-control" name="message" id="message" rows="5" placeholder="Write a Message"></textarea>
+												<button class="theme-btn btn-style-one rounded-1 mt-30">Send Message</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+<!-- Footer Section Start -->
+		<footer class="footer-section-1 fix footer-bg bg-cover"
+			style="background-image: url(images/home-1/footer-shape.png)">
+			<span class="circle-shape"></span>
+			<span class="circle-shape-2"></span>
+			<div class="auto-container">
+				
+				<div class="footer-widget-wrapper">
+					<div class="row justify-content-between">
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<a href="index.html" class="footer-logo">
+										<img src="/images/planmyfin-logo.png" alt="img"  style="height: 80px; width: auto;" />
+									</a>
+								</div>
+								<div class="footer-content">
+									<p>PlanMyFin is a financial wellness platform helping individuals and businesses achieve long-term stability through personalized planning.</p>
+									
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Company</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="page-about.html">About us</a></li>
+									<li><a href="page-services.html">Blogs</a></li>
+									<li><a href="page-contact.html">Contact Us</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Main Services</h3>
+								</div>
+								<ul class="user-links">
+									<li><a href="index.html">Financial Advising</a></li>
+									<li><a href="page-about.html">Investment Planning</a></li>
+									<li><a href="page-services.html">Risk Profiling</a></li>
+									<li><a href="page-contact.html">Retirement Planning</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+							<div class="footer-widget-items mt-30">
+								<div class="widget-title mb-25">
+									<h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
+								</div>
+								<ul class="contact-list">
+									<li>
+										<i class="lnr-icon-phone-handset"></i>
+										<p><a href="tel:+1050055900">+91 97785 96947</a></p>
+									</li>
+									<li>
+										<i class="lnr-icon-envelope"></i>
+										<p><a
+												href="https://html.kodesolution.com/cdn-cgi/l/email-protection#a3c5cacdc0cfcadbe3cbc6cfd38dd6d0"><span
+													class="__cf_email__"
+													data-cfemail="ce88a7a0ada2a7b68ea6aba2bee0bbbd">info@planmyfin.com</span></a>
+										</p>
+									</li>
+									<li>
+										<div class="social-icon">
+										<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+										<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+										<a href="#"><i class="fa-brands fa-instagram"></i></a>
+									</div>
+										<!--<i class="lnr-icon-map-marker"></i>-->
+										<!--<p>44 Danwers, NY City, USA, 70-102</p>-->
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="auto-container">
+					<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved. Designed & Developed by Trivlogic.</p>
+				</div>
+			</div>
+		</footer>
+
+
+</div>
+
+<script src="js/jquery.js"></script> 
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/gsap.js"></script>
+<script src="js/gsap-scroll-to-plugin.js"></script>
+<script src="js/gsap-scroll-smoother.js"></script>
+<script src="js/gsap-scroll-trigger.js"></script>
+<script src="js/gsap-split-text.js"></script>
+<script src="js/split-type.min.js"></script>
+<script src="js/parallaxie.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/bxslider.js"></script>
+<script src="js/nice-select.min.js"></script>
+<script src="js/knob.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/mixitup.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
