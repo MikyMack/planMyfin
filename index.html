@@ -13,10 +13,10 @@
 	<link href="css/style-dark.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-	 <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+	<link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
 
-	<link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
-	<link rel="icon" href="images/favicon.svg" type="image/x-icon">
+	<link rel="shortcut icon" href="/images/favicon-32x32.png" type="image/x-icon">
+	<link rel="icon" href="/images/favicon-32x32.png" type="image/x-icon">
 
 	<!-- Responsive -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,262 +35,263 @@
 			transition: all 0.3s ease;
 		}
 
-		     /* Floating Calculator Buttons */
-        .calculator-float-buttons {
-            position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+		/* Floating Calculator Buttons */
+		.calculator-float-buttons {
+			position: fixed;
+			left: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 9999;
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+		}
 
-        .calc-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--gradient-1);
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(9, 150, 150, 0.3);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+		.calc-btn {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background: var(--gradient-1);
+			border: none;
+			color: white;
+			font-size: 24px;
+			cursor: pointer;
+			box-shadow: 0 4px 15px rgba(9, 150, 150, 0.3);
+			transition: all 0.3s ease;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 
-        .calc-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(9, 150, 150, 0.5);
-        }
+		.calc-btn:hover {
+			transform: scale(1.1);
+			box-shadow: 0 6px 20px rgba(9, 150, 150, 0.5);
+		}
 
-        .calc-btn-tooltip {
-            position: absolute;
-            left: 75px;
-            background: #1a1a1a;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 8px;
-            white-space: nowrap;
-            font-size: 14px;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
+		.calc-btn-tooltip {
+			position: absolute;
+			left: 75px;
+			background: #1a1a1a;
+			color: white;
+			padding: 8px 15px;
+			border-radius: 8px;
+			white-space: nowrap;
+			font-size: 14px;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.3s ease;
+		}
 
-        .calc-btn:hover .calc-btn-tooltip {
-            opacity: 1;
-        }
+		.calc-btn:hover .calc-btn-tooltip {
+			opacity: 1;
+		}
 
-        /* Modal Styles */
-        .calc-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+		/* Modal Styles */
+		.calc-modal {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.7);
+			z-index: 10000;
+			justify-content: center;
+			align-items: center;
+			padding: 20px;
+		}
 
-        .calc-modal.active {
-            display: flex;
-        }
+		.calc-modal.active {
+			display: flex;
+		}
 
-        .calc-modal-content {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 500px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
+		.calc-modal-content {
+			background: white;
+			border-radius: 20px;
+			padding: 40px;
+			max-width: 500px;
+			width: 100%;
+			max-height: 90vh;
+			overflow-y: auto;
+			position: relative;
+			box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+		}
 
-        .calc-modal-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 28px;
-            color: #666;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
+		.calc-modal-close {
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			background: none;
+			border: none;
+			font-size: 28px;
+			color: #666;
+			cursor: pointer;
+			transition: color 0.3s ease;
+		}
 
-        .calc-modal-close:hover {
-            color: #099696;
-        }
+		.calc-modal-close:hover {
+			color: #099696;
+		}
 
-        .calc-modal-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+		.calc-modal-title {
+			font-size: 28px;
+			font-weight: 700;
+			color: #1a1a1a;
+			margin-bottom: 10px;
+			background: var(--gradient-1);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
 
-        .calc-modal-subtitle {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 30px;
-        }
+		.calc-modal-subtitle {
+			font-size: 14px;
+			color: #666;
+			margin-bottom: 30px;
+		}
 
-        .calc-form-group {
-            margin-bottom: 20px;
-        }
+		.calc-form-group {
+			margin-bottom: 20px;
+		}
 
-        .calc-form-label {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 8px;
-        }
+		.calc-form-label {
+			display: block;
+			font-size: 14px;
+			font-weight: 600;
+			color: #333;
+			margin-bottom: 8px;
+		}
 
-        .calc-form-input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
+		.calc-form-input {
+			width: 100%;
+			padding: 12px 15px;
+			border: 2px solid #e0e0e0;
+			border-radius: 10px;
+			font-size: 16px;
+			transition: border-color 0.3s ease;
+		}
 
-        .calc-form-input:focus {
-            outline: none;
-            border-color: #099696;
-        }
+		.calc-form-input:focus {
+			outline: none;
+			border-color: #099696;
+		}
 
-        .calc-form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
+		.calc-form-row {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 15px;
+		}
 
-        .calc-btn-calculate {
-            width: 100%;
-            padding: 15px;
-            background: var(--gradient-1);
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            margin-top: 10px;
-        }
+		.calc-btn-calculate {
+			width: 100%;
+			padding: 15px;
+			background: var(--gradient-1);
+			border: none;
+			border-radius: 10px;
+			color: white;
+			font-size: 16px;
+			font-weight: 600;
+			cursor: pointer;
+			transition: transform 0.3s ease;
+			margin-top: 10px;
+		}
 
-        .calc-btn-calculate:hover {
-            transform: translateY(-2px);
-        }
+		.calc-btn-calculate:hover {
+			transform: translateY(-2px);
+		}
 
-        .calc-result-box {
-            margin-top: 30px;
-            padding: 25px;
-            background: var(--gradient-1);
-            border-radius: 15px;
-            color: white;
-            display: none;
-        }
+		.calc-result-box {
+			margin-top: 30px;
+			padding: 25px;
+			background: var(--gradient-1);
+			border-radius: 15px;
+			color: white;
+			display: none;
+		}
 
-        .calc-result-box.show {
-            display: block;
-            animation: slideIn 0.5s ease;
-        }
+		.calc-result-box.show {
+			display: block;
+			animation: slideIn 0.5s ease;
+		}
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+		@keyframes slideIn {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
 
-        .calc-result-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
 
-        .calc-result-value {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
+		.calc-result-title {
+			font-size: 18px;
+			font-weight: 600;
+			margin-bottom: 15px;
+			opacity: 0.9;
+		}
 
-        .calc-result-details {
-            font-size: 14px;
-            opacity: 0.9;
-            line-height: 1.8;
-        }
+		.calc-result-value {
+			font-size: 36px;
+			font-weight: 700;
+			margin-bottom: 10px;
+		}
 
-        /* Budget Tracker Specific */
-        .budget-summary {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 20px;
-        }
+		.calc-result-details {
+			font-size: 14px;
+			opacity: 0.9;
+			line-height: 1.8;
+		}
 
-        .budget-summary-item {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-        }
+		/* Budget Tracker Specific */
+		.budget-summary {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 15px;
+			margin-top: 20px;
+		}
 
-        .budget-summary-label {
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 5px;
-        }
+		.budget-summary-item {
+			background: #f8f9fa;
+			padding: 15px;
+			border-radius: 10px;
+			text-align: center;
+		}
 
-        .budget-summary-value {
-            font-size: 24px;
-            font-weight: 700;
-            color: #099696;
-        }
+		.budget-summary-label {
+			font-size: 12px;
+			color: #666;
+			margin-bottom: 5px;
+		}
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .calculator-float-buttons {
-                left: 10px;
-            }
+		.budget-summary-value {
+			font-size: 24px;
+			font-weight: 700;
+			color: #099696;
+		}
 
-            .calc-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
+		/* Mobile Responsiveness */
+		@media (max-width: 768px) {
+			.calculator-float-buttons {
+				left: 10px;
+			}
 
-            .calc-modal-content {
-                padding: 25px;
-            }
+			.calc-btn {
+				width: 50px;
+				height: 50px;
+				font-size: 20px;
+			}
 
-            .calc-form-row {
-                grid-template-columns: 1fr;
-            }
-        }
+			.calc-modal-content {
+				padding: 25px;
+			}
+
+			.calc-form-row {
+				grid-template-columns: 1fr;
+			}
+		}
 	</style>
 
 </head>
@@ -312,7 +313,7 @@
 						L
 					</span>
 					<span data-text-preloader="A" class="letters-loading">
-						A					</span>
+						A </span>
 					<span data-text-preloader="N" class="letters-loading">
 						N
 					</span>
@@ -382,20 +383,22 @@
 										<li><a href="fin-wellness-plan1.html">Financial Wellness Programme</a></li>
 										<li><a href="invest-plan2.html">Investment Planning</a></li>
 										<li><a href="retirement-plan3.html">Retirement Planning</a></li>
-										<li><a href="risk-manage-plan4.html">Risk Management & Insurance Planning</a></li>
+										<li><a href="risk-manage-plan4.html">Risk Management & Insurance Planning</a>
+										</li>
 										<li><a href="emergency-fund-plan5.html">Emergency Fund Planning</a></li>
 										<li><a href="debt-manage-plan6.html">Debt Management</a></li>
 										<li><a href="cashflow7.html">Cashflow Analysis</a></li>
 										<li><a href="asset-allocat8.html">Asset Allocation Strategy</a></li>
-										<li><a href="risk-profiling9.html">Risk Profiling</a></li>										
-										<li><a href="legacy-plan10.html">Legacy Planning (Estate Planning & Will)</a></li>
+										<li><a href="risk-profiling9.html">Risk Profiling</a></li>
+										<li><a href="legacy-plan10.html">Legacy Planning (Estate Planning & Will)</a>
+										</li>
 										<li><a href="fin-goal-plan11.html">Financial Goal Planning </a></li>
 									</ul>
 								</li>
 								<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a>
 
 								<li class="dropdown"><a href="news-grid.html">Blogs</a>
-								<!--	<ul>
+									<!--	<ul>
 										<li><a href="news-grid.html">News Grid</a></li>
 										<li><a href="news-details.html">News Details</a></li>
 									</ul>-->
@@ -405,7 +408,7 @@
 						</nav>
 						<!-- Main Menu End-->
 						<div class="outer-box">
-							<a href="tel:+92(8800)9806" class="info-btn">
+							<a href="tel:+919778596947" class="info-btn">
 								<i class="icon fa fa-phone"></i>
 								+91 97785 96947
 							</a>
@@ -427,7 +430,8 @@
 				<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
 				<nav class="menu-box">
 					<div class="upper-box">
-						<div class="nav-logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt="" style="height: 50px; width: auto;"></a></div>
+						<div class="nav-logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""
+									style="height: 50px; width: auto;"></a></div>
 						<div class="close-btn"><i class="icon fa fa-times"></i></div>
 					</div>
 
@@ -440,7 +444,7 @@
 							<div class="contact-info-box">
 								<i class="icon lnr-icon-phone-handset"></i>
 								<span class="title">Call Now</span>
-								<a href="tel:+92880098670">+92 (8800) - 98670</a>
+								<a href="tel:+919778596947">+919778596947</a>
 							</div>
 						</li>
 						<li>
@@ -448,17 +452,14 @@
 							<div class="contact-info-box">
 								<span class="icon lnr-icon-envelope1"></span>
 								<span class="title">Send Email</span>
-								<a
-									href="https://html.kodesolution.com/cdn-cgi/l/email-protection#85ede0e9f5c5e6eae8f5e4ebfcabe6eae8"><span
-										class="__cf_email__"
-										data-cfemail="80e8e5ecf0c0e3efedf0e1eef9aee3efed">[email&#160;protected]</span></a>
+								<a href="mailto:info@planmyfin.com">info@planmyfin.com</a>
 							</div>
 						</li>
 						<li>
 							<!-- Contact Info Box -->
 							<div class="contact-info-box">
 								<span class="icon lnr-icon-clock"></span>
-								<span class="title">Send Email</span>
+								<span class="title">Timings</span>
 								Mon - Sat 8:00 - 6:30, Sunday - CLOSED
 							</div>
 						</li>
@@ -480,7 +481,8 @@
 					<div class="inner-container">
 						<!--Logo-->
 						<div class="logo">
-							<a href="index.html"><img src="images/planmyfin-logo.png" alt="img"  style="height: 80px; width: auto;"></a>
+							<a href="index.html"><img src="images/planmyfin-logo.png" alt="img"
+									style="height: 80px; width: auto;"></a>
 						</div>
 
 						<!--Right Col-->
@@ -1673,7 +1675,9 @@
 									Unsure Where Your Money Should Go? <br> let's talk
 								</h2>
 								<p class="wow fadeInUp" data-wow-delay=".4s">
-									Take control of your financial future with expert guidance tailored to your unique goals. From retirement planning to wealth building, we transform financial confusion into clarity—helping you make informed decisions that secure your family's future.
+									Take control of your financial future with expert guidance tailored to your unique
+									goals. From retirement planning to wealth building, we transform financial confusion
+									into clarity—helping you make informed decisions that secure your family's future.
 								</p>
 								<div class="count-item">
 									<div class="count-box wow fadeInUp" data-wow-delay=".6s">
@@ -1681,7 +1685,7 @@
 											<span class="count-text" data-speed="3000" data-stop="100">0</span>%
 										</h2>
 										<span>
-											Objective Advice							
+											Objective Advice
 										</span>
 									</div>
 									<div class="count-box wow fadeInUp" data-wow-delay=".6s">
@@ -1689,7 +1693,7 @@
 											<span class="count-text" data-speed="3000" data-stop="98">0</span>%
 										</h2>
 										<span>
-											Goal Achievement 
+											Goal Achievement
 										</span>
 									</div>
 								</div>
@@ -1715,134 +1719,142 @@
 		</section>
 
 		<!-- News Section Start -->
-<section class="news-secton section-padding fix">
-	<div class="auto-container">
-		<div class="sec-title text-center">
-			<h6 class="sub-title wow fadeInUp">
-				<span class="triangle triangle1"></span>
-				<span class="triangle triangle2"></span>
-				Our Blog
-			</h6>
-			<h2 class="wow fadeInUp" data-wow-delay=".3s">Insights from Latest Blog</h2>
-		</div>
-		<div class="row">
-			<!-- Blog 1 -->
-			<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-				<div class="news-box-items">
-					<div class="news-image">
-						<img src="images/home-1/news/news-01.jpg" alt="Financial Planning">
-						<img src="images/home-1/news/news-01.jpg" alt="Financial Planning">
-						<span class="post-box">
-							<span class="date">05</span>
-							<span class="month">Dec</span>
-						</span>
-					</div>
-					<div class="news-content">
-						<ul class="comments-list">
-							<li>
-								<i class="fa-solid fa-clock" style="color: #144443; font-size: 14px; margin-right: 5px;"></i>
-								5 min read
-							</li>
-						</ul>
-						<h3>
-							<a href="news-grid.html">Why 80% of Indians Don't Have a Financial Plan</a>
-						</h3>
-						<p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 15px;">
-							Most families handle money reactively—paying bills, making random investments, buying insurance when pushed. Without a plan, you're navigating blind.
-						</p>
-						<a href="news-grid.html" class="link-btn">
-							Learn More
-							<span class="icon"><i class="lnr-icon-arrow-right"></i></span>
-						</a>
-					</div>
+		<section class="news-secton section-padding fix">
+			<div class="auto-container">
+				<div class="sec-title text-center">
+					<h6 class="sub-title wow fadeInUp">
+						<span class="triangle triangle1"></span>
+						<span class="triangle triangle2"></span>
+						Our Blog
+					</h6>
+					<h2 class="wow fadeInUp" data-wow-delay=".3s">Insights from Latest Blog</h2>
 				</div>
-			</div>
+				<div class="row">
+					<!-- Blog 1 -->
+					<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+						<div class="news-box-items">
+							<div class="news-image">
+								<img src="images/home-1/news/news-01.jpg" alt="Financial Planning">
+								<img src="images/home-1/news/news-01.jpg" alt="Financial Planning">
+								<span class="post-box">
+									<span class="date">05</span>
+									<span class="month">Dec</span>
+								</span>
+							</div>
+							<div class="news-content">
+								<ul class="comments-list">
+									<li>
+										<i class="fa-solid fa-clock"
+											style="color: #144443; font-size: 14px; margin-right: 5px;"></i>
+										5 min read
+									</li>
+								</ul>
+								<h3>
+									<a href="news-grid.html">Why 80% of Indians Don't Have a Financial Plan</a>
+								</h3>
+								<p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 15px;">
+									Most families handle money reactively—paying bills, making random investments,
+									buying insurance when pushed. Without a plan, you're navigating blind.
+								</p>
+								<a href="news-grid.html" class="link-btn">
+									Learn More
+									<span class="icon"><i class="lnr-icon-arrow-right"></i></span>
+								</a>
+							</div>
+						</div>
+					</div>
 
-			<!-- Blog 2 -->
-			<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-				<div class="news-box-items">
-					<div class="news-image">
-						<img src="images/home-1/news/news-02.jpg" alt="Investment Mistakes">
-						<img src="images/home-1/news/news-02.jpg" alt="Investment Mistakes">
-						<span class="post-box">
-							<span class="date">03</span>
-							<span class="month">Dec</span>
-						</span>
+					<!-- Blog 2 -->
+					<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+						<div class="news-box-items">
+							<div class="news-image">
+								<img src="images/home-1/news/news-02.jpg" alt="Investment Mistakes">
+								<img src="images/home-1/news/news-02.jpg" alt="Investment Mistakes">
+								<span class="post-box">
+									<span class="date">03</span>
+									<span class="month">Dec</span>
+								</span>
+							</div>
+							<div class="news-content">
+								<ul class="comments-list">
+									<li>
+										<i class="fa-solid fa-clock"
+											style="color: #144443; font-size: 14px; margin-right: 5px;"></i>
+										6 min read
+									</li>
+								</ul>
+								<h3>
+									<a href="news-grid.html">The Costly Mistakes Investors Keep Making</a>
+								</h3>
+								<p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 15px;">
+									Chasing past returns and timing the market destroys wealth. The fix: Invest based on
+									your goals and risk capacity, not market noise.
+								</p>
+								<a href="news-grid.html" class="link-btn">
+									Learn More
+									<span class="icon"><i class="lnr-icon-arrow-right"></i></span>
+								</a>
+							</div>
+						</div>
 					</div>
-					<div class="news-content">
-						<ul class="comments-list">
-							<li>
-								<i class="fa-solid fa-clock" style="color: #144443; font-size: 14px; margin-right: 5px;"></i>
-								6 min read
-							</li>
-						</ul>
-						<h3>
-							<a href="news-grid.html">The Costly Mistakes Investors Keep Making</a>
-						</h3>
-						<p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 15px;">
-							Chasing past returns and timing the market destroys wealth. The fix: Invest based on your goals and risk capacity, not market noise.
-						</p>
-						<a href="news-grid.html" class="link-btn">
-							Learn More
-							<span class="icon"><i class="lnr-icon-arrow-right"></i></span>
-						</a>
-					</div>
-				</div>
-			</div>
 
-			<!-- Blog 3 -->
-			<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-				<div class="news-box-items">
-					<div class="news-image">
-						<img src="images/home-1/news/news-03.jpg" alt="Emergency Fund">
-						<img src="images/home-1/news/news-03.jpg" alt="Emergency Fund">
-						<span class="post-box">
-							<span class="date">01</span>
-							<span class="month">Dec</span>
-						</span>
-					</div>
-					<div class="news-content">
-						<ul class="comments-list">
-							<li>
-								<i class="fa-solid fa-clock" style="color: #144443; font-size: 14px; margin-right: 5px;"></i>
-								4 min read
-							</li>
-						</ul>
-						<h3>
-							<a href="news-grid.html">Emergency Fund: Your First Financial Priority</a>
-						</h3>
-						<p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 15px;">
-							3-6 months of essential expenses in liquid funds. Job loss, medical emergency—life happens. An emergency fund prevents financial disasters.
-						</p>
-						<a href="news-grid.html" class="link-btn">
-							Learn More
-							<span class="icon"><i class="lnr-icon-arrow-right"></i></span>
-						</a>
+					<!-- Blog 3 -->
+					<div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+						<div class="news-box-items">
+							<div class="news-image">
+								<img src="images/home-1/news/news-03.jpg" alt="Emergency Fund">
+								<img src="images/home-1/news/news-03.jpg" alt="Emergency Fund">
+								<span class="post-box">
+									<span class="date">01</span>
+									<span class="month">Dec</span>
+								</span>
+							</div>
+							<div class="news-content">
+								<ul class="comments-list">
+									<li>
+										<i class="fa-solid fa-clock"
+											style="color: #144443; font-size: 14px; margin-right: 5px;"></i>
+										4 min read
+									</li>
+								</ul>
+								<h3>
+									<a href="news-grid.html">Emergency Fund: Your First Financial Priority</a>
+								</h3>
+								<p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 15px;">
+									3-6 months of essential expenses in liquid funds. Job loss, medical emergency—life
+									happens. An emergency fund prevents financial disasters.
+								</p>
+								<a href="news-grid.html" class="link-btn">
+									Learn More
+									<span class="icon"><i class="lnr-icon-arrow-right"></i></span>
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-</section>
+		</section>
 		<!-- Footer Section Start -->
 		<footer class="footer-section-1 fix footer-bg bg-cover"
 			style="background-image: url(images/home-1/footer-shape.png)">
 			<span class="circle-shape"></span>
 			<span class="circle-shape-2"></span>
 			<div class="auto-container">
-				
+
 				<div class="footer-widget-wrapper">
 					<div class="row justify-content-between">
 						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
 							<div class="footer-widget-items mt-30">
 								<div class="widget-title mb-25">
 									<a href="index.html" class="footer-logo">
-										<img src="/images/planmyfin-logo.png" alt="img"  style="height: 80px; width: auto;" />
+										<img src="/images/planmyfin-logo.png" alt="img"
+											style="height: 80px; width: auto;" />
 									</a>
 								</div>
 								<div class="footer-content">
-									<p>PlanMyFin is a financial wellness platform helping individuals and businesses achieve long-term stability through personalized planning.</p>
-									
+									<p>PlanMyFin is a financial wellness platform helping individuals and businesses
+										achieve long-term stability through personalized planning.</p>
+
 								</div>
 							</div>
 						</div>
@@ -1880,22 +1892,19 @@
 								<ul class="contact-list">
 									<li>
 										<i class="lnr-icon-phone-handset"></i>
-										<p><a href="tel:+1050055900">+91 97785 96947</a></p>
+										<p><a href="tel:+919778596947">+91 97785 96947</a></p>
 									</li>
 									<li>
 										<i class="lnr-icon-envelope"></i>
-										<p><a
-												href="https://html.kodesolution.com/cdn-cgi/l/email-protection#a3c5cacdc0cfcadbe3cbc6cfd38dd6d0"><span
-													class="__cf_email__"
-													data-cfemail="ce88a7a0ada2a7b68ea6aba2bee0bbbd">info@planmyfin.com</span></a>
-										</p>
+										<a href="mailto:info@planmyfin.com">info@planmyfin.com</a>
+
 									</li>
 									<li>
 										<div class="social-icon">
-										<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-										<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-										<a href="#"><i class="fa-brands fa-instagram"></i></a>
-									</div>
+											<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+											<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+										</div>
 										<!--<i class="lnr-icon-map-marker"></i>-->
 										<!--<p>44 Danwers, NY City, USA, 70-102</p>-->
 									</li>
@@ -1907,183 +1916,185 @@
 			</div>
 			<div class="footer-bottom">
 				<div class="auto-container">
-					<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved. Designed & Developed by Trivlogic.</p>
+					<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved.
+						Designed & Developed by Trivlogic.</p>
 				</div>
 			</div>
 		</footer>
 
 	</div><!-- End Page Wrapper -->
 
-	 <!-- Floating Calculator Buttons -->
-    <div class="calculator-float-buttons">
-        <button class="calc-btn" onclick="openCalculator('emi')">
-            <i class="fas fa-calculator"></i>
-            <span class="calc-btn-tooltip">EMI Calculator</span>
-        </button>
-        
-        <button class="calc-btn" onclick="openCalculator('sip')">
-            <i class="fas fa-chart-line"></i>
-            <span class="calc-btn-tooltip">SIP Calculator</span>
-        </button>
-        
-        <button class="calc-btn" onclick="openCalculator('budget')">
-            <i class="fas fa-wallet"></i>
-            <span class="calc-btn-tooltip">Budget Tracker</span>
-        </button>
-    </div>
+	<!-- Floating Calculator Buttons -->
+	<div class="calculator-float-buttons">
+		<button class="calc-btn" onclick="openCalculator('emi')">
+			<i class="fas fa-calculator"></i>
+			<span class="calc-btn-tooltip">EMI Calculator</span>
+		</button>
 
-    <!-- EMI Calculator Modal -->
-    <div id="emiModal" class="calc-modal">
-        <div class="calc-modal-content">
-            <button class="calc-modal-close" onclick="closeCalculator('emi')">&times;</button>
-            <h2 class="calc-modal-title">EMI Calculator</h2>
-            <p class="calc-modal-subtitle">Calculate your monthly loan payments</p>
-            
-            <form onsubmit="calculateEMI(event)">
-                <div class="calc-form-group">
-                    <label class="calc-form-label">Loan Amount (₹)</label>
-                    <input type="number" id="emiPrincipal" class="calc-form-input" placeholder="500000" required>
-                </div>
-                
-                <div class="calc-form-row">
-                    <div class="calc-form-group">
-                        <label class="calc-form-label">Interest Rate (% p.a.)</label>
-                        <input type="number" step="0.1" id="emiRate" class="calc-form-input" placeholder="8.5" required>
-                    </div>
-                    
-                    <div class="calc-form-group">
-                        <label class="calc-form-label">Loan Tenure (Years)</label>
-                        <input type="number" id="emiTenure" class="calc-form-input" placeholder="10" required>
-                    </div>
-                </div>
-                
-                <button type="submit" class="calc-btn-calculate">Calculate EMI</button>
-            </form>
-            
-            <div id="emiResult" class="calc-result-box">
-                <div class="calc-result-title">Your Monthly EMI</div>
-                <div class="calc-result-value" id="emiValue">₹0</div>
-                <div class="calc-result-details" id="emiDetails"></div>
-            </div>
-        </div>
-    </div>
+		<button class="calc-btn" onclick="openCalculator('sip')">
+			<i class="fas fa-chart-line"></i>
+			<span class="calc-btn-tooltip">SIP Calculator</span>
+		</button>
 
-    <!-- SIP Calculator Modal -->
-    <div id="sipModal" class="calc-modal">
-        <div class="calc-modal-content">
-            <button class="calc-modal-close" onclick="closeCalculator('sip')">&times;</button>
-            <h2 class="calc-modal-title">SIP Calculator</h2>
-            <p class="calc-modal-subtitle">Calculate your investment returns</p>
-            
-            <form onsubmit="calculateSIP(event)">
-                <div class="calc-form-group">
-                    <label class="calc-form-label">Monthly Investment (₹)</label>
-                    <input type="number" id="sipAmount" class="calc-form-input" placeholder="5000" required>
-                </div>
-                
-                <div class="calc-form-row">
-                    <div class="calc-form-group">
-                        <label class="calc-form-label">Expected Return (% p.a.)</label>
-                        <input type="number" step="0.1" id="sipReturn" class="calc-form-input" placeholder="12" required>
-                    </div>
-                    
-                    <div class="calc-form-group">
-                        <label class="calc-form-label">Time Period (Years)</label>
-                        <input type="number" id="sipTenure" class="calc-form-input" placeholder="10" required>
-                    </div>
-                </div>
-                
-                <button type="submit" class="calc-btn-calculate">Calculate Returns</button>
-            </form>
-            
-            <div id="sipResult" class="calc-result-box">
-                <div class="calc-result-title">Future Value</div>
-                <div class="calc-result-value" id="sipValue">₹0</div>
-                <div class="calc-result-details" id="sipDetails"></div>
-            </div>
-        </div>
-    </div>
+		<button class="calc-btn" onclick="openCalculator('budget')">
+			<i class="fas fa-wallet"></i>
+			<span class="calc-btn-tooltip">Budget Tracker</span>
+		</button>
+	</div>
 
-    <!-- Budget Tracker Modal -->
-    <div id="budgetModal" class="calc-modal">
-        <div class="calc-modal-content">
-            <button class="calc-modal-close" onclick="closeCalculator('budget')">&times;</button>
-            <h2 class="calc-modal-title">Budget Tracker</h2>
-            <p class="calc-modal-subtitle">Track your monthly income and expenses</p>
-            
-            <form onsubmit="calculateBudget(event)">
-                <div class="calc-form-group">
-                    <label class="calc-form-label">Monthly Income (₹)</label>
-                    <input type="number" id="budgetIncome" class="calc-form-input" placeholder="50000" required>
-                </div>
-                
-                <div class="calc-form-group">
-                    <label class="calc-form-label">Housing (Rent/EMI) (₹)</label>
-                    <input type="number" id="budgetHousing" class="calc-form-input" placeholder="15000" required>
-                </div>
-                
-                <div class="calc-form-row">
-                    <div class="calc-form-group">
-                        <label class="calc-form-label">Food & Groceries (₹)</label>
-                        <input type="number" id="budgetFood" class="calc-form-input" placeholder="8000" required>
-                    </div>
-                    
-                    <div class="calc-form-group">
-                        <label class="calc-form-label">Transportation (₹)</label>
-                        <input type="number" id="budgetTransport" class="calc-form-input" placeholder="5000" required>
-                    </div>
-                </div>
-                
-                <div class="calc-form-row">
-                    <div class="calc-form-group">
-                        <label class="calc-form-label">Utilities (₹)</label>
-                        <input type="number" id="budgetUtilities" class="calc-form-input" placeholder="3000" required>
-                    </div>
-                    
-                    <div class="calc-form-group">
-                        <label class="calc-form-label">Entertainment (₹)</label>
-                        <input type="number" id="budgetEntertainment" class="calc-form-input" placeholder="5000" required>
-                    </div>
-                </div>
-                
-                <div class="calc-form-group">
-                    <label class="calc-form-label">Other Expenses (₹)</label>
-                    <input type="number" id="budgetOther" class="calc-form-input" placeholder="4000" required>
-                </div>
-                
-                <button type="submit" class="calc-btn-calculate">Calculate Budget</button>
-            </form>
-            
-            <div id="budgetResult" class="calc-result-box">
-                <div class="budget-summary">
-                    <div class="budget-summary-item">
-                        <div class="budget-summary-label">Total Expenses</div>
-                        <div class="budget-summary-value" id="budgetTotalExpenses">₹0</div>
-                    </div>
-                    <div class="budget-summary-item">
-                        <div class="budget-summary-label">Monthly Savings</div>
-                        <div class="budget-summary-value" id="budgetSavings">₹0</div>
-                    </div>
-                </div>
-                <div style="margin-top: 15px; text-align: center;">
-                    <div class="calc-result-details" id="budgetPercentage"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<!-- EMI Calculator Modal -->
+	<div id="emiModal" class="calc-modal">
+		<div class="calc-modal-content">
+			<button class="calc-modal-close" onclick="closeCalculator('emi')">&times;</button>
+			<h2 class="calc-modal-title">EMI Calculator</h2>
+			<p class="calc-modal-subtitle">Calculate your monthly loan payments</p>
 
-	 <!-- Floating contact icons -->
-        <div class="edug-contact-icons" id="contactIcons">
-            <a href="https://wa.me/+918655897610" target="_blank" class="edug-contact-icon"
-                data-tooltip="Chat on WhatsApp">
-                <i class="lni lni-whatsapp"></i>
-            </a>
+			<form onsubmit="calculateEMI(event)">
+				<div class="calc-form-group">
+					<label class="calc-form-label">Loan Amount (₹)</label>
+					<input type="number" id="emiPrincipal" class="calc-form-input" placeholder="500000" required>
+				</div>
 
-            <a href="tel:+918655897610" class="edug-contact-icon" data-tooltip="Call us Now">
-                <i class="lni lni-phone"></i>
-            </a>
+				<div class="calc-form-row">
+					<div class="calc-form-group">
+						<label class="calc-form-label">Interest Rate (% p.a.)</label>
+						<input type="number" step="0.1" id="emiRate" class="calc-form-input" placeholder="8.5" required>
+					</div>
 
-        </div>
+					<div class="calc-form-group">
+						<label class="calc-form-label">Loan Tenure (Years)</label>
+						<input type="number" id="emiTenure" class="calc-form-input" placeholder="10" required>
+					</div>
+				</div>
+
+				<button type="submit" class="calc-btn-calculate">Calculate EMI</button>
+			</form>
+
+			<div id="emiResult" class="calc-result-box">
+				<div class="calc-result-title">Your Monthly EMI</div>
+				<div class="calc-result-value" id="emiValue">₹0</div>
+				<div class="calc-result-details" id="emiDetails"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- SIP Calculator Modal -->
+	<div id="sipModal" class="calc-modal">
+		<div class="calc-modal-content">
+			<button class="calc-modal-close" onclick="closeCalculator('sip')">&times;</button>
+			<h2 class="calc-modal-title">SIP Calculator</h2>
+			<p class="calc-modal-subtitle">Calculate your investment returns</p>
+
+			<form onsubmit="calculateSIP(event)">
+				<div class="calc-form-group">
+					<label class="calc-form-label">Monthly Investment (₹)</label>
+					<input type="number" id="sipAmount" class="calc-form-input" placeholder="5000" required>
+				</div>
+
+				<div class="calc-form-row">
+					<div class="calc-form-group">
+						<label class="calc-form-label">Expected Return (% p.a.)</label>
+						<input type="number" step="0.1" id="sipReturn" class="calc-form-input" placeholder="12"
+							required>
+					</div>
+
+					<div class="calc-form-group">
+						<label class="calc-form-label">Time Period (Years)</label>
+						<input type="number" id="sipTenure" class="calc-form-input" placeholder="10" required>
+					</div>
+				</div>
+
+				<button type="submit" class="calc-btn-calculate">Calculate Returns</button>
+			</form>
+
+			<div id="sipResult" class="calc-result-box">
+				<div class="calc-result-title">Future Value</div>
+				<div class="calc-result-value" id="sipValue">₹0</div>
+				<div class="calc-result-details" id="sipDetails"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Budget Tracker Modal -->
+	<div id="budgetModal" class="calc-modal">
+		<div class="calc-modal-content">
+			<button class="calc-modal-close" onclick="closeCalculator('budget')">&times;</button>
+			<h2 class="calc-modal-title">Budget Tracker</h2>
+			<p class="calc-modal-subtitle">Track your monthly income and expenses</p>
+
+			<form onsubmit="calculateBudget(event)">
+				<div class="calc-form-group">
+					<label class="calc-form-label">Monthly Income (₹)</label>
+					<input type="number" id="budgetIncome" class="calc-form-input" placeholder="50000" required>
+				</div>
+
+				<div class="calc-form-group">
+					<label class="calc-form-label">Housing (Rent/EMI) (₹)</label>
+					<input type="number" id="budgetHousing" class="calc-form-input" placeholder="15000" required>
+				</div>
+
+				<div class="calc-form-row">
+					<div class="calc-form-group">
+						<label class="calc-form-label">Food & Groceries (₹)</label>
+						<input type="number" id="budgetFood" class="calc-form-input" placeholder="8000" required>
+					</div>
+
+					<div class="calc-form-group">
+						<label class="calc-form-label">Transportation (₹)</label>
+						<input type="number" id="budgetTransport" class="calc-form-input" placeholder="5000" required>
+					</div>
+				</div>
+
+				<div class="calc-form-row">
+					<div class="calc-form-group">
+						<label class="calc-form-label">Utilities (₹)</label>
+						<input type="number" id="budgetUtilities" class="calc-form-input" placeholder="3000" required>
+					</div>
+
+					<div class="calc-form-group">
+						<label class="calc-form-label">Entertainment (₹)</label>
+						<input type="number" id="budgetEntertainment" class="calc-form-input" placeholder="5000"
+							required>
+					</div>
+				</div>
+
+				<div class="calc-form-group">
+					<label class="calc-form-label">Other Expenses (₹)</label>
+					<input type="number" id="budgetOther" class="calc-form-input" placeholder="4000" required>
+				</div>
+
+				<button type="submit" class="calc-btn-calculate">Calculate Budget</button>
+			</form>
+
+			<div id="budgetResult" class="calc-result-box">
+				<div class="budget-summary">
+					<div class="budget-summary-item">
+						<div class="budget-summary-label">Total Expenses</div>
+						<div class="budget-summary-value" id="budgetTotalExpenses">₹0</div>
+					</div>
+					<div class="budget-summary-item">
+						<div class="budget-summary-label">Monthly Savings</div>
+						<div class="budget-summary-value" id="budgetSavings">₹0</div>
+					</div>
+				</div>
+				<div style="margin-top: 15px; text-align: center;">
+					<div class="calc-result-details" id="budgetPercentage"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Floating contact icons -->
+	<div class="edug-contact-icons" id="contactIcons">
+		<a href="https://wa.me/919778596947" target="_blank" class="edug-contact-icon" data-tooltip="Chat on WhatsApp">
+			<i class="lni lni-whatsapp"></i>
+		</a>
+
+		<a href="tel:+919778596947" class="edug-contact-icon" data-tooltip="Call us Now">
+			<i class="lni lni-phone"></i>
+		</a>
+
+	</div>
 
 
 	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
@@ -2113,140 +2124,140 @@
 		data-cf-beacon='{"version":"2024.11.0","token":"88f4fa328f314d4c95a104b4a60b2313","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
 		crossorigin="anonymous"></script>
 
-		 <script>
-        // Open Calculator Modal
-        function openCalculator(type) {
-            const modal = document.getElementById(`${type}Modal`);
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+	<script>
+		// Open Calculator Modal
+		function openCalculator(type) {
+			const modal = document.getElementById(`${type}Modal`);
+			modal.classList.add('active');
+			document.body.style.overflow = 'hidden';
+		}
 
-        // Close Calculator Modal
-        function closeCalculator(type) {
-            const modal = document.getElementById(`${type}Modal`);
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
+		// Close Calculator Modal
+		function closeCalculator(type) {
+			const modal = document.getElementById(`${type}Modal`);
+			modal.classList.remove('active');
+			document.body.style.overflow = 'auto';
+		}
 
-        // Close modal when clicking outside
-        document.querySelectorAll('.calc-modal').forEach(modal => {
-            modal.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    this.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        });
+		// Close modal when clicking outside
+		document.querySelectorAll('.calc-modal').forEach(modal => {
+			modal.addEventListener('click', function (e) {
+				if (e.target === this) {
+					this.classList.remove('active');
+					document.body.style.overflow = 'auto';
+				}
+			});
+		});
 
-        // EMI Calculator
-        function calculateEMI(event) {
-            event.preventDefault();
-            
-            const principal = parseFloat(document.getElementById('emiPrincipal').value);
-            const annualRate = parseFloat(document.getElementById('emiRate').value);
-            const years = parseFloat(document.getElementById('emiTenure').value);
-            
-            const monthlyRate = annualRate / (12 * 100);
-            const months = years * 12;
-            
-            const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) / 
-                        (Math.pow(1 + monthlyRate, months) - 1);
-            
-            const totalAmount = emi * months;
-            const totalInterest = totalAmount - principal;
-            
-            document.getElementById('emiValue').textContent = `₹${emi.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
-            document.getElementById('emiDetails').innerHTML = `
+		// EMI Calculator
+		function calculateEMI(event) {
+			event.preventDefault();
+
+			const principal = parseFloat(document.getElementById('emiPrincipal').value);
+			const annualRate = parseFloat(document.getElementById('emiRate').value);
+			const years = parseFloat(document.getElementById('emiTenure').value);
+
+			const monthlyRate = annualRate / (12 * 100);
+			const months = years * 12;
+
+			const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) /
+				(Math.pow(1 + monthlyRate, months) - 1);
+
+			const totalAmount = emi * months;
+			const totalInterest = totalAmount - principal;
+
+			document.getElementById('emiValue').textContent = `₹${emi.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+			document.getElementById('emiDetails').innerHTML = `
                 Total Amount Payable: ₹${totalAmount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}<br>
                 Total Interest: ₹${totalInterest.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}<br>
                 Principal Amount: ₹${principal.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
             `;
-            
-            document.getElementById('emiResult').classList.add('show');
-        }
 
-        // SIP Calculator
-        function calculateSIP(event) {
-            event.preventDefault();
-            
-            const monthly = parseFloat(document.getElementById('sipAmount').value);
-            const annualReturn = parseFloat(document.getElementById('sipReturn').value);
-            const years = parseFloat(document.getElementById('sipTenure').value);
-            
-            const monthlyRate = annualReturn / (12 * 100);
-            const months = years * 12;
-            
-            const futureValue = monthly * (((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate));
-            
-            const totalInvested = monthly * months;
-            const returns = futureValue - totalInvested;
-            
-            document.getElementById('sipValue').textContent = `₹${futureValue.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
-            document.getElementById('sipDetails').innerHTML = `
+			document.getElementById('emiResult').classList.add('show');
+		}
+
+		// SIP Calculator
+		function calculateSIP(event) {
+			event.preventDefault();
+
+			const monthly = parseFloat(document.getElementById('sipAmount').value);
+			const annualReturn = parseFloat(document.getElementById('sipReturn').value);
+			const years = parseFloat(document.getElementById('sipTenure').value);
+
+			const monthlyRate = annualReturn / (12 * 100);
+			const months = years * 12;
+
+			const futureValue = monthly * (((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate));
+
+			const totalInvested = monthly * months;
+			const returns = futureValue - totalInvested;
+
+			document.getElementById('sipValue').textContent = `₹${futureValue.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+			document.getElementById('sipDetails').innerHTML = `
                 Total Invested: ₹${totalInvested.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}<br>
                 Expected Returns: ₹${returns.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}<br>
                 Return on Investment: ${((returns / totalInvested) * 100).toFixed(2)}%
             `;
-            
-            document.getElementById('sipResult').classList.add('show');
-        }
 
-        // Budget Tracker
-        function calculateBudget(event) {
-            event.preventDefault();
-            
-            const income = parseFloat(document.getElementById('budgetIncome').value);
-            const housing = parseFloat(document.getElementById('budgetHousing').value);
-            const food = parseFloat(document.getElementById('budgetFood').value);
-            const transport = parseFloat(document.getElementById('budgetTransport').value);
-            const utilities = parseFloat(document.getElementById('budgetUtilities').value);
-            const entertainment = parseFloat(document.getElementById('budgetEntertainment').value);
-            const other = parseFloat(document.getElementById('budgetOther').value);
-            
-            const totalExpenses = housing + food + transport + utilities + entertainment + other;
-            const savings = income - totalExpenses;
-            const savingsPercentage = ((savings / income) * 100).toFixed(1);
-            
-            document.getElementById('budgetTotalExpenses').textContent = `₹${totalExpenses.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
-            document.getElementById('budgetSavings').textContent = `₹${savings.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
-            
-            let message = '';
-            if (savingsPercentage >= 20) {
-                message = `🎉 Excellent! You're saving ${savingsPercentage}% of your income.`;
-            } else if (savingsPercentage >= 10) {
-                message = `👍 Good job! You're saving ${savingsPercentage}% of your income.`;
-            } else if (savingsPercentage > 0) {
-                message = `⚠️ Try to increase savings. Currently at ${savingsPercentage}%.`;
-            } else {
-                message = `🚨 Warning! Expenses exceed income by ₹${Math.abs(savings).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
-            }
-            
-            document.getElementById('budgetPercentage').textContent = message;
-            document.getElementById('budgetResult').classList.add('show');
-        }
-    </script>
+			document.getElementById('sipResult').classList.add('show');
+		}
 
- <script>
-            // Grab the contact icons container
-            const contactIcons = document.getElementById('contactIcons');
+		// Budget Tracker
+		function calculateBudget(event) {
+			event.preventDefault();
 
-            // Show or hide the icons when the user scrolls
-            function toggleContactIcons() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			const income = parseFloat(document.getElementById('budgetIncome').value);
+			const housing = parseFloat(document.getElementById('budgetHousing').value);
+			const food = parseFloat(document.getElementById('budgetFood').value);
+			const transport = parseFloat(document.getElementById('budgetTransport').value);
+			const utilities = parseFloat(document.getElementById('budgetUtilities').value);
+			const entertainment = parseFloat(document.getElementById('budgetEntertainment').value);
+			const other = parseFloat(document.getElementById('budgetOther').value);
 
-                // Adjust the 300 value if you want them to appear sooner/later
-                if (scrollTop > 300) {
-                    contactIcons.classList.add('visible');
-                } else {
-                    contactIcons.classList.remove('visible');
-                }
-            }
+			const totalExpenses = housing + food + transport + utilities + entertainment + other;
+			const savings = income - totalExpenses;
+			const savingsPercentage = ((savings / income) * 100).toFixed(1);
 
-            // Listen for scrolling
-            window.addEventListener('scroll', toggleContactIcons);
-        </script>
+			document.getElementById('budgetTotalExpenses').textContent = `₹${totalExpenses.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+			document.getElementById('budgetSavings').textContent = `₹${savings.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
 
-	</body>
+			let message = '';
+			if (savingsPercentage >= 20) {
+				message = `🎉 Excellent! You're saving ${savingsPercentage}% of your income.`;
+			} else if (savingsPercentage >= 10) {
+				message = `👍 Good job! You're saving ${savingsPercentage}% of your income.`;
+			} else if (savingsPercentage > 0) {
+				message = `⚠️ Try to increase savings. Currently at ${savingsPercentage}%.`;
+			} else {
+				message = `🚨 Warning! Expenses exceed income by ₹${Math.abs(savings).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+			}
+
+			document.getElementById('budgetPercentage').textContent = message;
+			document.getElementById('budgetResult').classList.add('show');
+		}
+	</script>
+
+	<script>
+		// Grab the contact icons container
+		const contactIcons = document.getElementById('contactIcons');
+
+		// Show or hide the icons when the user scrolls
+		function toggleContactIcons() {
+			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+			// Adjust the 300 value if you want them to appear sooner/later
+			if (scrollTop > 300) {
+				contactIcons.classList.add('visible');
+			} else {
+				contactIcons.classList.remove('visible');
+			}
+		}
+
+		// Listen for scrolling
+		window.addEventListener('scroll', toggleContactIcons);
+	</script>
+
+</body>
 
 <!-- Mirrored from html.kodesolution.com/2025/finclix-html/index-2-dark.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Dec 2025 05:01:37 GMT -->
 
