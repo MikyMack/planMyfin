@@ -8310,6 +8310,9 @@ Section Title
   padding-bottom: 0;
   position: relative;
   overflow: hidden;
+     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .service-card-items-2 .arrow-shape-2 {
   position: absolute;
@@ -8394,6 +8397,9 @@ Section Title
   -webkit-text-stroke-color: var(--headings-color);
 }
 .service-card-items-2 .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
   padding: 50px 40px 40px;
 }
 @media (max-width: 767.98px) {
@@ -8413,6 +8419,8 @@ Section Title
   background-image: linear-gradient(180deg, var(--headings-color) 0%, var(--headings-color) 100%);
 }
 .service-card-items-2 .content p {
+  
+   flex-grow: 1;
   line-height: 218%;
 }
 @media (max-width: 1199.98px) {
