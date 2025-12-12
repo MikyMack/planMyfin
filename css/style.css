@@ -2494,8 +2494,10 @@ Scroll To Top style
   padding: 10px 0 0;
   position: absolute;
   top: 100%;
-  width: 220px;
+  width: 500px;
   z-index: 100;
+   column-count: 2; /* Two columns */
+  column-gap: 20px;
 }
 .main-menu .navigation > li > ul.from-right {
   left: auto;
@@ -2505,6 +2507,10 @@ Scroll To Top style
   position: relative;
   width: 100%;
   border-bottom: 1px solid #ebf1f5;
+   break-inside: avoid; /* Prevents item from splitting */
+  page-break-inside: avoid;
+  display: inline-block;
+  width: 100%;
 }
 [data-tm-layout=dark] .main-menu .navigation > li > ul > li {
   border-color: rgb(var(--theme-color-white-rgb), 0.1);
@@ -2515,10 +2521,10 @@ Scroll To Top style
 .main-menu .navigation > li > ul > li > a {
   position: relative;
   display: block;
-  padding: 10px 0px;
+  padding: 10px 20px;
   line-height: 29px;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   color: var(--headings-color);
   text-align: left;
   font-family: var(--heading-font-family);
@@ -2529,6 +2535,7 @@ Scroll To Top style
 }
 .main-menu .navigation > li > ul > li:hover > a {
   color: var(--headings-color);
+    background: var(--theme-color-light);
 }
 .main-menu .navigation > li > ul > li.dropdown > a:after {
   font-family: "Font Awesome 5 Free";
@@ -2542,6 +2549,18 @@ Scroll To Top style
   font-weight: 900;
   z-index: 5;
 }
+
+.main-menu .navigation > li > ul.scrollable {
+  max-height: 400px;
+  overflow-y: auto;
+  width: 320px;
+  column-count: 1;
+}
+.main-menu .navigation > li > ul.scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+
+
 .main-menu .navigation > li > ul > li.dropdown:hover > ul {
   visibility: visible;
   opacity: 1;
@@ -21628,4 +21647,11 @@ Sidebar
     height: 45px;
     font-size: 20px;
   }
+}
+
+
+.main-menu .navigation > li > ul.two-column-dropdown {
+  width: 500px;
+  column-count: 2;
+  column-gap: 20px;
 }
