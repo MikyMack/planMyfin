@@ -2494,8 +2494,10 @@ Scroll To Top style
   padding: 10px 0 0;
   position: absolute;
   top: 100%;
-  width: 220px;
+  width: 500px;
   z-index: 100;
+   column-count: 2; /* Two columns */
+  column-gap: 20px;
 }
 .main-menu .navigation > li > ul.from-right {
   left: auto;
@@ -2505,6 +2507,10 @@ Scroll To Top style
   position: relative;
   width: 100%;
   border-bottom: 1px solid #ebf1f5;
+   break-inside: avoid; /* Prevents item from splitting */
+  page-break-inside: avoid;
+  display: inline-block;
+  width: 100%;
 }
 [data-tm-layout=dark] .main-menu .navigation > li > ul > li {
   border-color: rgb(var(--theme-color-white-rgb), 0.1);
@@ -2515,10 +2521,10 @@ Scroll To Top style
 .main-menu .navigation > li > ul > li > a {
   position: relative;
   display: block;
-  padding: 10px 0px;
+  padding: 10px 20px;
   line-height: 29px;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   color: var(--headings-color);
   text-align: left;
   font-family: var(--heading-font-family);
@@ -2529,6 +2535,7 @@ Scroll To Top style
 }
 .main-menu .navigation > li > ul > li:hover > a {
   color: var(--headings-color);
+    background: var(--theme-color-light);
 }
 .main-menu .navigation > li > ul > li.dropdown > a:after {
   font-family: "Font Awesome 5 Free";
@@ -2542,6 +2549,18 @@ Scroll To Top style
   font-weight: 900;
   z-index: 5;
 }
+
+.main-menu .navigation > li > ul.scrollable {
+  max-height: 400px;
+  overflow-y: auto;
+  width: 320px;
+  column-count: 1;
+}
+.main-menu .navigation > li > ul.scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+
+
 .main-menu .navigation > li > ul > li.dropdown:hover > ul {
   visibility: visible;
   opacity: 1;
@@ -3842,7 +3861,7 @@ Section Title
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
+          align-items: stretch;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
@@ -3868,6 +3887,8 @@ Section Title
   backdrop-filter: blur(20px);
   padding: 30px 25px;
   max-width: 300px;
+  display:flex;
+  flex-direction: column;
 }
 [data-tm-layout=dark] .hero-2 .hero-box-items .hero-box {
   backdrop-filter: blur(40px);
@@ -8308,6 +8329,9 @@ Section Title
   padding-bottom: 0;
   position: relative;
   overflow: hidden;
+     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .service-card-items-2 .arrow-shape-2 {
   position: absolute;
@@ -8392,6 +8416,9 @@ Section Title
   -webkit-text-stroke-color: var(--headings-color);
 }
 .service-card-items-2 .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
   padding: 50px 40px 40px;
 }
 @media (max-width: 767.98px) {
@@ -8411,6 +8438,8 @@ Section Title
   background-image: linear-gradient(180deg, var(--headings-color) 0%, var(--headings-color) 100%);
 }
 .service-card-items-2 .content p {
+  
+   flex-grow: 1;
   line-height: 218%;
 }
 @media (max-width: 1199.98px) {
@@ -21609,7 +21638,7 @@ Sidebar
 /* Responsive */
 @media (max-width: 768px) {
   .edug-contact-icons {
-    bottom: 260px;
+    bottom: 75px;
     right: 20px;
   }
 
@@ -21618,4 +21647,11 @@ Sidebar
     height: 45px;
     font-size: 20px;
   }
+}
+
+
+.main-menu .navigation > li > ul.two-column-dropdown {
+  width: 500px;
+  column-count: 2;
+  column-gap: 20px;
 }

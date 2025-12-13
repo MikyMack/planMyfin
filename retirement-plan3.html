@@ -7,13 +7,160 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <link href="css/responsive.css" rel="stylesheet">
-<link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+<link rel="shortcut icon" href="/images/favicon-16x16.png" type="image/x-icon">
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-	.timeline-box {
+	.retire-main-layout {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 40px;
+    align-items: start;
+    padding: 60px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.retire-content-area {
+    width: 100%;
+}
+
+/* Sidebar Styles */
+.retire-sidebar {
+    position: sticky;
+    top: 20px;
+}
+
+.retire-sidebar-box {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.retire-sidebar-heading {
+    background: var(--gradient-1);
+    color: white;
+    padding: 20px 25px;
+    font-family: var(--heading-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.retire-services-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.retire-services-menu li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.retire-services-menu li:last-child {
+    border-bottom: none;
+}
+
+.retire-services-menu a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    color: #666;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.retire-services-menu a:hover {
+    background: #f8f9fa;
+    color: var(--theme-color1);
+    padding-left: 30px;
+}
+
+.retire-services-menu li.active a {
+    background: var(--theme-color-light);
+    color: var(--theme-color1);
+    font-weight: 600;
+}
+
+.retire-services-menu i {
+    color: var(--theme-color1);
+}
+
+.retire-contact-box {
+    padding: 25px;
+}
+
+.retire-contact-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.retire-contact-items li {
+    margin-bottom: 15px;
+    color: #666;
+    font-size: 15px;
+}
+
+.retire-contact-items a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.retire-contact-items a:hover {
+    color: var(--theme-color1);
+}
+
+.retire-form-box {
+    padding: 25px;
+}
+
+.retire-form-field {
+    margin-bottom: 20px;
+}
+
+.retire-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #f0f0f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.retire-input:focus {
+    outline: none;
+    border-color: var(--theme-color1);
+}
+
+.retire-submit-btn {
+    width: 100%;
+    background: var(--gradient-1);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.retire-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(20, 68, 67, 0.2);
+}
+
+/* Existing Retirement Styles */
+.timeline-box {
     background: var(--gradient-1);
     padding: 20px;
     border-radius: 8px;
@@ -156,7 +303,23 @@
     color: #ffffff;
 }
 
+/* Responsive */
+@media (max-width: 1024px) {
+    .retire-main-layout {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
 
+    .retire-sidebar {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .retire-main-layout {
+        padding: 30px 15px;
+    }
+}
 </style>
 </head>
 
@@ -218,20 +381,23 @@
 										<li><a href="fin-wellness-plan1.html">Financial Wellness Programme</a></li>
 										<li><a href="invest-plan2.html">Investment Planning</a></li>
 										<li><a href="retirement-plan3.html">Retirement Planning</a></li>
-										<li><a href="risk-manage-plan4.html">Risk Management & Insurance Planning</a></li>
+										<li><a href="risk-manage-plan4.html">Risk Management & Insurance Planning</a>
+										</li>
 										<li><a href="emergency-fund-plan5.html">Emergency Fund Planning</a></li>
 										<li><a href="debt-manage-plan6.html">Debt Management</a></li>
 										<li><a href="cashflow7.html">Cashflow Analysis</a></li>
 										<li><a href="asset-allocat8.html">Asset Allocation Strategy</a></li>
-										<li><a href="risk-profiling9.html">Risk Profiling</a></li>										
-										<li><a href="legacy-plan10.html">Legacy Planning (Estate Planning & Will)</a></li>
+										<li><a href="risk-profiling9.html">Risk Profiling</a></li>
+										<li><a href="legacy-plan10.html">Legacy Planning (Estate Planning & Will)</a>
+										</li>
 										<li><a href="fin-goal-plan11.html">Financial Goal Planning </a></li>
 									</ul>
 								</li>
-								<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a>
+								<li class="dropdown"><a href="fin-adv-services.html">Financial Advising</a></li>
+									<li class="dropdown"><a href="/eductional-pgms.html">Educational programs</a></li>
 
 								<li class="dropdown"><a href="news-grid.html">Blogs</a>
-								<!--	<ul>
+									<!--	<ul>
 										<li><a href="news-grid.html">News Grid</a></li>
 										<li><a href="news-details.html">News Details</a></li>
 									</ul>-->
@@ -241,7 +407,7 @@
 						</nav>
 						<!-- Main Menu End-->
 						<div class="outer-box">
-							<a href="tel:+92(8800)9806" class="info-btn">
+							<a href="tel:+919778596947" class="info-btn">
 								<i class="icon fa fa-phone"></i>
 								+91 97785 96947
 							</a>
@@ -257,38 +423,57 @@
 			<!-- End Header Lower -->
 
 
-		<!-- Mobile Menu -->
-		<div class="mobile-menu">
-			<div class="menu-backdrop"></div>
-			<nav class="menu-box">
-				<div class="upper-box">
-					<div class="nav-logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""></a></div>
-					<div class="close-btn"><i class="icon fa fa-times"></i></div>
-				</div>
-				<ul class="navigation clearfix"></ul>
-				<ul class="contact-list-one">
-					<li>
-						<div class="contact-info-box">
-							<i class="icon lnr-icon-phone-handset"></i>
-							<span class="title">Call Now</span>
-							<a href="tel:+919778596947">+91 97785 96947</a>
-						</div>
-					</li>
-					<li>
-						<div class="contact-info-box">
-							<span class="icon lnr-icon-envelope1"></span>
-							<span class="title">Send Email</span>
-							<a href="mailto:info@planmyfin.com">info@planmyfin.com</a>
-						</div>
-					</li>
-				</ul>
-				<ul class="social-links">
-					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-				</ul>
-			</nav>
-		</div>
+		<!-- Mobile Menu  -->
+			<div class="mobile-menu">
+				<div class="menu-backdrop"></div>
+
+				<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+				<nav class="menu-box">
+					<div class="upper-box">
+						<div class="nav-logo"><a href="index.html"><img src="images/planmyfin-logo.png" alt=""
+									style="height: 50px; width: auto;"></a></div>
+						<div class="close-btn"><i class="icon fa fa-times"></i></div>
+					</div>
+
+					<ul class="navigation clearfix">
+						<!--Keep This Empty / Menu will come through Javascript-->
+					</ul>
+					<ul class="contact-list-one">
+						<li>
+							<!-- Contact Info Box -->
+							<div class="contact-info-box">
+								<i class="icon lnr-icon-phone-handset"></i>
+								<span class="title">Call Now</span>
+								<a href="tel:+919778596947">+919778596947</a>
+							</div>
+						</li>
+						<li>
+							<!-- Contact Info Box -->
+							<div class="contact-info-box">
+								<span class="icon lnr-icon-envelope1"></span>
+								<span class="title">Send Email</span>
+								<a href="mailto:info@planmyfin.com">info@planmyfin.com</a>
+							</div>
+						</li>
+						<li>
+							<!-- Contact Info Box -->
+							<div class="contact-info-box">
+								<span class="icon lnr-icon-clock"></span>
+								<span class="title">Timings</span>
+								Mon - Sat 8:00 - 6:30, Sunday - CLOSED
+							</div>
+						</li>
+					</ul>
+
+
+					<ul class="social-links">
+						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+						<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+					</ul>
+				</nav>
+			</div><!-- End Mobile Menu -->
 
 		<!-- Sticky Header -->
 		<div class="sticky-header">
@@ -324,196 +509,244 @@
 		</div>
 	</section>
 
-<section class="services-details section-padding retirement-plan-page">
-    <div class="auto-container">
+<section class="retire-main-layout">
+    
+    <!-- Main Content Area -->
+    <div class="retire-content-area">
+        <div class="auto-container" style="padding: 0;">
 
-        <!-- Section 1 : Intro -->
-        <div class="row align-items-lg-center g-4">
-            <div class="col-lg-7">
-                <div class="sec-title mb-30">
-                    <h6 class="sub-title">
-                        <span class="triangle triangle1"></span>
-                        <span class="triangle triangle2"></span>
-                        Retirement Planning
-                    </h6>
-                    <h2>Build a Comfortable & Worry-Free Retirement Life</h2>
+            <!-- Section 1 : Intro -->
+            <div class="row align-items-lg-center g-4">
+                <div class="col-lg-7">
+                    <div class="sec-title mb-30">
+                        <h6 class="sub-title">
+                            <span class="triangle triangle1"></span>
+                            <span class="triangle triangle2"></span>
+                            Retirement Planning
+                        </h6>
+                        <h2>Build a Comfortable & Worry-Free Retirement Life</h2>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <p class="retire-desc">
+                        With increasing life expectancy and rising costs, having a strategic retirement plan is essential
+                        to maintain the lifestyle you desire even after your income stops.
+                    </p>
                 </div>
             </div>
-            <div class="col-lg-5">
-                <p class="retire-desc">
-                    With increasing life expectancy and rising costs, having a strategic retirement plan is essential
-                    to maintain the lifestyle you desire even after your income stops.
-                </p>
-            </div>
-        </div>
 
 
-        <!-- Section 2 : Why it matters -->
-        <div class="row stats-row mt-5 mb-5">
-            <div class="col-lg-12 text-center">
-                <h3 class="mb-4">Why Early Retirement Planning Matters</h3>
-            </div>
-            <div class="col-md-4">
-                <div class="fin-stats-box">
-                    <h4>Longer Retirement Years</h4>
-                    <p>People live longer, making financial planning more important for a secure future.</p>
+            <!-- Section 2 : Why it matters -->
+            <div class="row stats-row mt-5 mb-5">
+                <div class="col-lg-12 text-center">
+                    <h3 class="mb-4">Why Early Retirement Planning Matters</h3>
+                </div>
+                <div class="col-md-4">
+                    <div class="fin-stats-box">
+                        <h4>Longer Retirement Years</h4>
+                        <p>People live longer, making financial planning more important for a secure future.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fin-stats-box">
+                        <h4>Inflation & Growing Lifestyle Costs</h4>
+                        <p>The value of money reduces with time — your savings must outgrow inflation.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fin-stats-box">
+                        <h4>Healthcare & Family Needs</h4>
+                        <p>Medical expenses and support for dependents require planned resources.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="fin-stats-box">
-                    <h4>Inflation & Growing Lifestyle Costs</h4>
-                    <p>The value of money reduces with time — your savings must outgrow inflation.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="fin-stats-box">
-                    <h4>Healthcare & Family Needs</h4>
-                    <p>Medical expenses and support for dependents require planned resources.</p>
-                </div>
-            </div>
-        </div>
 
 
-        <!-- Section 3 : Retirement Journey -->
-        <div class="row mt-5 align-items-center">
-            <div class="col-lg-6">
-                <h3 class="mb-3">Your Retirement Journey</h3>
-                <p>Retirement is a journey with distinct financial phases:</p>
-                <ul class="retire-list mt-3">
-                    <li><strong>Accumulation Phase:</strong> Build wealth during your earning years</li>
-                    <li><strong>Distribution Phase:</strong> Utilize investments wisely post-retirement</li>
+            <!-- Section 3 : Retirement Journey -->
+            <div class="row mt-5 align-items-center">
+                <div class="col-lg-6">
+                    <h3 class="mb-3">Your Retirement Journey</h3>
+                    <p>Retirement is a journey with distinct financial phases:</p>
+                    <ul class="retire-list mt-3">
+                        <li><strong>Accumulation Phase:</strong> Build wealth during your earning years</li>
+                        <li><strong>Distribution Phase:</strong> Utilize investments wisely post-retirement</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="timeline-box">
+                        <span>Accumulation ➝ Wealth Growth ➝ Distribution</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Section 4 : Inflation -->
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="fin-highlight-box">
+                        <p><strong>Did You Know?</strong> Even a low inflation rate can significantly reduce purchasing power over time — a retirement plan helps you stay inflation-proof.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Section 5 : What You Get -->
+            <div class="row mt-5 g-4">
+                <h3 class="mb-4">What You Get From This Service</h3>
+                <div class="col-md-6">
+                    <div class="fin-outcome-box">
+                        <h5><i class="fal fa-check-circle"></i>Clear Retirement Goals</h5>
+                        <p>Structured plan for income needs and lifestyle expectations.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="fin-outcome-box">
+                        <h5><i class="fal fa-check-circle"></i>Tax-Smart Investment Strategy</h5>
+                        <p>Investments optimized for both growth and tax efficiency.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="fin-outcome-box">
+                        <h5><i class="fal fa-check-circle"></i>Healthcare & Risk Coverage</h5>
+                        <p>Planning for medical expenses and unexpected uncertainties.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="fin-outcome-box">
+                        <h5><i class="fal fa-check-circle"></i>Retirement Fund Strategy</h5>
+                        <p>Right investment mix to ensure lifelong sustainable income.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Section 6 : Process -->
+            <div class="process-box mt-5">
+                <h3 class="mb-4 text-center">How We Help You Retire Confidently</h3>
+                <div class="row g-4 text-center">
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="retire-process-card">
+                            <i class="lnr-icon-search"></i>
+                            <h4>Assess</h4>
+                            <p>Understanding your current life stage & future lifestyle needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="retire-process-card">
+                            <i class="lnr-icon-paperclip"></i>
+                            <h4>Plan</h4>
+                            <p>Tailored retirement strategy to build sustainable wealth.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="retire-process-card">
+                            <i class="lnr-icon-graph"></i>
+                            <h4>Execute</h4>
+                            <p>Optimized investment products & risk-adjusted growth.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="retire-process-card">
+                            <i class="lnr-icon-refresh"></i>
+                            <h4>Review</h4>
+                            <p>Ongoing monitoring to ensure you stay on track.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Section 7 : Why Choose Us -->
+            <div class="row mt-5">
+                <h3 class="mb-4">Why Choose Our Retirement Planning?</h3>
+                <ul class="retire-list">
+                    <li>Holistic view of wealth, risks & lifestyle needs</li>
+                    <li>Independent advice — no product bias</li>
+                    <li>Long-term partnership focusing on your goals</li>
+                    <li>Transparent & professional guidance</li>
                 </ul>
             </div>
-            <div class="col-lg-6 text-center">
-                <div class="timeline-box">
-                    <span>Accumulation ➝ Wealth Growth ➝ Distribution</span>
-                </div>
+
+
+            <!-- CTA -->
+            <div class="cta-retirement text-center mt-5">
+                <h3>Plan Today. Retire Happily Tomorrow.</h3>
+                <a href="/page-contact.html" class="theme-btn btn-style-one rounded-1 mt-3">connect with us now</a>
             </div>
+
         </div>
-
-
-        <!-- Section 4 : Inflation -->
-        <div class="row mt-5">
-            <div class="col-lg-12">
-                <div class="fin-highlight-box">
-                    <p><strong>Did You Know?</strong> Even a low inflation rate can significantly reduce purchasing power over time — a retirement plan helps you stay inflation-proof.</p>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Section 5 : What You Get -->
-        <div class="row mt-5 g-4">
-            <h3 class="mb-4">What You Get From This Service</h3>
-            <div class="col-md-6">
-                <div class="fin-outcome-box">
-                    <h5><i class="fal fa-check-circle"></i>Clear Retirement Goals</h5>
-                    <p>Structured plan for income needs and lifestyle expectations.</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="fin-outcome-box">
-                    <h5><i class="fal fa-check-circle"></i>Tax-Smart Investment Strategy</h5>
-                    <p>Investments optimized for both growth and tax efficiency.</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="fin-outcome-box">
-                    <h5><i class="fal fa-check-circle"></i>Healthcare & Risk Coverage</h5>
-                    <p>Planning for medical expenses and unexpected uncertainties.</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="fin-outcome-box">
-                    <h5><i class="fal fa-check-circle"></i>Retirement Fund Strategy</h5>
-                    <p>Right investment mix to ensure lifelong sustainable income.</p>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Section 6 : Process -->
-        <div class="process-box mt-5">
-    <h3 class="mb-4 text-center">How We Help You Retire Confidently</h3>
-    <div class="row g-4 text-center">
-        
-        <div class="col-lg-3 col-md-6">
-            <div class="retire-process-card">
-                <i class="lnr-icon-search"></i>
-                <h4>Assess</h4>
-                <p>Understanding your current life stage & future lifestyle needs.</p>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-            <div class="retire-process-card">
-                <i class="lnr-icon-paperclip"></i>
-                <h4>Plan</h4>
-                <p>Tailored retirement strategy to build sustainable wealth.</p>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-            <div class="retire-process-card">
-                <i class="lnr-icon-graph"></i>
-                <h4>Execute</h4>
-                <p>Optimized investment products & risk-adjusted growth.</p>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-            <div class="retire-process-card">
-                <i class="lnr-icon-refresh"></i>
-                <h4>Review</h4>
-                <p>Ongoing monitoring to ensure you stay on track.</p>
-            </div>
-        </div>
-
     </div>
-</div>
 
-
-        <!-- Section 7 : Why Choose Us -->
-        <div class="row mt-5">
-            <h3 class="mb-4">Why Choose Our Retirement Planning?</h3>
-            <ul class="retire-list">
-                <li>Holistic view of wealth, risks & lifestyle needs</li>
-                <li>Independent advice — no product bias</li>
-                <li>Long-term partnership focusing on your goals</li>
-                <li>Transparent & professional guidance</li>
+    <!-- Sidebar -->
+    <aside class="retire-sidebar">
+        <!-- Services Menu -->
+        <div class="retire-sidebar-box">
+            <h4 class="retire-sidebar-heading">All Services</h4>
+            <ul class="retire-services-menu">
+                <li><a href="fin-wellness-plan1.html"><span>Financial Wellness Programme</span><i>→</i></a></li>
+                <li><a href="invest-plan2.html"><span>Investment Planning</span><i>→</i></a></li>
+                <li class="active"><a href="retirement-plan3.html"><span>Retirement Planning</span><i>→</i></a></li>
+                <li><a href="risk-manage-plan4.html"><span>Risk Management</span><i>→</i></a></li>
+                <li><a href="emergency-fund-plan5.html"><span>Emergency Fund Planning</span><i>→</i></a></li>
+                <li><a href="debt-manage-plan6.html"><span>Debt Management</span><i>→</i></a></li>
+                <li><a href="cashflow7.html"><span>Cashflow Analysis</span><i>→</i></a></li>
+                <li><a href="asset-allocat8.html"><span>Asset Allocation</span><i>→</i></a></li>
+                <li><a href="risk-profiling9.html"><span>Risk Profiling</span><i>→</i></a></li>
+                <li><a href="legacy-plan10.html"><span>Legacy Planning</span><i>→</i></a></li>
+                <li><a href="fin-goal-plan11.html"><span>Financial Goal Planning</span><i>→</i></a></li>
             </ul>
         </div>
 
-
-        <!-- CTA -->
-        <div class="cta-retirement text-center mt-5">
-            <h3>Plan Today. Retire Happily Tomorrow.</h3>
-            <a href="#contact" class="theme-btn btn-style-one rounded-1 mt-3">Book a Consultation</a>
+        <!-- Contact Widget -->
+        <div class="retire-sidebar-box">
+            <h4 class="retire-sidebar-heading">Contact Us</h4>
+            <div class="retire-contact-box">
+                <ul class="retire-contact-items">
+                    <li>📍 Bengaluru, Karnataka, IN</li>
+                    <li>✉️ <a href="mailto:info@planmyfin.com">info@planmyfin.com</a></li>
+                    <li>📞 <a href="tel:+919778596947">+91 97785 96947</a></li>
+                </ul>
+            </div>
         </div>
 
-    </div>
+        <!-- Contact Form -->
+        <div class="retire-sidebar-box">
+            <h4 class="retire-sidebar-heading">Get In Touch</h4>
+            <div class="retire-form-box">
+             	<form id="send_message_form" onsubmit="return false;">
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="mb-20">
+													<input class="form-control" type="text" id="msg_name" name="name"
+														placeholder="Your Name" required>
+												</div>
+											</div>
+											<div class="col-sm-12">
+												<div class="mb-20">
+													<input class="form-control" type="email" id="msg_email" name="email"
+														placeholder="Email Address" required>
+												</div>
+											</div>
+											<div class="col-sm-12">
+												<div class="mb-20">
+													<textarea class="form-control" name="message" id="msg_message"
+														rows="5" placeholder="Write a Message" required></textarea>
+													<button class="theme-btn btn-style-one rounded-1 mt-30"
+														type="submit">Send Message</button>
+												</div>
+											</div>
+										</div>
+									</form>
+            </div>
+        </div>
+    </aside>
+
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	<!-- Footer Section Start -->
 		<footer class="footer-section-1 fix footer-bg bg-cover"
@@ -521,19 +754,21 @@
 			<span class="circle-shape"></span>
 			<span class="circle-shape-2"></span>
 			<div class="auto-container">
-				
+
 				<div class="footer-widget-wrapper">
 					<div class="row justify-content-between">
 						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
 							<div class="footer-widget-items mt-30">
 								<div class="widget-title mb-25">
 									<a href="index.html" class="footer-logo">
-										<img src="/images/planmyfin-logo.png" alt="img"  style="height: 80px; width: auto;" />
+										<img src="/images/planmyfin-logo.png" alt="img"
+											style="height: 80px; width: auto;" />
 									</a>
 								</div>
 								<div class="footer-content">
-									<p>PlanMyFin is a financial wellness platform helping individuals and businesses achieve long-term stability through personalized planning.</p>
-									
+									<p>PlanMyFin is a financial wellness platform helping individuals and businesses
+										achieve long-term stability through personalized planning.</p>
+
 								</div>
 							</div>
 						</div>
@@ -545,7 +780,7 @@
 								<ul class="user-links">
 									<li><a href="index.html">Home</a></li>
 									<li><a href="page-about.html">About us</a></li>
-									<li><a href="page-services.html">Blogs</a></li>
+									<li><a href="news-grid.html">Blogs</a></li>
 									<li><a href="page-contact.html">Contact Us</a></li>
 								</ul>
 							</div>
@@ -556,10 +791,10 @@
 									<h3 class="font-size-24 text-white font-weight-500">Main Services</h3>
 								</div>
 								<ul class="user-links">
-									<li><a href="index.html">Financial Advising</a></li>
-									<li><a href="page-about.html">Investment Planning</a></li>
-									<li><a href="page-services.html">Risk Profiling</a></li>
-									<li><a href="page-contact.html">Retirement Planning</a></li>
+									<li><a href="fin-adv-services.html">Financial Advising</a></li>
+									<li><a href="invest-plan2.html">Investment Planning</a></li>
+									<li><a href="eductional-pgms.html">certification programs</a></li>
+									<li><a href="retirement-plan3.html">Retirement Planning</a></li>
 								</ul>
 							</div>
 						</div>
@@ -571,22 +806,19 @@
 								<ul class="contact-list">
 									<li>
 										<i class="lnr-icon-phone-handset"></i>
-										<p><a href="tel:+1050055900">+91 97785 96947</a></p>
+										<p><a href="tel:+919778596947">+91 97785 96947</a></p>
 									</li>
 									<li>
 										<i class="lnr-icon-envelope"></i>
-										<p><a
-												href="https://html.kodesolution.com/cdn-cgi/l/email-protection#a3c5cacdc0cfcadbe3cbc6cfd38dd6d0"><span
-													class="__cf_email__"
-													data-cfemail="ce88a7a0ada2a7b68ea6aba2bee0bbbd">info@planmyfin.com</span></a>
-										</p>
+										<a href="mailto:info@planmyfin.com">info@planmyfin.com</a>
+
 									</li>
 									<li>
 										<div class="social-icon">
-										<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-										<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-										<a href="#"><i class="fa-brands fa-instagram"></i></a>
-									</div>
+											<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+											<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+										</div>
 										<!--<i class="lnr-icon-map-marker"></i>-->
 										<!--<p>44 Danwers, NY City, USA, 70-102</p>-->
 									</li>
@@ -598,7 +830,8 @@
 			</div>
 			<div class="footer-bottom">
 				<div class="auto-container">
-					<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved. Designed & Developed by Trivlogic.</p>
+					<p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 PlanMyFin. All Rights Reserved.
+						Designed & Developed by Trivlogic.</p>
 				</div>
 			</div>
 		</footer>
@@ -626,5 +859,35 @@
 <script src="js/swiper.min.js"></script>
 <script src="js/mixitup.js"></script>
 <script src="js/script.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const sendMsgForm = document.getElementById('send_message_form');
+    
+    if (sendMsgForm) {
+        sendMsgForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('msg_name').value;
+            const email = document.getElementById('msg_email').value;
+            const message = document.getElementById('msg_message').value;
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            const whatsappNumber = '919778596947'; // Your WhatsApp number
+            
+            const whatsappMessage = `Hi! I'm ${encodeURIComponent(name)} and I'd like to connect with you.%0A%0AEmail: ${encodeURIComponent(email)}%0A%0AMessage:%0A${encodeURIComponent(message)}`;
+            
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+            
+            window.open(whatsappURL, '_blank');
+            sendMsgForm.reset();
+        });
+    }
+});
+</script>
 </body>
 </html>
